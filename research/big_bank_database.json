@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-04-15T08:00:00-07:00",
+  "task": "Big Bank triple-sweep research task",
+  "sweep_type": "morning sweep",
+  "results": {
+    "target": {
+      "ticker": "JPM",
+      "company": "JPMorgan Chase & Co.",
+      "price": 305.94,
+      "change": -1.66,
+      "pe": 14.99,
+      "market_cap": "828.9B",
+      "net_income_ttm": "57.0B",
+      "sentiment": "Positive-to-mixed (record trading revenue)"
+    },
+    "peers": [
+      { "ticker": "BAC", "company": "Bank of America", "price": 54.05, "pe": 13.60, "sentiment": "Positive" },
+      { "ticker": "WFC", "company": "Wells Fargo", "price": 80.66, "pe": 12.22, "sentiment": "Mixed" },
+      { "ticker": "C", "company": "Citigroup", "price": 131.66, "pe": 17.13, "sentiment": "Positive" }
+    ]
+  }
+}
