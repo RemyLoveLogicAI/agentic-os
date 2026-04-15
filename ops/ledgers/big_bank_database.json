@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-04-15T08:00:00-07:00",
+  "task": "Big Bank triple-sweep research task",
+  "sweep_type": "morning sweep",
+  "target_bank": {
+    "name": "JPMorgan Chase & Co.",
+    "ticker": "JPM",
+    "metrics": {
+      "price": 305.94,
+      "change": -1.66,
+      "pe_ratio": 14.99,
+      "market_cap": "828.9B",
+      "net_income_ttm": "57.0B",
+      "latest_earnings": "FY2025 EPS beat; Q4 2025 EPS miss"
+    },
+    "sentiment": "Positive-to-mixed: record trading revenue and strong dealmaking"
+  },
+  "sector_peers": [
+    {
+      "ticker": "BAC",
+      "name": "Bank of America",
+      "price": 54.05,
+      "change": 1.31,
+      "pe": 13.60,
+      "sentiment": "Positive (Q1 2026 beat)"
+    },
+    {
+      "ticker": "WFC",
+      "name": "Wells Fargo",
+      "price": 80.66,
+      "change": -1.27,
+      "pe": 12.22,
+      "sentiment": "Mixed (revenue miss)"
+    },
+    {
+      "ticker": "C",
+      "name": "Citigroup",
+      "price": 131.66,
+      "change": 1.61,
+      "pe": 17.13,
+      "sentiment": "Positive (Q1 2026 beat)"
+    }
+  ]
+}
