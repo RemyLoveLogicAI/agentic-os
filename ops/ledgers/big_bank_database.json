@@ -145,5 +145,57 @@
       ],
       "final_summary": "JPM remains the core long; GS is the quality cyclical; BAC/C are mixed; WFC shows positive momentum."
     }
+  },
+  {
+    "timestamp": "2026-04-16T12:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "noon sweep",
+    "results": {
+      "target": {
+        "ticker": "JPM",
+        "price": 308.53,
+        "change_pct": 0.85,
+        "sentiment": "Mixed/Cautious",
+        "findings": "Elite profitability (ROE 15.7%); Q4 2025 EPS miss; recent coverage of insider selling and 'warning' commentary."
+      },
+      "peers": [
+        {
+          "ticker": "BAC",
+          "price": 53.64,
+          "change_pct": -1.25,
+          "sentiment": "Slightly Positive",
+          "findings": "Strong earnings coverage; weaker day performance (-1.25%)."
+        },
+        {
+          "ticker": "C",
+          "price": 129.66,
+          "change_pct": -1.54,
+          "sentiment": "Neutral/Quiet",
+          "findings": "Weak tape (-1.54%) with no fresh headlines."
+        },
+        {
+          "ticker": "WFC",
+          "price": 81.35,
+          "change_pct": 1.32,
+          "sentiment": "Neutral/Quiet",
+          "findings": "Strongest daily performer (+1.32%) among peer group; neutral news sentiment."
+        },
+        {
+          "ticker": "GS",
+          "price": 904.89,
+          "change_pct": 0.6,
+          "sentiment": "Neutral/Slightly Positive",
+          "findings": "Institutional share buying noted; steady day move (+0.60%)."
+        },
+        {
+          "ticker": "MS",
+          "price": 188.34,
+          "change_pct": -1.71,
+          "sentiment": "Neutral/Quiet",
+          "findings": "Weakest daily performer (-1.71%); no recent news found."
+        }
+      ],
+      "final_summary": "JPM remains fundamentally strong but faces cautious news sentiment; WFC leads peer performance (+1.32%) while MS/C lag significantly."
+    }
   }
 ]
