@@ -1,21 +1,104 @@
-{
-  "timestamp": "2026-04-15T12:00:00-07:00",
-  "task": "Big Bank triple-sweep research task",
-  "sweep_type": "noon sweep",
-  "results": {
-    "target": {
-      "ticker": "JPM",
-      "price": 305.94,
-      "pe": 14.9,
-      "sentiment": "Mixed to slightly positive",
-      "findings": "FY2025 beat; Q4 2025 EPS miss; analyst optimism."
-    },
-    "peers": [
-      {"ticker": "BAC", "price": 54.44, "pe": 13.7, "sentiment": "Positive", "findings": "Q1 2026 beat; strong revenue and EPS."},
-      {"ticker": "C", "price": 131.91, "pe": 17.3, "sentiment": "Positive", "findings": "Q1 2026 beat across top and bottom line."},
-      {"ticker": "WFC", "price": 80.50, "pe": 12.2, "sentiment": "Mixed", "findings": "Q1 2026 mixed; EPS beat but revenue miss."},
-      {"ticker": "GS", "price": 900.33, "pe": 16.7, "sentiment": "Mixed to positive", "findings": "Q1 2026 beat; market cautious on tone."},
-      {"ticker": "MS", "price": 191.94, "pe": 18.1, "sentiment": "Strongly positive", "findings": "Q1 2026 beat; best daily performer in group."}
-    ]
+[
+  {
+    "timestamp": "2026-04-15T12:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "noon sweep",
+    "results": {
+      "target": {
+        "ticker": "JPM",
+        "price": 305.94,
+        "pe": 14.9,
+        "sentiment": "Mixed to slightly positive",
+        "findings": "FY2025 beat; Q4 2025 EPS miss; analyst optimism."
+      },
+      "peers": [
+        {
+          "ticker": "BAC",
+          "price": 54.44,
+          "pe": 13.7,
+          "sentiment": "Positive",
+          "findings": "Q1 2026 beat; strong revenue and EPS."
+        },
+        {
+          "ticker": "C",
+          "price": 131.91,
+          "pe": 17.3,
+          "sentiment": "Positive",
+          "findings": "Q1 2026 beat across top and bottom line."
+        },
+        {
+          "ticker": "WFC",
+          "price": 80.5,
+          "pe": 12.2,
+          "sentiment": "Mixed",
+          "findings": "Q1 2026 mixed; EPS beat but revenue miss."
+        },
+        {
+          "ticker": "GS",
+          "price": 900.33,
+          "pe": 16.7,
+          "sentiment": "Mixed to positive",
+          "findings": "Q1 2026 beat; market cautious on tone."
+        },
+        {
+          "ticker": "MS",
+          "price": 191.94,
+          "pe": 18.1,
+          "sentiment": "Strongly positive",
+          "findings": "Q1 2026 beat; best daily performer in group."
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-15T20:01:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "night sweep",
+    "results": {
+      "target": {
+        "ticker": "JPM",
+        "price": 306.13,
+        "pe": 14.91,
+        "sentiment": "Mixed (Stock down, dividend/analyst positive)",
+        "findings": "Highest ROE (15.74%) and Net Margin (31.27%) in group; highest quality franchise; price performance weaker than peers (-1.6%)."
+      },
+      "peers": [
+        {
+          "ticker": "BAC",
+          "price": 54.31,
+          "pe": 13.67,
+          "sentiment": "Positive (Q1 earnings beat)",
+          "findings": "ROE 10.06%, Net Margin 26.98%. Strong trading and investment banking headlines."
+        },
+        {
+          "ticker": "C",
+          "price": 131.66,
+          "pe": 17.24,
+          "sentiment": "Neutral",
+          "findings": "ROE 6.74%, Net Margin 16.79%."
+        },
+        {
+          "ticker": "WFC",
+          "price": 80.3,
+          "pe": 12.2,
+          "sentiment": "Neutral",
+          "findings": "ROE 11.78%, Net Margin 25.49%."
+        },
+        {
+          "ticker": "GS",
+          "price": 899.5,
+          "pe": 16.62,
+          "sentiment": "Mixed (Upgrades offset by risk)",
+          "findings": "ROE 13.74%, Net Margin 29.47%."
+        },
+        {
+          "ticker": "MS",
+          "price": 191.56,
+          "pe": 18.09,
+          "sentiment": "Neutral",
+          "findings": "ROE 15.10%, Net Margin 23.87%. Strongest price performance (+4.48%)."
+        }
+      ]
+    }
   }
-}
+]
