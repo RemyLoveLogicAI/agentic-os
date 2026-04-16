@@ -1,21 +1,45 @@
 {
-  "timestamp": "2026-04-15T12:00:00-07:00",
+  "timestamp": "2026-04-16T08:00:00-07:00",
   "task": "Big Bank triple-sweep research task",
-  "sweep_type": "noon sweep",
+  "sweep_type": "morning sweep",
   "results": {
     "target": {
       "ticker": "JPM",
-      "price": 305.94,
-      "pe": 14.9,
-      "sentiment": "Mixed to slightly positive",
-      "findings": "FY2025 beat; Q4 2025 EPS miss; analyst optimism."
+      "price": 308.3,
+      "change_pct": 0.77,
+      "sentiment": "Mixed",
+      "findings": "Strong earnings; mixed sentiment. JPM remains the core long."
     },
     "peers": [
-      {"ticker": "BAC", "price": 54.44, "pe": 13.7, "sentiment": "Positive", "findings": "Q1 2026 beat; strong revenue and EPS."},
-      {"ticker": "C", "price": 131.91, "pe": 17.3, "sentiment": "Positive", "findings": "Q1 2026 beat across top and bottom line."},
-      {"ticker": "WFC", "price": 80.50, "pe": 12.2, "sentiment": "Mixed", "findings": "Q1 2026 mixed; EPS beat but revenue miss."},
-      {"ticker": "GS", "price": 900.33, "pe": 16.7, "sentiment": "Mixed to positive", "findings": "Q1 2026 beat; market cautious on tone."},
-      {"ticker": "MS", "price": 191.94, "pe": 18.1, "sentiment": "Strongly positive", "findings": "Q1 2026 beat; best daily performer in group."}
-    ]
+      {
+        "ticker": "BAC",
+        "price": 53.83,
+        "change_pct": -0.9,
+        "sentiment": "Mixed",
+        "findings": "Solid but soft tape; risk-heavy filing."
+      },
+      {
+        "ticker": "WFC",
+        "price": 81.61,
+        "change_pct": 1.64,
+        "sentiment": "Positive",
+        "findings": "Positive price action; operational focus."
+      },
+      {
+        "ticker": "C",
+        "price": 130.0,
+        "change_pct": -1.28,
+        "sentiment": "Mixed",
+        "findings": "Weakest net income; restructuring story."
+      },
+      {
+        "ticker": "GS",
+        "price": 905.1,
+        "change_pct": 0.62,
+        "sentiment": "Positive",
+        "findings": "High quality but cyclical."
+      }
+    ],
+    "final_summary": "JPM remains the core long; GS is the quality cyclical; BAC/C are mixed; WFC shows positive momentum."
   }
 }
