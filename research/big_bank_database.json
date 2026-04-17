@@ -1,45 +1,52 @@
 {
-  "timestamp": "2026-04-16T08:00:00-07:00",
+  "timestamp": "2026-04-17T08:00:00-07:00",
   "task": "Big Bank triple-sweep research task",
   "sweep_type": "morning sweep",
   "results": {
     "target": {
       "ticker": "JPM",
-      "price": 308.3,
-      "change_pct": 0.77,
-      "sentiment": "Mixed",
-      "findings": "Strong earnings; mixed sentiment. JPM remains the core long."
+      "price": 312.39,
+      "change_pct": 0.79,
+      "sentiment": "Positive",
+      "findings": "Up 0.79%. Released from OCC order on trade surveillance; analyst upgrades noted."
     },
     "peers": [
       {
         "ticker": "BAC",
-        "price": 53.83,
-        "change_pct": -0.9,
-        "sentiment": "Mixed",
-        "findings": "Solid but soft tape; risk-heavy filing."
+        "price": 54.10,
+        "change_pct": 1.10,
+        "sentiment": "Positive",
+        "findings": "Up 1.10%. Positive sentiment post Q1 earnings call."
       },
       {
         "ticker": "WFC",
-        "price": 81.61,
-        "change_pct": 1.64,
-        "sentiment": "Positive",
-        "findings": "Positive price action; operational focus."
+        "price": 81.52,
+        "change_pct": 0.33,
+        "sentiment": "Neutral/Positive",
+        "findings": "Up 0.33%. Recent 8-K filings on 4/14."
       },
       {
         "ticker": "C",
-        "price": 130.0,
-        "change_pct": -1.28,
-        "sentiment": "Mixed",
-        "findings": "Weakest net income; restructuring story."
+        "price": 132.06,
+        "change_pct": 2.10,
+        "sentiment": "Strong Positive",
+        "findings": "Up 2.10%. Leading daily gains among core bank peers."
       },
       {
         "ticker": "GS",
-        "price": 905.1,
-        "change_pct": 0.62,
+        "price": 924.25,
+        "change_pct": 2.69,
+        "sentiment": "Strong Positive",
+        "findings": "Up 2.69%. Strong momentum with significant share purchases by major funds."
+      },
+      {
+        "ticker": "MS",
+        "price": 189.97,
+        "change_pct": 1.41,
         "sentiment": "Positive",
-        "findings": "High quality but cyclical."
+        "findings": "Up 1.41%. Steady performance in line with peer group strength."
       }
     ],
-    "final_summary": "JPM remains the core long; GS is the quality cyclical; BAC/C are mixed; WFC shows positive momentum."
+    "final_summary": "Broad strength across the sector this morning, with GS and C outperforming. JPM remains steady following positive regulatory updates."
   }
 }
