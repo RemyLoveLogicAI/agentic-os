@@ -197,5 +197,57 @@
       ],
       "final_summary": "JPM remains fundamentally strong but faces cautious news sentiment; WFC leads peer performance (+1.32%) while MS/C lag significantly."
     }
+  },
+  {
+    "timestamp": "2026-04-17T08:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "morning sweep",
+    "results": {
+      "target": {
+        "ticker": "JPM",
+        "price": 312.39,
+        "change_pct": 0.79,
+        "sentiment": "Positive",
+        "findings": "Up 0.79%. Released from OCC order on trade surveillance; analyst upgrades noted."
+      },
+      "peers": [
+        {
+          "ticker": "BAC",
+          "price": 54.1,
+          "change_pct": 1.1,
+          "sentiment": "Positive",
+          "findings": "Up 1.10%. Positive sentiment post Q1 earnings call."
+        },
+        {
+          "ticker": "WFC",
+          "price": 81.52,
+          "change_pct": 0.33,
+          "sentiment": "Neutral/Positive",
+          "findings": "Up 0.33%. Recent 8-K filings on 4/14."
+        },
+        {
+          "ticker": "C",
+          "price": 132.06,
+          "change_pct": 2.1,
+          "sentiment": "Strong Positive",
+          "findings": "Up 2.10%. Leading daily gains among core bank peers."
+        },
+        {
+          "ticker": "GS",
+          "price": 924.25,
+          "change_pct": 2.69,
+          "sentiment": "Strong Positive",
+          "findings": "Up 2.69%. Strong momentum with significant share purchases by major funds."
+        },
+        {
+          "ticker": "MS",
+          "price": 189.97,
+          "change_pct": 1.41,
+          "sentiment": "Positive",
+          "findings": "Up 1.41%. Steady performance in line with peer group strength."
+        }
+      ],
+      "final_summary": "Broad strength across the sector this morning, with GS and C outperforming. JPM remains steady following positive regulatory updates."
+    }
   }
 ]
