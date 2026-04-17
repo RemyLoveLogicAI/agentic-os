@@ -249,5 +249,57 @@
       ],
       "final_summary": "Broad strength across the sector this morning, with GS and C outperforming. JPM remains steady following positive regulatory updates."
     }
+  },
+  {
+    "timestamp": "2026-04-17T12:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "noon sweep",
+    "results": {
+      "target": {
+        "ticker": "JPM",
+        "price": 311.27,
+        "change_pct": 0.43,
+        "sentiment": "Positive",
+        "findings": "Released from OCC trade-surveillance order, Analyst upgrade."
+      },
+      "peers": [
+        {
+          "ticker": "BAC",
+          "price": 53.99,
+          "change_pct": 0.9,
+          "sentiment": "Positive",
+          "findings": "Q1 earnings beat: $1.11 EPS vs $1.00 est"
+        },
+        {
+          "ticker": "WFC",
+          "price": 81.11,
+          "change_pct": -0.17,
+          "sentiment": "Mixed",
+          "findings": "EPS beat $1.60 vs $1.58, but revenue missed"
+        },
+        {
+          "ticker": "C",
+          "price": 132.25,
+          "change_pct": 2.25,
+          "sentiment": "Positive",
+          "findings": "Q1 earnings beat: $3.06 EPS vs $2.64 est, restructuring ongoing"
+        },
+        {
+          "ticker": "GS",
+          "price": 922.63,
+          "change_pct": 2.51,
+          "sentiment": "Positive",
+          "findings": "Q1 beat: $17.55 EPS vs $16.31 est, strong buying interest"
+        },
+        {
+          "ticker": "MS",
+          "price": 189.35,
+          "change_pct": 1.08,
+          "sentiment": "Positive",
+          "findings": "Q1 beat: $3.43 EPS vs $3.05 est"
+        }
+      ],
+      "final_summary": "Strong constructive action across major banks, led by GS and C. JPM boosted by regulatory resolution and analyst upgrades. WFC is the laggard due to revenue miss."
+    }
   }
 ]
