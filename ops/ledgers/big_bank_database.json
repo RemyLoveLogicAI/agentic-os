@@ -301,5 +301,57 @@
       ],
       "final_summary": "Strong constructive action across major banks, led by GS and C. JPM boosted by regulatory resolution and analyst upgrades. WFC is the laggard due to revenue miss."
     }
+  },
+  {
+    "timestamp": "2026-04-17T20:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "night sweep",
+    "results": {
+      "target": {
+        "ticker": "JPM",
+        "price": 310.2,
+        "change_pct": 0.08,
+        "sentiment": "Positive",
+        "findings": "Released from OCC trade-surveillance order; analyst upgrades noted."
+      },
+      "peers": [
+        {
+          "ticker": "BAC",
+          "price": 53.9,
+          "change_pct": 0.73,
+          "sentiment": "Positive",
+          "findings": "Q1 earnings beat: $1.11 EPS vs $1.00 est; preferred stock payouts lined up."
+        },
+        {
+          "ticker": "WFC",
+          "price": 81.39,
+          "change_pct": 0.17,
+          "sentiment": "Neutral",
+          "findings": "Stable performance; highest TTM revenue and net income in peer subset."
+        },
+        {
+          "ticker": "C",
+          "price": 132.18,
+          "change_pct": 2.2,
+          "sentiment": "Positive",
+          "findings": "Strong daily price performance (+2.20%); Q1 earnings beat: $3.06 EPS vs $2.64 est."
+        },
+        {
+          "ticker": "GS",
+          "price": 926.39,
+          "change_pct": 2.93,
+          "sentiment": "Strong Positive",
+          "findings": "Leading the group with 2.93% gain; strong institutional buying and momentum."
+        },
+        {
+          "ticker": "MS",
+          "price": 189.0,
+          "change_pct": 0.9,
+          "sentiment": "Positive",
+          "findings": "Steady performance; highest market cap in peer subset."
+        }
+      ],
+      "final_summary": "Broadly constructive day for the sector, with GS and C showing strong momentum. JPM remains steady following positive regulatory and analyst updates."
+    }
   }
 ]
