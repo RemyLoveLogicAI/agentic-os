@@ -1,52 +1,53 @@
 {
-  "timestamp": "2026-04-17T12:00:00-07:00",
+  "timestamp": "2026-04-18T08:00:00-07:00",
   "task": "Big Bank triple-sweep research task",
-  "sweep_type": "noon sweep",
+  "sweep_type": "morning sweep",
   "results": {
     "target": {
       "ticker": "JPM",
-      "price": 311.27,
-      "change_pct": 0.43,
-      "sentiment": "Positive",
-      "findings": "Released from OCC trade-surveillance order, Analyst upgrade."
+      "price": 310.2,
+      "day_change": "+0.25",
+      "day_change_percent": "+0.08%",
+      "sentiment": "Mildly Positive",
+      "key_findings": "Analyst upgrade and OCC trade-surveillance order release supportive. Notable insider selling cluster by senior leadership on Apr 15."
     },
     "peers": [
       {
         "ticker": "BAC",
-        "price": 53.99,
-        "change_pct": 0.9,
-        "sentiment": "Positive",
-        "findings": "Q1 earnings beat: $1.11 EPS vs $1.00 est"
+        "price": 53.9,
+        "change_percent": "+0.73%",
+        "sentiment": "Mildly Positive",
+        "notes": "Strong revenue growth, post-Q1 momentum."
       },
       {
         "ticker": "WFC",
-        "price": 81.11,
-        "change_pct": -0.17,
-        "sentiment": "Mixed",
-        "findings": "EPS beat $1.60 vs $1.58, but revenue missed"
+        "price": 81.39,
+        "change_percent": "+0.17%",
+        "sentiment": "Neutral",
+        "notes": "Stable valuation, thin news flow."
       },
       {
         "ticker": "C",
-        "price": 132.25,
-        "change_pct": 2.25,
-        "sentiment": "Positive",
-        "findings": "Q1 earnings beat: $3.06 EPS vs $2.64 est, restructuring ongoing"
+        "price": 132.18,
+        "change_percent": "+2.20%",
+        "sentiment": "Neutral",
+        "notes": "Challenged fundamentals (low ROE), notable insider sales."
       },
       {
         "ticker": "GS",
-        "price": 922.63,
-        "change_pct": 2.51,
-        "sentiment": "Positive",
-        "findings": "Q1 beat: $17.55 EPS vs $16.31 est, strong buying interest"
+        "price": 926.39,
+        "change_percent": "+2.93%",
+        "sentiment": "Mildly Positive",
+        "notes": "Strong momentum, high profitability (13.7% ROE)."
       },
       {
         "ticker": "MS",
-        "price": 189.35,
-        "change_pct": 1.08,
-        "sentiment": "Positive",
-        "findings": "Q1 beat: $3.43 EPS vs $3.05 est"
+        "price": 189.0,
+        "change_percent": "+0.90%",
+        "sentiment": "Neutral",
+        "notes": "Significant insider selling cluster on Apr 16/17."
       }
     ],
-    "final_summary": "Strong constructive action across major banks, led by GS and C. JPM boosted by regulatory resolution and analyst upgrades. WFC is the laggard due to revenue miss."
+    "final_summary": "Overall constructive sector action led by GS and C. JPM remains the quality leader but faces near-term insider selling pressure. BAC shows best revenue growth profile in the group."
   }
 }
