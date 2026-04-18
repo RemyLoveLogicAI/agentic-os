@@ -406,5 +406,51 @@
       ],
       "final_summary": "Overall constructive sector action led by GS and C. JPM remains the quality leader but faces near-term insider selling pressure. BAC shows best revenue growth profile in the group."
     }
+  },
+  {
+    "timestamp": "2026-04-18T12:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "noon sweep",
+    "results": {
+      "target": {
+        "ticker": "JPM",
+        "price": 310.2,
+        "day_change": "+0.25",
+        "day_change_percent": "+0.08%",
+        "sentiment": "Mildly Positive",
+        "key_findings": "JPM released from OCC order."
+      },
+      "peers": [
+        {
+          "ticker": "BAC",
+          "price": 53.9,
+          "change_percent": "+0.73%",
+          "sentiment": "Mildly Positive",
+          "notes": "Q1 net $8.6B."
+        },
+        {
+          "ticker": "WFC",
+          "price": 81.39,
+          "change_percent": "+0.17%",
+          "sentiment": "Neutral",
+          "notes": "Constructive follow-through."
+        },
+        {
+          "ticker": "MS",
+          "price": 189.0,
+          "change_percent": "+0.90%",
+          "sentiment": "Neutral",
+          "notes": "Positive day, but GS led."
+        },
+        {
+          "ticker": "GS",
+          "price": 926.39,
+          "change_percent": "+2.93%",
+          "sentiment": "Mildly Positive",
+          "notes": "Led the tape on strong Q1 earnings follow-through."
+        }
+      ],
+      "final_summary": "GS led the tape (+2.93%); market constructive on Q1 earnings follow-through."
+    }
   }
 ]
