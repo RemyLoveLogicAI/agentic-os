@@ -452,5 +452,67 @@
       ],
       "final_summary": "GS led the tape (+2.93%); market constructive on Q1 earnings follow-through."
     }
+  },
+  {
+    "timestamp": "2026-04-19T08:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "morning sweep",
+    "entries": [
+      {
+        "ticker": "JPM",
+        "price": 310.2,
+        "day_change": "+0.08%",
+        "pe_ratio": "15.12x",
+        "market_cap": "$836.6B",
+        "sentiment": "Mildly Positive",
+        "findings": "Institutional-holdings updates; analyst upgrade noted. Trading up after upgrade."
+      },
+      {
+        "ticker": "BAC",
+        "price": 53.9,
+        "day_change": "+0.73%",
+        "pe_ratio": "13.57x",
+        "market_cap": "$386.8B",
+        "sentiment": "Mildly Positive",
+        "findings": "Q1 earnings follow-up momentum; preferred stock dividend notices; institutional filings."
+      },
+      {
+        "ticker": "WFC",
+        "price": 81.39,
+        "day_change": "+0.17%",
+        "pe_ratio": "12.37x",
+        "market_cap": "$251.1B",
+        "sentiment": "Neutral",
+        "findings": "Stable valuation; no major news flow."
+      },
+      {
+        "ticker": "C",
+        "price": 132.18,
+        "day_change": "+2.20%",
+        "pe_ratio": "17.31x",
+        "market_cap": "$231.2B",
+        "sentiment": "Neutral",
+        "findings": "Significant daily price move; no major operating news."
+      },
+      {
+        "ticker": "GS",
+        "price": 926.39,
+        "day_change": "+2.93%",
+        "pe_ratio": "17.13x",
+        "market_cap": "$274.9B",
+        "sentiment": "Mildly Positive",
+        "findings": "Strong momentum; ownership-filing headlines; market-move focus."
+      },
+      {
+        "ticker": "MS",
+        "price": 189.00,
+        "day_change": "+0.90%",
+        "pe_ratio": "17.83x",
+        "market_cap": "$299.9B",
+        "sentiment": "Neutral",
+        "findings": "General market move; no major company announcement."
+      }
+    ],
+    "summary": "Overall constructive sector action led by GS and C. Sector momentum remains positive despite thin operating news flow."
   }
 ]
