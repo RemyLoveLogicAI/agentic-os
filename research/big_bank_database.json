@@ -113,5 +113,67 @@
       }
     ],
     "summary": "Overall constructive sector action led by GS and C. Sector momentum remains positive despite thin operating news flow."
+  },
+  {
+    "timestamp": "2026-04-19T12:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "noon sweep",
+    "entries": [
+      {
+        "ticker": "JPM",
+        "price": 310.2,
+        "day_change": "+0.08%",
+        "pe_ratio": "15.12x",
+        "market_cap": "$836.6B",
+        "sentiment": "Mildly Positive",
+        "findings": "Aggressive AI integration via 'Proxy IQ' platform. Facing class-action lawsuit regarding infrastructure for a $328M crypto Ponzi scheme."
+      },
+      {
+        "ticker": "BAC",
+        "price": 53.9,
+        "day_change": "+0.73%",
+        "pe_ratio": "13.57x",
+        "market_cap": "$386.8B",
+        "sentiment": "Mixed",
+        "findings": "Increasing development spend by 10% in 2026 for AI and digital transformation; $13B tech spend in 2025."
+      },
+      {
+        "ticker": "WFC",
+        "price": 81.39,
+        "day_change": "+0.17%",
+        "pe_ratio": "12.37x",
+        "market_cap": "$251.1B",
+        "sentiment": "Neutral",
+        "findings": "Continued multi-year restructuring; shareholder pressure to appoint an independent board chair at upcoming annual meeting."
+      },
+      {
+        "ticker": "C",
+        "price": 132.18,
+        "day_change": "+2.20%",
+        "pe_ratio": "17.31x",
+        "market_cap": "$231.2B",
+        "sentiment": "Neutral",
+        "findings": "CEO Jane Fraser highlighted systematic end-to-end AI embedding for wealth management advisor support."
+      },
+      {
+        "ticker": "GS",
+        "price": 926.39,
+        "day_change": "+2.93%",
+        "pe_ratio": "17.13x",
+        "market_cap": "$274.9B",
+        "sentiment": "Mildly Positive",
+        "findings": "Leveraging AI for broad efficiency gains; signals potential tech-driven reduction in certain roles."
+      },
+      {
+        "ticker": "MS",
+        "price": 189.0,
+        "day_change": "+0.90%",
+        "pe_ratio": "17.83x",
+        "market_cap": "$299.9B",
+        "sentiment": "Positive",
+        "findings": "Record Q1 net revenue ($20.6B) and EPS ($3.43). Wealth management record $8.5B. Bitcoin holdings surpassed $100M."
+      }
+    ],
+    "summary": "Sector shifting toward growth via AI integration. Morgan Stanley leads with record Q1 earnings and institutional crypto adoption. JPM remains dominant but faces legal noise."
   }
 ]
