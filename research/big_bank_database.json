@@ -121,7 +121,7 @@
     "entries": [
       {
         "ticker": "JPM",
-        "price": 310.2,
+        "price": 310.20,
         "day_change": "+0.08%",
         "pe_ratio": "15.12x",
         "market_cap": "$836.6B",
@@ -130,7 +130,7 @@
       },
       {
         "ticker": "BAC",
-        "price": 53.9,
+        "price": 53.90,
         "day_change": "+0.73%",
         "pe_ratio": "13.57x",
         "market_cap": "$386.8B",
@@ -166,7 +166,7 @@
       },
       {
         "ticker": "MS",
-        "price": 189.0,
+        "price": 189.00,
         "day_change": "+0.90%",
         "pe_ratio": "17.83x",
         "market_cap": "$299.9B",
