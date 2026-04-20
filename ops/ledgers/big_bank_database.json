@@ -626,5 +626,67 @@
       }
     ],
     "summary": "Constructive sector action continues, with Goldman Sachs and Citigroup leading the group. Strong fundamental backdrop remains after recent Q1 earnings reports across the sector."
+  },
+  {
+    "timestamp": "2026-04-20T08:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "morning sweep",
+    "target": {
+      "ticker": "JPM",
+      "price": "314.35",
+      "day_change_percent": "+1.31%",
+      "pe_ratio": "15.33x",
+      "market_cap": "$847.8B",
+      "sentiment": "Mildly Positive",
+      "findings": "Largest bank in the group; strong ROE (15.7%) and solid margins. News flow stable with institutional ownership updates."
+    },
+    "peers": [
+      {
+        "ticker": "BAC",
+        "price": "53.51",
+        "day_change_percent": "-0.74%",
+        "pe_ratio": "13.47x",
+        "market_cap": "$384.0B",
+        "sentiment": "Neutral",
+        "findings": "Relatively inexpensive vs peers. Strongest revenue growth, but news shows mixed holder activity."
+      },
+      {
+        "ticker": "WFC",
+        "price": "81.53",
+        "day_change_percent": "+0.15%",
+        "pe_ratio": "12.40x",
+        "market_cap": "$251.8B",
+        "sentiment": "Neutral",
+        "findings": "Cheapest on P/E, improving fundamentals. ROE 11.8%, modest growth."
+      },
+      {
+        "ticker": "C",
+        "price": "132.30",
+        "day_change_percent": "+0.09%",
+        "pe_ratio": "17.32x",
+        "market_cap": "$231.4B",
+        "sentiment": "Neutral",
+        "findings": "Weakest growth and least compelling fundamentals. Negative revenue and earnings growth."
+      },
+      {
+        "ticker": "GS",
+        "price": "926.16",
+        "day_change_percent": "+0.02%",
+        "pe_ratio": "17.13x",
+        "market_cap": "$274.9B",
+        "sentiment": "Mildly Positive",
+        "findings": "Strong Q1 earnings and Bitcoin ETF filing mentioned in news. High ROE (13.7%)."
+      },
+      {
+        "ticker": "MS",
+        "price": "189.50",
+        "day_change_percent": "+0.36%",
+        "pe_ratio": "17.91x",
+        "market_cap": "$301.2B",
+        "sentiment": "Neutral",
+        "findings": "Solid profitability and growth profile, but trades at a premium multiple."
+      }
+    ],
+    "summary": "The sector remains stable with JPM leading price performance (+1.31%). Valuation splits favor WFC and BAC for value seekers, while JPM maintains scale leadership. GS news remains constructive following strong Q1 earnings and ETF developments."
   }
 ]
