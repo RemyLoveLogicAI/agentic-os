@@ -287,5 +287,67 @@
       }
     ],
     "summary": "The sector remains stable with JPM leading price performance (+1.31%). Valuation splits favor WFC and BAC for value seekers, while JPM maintains scale leadership. GS news remains constructive following strong Q1 earnings and ETF developments."
+  },
+  {
+    "timestamp": "2026-04-21T08:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "morning sweep",
+    "target": {
+      "ticker": "JPM",
+      "price": "315.48",
+      "day_change_percent": "-0.48%",
+      "pe_ratio": "15.46x",
+      "market_cap": "$854.9B",
+      "sentiment": "Positive",
+      "findings": "Largest market cap; focused on Europe expansion and analyst target increases."
+    },
+    "peers": [
+      {
+        "ticker": "BAC",
+        "price": "53.96",
+        "day_change_percent": "+0.02%",
+        "pe_ratio": "13.65x",
+        "market_cap": "$389.0B",
+        "sentiment": "Positive",
+        "findings": "Lower P/E; partnership expansion with Alaska Air."
+      },
+      {
+        "ticker": "WFC",
+        "price": "81.75",
+        "day_change_percent": "-0.27%",
+        "pe_ratio": "12.52x",
+        "market_cap": "$254.2B",
+        "sentiment": "Neutral",
+        "findings": "Lowest P/E in the set; thin news flow."
+      },
+      {
+        "ticker": "C",
+        "price": "132.66",
+        "day_change_percent": "-0.29%",
+        "pe_ratio": "17.53x",
+        "market_cap": "$231.4B",
+        "sentiment": "Neutral",
+        "findings": "Mid-range valuation; limited news coverage."
+      },
+      {
+        "ticker": "GS",
+        "price": "931.54",
+        "day_change_percent": "-1.08%",
+        "pe_ratio": "17.28x",
+        "market_cap": "$277.3B",
+        "sentiment": "Mixed",
+        "findings": "Weakest performance; news on shareholder sale and debt issuance."
+      },
+      {
+        "ticker": "MS",
+        "price": "189.85",
+        "day_change_percent": "-0.45%",
+        "pe_ratio": "18.03x",
+        "market_cap": "$303.2B",
+        "sentiment": "Neutral",
+        "findings": "Highest P/E; no major recent news."
+      }
+    ],
+    "summary": "The sector is down modestly with Goldman Sachs showing the weakest price action. JPM and BAC maintain a positive news tone, while Wells Fargo and Bank of America remain the value leaders on a P/E basis."
   }
 ]
