@@ -48,8 +48,7 @@
           "sentiment": "Neutral",
           "notes": "Significant insider selling cluster on Apr 16/17."
         }
-      ],
-      "final_summary": "Overall constructive sector action led by GS and C. JPM remains the quality leader but faces near-term insider selling pressure. BAC shows best revenue growth profile in the group."
+      ]
     }
   },
   {
@@ -104,7 +103,7 @@
       },
       {
         "ticker": "MS",
-        "price": 189.00,
+        "price": 189.0,
         "day_change": "+0.90%",
         "pe_ratio": "17.83x",
         "market_cap": "$299.9B",
@@ -349,5 +348,55 @@
       }
     ],
     "summary": "The sector is down modestly with Goldman Sachs showing the weakest price action. JPM and BAC maintain a positive news tone, while Wells Fargo and Bank of America remain the value leaders on a P/E basis."
+  },
+  {
+    "timestamp": "2026-04-21T12:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "noon sweep",
+    "target": {
+      "ticker": "JPM",
+      "price": "314.42",
+      "day_change_percent": "-0.81%",
+      "sentiment": "Neutral",
+      "findings": "JPM is expanding its national security initiative in Europe. Context: US and UK regulators are briefing big banks on cybersecurity risks associated with Anthropic's Claude Mythos model, specifically its OS/browser exploit capabilities under 'Project Glasswing'."
+    },
+    "peers": [
+      {
+        "ticker": "BAC",
+        "price": "53.55",
+        "day_change_percent": "-0.74%",
+        "sentiment": "Positive",
+        "findings": "Focus on AI edge for margin expansion; expanded credit card partnership with Alaska Airlines."
+      },
+      {
+        "ticker": "WFC",
+        "price": "81.75",
+        "day_change_percent": "-0.27%",
+        "sentiment": "Neutral",
+        "findings": "Thin news flow; stable price action."
+      },
+      {
+        "ticker": "C",
+        "price": "132.51",
+        "day_change_percent": "-0.41%",
+        "sentiment": "Neutral",
+        "findings": "No major company news; tracking sector modest decline."
+      },
+      {
+        "ticker": "GS",
+        "price": "927.03",
+        "day_change_percent": "-1.56%",
+        "sentiment": "Mixed",
+        "findings": "Weakest price action; BMO Capital Markets forecasts strong price appreciation despite current share sales."
+      },
+      {
+        "ticker": "MS",
+        "price": "189.75",
+        "day_change_percent": "-0.50%",
+        "sentiment": "Neutral",
+        "findings": "No major company news; maintaining premium valuation."
+      }
+    ],
+    "summary": "Sector is down modestly at noon, with Goldman Sachs trailing. Research highlights a strategic pivot toward AI-security risk management following regulator briefings on Anthropic's Claude Mythos model cyber-capabilities."
   }
 ]
