@@ -103,7 +103,7 @@
       },
       {
         "ticker": "MS",
-        "price": 189.0,
+        "price": 189.00,
         "day_change": "+0.90%",
         "pe_ratio": "17.83x",
         "market_cap": "$299.9B",
@@ -398,5 +398,28 @@
       }
     ],
     "summary": "Sector is down modestly at noon, with Goldman Sachs trailing. Research highlights a strategic pivot toward AI-security risk management following regulator briefings on Anthropic's Claude Mythos model cyber-capabilities."
+  },
+  {
+    "timestamp": "2026-04-21T20:01:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "night sweep",
+    "results": {
+      "target": {
+        "ticker": "JPM",
+        "price": 312.99,
+        "day_change_percent": "-1.26%",
+        "pe_ratio": "15.26x",
+        "sentiment": "Mildly positive / strategic",
+        "findings": "JPMorgan is expanding its national security initiative in Europe. Truist raised the price target to $332. Quarterly EPS estimates trend upwards through 2028."
+      },
+      "peers": [
+        { "ticker": "BAC", "price": 53.47, "change_percent": "-0.89%", "pe": "13.46x", "sentiment": "Positive", "notes": "AI edge framed as margin-accretive." },
+        { "ticker": "WFC", "price": 81.53, "change_percent": "-0.54%", "pe": "12.39x", "sentiment": "Neutral", "notes": "No recent news." },
+        { "ticker": "C", "price": 131.64, "change_percent": "-1.06%", "pe": "17.24x", "sentiment": "Neutral", "notes": "No recent news." },
+        { "ticker": "GS", "price": 930.17, "change_percent": "-1.23%", "pe": "17.13x", "sentiment": "Mixed", "notes": "Insider sales noted despite neutral issuance." },
+        { "ticker": "MS", "price": 188.53, "change_percent": "-1.14%", "pe": "17.80x", "sentiment": "Neutral", "notes": "No recent news." }
+      ]
+    },
+    "summary": "The sector saw a broad decline today with GS leading the dollar loss. JPM remains strong with strategic European expansion and positive analyst sentiment. BAC is highlighted for its AI-related margin narrative."
   }
 ]
