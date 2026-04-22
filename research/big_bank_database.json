@@ -483,5 +483,65 @@
         "notes": "Only gainer in the Big 6 group today."
       }
     ]
+  },
+  {
+    "timestamp": "2026-04-22T12:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "noon sweep",
+    "summary": "Sector performance is mixed at noon, with investment banks (GS, MS) showing resilience while commercial peers (JPM, BAC, WFC, C) are modestly down. The research focus is dominated by Anthropic's 'Claude Mythos' model vulnerabilities and banks' defensive posture via Project Glasswing. Reports of unauthorized access to Mythos Preview have triggered global regulatory scrutiny.",
+    "entries": [
+      {
+        "ticker": "JPM",
+        "price": 312.63,
+        "day_change_percent": -0.12,
+        "market_cap": "843.3B",
+        "sentiment": "Neutral",
+        "key_findings": "CEO Jamie Dimon defends $20B annual tech budget. Transitioning to 'Proxy IQ' internal AI for shareholder voting. Active testing of Anthropic Mythos for defensive security under Project Glasswing."
+      },
+      {
+        "ticker": "BAC",
+        "price": 53.09,
+        "day_change_percent": -0.73,
+        "market_cap": "380.9B",
+        "sentiment": "Neutral",
+        "notes": "Targeting 10% development spend growth in 2026. Framing as an AI beneficiary in commercial banking workflows."
+      },
+      {
+        "ticker": "WFC",
+        "price": 80.66,
+        "day_change_percent": -1.09,
+        "market_cap": "249.7B",
+        "sentiment": "Mixed",
+        "notes": "Thin news flow at noon; tracking broader sector weakness."
+      },
+      {
+        "ticker": "C",
+        "price": 129.65,
+        "day_change_percent": -1.54,
+        "market_cap": "226.9B",
+        "sentiment": "Bearish",
+        "notes": "Weakest relative performer in the Big 4 group."
+      },
+      {
+        "ticker": "GS",
+        "price": 932.92,
+        "day_change_percent": 0.69,
+        "market_cap": "277.1B",
+        "sentiment": "Bullish",
+        "notes": "Launching One Goldman Sachs 3.0 AI operating model. Working with Anthropic on trade-accounting and onboarding agents."
+      },
+      {
+        "ticker": "MS",
+        "price": 191.42,
+        "day_change_percent": 1.11,
+        "market_cap": "304.2B",
+        "sentiment": "Bullish",
+        "notes": "CEO Ted Pick bullish on AI integration for margin expansion. No new headlines since morning."
+      }
+    ],
+    "breakthrough_signals": {
+      "mythos_update": "Anthropic investigating reports of unauthorized access to Claude Mythos Preview. Central banks in APAC monitoring risk.",
+      "spacex_leverage": "Elon Musk requiring banks advising on SpaceX IPO to subscribe to Grok (fees in tens of millions)."
+    }
   }
 ]
