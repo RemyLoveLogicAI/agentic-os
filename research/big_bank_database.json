@@ -543,5 +543,138 @@
       "mythos_update": "Anthropic investigating reports of unauthorized access to Claude Mythos Preview. Central banks in APAC monitoring risk.",
       "spacex_leverage": "Elon Musk requiring banks advising on SpaceX IPO to subscribe to Grok (fees in tens of millions)."
     }
+  },
+  {
+    "timestamp": "2026-04-24T12:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "noon sweep",
+    "results": {
+      "target": {
+        "ticker": "JPM",
+        "company": "JPMorgan Chase & Co",
+        "price_current": 308.16,
+        "day_change_pct": -1.13,
+        "day_change_abs": -3.53,
+        "performance_1m_return_pct": 6.6,
+        "performance_ytd_return_pct": -3.3,
+        "performance_since_2025_12_31_to_intraday_pct": -4.4,
+        "market_cap_usd_B": 831.36,
+        "enterprise_value_usd_B": 552.8,
+        "valuation_multiples": {
+          "PE": 15.03,
+          "PB": 2.29,
+          "PS": 4.56,
+          "EV_EBITDA": 6.91,
+          "EV_Revenue": 3.03
+        },
+        "profitability": {
+          "ROE": 15.74,
+          "ROA": 1.29,
+          "net_margin": 31.27
+        },
+        "earnings_latest": {
+          "quarter": "FY2025 Q4",
+          "revenue_B": 45.8,
+          "eps": 4.64,
+          "eps_est": 4.91,
+          "eps_surprise": "MISS",
+          "net_income_B": 12.69,
+          "revenue_change_yoy_pct": -1.35,
+          "net_income_change_yoy_pct": -9.63,
+          "annual": {
+            "FY2025": {
+              "revenue_B": 182.45,
+              "eps": 20.02,
+              "eps_est": 19.94,
+              "eps_surprise": "BEAT",
+              "net_income_B": 55.68
+            }
+          }
+        },
+        "sec_latest_10k_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm",
+        "sec_latest_8k_url": "https://www.sec.gov/Archives/edgar/data/19617/000119312526173739/d235028d8k.htm",
+        "insider_trades_2026-04-15": [
+          {
+            "name": "James Dimon",
+            "shares_sold": 130488,
+            "approx_sale_price": 306.56,
+            "approx_sale_value_usd": 40002401.28,
+            "shares_after_transaction": 1680625
+          },
+          {
+            "name": "Mary E. Erdoes",
+            "shares_sold": 12345,
+            "approx_sale_price": 306.57,
+            "approx_sale_value_usd": 3784606.65
+          },
+          {
+            "name": "Jennifer Piepszak",
+            "shares_sold": 9136,
+            "approx_sale_price": 306.56,
+            "approx_sale_value_usd": 2800733.76
+          },
+          {
+            "name": "Ashley Bacon",
+            "shares_sold": 7558,
+            "approx_sale_price": 306.55,
+            "approx_sale_value_usd": 2316904.9
+          },
+          {
+            "name": "Marianne Lake",
+            "shares_sold": 6427,
+            "approx_sale_price": 306.57,
+            "approx_sale_value_usd": 1970325.39
+          },
+          {
+            "name": "Jeremy Barnum",
+            "shares_sold": 5611,
+            "approx_sale_price": 306.55,
+            "approx_sale_value_usd": 1720052.05
+          },
+          {
+            "name": "Douglas B. Petno",
+            "shares_sold": 5660,
+            "approx_sale_price": 306.58,
+            "approx_sale_value_usd": 1735242.8
+          },
+          {
+            "name": "Lori A. Beer",
+            "shares_sold": 3166,
+            "approx_sale_price": 306.59,
+            "approx_sale_value_usd": 970663.94
+          }
+        ],
+        "news_top_5": [
+          {
+            "headline": "Have JPMorgan Chase Insiders Been Selling Stock?",
+            "sentiment": "Negative / cautionary",
+            "link": "https://simplywall.st/stocks/us/banks/nyse-jpm/jpmorgan-chase/news/have-jpmorgan-chase-insiders-been-selling-stock"
+          },
+          {
+            "headline": "JPMorgan Chase (JPM) Successfully Closes Multi-Billion Dollar Note Offerings",
+            "sentiment": "Neutral to positive",
+            "link": "https://www.gurufocus.com/news/8814296/jpmorgan-chase-jpm-successfully-closes-multibillion-dollar-note-offerings"
+          },
+          {
+            "headline": "JPMorgan Chase Issues $10 Billion in New Debt",
+            "sentiment": "Neutral",
+            "link": "https://www.tipranks.com/news/company-announcements/jpmorgan-chase-issues-10-billion-in-new-debt"
+          },
+          {
+            "headline": "JPMorgan Chase (NYSE: JPM) offers $25M 4.45% callable notes due 2031",
+            "sentiment": "Neutral",
+            "link": "https://www.stocktitan.net/sec-filings/JPM/424b2-jpmorgan-chase-co-prospectus-supplement-0c8a84b0499f.html"
+          },
+          {
+            "headline": "JPMorgan Preferreds Pair Trade Idea (NYSE:JPM)",
+            "sentiment": "Neutral",
+            "link": "https://seekingalpha.com/article/4893056-jpmorgan-preferreds-pair-trade-idea"
+          }
+        ],
+        "sentiment": "Negative / cautionary",
+        "findings": "Q4 FY2025 EPS missed estimates while annual FY2025 EPS beat; insider selling and debt-offering headlines keep the near-term tone cautious."
+      },
+      "summary": "JPMorgan remains the quality leader on profitability, but Q4 miss and insider selling drove a negative short-term tone."
+    }
   }
 ]
