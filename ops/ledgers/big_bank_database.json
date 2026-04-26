@@ -825,6 +825,128 @@
     "summary": "The sector saw a broad decline today with GS leading the dollar loss. JPM remains strong with strategic European expansion and positive analyst sentiment. BAC is highlighted for its AI-related margin narrative."
   },
   {
+    "timestamp": "2026-04-22T08:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "morning sweep",
+    "summary": "Broad market weakness observed across major banks, with only MS showing green. JPM remains the sector anchor with significant Europe expansion initiatives.",
+    "entries": [
+      {
+        "ticker": "JPM",
+        "price": 312.98,
+        "day_change_percent": -1.27,
+        "market_cap": "844.7B",
+        "pe_ratio": 15.3,
+        "sentiment": "neutral",
+        "key_findings": "Expanding national security initiative in Europe. Widening $1.5T push into supply chains, defense, and energy."
+      },
+      {
+        "ticker": "BAC",
+        "price": 53.37,
+        "day_change_percent": -1.08,
+        "market_cap": "382.4B",
+        "pe_ratio": 13.4,
+        "sentiment": "neutral",
+        "notes": "No significant fresh news flow in the last 24h."
+      },
+      {
+        "ticker": "WFC",
+        "price": 81.07,
+        "day_change_percent": -1.1,
+        "market_cap": "249.8B",
+        "pe_ratio": 12.3,
+        "sentiment": "neutral",
+        "notes": "Quiet session with no major updates."
+      },
+      {
+        "ticker": "C",
+        "price": 130.73,
+        "day_change_percent": -1.74,
+        "market_cap": "228.7B",
+        "pe_ratio": 17.1,
+        "sentiment": "bearish",
+        "notes": "Weakest relative mover in the group."
+      },
+      {
+        "ticker": "GS",
+        "price": 936.81,
+        "day_change_percent": -0.52,
+        "market_cap": "277.7B",
+        "pe_ratio": 17.3,
+        "sentiment": "neutral",
+        "notes": "Institutional position increases by KLP Kapitalforvaltning and Oversea Chinese Banking Corp; Insider sell alert for Alex Golten."
+      },
+      {
+        "ticker": "MS",
+        "price": 191.40,
+        "day_change_percent": 0.37,
+        "market_cap": "303.1B",
+        "pe_ratio": 18.0,
+        "sentiment": "bullish",
+        "notes": "Only gainer in the Big 6 group today."
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-22T12:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "noon sweep",
+    "summary": "Sector performance is mixed at noon, with investment banks (GS, MS) showing resilience while commercial peers (JPM, BAC, WFC, C) are modestly down. The research focus is dominated by Anthropic's 'Claude Mythos' model vulnerabilities and banks' defensive posture via Project Glasswing. Reports of unauthorized access to Mythos Preview have triggered global regulatory scrutiny.",
+    "entries": [
+      {
+        "ticker": "JPM",
+        "price": 312.63,
+        "day_change_percent": -0.12,
+        "market_cap": "843.3B",
+        "sentiment": "Neutral",
+        "key_findings": "CEO Jamie Dimon defends $20B annual tech budget. Transitioning to 'Proxy IQ' internal AI for shareholder voting. Active testing of Anthropic Mythos for defensive security under Project Glasswing."
+      },
+      {
+        "ticker": "BAC",
+        "price": 53.09,
+        "day_change_percent": -0.73,
+        "market_cap": "380.9B",
+        "sentiment": "Neutral",
+        "notes": "Targeting 10% development spend growth in 2026. Framing as an AI beneficiary in commercial banking workflows."
+      },
+      {
+        "ticker": "WFC",
+        "price": 80.66,
+        "day_change_percent": -1.09,
+        "market_cap": "249.7B",
+        "sentiment": "Mixed",
+        "notes": "Thin news flow at noon; tracking broader sector weakness."
+      },
+      {
+        "ticker": "C",
+        "price": 129.65,
+        "day_change_percent": -1.54,
+        "market_cap": "226.9B",
+        "sentiment": "Bearish",
+        "notes": "Weakest relative performer in the Big 4 group."
+      },
+      {
+        "ticker": "GS",
+        "price": 932.92,
+        "day_change_percent": 0.69,
+        "market_cap": "277.1B",
+        "sentiment": "Bullish",
+        "notes": "Launching One Goldman Sachs 3.0 AI operating model. Working with Anthropic on trade-accounting and onboarding agents."
+      },
+      {
+        "ticker": "MS",
+        "price": 191.42,
+        "day_change_percent": 1.11,
+        "market_cap": "304.2B",
+        "sentiment": "Bullish",
+        "notes": "CEO Ted Pick bullish on AI integration for margin expansion. No new headlines since morning."
+      }
+    ],
+    "breakthrough_signals": {
+      "mythos_update": "Anthropic investigating reports of unauthorized access to Claude Mythos Preview. Central banks in APAC monitoring risk.",
+      "spacex_leverage": "Elon Musk requiring banks advising on SpaceX IPO to subscribe to Grok (fees in tens of millions)."
+    }
+  },
+  {
     "timestamp": "2026-04-24T12:00:00-07:00",
     "task": "Big Bank triple-sweep research task",
     "sweep_type": "noon sweep",
