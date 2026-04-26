@@ -581,51 +581,53 @@
     "timestamp": "2026-04-19T20:01:00-07:00",
     "task": "Big Bank triple-sweep research task",
     "sweep_type": "night sweep",
-    "entries": [
-      {
+    "results": {
+      "target": {
         "ticker": "JPM",
         "price": 310.2,
         "day_change": "+0.08%",
         "sentiment": "Mildly Positive",
         "findings": "Mildly positive sentiment; bullish analyst-upgrade headline noted. Recent 8-K filings on Q1 performance."
       },
-      {
-        "ticker": "BAC",
-        "price": 53.9,
-        "day_change": "+0.73%",
-        "sentiment": "Mildly Positive",
-        "findings": "Strong Q1 2026 earnings results ($8.6B net income, $1.11 EPS). Momentum remains neutral to positive."
-      },
-      {
-        "ticker": "WFC",
-        "price": 81.39,
-        "day_change": "+0.17%",
-        "sentiment": "Neutral",
-        "findings": "Stable valuation with thin news flow. Q1 2026 results released recently."
-      },
-      {
-        "ticker": "C",
-        "price": 132.18,
-        "day_change": "+2.20%",
-        "sentiment": "Neutral",
-        "findings": "Significant daily price move of +2.20%. Q1 2026 results announced; no major fresh operating news since."
-      },
-      {
-        "ticker": "GS",
-        "price": 926.39,
-        "day_change": "+2.93%",
-        "sentiment": "Positive",
-        "findings": "Leading sector performer with +2.93% move. Bullish media coverage and active filing activity."
-      },
-      {
-        "ticker": "MS",
-        "price": 189.0,
-        "day_change": "+0.90%",
-        "sentiment": "Neutral",
-        "findings": "Positive Q1 earnings backdrop ($20.6B revenue). General market move on Apr 19."
-      }
-    ],
-    "summary": "Constructive sector action continues, with Goldman Sachs and Citigroup leading the group. Strong fundamental backdrop remains after recent Q1 earnings reports across the sector."
+      "peers": [
+        {
+          "ticker": "BAC",
+          "price": 53.9,
+          "day_change": "+0.73%",
+          "sentiment": "Mildly Positive",
+          "findings": "Strong Q1 2026 earnings results ($8.6B net income, $1.11 EPS). Momentum remains neutral to positive."
+        },
+        {
+          "ticker": "WFC",
+          "price": 81.39,
+          "day_change": "+0.17%",
+          "sentiment": "Neutral",
+          "findings": "Stable valuation with thin news flow. Q1 2026 results released recently."
+        },
+        {
+          "ticker": "C",
+          "price": 132.18,
+          "day_change": "+2.20%",
+          "sentiment": "Neutral",
+          "findings": "Significant daily price move of +2.20%. Q1 2026 results announced; no major fresh operating news since."
+        },
+        {
+          "ticker": "GS",
+          "price": 926.39,
+          "day_change": "+2.93%",
+          "sentiment": "Positive",
+          "findings": "Leading sector performer with +2.93% move. Bullish media coverage and active filing activity."
+        },
+        {
+          "ticker": "MS",
+          "price": 189.0,
+          "day_change": "+0.90%",
+          "sentiment": "Neutral",
+          "findings": "Positive Q1 earnings backdrop ($20.6B revenue). General market move on Apr 19."
+        }
+      ],
+      "summary": "Constructive sector action continues, with Goldman Sachs and Citigroup leading the group. Strong fundamental backdrop remains after recent Q1 earnings reports across the sector."
+    }
   },
   {
     "timestamp": "2026-04-20T08:00:00-07:00",
@@ -1077,6 +1079,211 @@
         "findings": "Q4 FY2025 EPS missed estimates while annual FY2025 EPS beat; insider selling and debt-offering headlines keep the near-term tone cautious."
       },
       "summary": "JPMorgan remains the quality leader on profitability, but Q4 miss and insider selling drove a negative short-term tone."
+    }
+  },
+  {
+    "timestamp": "2026-04-26T12:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "noon sweep",
+    "results": {
+      "target": {
+        "ticker": "JPM",
+        "company": "JPMorgan Chase & Co.",
+        "price_current": 308.72,
+        "day_change_pct": -0.95,
+        "market_cap_usd_B": 832.63,
+        "sentiment": "neutral",
+        "findings": "Summary: JPM remains the largest and highest-quality large-bank name in the peer set by market cap and ROE, but it trades at a meaningful premium to BAC/WFC/C on book value. Latest quarter: revenue ~$45.80B, net income ~$12.69B, EPS 4.64 (miss vs est 4.91). Macro backdrop: Fed funds ~3.625%. News tone mostly neutral with mild negative tilt from short-term weakness/competitive narratives. Full research JSON is included in this entry as `full_research` if supported by the ledger schema."
+      },
+      "peers": [
+        {"ticker":"BAC","price":52.04,"day_change_pct":-0.82,"market_cap_usd_B":373.47,"sentiment":"neutral","findings":"Peer snapshot"},
+        {"ticker":"WFC","price":79.42,"day_change_pct":-1.35,"market_cap_usd_B":245.06,"sentiment":"neutral","findings":"Peer snapshot"},
+        {"ticker":"C","price":127.98,"day_change_pct":-0.41,"market_cap_usd_B":223.86,"sentiment":"neutral","findings":"Peer snapshot"},
+        {"ticker":"GS","price":927.0,"day_change_pct":-0.46,"market_cap_usd_B":275.09,"sentiment":"neutral","findings":"Peer snapshot"}
+      ],
+      "summary": "JPM leads on ROE and scale; valuation premium vs consumer banks. Peer read: GS closest on premium/quality; C cheapest on P/B but weakest profitability/growth in this snapshot."
+    },
+    "full_research": {
+      "ledger_name": "Big Bank",
+      "as_of": {
+        "market_data_time_utc": "2026-04-24",
+        "earnings_report_period": "2025-12-31",
+        "macro_rates_date": "2026-03-01",
+        "news_latest_date_utc": "2026-04-26"
+      },
+      "primary": {
+        "ticker": "JPM",
+        "company": "JPMorgan Chase & Co.",
+        "market": {
+          "price": 308.72,
+          "day_change": -2.97,
+          "day_change_percent": -0.95,
+          "market_cap": 832627834810
+        },
+        "valuation": {
+          "price_to_earnings": 15.05,
+          "price_to_book": 2.3,
+          "price_to_sales": 4.56,
+          "enterprise_value_to_ebitda": 6.92,
+          "enterprise_value_to_revenue": 3.04
+        },
+        "latest_quarter": {
+          "fiscal_period": "2025-Q4",
+          "revenue": 45798000000,
+          "net_income": 12690000000,
+          "eps": 4.64,
+          "eps_estimate": 4.91,
+          "eps_surprise": "MISS",
+          "revenue_yoy_percent": -1.35,
+          "net_income_yoy_percent": -9.63,
+          "operating_income": 21815000000,
+          "total_assets": 4424900000000,
+          "shareholders_equity": 362438000000,
+          "total_debt": 942378000000,
+          "deposit_liabilities": 2559320000000,
+          "guidance": null,
+          "guidance_note": "No explicit guidance surfaced in the available earnings/financial data."
+        },
+        "quality_and_credit_proxy": {
+          "return_on_equity": 15.74,
+          "return_on_assets": 1.29,
+          "debt_to_equity": 0.18,
+          "debt_to_assets": 1.46,
+          "earnings_growth_percent": 0.22,
+          "revenue_growth_percent": 1.75,
+          "commentary": "Direct charge-off / reserve line items were not available in the current API output. JPM still looks well-capitalized by the available balance-sheet proxies, with a very large deposit base and modest debt-to-equity."
+        },
+        "macro_context": {
+          "fed_rate": 3.625,
+          "ecb_rate": 2.0,
+          "boj_rate": 0.75,
+          "boe_rate": 3.75,
+          "note": "Rates remain restrictive relative to pre-2022 norms, which can support net interest income but also keep deposit competition and credit normalization in focus."
+        },
+        "recent_news": {
+          "quality_note": "News feed was dominated by automated/secondary headlines; higher-signal items were retained and classified conservatively.",
+          "items": [
+            {
+              "headline": "JPMorgan Chase (NYSE: JPM) revises by-laws on advancement of fees and expenses",
+              "source": "Stock Titan",
+              "date": "2026-04-24T20:16:13+00:00",
+              "sentiment": "neutral",
+              "why": "Corporate governance update; not clearly financially material from the headline alone."
+            },
+            {
+              "headline": "Why Are Stocks at Record Highs with no Iran Resolution?",
+              "source": "J.P. Morgan",
+              "date": "2026-04-24T12:56:44+00:00",
+              "sentiment": "neutral",
+              "why": "Macro commentary from JPM; generally informative rather than company-specific."
+            },
+            {
+              "headline": "JPMorgan Chase & Co. (NYSE:JPM) Shares Down 1% - Here's Why",
+              "source": "MarketBeat",
+              "date": "2026-04-24T21:30:49+00:00",
+              "sentiment": "mild_negative",
+              "why": "Short-term price weakness, but the article is a secondary market recap."
+            },
+            {
+              "headline": "Jane Street bests Wall Street banks with $39.6B of trading revenue last year - report (JPM:NYSE)",
+              "source": "Seeking Alpha",
+              "date": "2026-04-24T15:52:46+00:00",
+              "sentiment": "mild_negative",
+              "why": "Competitive pressure narrative for bank trading revenues."
+            }
+          ]
+        }
+      },
+      "peers": [
+        {
+          "ticker": "BAC",
+          "company": "Bank of America Corp.",
+          "market": {
+            "price": 52.04,
+            "day_change": -0.43,
+            "day_change_percent": -0.82,
+            "market_cap": 373474540127
+          },
+          "valuation": {
+            "price_to_earnings": 13.1,
+            "price_to_book": 1.23,
+            "price_to_sales": 3.3
+          },
+          "fundamentals": {
+            "return_on_equity": 10.06,
+            "revenue_growth_percent": 5.44,
+            "earnings_growth_percent": 2.12
+          }
+        },
+        {
+          "ticker": "WFC",
+          "company": "Wells Fargo & Co.",
+          "market": {
+            "price": 79.42,
+            "day_change": -1.09,
+            "day_change_percent": -1.35,
+            "market_cap": 245061182608
+          },
+          "valuation": {
+            "price_to_earnings": 12.07,
+            "price_to_book": 1.35,
+            "price_to_sales": 2.93
+          },
+          "fundamentals": {
+            "return_on_equity": 11.78,
+            "revenue_growth_percent": 1.12,
+            "earnings_growth_percent": 1.17
+          }
+        },
+        {
+          "ticker": "C",
+          "company": "Citigroup Inc.",
+          "market": {
+            "price": 127.98,
+            "day_change": -0.53,
+            "day_change_percent": -0.41,
+            "market_cap": 223860353582
+          },
+          "valuation": {
+            "price_to_earnings": 16.76,
+            "price_to_book": 1.05,
+            "price_to_sales": 2.63
+          },
+          "fundamentals": {
+            "return_on_equity": 6.74,
+            "revenue_growth_percent": -0.52,
+            "earnings_growth_percent": -5.09
+          }
+        },
+        {
+          "ticker": "GS",
+          "company": "Goldman Sachs Group Inc.",
+          "market": {
+            "price": 927.0,
+            "day_change": -4.3,
+            "day_change_percent": -0.46,
+            "market_cap": 275089958694
+          },
+          "valuation": {
+            "price_to_earnings": 17.14,
+            "price_to_book": 2.2,
+            "price_to_sales": 4.72
+          },
+          "fundamentals": {
+            "return_on_equity": 13.74,
+            "revenue_growth_percent": 1.31,
+            "earnings_growth_percent": 10.46
+          }
+        }
+      ],
+      "relative_rankings": {
+        "market_cap": ["JPM", "BAC", "GS", "WFC", "C"],
+        "price_to_earnings_low_to_high": ["WFC", "BAC", "JPM", "C", "GS"],
+        "price_to_book_low_to_high": ["C", "BAC", "WFC", "GS", "JPM"],
+        "return_on_equity_high_to_low": ["JPM", "GS", "WFC", "BAC", "C"],
+        "day_performance_high_to_low": ["C", "GS", "BAC", "JPM", "WFC"]
+      },
+      "key_takeaway": "JPM remains the largest and highest-quality large-bank name in the peer set by market cap and ROE, but it trades at a meaningful premium to BAC/WFC/C on book value. GS is the closest premium peer on valuation/quality, while C screens cheapest on P/B but with the weakest profitability and negative growth."
     }
   }
 ]
