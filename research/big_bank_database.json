@@ -809,5 +809,82 @@
       },
       "summary": "JPMorgan remains the quality leader on profitability, but Q4 miss and insider selling drove a negative short-term tone."
     }
+  },
+  {
+    "timestamp": "2026-04-27T08:00:00-07:00",
+    "sweep": "morning",
+    "data": {
+      "task": "Big Bank triple-sweep research (morning sweep)",
+      "ticker_candidate": {
+        "ticker": "JPM",
+        "company": "JPMorgan Chase & Co.",
+        "confidence": "high",
+        "assumptions": [
+          "User did not define 'Big Bank'; I mapped it to the largest U.S. bank / most common default reference for 'Big Bank'.",
+          "No conflicting universe or ticker preference was provided."
+        ]
+      },
+      "company_overview": {
+        "business": "Global diversified financial services firm spanning consumer banking, commercial banking, investment banking, markets, asset & wealth management, and payments.",
+        "sector": "Financials",
+        "industry": "Banks",
+        "listing": "NYSE"
+      },
+      "latest_financial_highlights": {
+        "data_reconciliation_note": "The quantitative financial statement snapshots pulled were the latest quarterly/TTM figures available in the tool set, while the detailed SEC narrative reviewed was a 10-Q MD&A for the period ended 2025-09-30. So the report mixes the newest statement snapshot with the latest filing text.",
+        "read_through": [
+          "Core franchise remains very large and diversified, with earnings supported by scale, fee businesses, and balance-sheet strength.",
+          "Credit normalization is visible but not disorderly; consumer credit and certain pockets of stress remain the main areas to watch.",
+          "Capital and liquidity remain strong enough to support ongoing returns, but management continues to emphasize regulatory sensitivity.",
+          "The MD&A flagged consumer credit pressure in California wildfire-affected areas as a specific driver to monitor."
+        ],
+        "filing_takeaways": [
+          "Recent SEC filings were dominated by 8-K updates and a 10-Q narrative review.",
+          "The 10-Q discussion highlighted balance-sheet resilience, liquidity management, and regulatory capital considerations.",
+          "No obvious single event in the retrieved filings changed the long-term thesis."
+        ]
+      },
+      "market_snapshot": {
+        "status": "retrieved",
+        "interpretation": [
+          "Stock remains a high-quality large-cap financial with a premium valuation relative to many banks.",
+          "Historical price points over the recent weekly window suggested a generally firm tape with normal volatility rather than a sharp trend break.",
+          "No major dislocation was apparent from the snapshot set."
+        ],
+        "key_metrics_theme": [
+          "Large market capitalization",
+          "Premium valuation versus most money-center peers",
+          "Strong profitability and capital profile",
+          "Leverage/liquidity metrics consistent with a systemically important bank"
+        ]
+      },
+      "news_and_sentiment": {
+        "retrieved_headlines_theme": [
+          "Most retrieved items were low-signal ownership/position-change style alerts from MarketBeat.",
+          "A CNN quote/news page was also retrieved, but it did not appear to be a major fundamental catalyst."
+        ],
+        "sentiment": "neutral to mildly positive",
+        "impact_assessment": [
+          "Ownership/position-change alerts are usually not immediate fundamental catalysts.",
+          "No major market-moving earnings, guidance shock, litigation shock, or macro headline was evident in the retrieved news set."
+        ]
+      },
+      "risks_and_watch_items": [
+        "Credit quality drift, especially consumer delinquencies and any spillover from regional stress pockets.",
+        "Commercial real estate and broader loan-loss provisioning trends.",
+        "Net interest income sensitivity to rates and deposit costs.",
+        "Trading / markets revenue volatility.",
+        "Regulatory capital, liquidity, and stress-test / capital-return constraints.",
+        "Litigation / compliance / operational risk inherent to a mega-bank.",
+        "Any follow-through from the California wildfire-related credit impacts noted in the filing discussion."
+      ],
+      "next_sweep_focus": [
+        "Update latest quarter numbers and compare against prior quarter and year-ago period.",
+        "Check whether credit losses or charge-offs are inflecting.",
+        "Confirm any new 8-K / earnings-release guidance changes.",
+        "Watch for macro-rate moves that could change NII expectations.",
+        "Scan for any new material news beyond passive ownership updates."
+      ]
+    }
   }
 ]
