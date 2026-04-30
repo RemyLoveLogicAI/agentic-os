@@ -1303,4 +1303,158 @@
     "sweep_type": "morning sweep",
     "results": {"timestamp_utc":"2026-04-30T15:08:34Z","target":{"ticker":"JPM","company_name":"JPMorgan Chase & Co.","current_price":312.85,"day_change":3.6,"day_change_pct":1.16,"price_snapshot_time_utc":"2026-04-30T15:08:32Z","market_cap":845249946325,"valuation":{"price_to_earnings_ratio":15.28,"price_to_book_ratio":2.33,"enterprise_value_to_ebitda_ratio":7.08,"enterprise_value_to_revenue_ratio":3.11,"price_to_sales_ratio":4.63},"profitability_and_growth":{"return_on_equity_pct":15.74,"return_on_assets_pct":1.29,"net_margin_pct":31.27,"revenue_growth_pct":1.75,"earnings_growth_pct":0.22,"earnings_per_share":20.51,"book_value_per_share":130.3},"balance_sheet_highlights_latest_available":{"report_period":"2025-09-30","period":"quarterly","currency":"USD","total_assets":4560205000000,"shareholders_equity":360212000000,"total_debt":69355000000,"cash_and_equivalents":303436000000},"income_statement_highlights_latest_available":{"report_period":"2025-09-30","period":"quarterly","currency":"USD","revenue":46427000000,"operating_income":8701000000,"net_income":14393000000,"earnings_per_share":5.08,"earnings_per_share_diluted":5.07,"dividends_per_common_share":1.5},"historical_performance_pct":{"1w":-0.05,"1m":6.35,"3m":2.28,"6m":1.1,"ytd_2026":-3.87,"1y":27.9},"news":[{"date":"2026-04-30T10:32:18+00:00","source":"Stock Titan","title":"JPMorgan Chase (JPM) offers 4.60% callable notes maturing May 15, 2031","sentiment":"neutral","url":"https://www.stocktitan.net/sec-filings/JPM/424b2-jpmorgan-chase-co-prospectus-supplement-09c5e461fda3.html"},{"date":"2026-04-30T10:08:07+00:00","source":"Stock Titan","title":"JPMorgan Chase (NYSE: JPM) offers $5.9M 5.10% callable notes due 2036","sentiment":"neutral","url":"https://www.stocktitan.net/sec-filings/JPM/424b2-jpmorgan-chase-co-prospectus-supplement-536d71d1ccf7.html"},{"date":"2026-04-30T07:24:39+00:00","source":"MarketBeat","title":"55 North Private Wealth LLC Makes New Investment in JPMorgan Chase & Co. $JPM","sentiment":"slightly_positive","url":"https://www.marketbeat.com/instant-alerts/filing-55-north-private-wealth-llc-makes-new-investment-in-jpmorgan-chase-co-jpm-2026-04-30/"},{"date":"2026-04-29T12:39:48+00:00","source":"MarketBeat","title":"Zurcher Kantonalbank Zurich Cantonalbank Has $665.01 Million Stock Holdings in JPMorgan Chase & Co. $JPM","sentiment":"neutral","url":"https://www.marketbeat.com/instant-alerts/filing-zurcher-kantonalbank-zurich-cantonalbank-has-66501-million-stock-holdings-in-jpmorgan-chase-co-jpm-2026-04-29/"},{"date":"2026-04-28T17:26:11+00:00","source":"Reuters","title":"JPMorgan CEO says not worried about inflation, risks remain of higher prices","sentiment":"mixed","url":"https://www.reuters.com/business/finance/jpmorgan-ceo-says-not-worried-about-inflation-risks-remain-higher-prices-2026-04-28/"}]},"peers":[{"ticker":"BAC","company_name":"Bank of America Corporation","current_price":53.35,"day_change_pct":0.89,"price_snapshot_time_utc":"2026-04-30T15:08:32Z","market_cap":382804226948,"valuation":{"price_to_earnings_ratio":13.43,"price_to_book_ratio":1.26,"enterprise_value_to_ebitda_ratio":13.43,"enterprise_value_to_revenue_ratio":4.75,"price_to_sales_ratio":3.38},"profitability_and_growth":{"return_on_equity_pct":10.06,"return_on_assets_pct":0.89,"net_margin_pct":26.98,"revenue_growth_pct":5.44,"earnings_growth_pct":2.12,"earnings_per_share":3.97,"book_value_per_share":39.48},"news_available":true,"news":[{"date":"2026-04-29T12:50:14+00:00","source":"MarketBeat","title":"GC Wealth Management RIA LLC Cuts Holdings in Bank of America Corporation $BAC","sentiment":"neutral","url":"https://www.marketbeat.com/instant-alerts/filing-gc-wealth-management-ria-llc-cuts-holdings-in-bank-of-america-corporation-bac-2026-04-29/"},{"date":"2026-04-29T12:43:42+00:00","source":"MarketBeat","title":"Rachor Investment Advisory Services LLC Takes Position in Bank of America Corporation $BAC","sentiment":"neutral","url":"https://www.marketbeat.com/instant-alerts/filing-rachor-investment-advisory-services-llc-takes-position-in-bank-of-america-corporation-bac-2026-04-29/"},{"date":"2026-04-29T12:07:20+00:00","source":"MarketBeat","title":"Joel Isaacson & Co. LLC Sells 24,989 Shares of Bank of America Corporation $BAC","sentiment":"neutral","url":"https://www.marketbeat.com/instant-alerts/filing-joel-isaacson-co-llc-sells-24989-shares-of-bank-of-america-corporation-bac-2026-04-29/"}]},{"ticker":"WFC","company_name":"Wells Fargo & Company","current_price":81.94,"day_change_pct":0.53,"price_snapshot_time_utc":"2026-04-30T15:08:33Z","market_cap":251180353668,"valuation":{"price_to_earnings_ratio":12.05,"price_to_book_ratio":1.41,"enterprise_value_to_ebitda_ratio":8.9,"enterprise_value_to_revenue_ratio":3.49,"price_to_sales_ratio":3.0},"profitability_and_growth":{"return_on_equity_pct":11.9,"return_on_assets_pct":0.96,"net_margin_pct":25.32,"revenue_growth_pct":0.18,"earnings_growth_pct":-0.51,"earnings_per_share":6.81,"book_value_per_share":57.22},"news_available":false,"news":[]},{"ticker":"C","company_name":"Citigroup Inc.","current_price":128.51,"day_change_pct":0.71,"price_snapshot_time_utc":"2026-04-30T15:08:15Z","market_cap":224787492656,"valuation":{"price_to_earnings_ratio":16.82,"price_to_book_ratio":1.06,"enterprise_value_to_ebitda_ratio":10.1,"enterprise_value_to_revenue_ratio":2.85,"price_to_sales_ratio":2.64},"profitability_and_growth":{"return_on_equity_pct":6.74,"return_on_assets_pct":0.54,"net_margin_pct":16.79,"revenue_growth_pct":-0.52,"earnings_growth_pct":-5.09,"earnings_per_share":7.64,"book_value_per_share":113.34},"news_available":false,"news":[]},{"ticker":"GS","company_name":"The Goldman Sachs Group, Inc.","current_price":920.05,"day_change_pct":1.6,"price_snapshot_time_utc":"2026-04-30T15:08:18Z","market_cap":272968175302,"valuation":{"price_to_earnings_ratio":17.01,"price_to_book_ratio":2.18,"enterprise_value_to_ebitda_ratio":27.41,"enterprise_value_to_revenue_ratio":11.3,"price_to_sales_ratio":4.68},"profitability_and_growth":{"return_on_equity_pct":13.74,"return_on_assets_pct":0.95,"net_margin_pct":29.47,"revenue_growth_pct":1.31,"earnings_growth_pct":10.46,"earnings_per_share":54.08,"book_value_per_share":393.49},"news_available":true,"news":[{"date":"2026-04-29T13:28:08+00:00","source":"MarketBeat","title":"Vest Financial LLC Acquires 1,646 Shares of The Goldman Sachs Group, Inc. $GS","sentiment":"neutral","url":"https://www.marketbeat.com/instant-alerts/filing-vest-financial-llc-acquires-1646-shares-of-the-goldman-sachs-group-inc-gs-2026-04-29/"},{"date":"2026-04-29T13:00:02+00:00","source":"Yahoo Finance","title":"The Goldman Sachs Group, Inc. (GS) is Attracting Investor Attention: Here is What You Should Know","sentiment":"slightly_positive","url":"https://finance.yahoo.com/markets/stocks/articles/goldman-sachs-group-inc-gs-130002803.html"},{"date":"2026-04-29T12:29:36+00:00","source":"MarketBeat","title":"GC Wealth Management RIA LLC Lowers Position in The Goldman Sachs Group, Inc. $GS","sentiment":"neutral","url":"https://www.marketbeat.com/instant-alerts/filing-gc-wealth-management-ria-llc-lowers-position-in-the-goldman-sachs-group-inc-gs-2026-04-29/"}]},{"ticker":"MS","company_name":"Morgan Stanley","current_price":188.92,"day_change_pct":0.98,"price_snapshot_time_utc":"2026-04-30T15:08:34Z","market_cap":299819764097,"valuation":{"price_to_earnings_ratio":17.83,"price_to_book_ratio":2.69,"enterprise_value_to_ebitda_ratio":23.0,"enterprise_value_to_revenue_ratio":8.61,"price_to_sales_ratio":4.24},"profitability_and_growth":{"return_on_equity_pct":15.1,"return_on_assets_pct":1.19,"net_margin_pct":23.87,"revenue_growth_pct":3.68,"earnings_growth_pct":7.72,"earnings_per_share":10.59,"book_value_per_share":70.12},"news_available":false,"news":[]}],"banking_context":{"interest_rates_snapshot":[{"bank":"FED","name":"Federal Reserve","rate":3.625,"date":"2026-03-01"},{"bank":"ECB","name":"European Central Bank","rate":2.0,"date":"2026-03-01"},{"bank":"BOJ","name":"Bank of Japan","rate":0.75,"date":"2026-03-01"},{"bank":"BOE","name":"Bank of England","rate":3.75,"date":"2026-03-01"},{"bank":"BOC","name":"Bank of Canada","rate":2.25,"date":"2026-03-01"},{"bank":"RBA","name":"Reserve Bank of Australia","rate":4.1,"date":"2026-03-01"},{"bank":"PBOC","name":"People's Bank of China","rate":3.0,"date":"2026-03-01"},{"bank":"SNB","name":"Swiss National Bank","rate":0.0,"date":"2026-03-01"},{"bank":"RBI","name":"Reserve Bank of India","rate":5.25,"date":"2026-03-01"},{"bank":"BOK","name":"Bank of Korea","rate":2.5,"date":"2026-03-01"}],"macro_takeaway":"Rates remain supportive for bank net interest income, but the backdrop looks later-cycle rather than fresh-tightening. For money-center banks, the key swing factors are deposit competition, credit normalization, and fee/markets activity rather than pure rate expansion."},"summary":["JPM screens as the strongest quality franchise in this peer set: highest ROE at 15.7% and a still-reasonable 15.3x earnings / 2.33x book, versus cheaper-but-lower-return BAC/WFC/C and richer GS/MS on P/B.","Latest available quarter (2025-Q3) showed $46.4B revenue, $14.4B net income, $5.08 EPS, $4.56T assets, and $360.2B equity; the balance sheet remains very large and well-capitalized in absolute terms.","Price action is constructive: JPM is up 27.9% YoY, up 6.35% over the last month, and only modestly down YTD, suggesting the stock has mostly digested earlier gains rather than breaking down.","News flow is mostly neutral/technical (bond issuance, institutional filings). The Reuters CEO comment is the only substantive macro read-through and points to manageable inflation concern rather than acute stress.","For bank comparison, use P/B and ROE first; EV/EBITDA is less informative across banks. JPM currently looks like a premium-quality core name rather than the cheapest multiple in the group."]}
   }
+,
+{
+  "timestamp": "2026-04-29T08:00:00-07:00",
+  "task": "Big Bank triple-sweep research task",
+  "sweep_type": "morning sweep",
+  "results": {
+    "target": {
+      "ticker": "JPM",
+      "price": 311.45,
+      "change_pct": -0.06,
+      "sentiment": "Provided snapshot",
+      "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+    },
+    "peers": [
+      {
+        "ticker": "BAC",
+        "price": 52.66,
+        "change_pct": 0.06,
+        "sentiment": "Provided snapshot",
+        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+      },
+      {
+        "ticker": "WFC",
+        "price": 81.5,
+        "change_pct": 1.17,
+        "sentiment": "Provided snapshot",
+        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+      },
+      {
+        "ticker": "C",
+        "price": 128.53,
+        "change_pct": -0.47,
+        "sentiment": "Provided snapshot",
+        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+      },
+      {
+        "ticker": "GS",
+        "price": 926.55,
+        "change_pct": -1.2,
+        "sentiment": "Provided snapshot",
+        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+      },
+      {
+        "ticker": "MS",
+        "price": 190.36,
+        "change_pct": 0.09,
+        "sentiment": "Provided snapshot",
+        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+      }
+    ]
+  }
+},
+{
+  "timestamp": "2026-04-29T12:00:00-07:00",
+  "task": "Big Bank triple-sweep research task",
+  "sweep_type": "noon sweep",
+  "results": {
+    "target": {
+      "ticker": "JPM",
+      "price": 309.25,
+      "change_pct": -0.71,
+      "sentiment": "Provided snapshot",
+      "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+    },
+    "peers": [
+      {
+        "ticker": "BAC",
+        "price": 52.88,
+        "change_pct": 0.42,
+        "sentiment": "Provided snapshot",
+        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+      },
+      {
+        "ticker": "WFC",
+        "price": 81.51,
+        "change_pct": 0.01,
+        "sentiment": "Provided snapshot",
+        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+      },
+      {
+        "ticker": "C",
+        "price": 127.61,
+        "change_pct": -0.72,
+        "sentiment": "Provided snapshot",
+        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+      },
+      {
+        "ticker": "GS",
+        "price": 905.6,
+        "change_pct": -2.26,
+        "sentiment": "Provided snapshot",
+        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+      },
+      {
+        "ticker": "MS",
+        "price": 187.08,
+        "change_pct": -1.72,
+        "sentiment": "Provided snapshot",
+        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+      }
+    ]
+  }
+},
+{
+  "timestamp": "2026-04-29T20:00:00-07:00",
+  "task": "Big Bank triple-sweep research task",
+  "sweep_type": "night sweep",
+  "results": {
+    "target": {
+      "ticker": "JPM",
+      "price": 308.96,
+      "change_pct": -0.8,
+      "sentiment": "Provided snapshot",
+      "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+    },
+    "peers": [
+      {
+        "ticker": "BAC",
+        "price": 52.9,
+        "change_pct": 0.46,
+        "sentiment": "Provided snapshot",
+        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+      },
+      {
+        "ticker": "WFC",
+        "price": 81.52,
+        "change_pct": 0.02,
+        "sentiment": "Provided snapshot",
+        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+      },
+      {
+        "ticker": "C",
+        "price": 127.59,
+        "change_pct": -0.73,
+        "sentiment": "Provided snapshot",
+        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+      },
+      {
+        "ticker": "GS",
+        "price": 905.7,
+        "change_pct": -2.25,
+        "sentiment": "Provided snapshot",
+        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+      },
+      {
+        "ticker": "MS",
+        "price": 187.06,
+        "change_pct": -1.73,
+        "sentiment": "Provided snapshot",
+        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
+      }
+    ]
+  }
+}
 ]
