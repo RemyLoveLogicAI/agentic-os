@@ -23,7 +23,7 @@ Inputs to canonicalJSON are restricted to JSON-compatible values:
 All values MUST be representable without custom classes.
 
 Bigint note (for serialization compatibility):
-- If a logical value is a bigint/integer that would not be safely representable as a JSON number (e.g., JS Number precision limits), canonicalJSON MUST encode it as a JSON string containing its base-10 decimal representation.
+- For any bigint/integer field value used in hashing/signing inputs, canonicalJSON MUST encode it as a JSON string containing its base-10 decimal representation (not a JSON number).
 - The decimal representation MUST be canonical:
   - no leading plus sign
   - no exponent (no "e" notation)

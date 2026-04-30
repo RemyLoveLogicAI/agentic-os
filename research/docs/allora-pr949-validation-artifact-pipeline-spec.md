@@ -10,9 +10,12 @@ All implementation notes below assume TUI/CLI-only execution (e.g., go test/go r
 
 ## 1) ValidationArtifact struct (Go)
 
-All structures that participate in hashing/signing MUST be serializable to canonical JSON bytes (UTF-8, stable key ordering) before hashing/signing.
+All structures MUST be serializable to canonical JSON bytes (UTF-8, stable key ordering) before hashing/signing.
 
-canonicalJSON is defined authoritatively in research/docs/canonical-json-spec.md and MUST be the same across Go and TypeScript implementations.
+Canonical JSON rule (for any hash/sign):
+- Use deterministic key ordering.
+- No insignificant whitespace.
+- Ensure numbers are encoded consistently.
 
 ### ValidationArtifact
 
@@ -22,15 +25,15 @@ Go type (reference):
 // ValidationArtifact is the persisted, verifiable record of a spec validation run.
 // It is designed to carry both "direct" validation results and metamorphic evidence.
 //
-// Serialized form MUST use canonicalJSON for artifactId computation.
+// Serialized form MUST be canonical JSON for artifactId computation.
 //
 // NOTE: Field names are part of the public schema.
 type ValidationArtifact struct {
   SchemaVersion string `json:"schemaVersion"` // e.g. "allora.validationArtifact.v1"
 
-  ArtifactID string `json:"artifactId"` // sha256(canonicalJSON(ValidationArtifactWithoutArtifactID))
+  ArtifactID string `json:"artifactId"` // sha256(canonicalJSON(ValidationArtifactWithoutArtifactIDAndSignature))
 
-  SpecID string `json:"specId"` // stable identifier for the validated Spec
+  SpecID string `json:"specId"` // sha256(canonicalJSON(specPayloadWithoutSpecID))
   SpecDigest string `json:"specDigest"` // sha256(canonicalJSON(spec))
 
   RunID string `json:"runId"` // caller-generated UUID/ULID for traceability
@@ -62,7 +65,7 @@ type ValidationArtifact struct {
 type Signature struct {
   Alg string `json:"alg"` // e.g. "ed25519" or "rsa-pss"
   KeyID string `json:"keyId"`
-  SignatureBytes string `json:"signatureBytes"` // base64url
+  SignatureBytes string `json:"signatureBytes"` // base64url over canonicalJSON(SignatureBytesPreimage: ValidationArtifact with artifactId and signature removed)
 }
 
 type PipelineError struct {
@@ -97,8 +100,12 @@ type InvariantEvidence struct {
 ### ArtifactID
 
 ArtifactID MUST be computed as:
-- artifactId = sha256( canonicalJSON(ValidationArtifact with artifactId removed) )
-- represented as lowercase hex.
+- artifactId = sha256( canonicalJSON(ValidationArtifact with artifactId and signature removed) )
+- Represent as lowercase hex.
+
+SignatureBytes preimage (scoping):
+- SignatureBytesPreimage = ValidationArtifact with artifactId removed and signature removed.
+- signatureBytes MUST be computed by signing canonicalJSON(SignatureBytesPreimage) using Signature.Alg and then base64url-encoding the signature bytes.
 
 ---
 
@@ -114,11 +121,12 @@ A Spec is a declarative description of:
 ```go
 // Spec is an immutable, addressable validation definition.
 //
-// SpecID MUST be derived from the canonical JSON of the Spec payload.
+// SpecID MUST be computed as:
+- SpecID = sha256( canonicalJSON(specPayloadWithoutSpecID) )
 type Spec struct {
   SchemaVersion string `json:"schemaVersion"` // e.g. "allora.spec.v1"
 
-  SpecID string `json:"specId"` // hash(canonicalJSON(specPayloadWithoutSpecID))
+  SpecID string `json:"specId"` // sha256(canonicalJSON(specPayloadWithoutSpecID))
   Name string `json:"name"`
   Description string `json:"description,omitempty"`
 
