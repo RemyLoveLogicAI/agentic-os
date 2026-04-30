@@ -39,7 +39,7 @@ Implementations MUST follow these rules:
 ### 2.1 Objects
 - Serialize as JSON object with:
   - keys in strictly increasing lexicographic order according to RFC 8785 (JCS) object key ordering.
-    This is based on Unicode character order (JCS-compatible comparison of key strings), not raw UTF-8 byte order.
+    This uses UTF-16 code unit lexicographic ordering of key strings per RFC 8785 (JCS), not raw UTF-8 byte order.
   - no extra fields.
 - No re-ordering beyond this key sort.
 
