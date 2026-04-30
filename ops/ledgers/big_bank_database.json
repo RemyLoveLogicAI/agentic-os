@@ -1,360 +1,5 @@
 [
   {
-    "timestamp": "2026-04-15T12:00:00-07:00",
-    "task": "Big Bank triple-sweep research task",
-    "sweep_type": "noon sweep",
-    "results": {
-      "target": {
-        "ticker": "JPM",
-        "price": 305.94,
-        "pe": 14.9,
-        "sentiment": "Mixed to slightly positive",
-        "findings": "FY2025 beat; Q4 2025 EPS miss; analyst optimism."
-      },
-      "peers": [
-        {
-          "ticker": "BAC",
-          "price": 54.44,
-          "pe": 13.7,
-          "sentiment": "Positive",
-          "findings": "Q1 2026 beat; strong revenue and EPS."
-        },
-        {
-          "ticker": "C",
-          "price": 131.91,
-          "pe": 17.3,
-          "sentiment": "Positive",
-          "findings": "Q1 2026 beat across top and bottom line."
-        },
-        {
-          "ticker": "WFC",
-          "price": 80.5,
-          "pe": 12.2,
-          "sentiment": "Mixed",
-          "findings": "Q1 2026 mixed; EPS beat but revenue miss."
-        },
-        {
-          "ticker": "GS",
-          "price": 900.33,
-          "pe": 16.7,
-          "sentiment": "Mixed to positive",
-          "findings": "Q1 2026 beat; market cautious on tone."
-        },
-        {
-          "ticker": "MS",
-          "price": 191.94,
-          "pe": 18.1,
-          "sentiment": "Strongly positive",
-          "findings": "Q1 2026 beat; best daily performer in group."
-        }
-      ]
-    }
-  },
-  {
-    "timestamp": "2026-04-15T20:01:00-07:00",
-    "task": "Big Bank triple-sweep research task",
-    "sweep_type": "night sweep",
-    "results": {
-      "target": {
-        "ticker": "JPM",
-        "price": 306.13,
-        "pe": 14.91,
-        "sentiment": "Mixed (Stock down, dividend/analyst positive)",
-        "findings": "Highest ROE (15.74%) and Net Margin (31.27%) in group; highest quality franchise; price performance weaker than peers (-1.6%)."
-      },
-      "peers": [
-        {
-          "ticker": "BAC",
-          "price": 54.31,
-          "pe": 13.67,
-          "sentiment": "Positive (Q1 earnings beat)",
-          "findings": "ROE 10.06%, Net Margin 26.98%. Strong trading and investment banking headlines."
-        },
-        {
-          "ticker": "C",
-          "price": 131.66,
-          "pe": 17.24,
-          "sentiment": "Neutral",
-          "findings": "ROE 6.74%, Net Margin 16.79%."
-        },
-        {
-          "ticker": "WFC",
-          "price": 80.3,
-          "pe": 12.2,
-          "sentiment": "Neutral",
-          "findings": "ROE 11.78%, Net Margin 25.49%."
-        },
-        {
-          "ticker": "GS",
-          "price": 899.5,
-          "pe": 16.62,
-          "sentiment": "Mixed (Upgrades offset by risk)",
-          "findings": "ROE 13.74%, Net Margin 29.47%."
-        },
-        {
-          "ticker": "MS",
-          "price": 191.56,
-          "pe": 18.09,
-          "sentiment": "Neutral",
-          "findings": "ROE 15.10%, Net Margin 23.87%. Strongest price performance (+4.48%)."
-        }
-      ]
-    }
-  },
-  {
-    "timestamp": "2026-04-16T08:00:00-07:00",
-    "task": "Big Bank triple-sweep research task",
-    "sweep_type": "morning sweep",
-    "results": {
-      "target": {
-        "ticker": "JPM",
-        "price": 308.3,
-        "change_pct": 0.77,
-        "sentiment": "Mixed",
-        "findings": "Strong earnings; mixed sentiment. JPM remains the core long."
-      },
-      "peers": [
-        {
-          "ticker": "BAC",
-          "price": 53.83,
-          "change_pct": -0.9,
-          "sentiment": "Mixed",
-          "findings": "Solid but soft tape; risk-heavy filing."
-        },
-        {
-          "ticker": "WFC",
-          "price": 81.61,
-          "change_pct": 1.64,
-          "sentiment": "Positive",
-          "findings": "Positive price action; operational focus."
-        },
-        {
-          "ticker": "C",
-          "price": 130.0,
-          "change_pct": -1.28,
-          "sentiment": "Mixed",
-          "findings": "Weakest net income; restructuring story."
-        },
-        {
-          "ticker": "GS",
-          "price": 905.1,
-          "change_pct": 0.62,
-          "sentiment": "Positive",
-          "findings": "High quality but cyclical."
-        }
-      ],
-      "final_summary": "JPM remains the core long; GS is the quality cyclical; BAC/C are mixed; WFC shows positive momentum."
-    }
-  },
-  {
-    "timestamp": "2026-04-16T12:00:00-07:00",
-    "task": "Big Bank triple-sweep research task",
-    "sweep_type": "noon sweep",
-    "results": {
-      "target": {
-        "ticker": "JPM",
-        "price": 308.53,
-        "change_pct": 0.85,
-        "sentiment": "Mixed/Cautious",
-        "findings": "Elite profitability (ROE 15.7%); Q4 2025 EPS miss; recent coverage of insider selling and 'warning' commentary."
-      },
-      "peers": [
-        {
-          "ticker": "BAC",
-          "price": 53.64,
-          "change_pct": -1.25,
-          "sentiment": "Slightly Positive",
-          "findings": "Strong earnings coverage; weaker day performance (-1.25%)."
-        },
-        {
-          "ticker": "C",
-          "price": 129.66,
-          "change_pct": -1.54,
-          "sentiment": "Neutral/Quiet",
-          "findings": "Weak tape (-1.54%) with no fresh headlines."
-        },
-        {
-          "ticker": "WFC",
-          "price": 81.35,
-          "change_pct": 1.32,
-          "sentiment": "Neutral/Quiet",
-          "findings": "Strongest daily performer (+1.32%) among peer group; neutral news sentiment."
-        },
-        {
-          "ticker": "GS",
-          "price": 904.89,
-          "change_pct": 0.6,
-          "sentiment": "Neutral/Slightly Positive",
-          "findings": "Institutional share buying noted; steady day move (+0.60%)."
-        },
-        {
-          "ticker": "MS",
-          "price": 188.34,
-          "change_pct": -1.71,
-          "sentiment": "Neutral/Quiet",
-          "findings": "Weakest daily performer (-1.71%); no recent news found."
-        }
-      ],
-      "final_summary": "JPM remains fundamentally strong but faces cautious news sentiment; WFC leads peer performance (+1.32%) while MS/C lag significantly."
-    }
-  },
-  {
-    "timestamp": "2026-04-17T08:00:00-07:00",
-    "task": "Big Bank triple-sweep research task",
-    "sweep_type": "morning sweep",
-    "results": {
-      "target": {
-        "ticker": "JPM",
-        "price": 312.39,
-        "change_pct": 0.79,
-        "sentiment": "Positive",
-        "findings": "Up 0.79%. Released from OCC order on trade surveillance; analyst upgrades noted."
-      },
-      "peers": [
-        {
-          "ticker": "BAC",
-          "price": 54.1,
-          "change_pct": 1.1,
-          "sentiment": "Positive",
-          "findings": "Up 1.10%. Positive sentiment post Q1 earnings call."
-        },
-        {
-          "ticker": "WFC",
-          "price": 81.52,
-          "change_pct": 0.33,
-          "sentiment": "Neutral/Positive",
-          "findings": "Up 0.33%. Recent 8-K filings on 4/14."
-        },
-        {
-          "ticker": "C",
-          "price": 132.06,
-          "change_pct": 2.1,
-          "sentiment": "Strong Positive",
-          "findings": "Up 2.10%. Leading daily gains among core bank peers."
-        },
-        {
-          "ticker": "GS",
-          "price": 924.25,
-          "change_pct": 2.69,
-          "sentiment": "Strong Positive",
-          "findings": "Up 2.69%. Strong momentum with significant share purchases by major funds."
-        },
-        {
-          "ticker": "MS",
-          "price": 189.97,
-          "change_pct": 1.41,
-          "sentiment": "Positive",
-          "findings": "Up 1.41%. Steady performance in line with peer group strength."
-        }
-      ],
-      "final_summary": "Broad strength across the sector this morning, with GS and C outperforming. JPM remains steady following positive regulatory updates."
-    }
-  },
-  {
-    "timestamp": "2026-04-17T12:00:00-07:00",
-    "task": "Big Bank triple-sweep research task",
-    "sweep_type": "noon sweep",
-    "results": {
-      "target": {
-        "ticker": "JPM",
-        "price": 311.27,
-        "change_pct": 0.43,
-        "sentiment": "Positive",
-        "findings": "Released from OCC trade-surveillance order, Analyst upgrade."
-      },
-      "peers": [
-        {
-          "ticker": "BAC",
-          "price": 53.99,
-          "change_pct": 0.9,
-          "sentiment": "Positive",
-          "findings": "Q1 earnings beat: $1.11 EPS vs $1.00 est"
-        },
-        {
-          "ticker": "WFC",
-          "price": 81.11,
-          "change_pct": -0.17,
-          "sentiment": "Mixed",
-          "findings": "EPS beat $1.60 vs $1.58, but revenue missed"
-        },
-        {
-          "ticker": "C",
-          "price": 132.25,
-          "change_pct": 2.25,
-          "sentiment": "Positive",
-          "findings": "Q1 earnings beat: $3.06 EPS vs $2.64 est, restructuring ongoing"
-        },
-        {
-          "ticker": "GS",
-          "price": 922.63,
-          "change_pct": 2.51,
-          "sentiment": "Positive",
-          "findings": "Q1 beat: $17.55 EPS vs $16.31 est, strong buying interest"
-        },
-        {
-          "ticker": "MS",
-          "price": 189.35,
-          "change_pct": 1.08,
-          "sentiment": "Positive",
-          "findings": "Q1 beat: $3.43 EPS vs $3.05 est"
-        }
-      ]
-    },
-    "final_summary": "Strong constructive action across major banks, led by GS and C. JPM boosted by regulatory resolution and analyst upgrades. WFC is the laggard due to revenue miss."
-  },
-  {
-    "timestamp": "2026-04-17T20:00:00-07:00",
-    "task": "Big Bank triple-sweep research task",
-    "sweep_type": "night sweep",
-    "results": {
-      "target": {
-        "ticker": "JPM",
-        "price": 310.2,
-        "change_pct": 0.08,
-        "sentiment": "Positive",
-        "findings": "Released from OCC trade-surveillance order; analyst upgrades noted."
-      },
-      "peers": [
-        {
-          "ticker": "BAC",
-          "price": 53.9,
-          "change_pct": 0.73,
-          "sentiment": "Positive",
-          "findings": "Q1 earnings beat: $1.11 EPS vs $1.00 est; preferred stock payouts lined up."
-        },
-        {
-          "ticker": "WFC",
-          "price": 81.39,
-          "change_pct": 0.17,
-          "sentiment": "Neutral",
-          "findings": "Stable performance; highest TTM revenue and net income in peer subset."
-        },
-        {
-          "ticker": "C",
-          "price": 132.18,
-          "change_pct": 2.2,
-          "sentiment": "Positive",
-          "findings": "Strong daily price performance (+2.20%); Q1 earnings beat: $3.06 EPS vs $2.64 est."
-        },
-        {
-          "ticker": "GS",
-          "price": 926.39,
-          "change_pct": 2.93,
-          "sentiment": "Strong Positive",
-          "findings": "Leading the group with 2.93% gain; strong institutional buying and momentum."
-        },
-        {
-          "ticker": "MS",
-          "price": 189.0,
-          "change_pct": 0.9,
-          "sentiment": "Positive",
-          "findings": "Steady performance; highest market cap in peer subset."
-        }
-      ],
-      "final_summary": "Broadly constructive day for the sector, with GS and C showing strong momentum. JPM remains steady following positive regulatory and analyst updates."
-    }
-  },
-  {
     "timestamp": "2026-04-18T08:00:00-07:00",
     "task": "Big Bank triple-sweep research task",
     "sweep_type": "morning sweep",
@@ -404,53 +49,6 @@
           "notes": "Significant insider selling cluster on Apr 16/17."
         }
       ]
-    },
-    "final_summary": "Overall constructive sector action led by GS and C. JPM remains the quality leader but faces near-term insider selling pressure. BAC shows best revenue growth profile in the group."
-  },
-  {
-    "timestamp": "2026-04-18T12:00:00-07:00",
-    "task": "Big Bank triple-sweep research task",
-    "sweep_type": "noon sweep",
-    "results": {
-      "target": {
-        "ticker": "JPM",
-        "price": 310.2,
-        "day_change": "+0.25",
-        "day_change_percent": "+0.08%",
-        "sentiment": "Mildly Positive",
-        "key_findings": "JPM released from OCC order."
-      },
-      "peers": [
-        {
-          "ticker": "BAC",
-          "price": 53.9,
-          "change_percent": "+0.73%",
-          "sentiment": "Mildly Positive",
-          "notes": "Q1 net $8.6B."
-        },
-        {
-          "ticker": "WFC",
-          "price": 81.39,
-          "change_percent": "+0.17%",
-          "sentiment": "Neutral",
-          "notes": "Constructive follow-through."
-        },
-        {
-          "ticker": "MS",
-          "price": 189.0,
-          "change_percent": "+0.90%",
-          "sentiment": "Neutral",
-          "notes": "Positive day, but GS led."
-        },
-        {
-          "ticker": "GS",
-          "price": 926.39,
-          "change_percent": "+2.93%",
-          "sentiment": "Mildly Positive",
-          "notes": "Led the tape on strong Q1 earnings follow-through."
-        }
-      ],
-      "final_summary": "GS led the tape (+2.93%); market constructive on Q1 earnings follow-through."
     }
   },
   {
@@ -581,53 +179,51 @@
     "timestamp": "2026-04-19T20:01:00-07:00",
     "task": "Big Bank triple-sweep research task",
     "sweep_type": "night sweep",
-    "results": {
-      "target": {
+    "entries": [
+      {
         "ticker": "JPM",
         "price": 310.2,
         "day_change": "+0.08%",
         "sentiment": "Mildly Positive",
         "findings": "Mildly positive sentiment; bullish analyst-upgrade headline noted. Recent 8-K filings on Q1 performance."
       },
-      "peers": [
-        {
-          "ticker": "BAC",
-          "price": 53.9,
-          "day_change": "+0.73%",
-          "sentiment": "Mildly Positive",
-          "findings": "Strong Q1 2026 earnings results ($8.6B net income, $1.11 EPS). Momentum remains neutral to positive."
-        },
-        {
-          "ticker": "WFC",
-          "price": 81.39,
-          "day_change": "+0.17%",
-          "sentiment": "Neutral",
-          "findings": "Stable valuation with thin news flow. Q1 2026 results released recently."
-        },
-        {
-          "ticker": "C",
-          "price": 132.18,
-          "day_change": "+2.20%",
-          "sentiment": "Neutral",
-          "findings": "Significant daily price move of +2.20%. Q1 2026 results announced; no major fresh operating news since."
-        },
-        {
-          "ticker": "GS",
-          "price": 926.39,
-          "day_change": "+2.93%",
-          "sentiment": "Positive",
-          "findings": "Leading sector performer with +2.93% move. Bullish media coverage and active filing activity."
-        },
-        {
-          "ticker": "MS",
-          "price": 189.0,
-          "day_change": "+0.90%",
-          "sentiment": "Neutral",
-          "findings": "Positive Q1 earnings backdrop ($20.6B revenue). General market move on Apr 19."
-        }
-      ],
-      "summary": "Constructive sector action continues, with Goldman Sachs and Citigroup leading the group. Strong fundamental backdrop remains after recent Q1 earnings reports across the sector."
-    }
+      {
+        "ticker": "BAC",
+        "price": 53.9,
+        "day_change": "+0.73%",
+        "sentiment": "Mildly Positive",
+        "findings": "Strong Q1 2026 earnings results ($8.6B net income, $1.11 EPS). Momentum remains neutral to positive."
+      },
+      {
+        "ticker": "WFC",
+        "price": 81.39,
+        "day_change": "+0.17%",
+        "sentiment": "Neutral",
+        "findings": "Stable valuation with thin news flow. Q1 2026 results released recently."
+      },
+      {
+        "ticker": "C",
+        "price": 132.18,
+        "day_change": "+2.20%",
+        "sentiment": "Neutral",
+        "findings": "Significant daily price move of +2.20%. Q1 2026 results announced; no major fresh operating news since."
+      },
+      {
+        "ticker": "GS",
+        "price": 926.39,
+        "day_change": "+2.93%",
+        "sentiment": "Positive",
+        "findings": "Leading sector performer with +2.93% move. Bullish media coverage and active filing activity."
+      },
+      {
+        "ticker": "MS",
+        "price": 189.0,
+        "day_change": "+0.90%",
+        "sentiment": "Neutral",
+        "findings": "Positive Q1 earnings backdrop ($20.6B revenue). General market move on Apr 19."
+      }
+    ],
+    "summary": "Constructive sector action continues, with Goldman Sachs and Citigroup leading the group. Strong fundamental backdrop remains after recent Q1 earnings reports across the sector."
   },
   {
     "timestamp": "2026-04-20T08:00:00-07:00",
@@ -637,6 +233,7 @@
       "ticker": "JPM",
       "price": "314.35",
       "day_change_percent": "+1.31%",
+      "pe_ratio": "15.33x",
       "market_cap": "$847.8B",
       "sentiment": "Mildly Positive",
       "findings": "Largest bank in the group; strong ROE (15.7%) and solid margins. News flow stable with institutional ownership updates."
@@ -1087,7 +684,7 @@
     "results": {
       "target": {
         "ticker": "JPM",
-        "company": "JPMorgan Chase & Co.",
+        "company": "JPMorgan Chase & Co",
         "price_current": 308.16,
         "day_change_pct": -1.13,
         "day_change_abs": -3.53,
@@ -1291,170 +888,10 @@
     }
   },
   {
-    "timestamp": "2026-04-28T20:00:00-07:00",
-    "task": "Big Bank triple-sweep research task",
-    "sweep_type": "night sweep",
-    "results": {"sweep_name":"Big Bank triple-sweep research","sweep_date":"2026-04-28","analyst":"Jeremy Morgan-Jones SR","focus_ticker":"JPM","peer_tickers":["BAC","WFC","C","GS","MS"],"status":"complete_with_gaps","summary":"JPM remains the strongest all-around money-center bank in this group: it has the largest FY2025 revenue and net income, the highest ROE in the set, and a mid-pack valuation versus peers. The biggest themes are still macro/rates, credit, capital/regulatory scrutiny, and operational/cyber risk. News flow was mostly macro commentary plus low-signal ownership/PR items. No prior sweep baseline was provided, so change detection versus the last sweep is unavailable.","change_since_last_sweep":{"status":"unavailable","reason":"No prior sweep baseline was supplied in the conversation."},"latest_financials":{"jpm":{"quarter":"2025-Q4","report_period":"2025-12-31","revenue":45798000000,"net_income":12690000000,"eps_diluted":4.64,"assets":4424900000000,"equity":362438000000,"total_debt":942378000000,"annual_2025":{"revenue":182447000000,"net_income":57048000000,"eps":20.02},"capital_note":{"cet1_ratio_percent":14.8,"source":"Earlier Q3 2025 10-Q extraction in this session"}},"peer_latest_quarter_snapshot":{"BAC":{"quarter":"2025-Q4","revenue":31180000000,"net_income":7528000000,"eps_diluted":0.96,"assets":3411738000000,"equity":303243000000},"WFC":{"quarter":"2025-Q4","revenue":21292000000,"net_income":5361000000,"eps_diluted":1.62,"assets":2148631000000,"equity":181117000000},"C":{"quarter":"2025-Q4","revenue":19871000000,"net_income":2471000000,"eps_diluted":1.21,"assets":2657202000000,"equity":212291000000},"GS":{"quarter":"2025-Q4","revenue":13454000000,"net_income":4617000000,"eps_diluted":13.99,"assets":1809320000000,"equity":124972000000},"MS":{"quarter":"2025-Q4","revenue":17890000000,"net_income":4397000000,"eps_diluted":2.68,"assets":1420270000000,"equity":111632000000}}},"market_snapshot":{"as_of":"2026-04-28 close snapshot","current_prices":{"JPM":311.57,"BAC":52.69,"WFC":81.49,"C":128.53,"GS":927.11,"MS":190.38},"day_change_percent":{"JPM":-0.02,"BAC":0.11,"WFC":1.15,"C":-0.47,"GS":-1.14,"MS":0.11},"market_caps":{"JPM":840314377079,"BAC":378139383537,"WFC":251448448385,"C":224839972227,"GS":274935647175,"MS":302296826018},"performance":{"method":"Current snapshot price vs nearest prior trading-day closes from historical daily data","window_reference_dates":{"1w":"2026-04-21","1m":"2026-03-27","3m":"2026-01-28"},"returns_percent":{"JPM":{"1w":-0.46,"1m":10.16,"3m":3.59},"BAC":{"1w":-1.48,"1m":12.20,"3m":1.70},"WFC":{"1w":-0.07,"1m":5.57,"3m":-7.44},"C":{"1w":-2.39,"1m":19.70,"3m":12.53},"GS":{"1w":0.06,"1m":15.48,"3m":-1.04},"MS":{"1w":0.56,"1m":20.20,"3m":4.41}},"volatility_3m_annualized":null,"volatility_note":"Daily price history was collected, but realized volatility was not computed in-tool for this pass."}},"valuation_and_quality":{"jpm":{"price_to_book":2.3185,"price_to_earnings":15.1913,"price_to_sales":4.6058,"roe":0.1574,"roa":0.0129,"net_margin":0.3127,"revenue_growth":0.0175,"earnings_growth":0.0022},"peer_comparison_snapshot":{"BAC":{"price_to_book":1.2470,"price_to_earnings":13.2652,"roe":0.1006},"WFC":{"price_to_book":1.3883,"price_to_earnings":12.3824,"roe":0.1178},"C":{"price_to_book":1.0591,"price_to_earnings":16.8286,"roe":0.0674},"GS":{"price_to_book":2.2000,"price_to_earnings":17.1315,"roe":0.1374},"MS":{"price_to_book":2.7080,"price_to_earnings":17.9755,"roe":0.1510}},"takeaway":"JPM screens as higher quality than BAC/WFC/C on ROE and growth, with valuation richer than BAC/WFC/C but still below MS on P/B. JPM's ROE leads the group or is essentially tied with MS at the top."},"news_and_sentiment":{"JPM":{"sentiment":"mixed_to_slightly_positive","high_signal_items":[{"title":"JPMorgan CEO says not worried about inflation, risks remain of higher prices - Reuters","source":"Reuters","date":"2026-04-28T17:26:11+00:00","why_it_matters":"Macro/rates commentary is relevant to NII, deposits, credit quality, and market sentiment."},{"title":"Olympics add first global banking partner as JPMorgan joins LA28 - Stock Titan","source":"Stock Titan","date":"2026-04-28T13:02:27+00:00","why_it_matters":"Brand/partnership positive, but limited direct financial impact."}],"low_signal_items":[{"title":"WestEnd Advisors LLC Cuts Stock Position in JPMorgan Chase & Co. $JPM - MarketBeat","source":"MarketBeat","date":"2026-04-28T12:52:41+00:00"},{"title":"Wealth Enhancement Trust Services Inc. Buys New Shares in JPMorgan Chase & Co. $JPM - MarketBeat","source":"MarketBeat","date":"2026-04-28T12:47:05+00:00"}]}},"peers":{"BAC":{"sentiment":"low_signal","items":["Mostly holder-flow headlines from MarketBeat; no major fundamental catalyst."]},"WFC":{"sentiment":"no_data_found","items":[]},"C":{"sentiment":"no_data_found","items":[]},"GS":{"sentiment":"low_signal","items":["Structured-note / financing headline and holder-flow articles; limited direct fundamental signal."]},"MS":{"sentiment":"no_data_found","items":[]}}},"analyst_estimates":{"JPM":{"quarterly_eps_estimates":[{"fiscal_period":"2026-06-30","eps":5.34},{"fiscal_period":"2026-09-30","eps":5.39},{"fiscal_period":"2026-12-31","eps":5.36},{"fiscal_period":"2027-03-31","eps":5.61}]},"peers":{"BAC":[1.08,1.12,1.11,1.15],"WFC":[1.75,1.85,1.83,1.73],"C":[2.52,2.62,2.45,3.1],"GS":[13.51,13.51,13.54,16.8],"MS":[2.66,2.8,2.75,2.99] }},"risk_flags":[{"category":"macro_and_rates","severity":"medium","note":"Inflation, interest-rate volatility, credit spreads, and market conditions can affect NII, deposit behavior, trading results, and liquidity."},{"category":"credit","severity":"medium","note":"Adverse client/counterparty conditions, collateral declines, CRE stress, and consumer credit deterioration can raise ACL and charge-offs."},{"category":"regulatory_and_capital","severity":"medium","note":"Extensive supervision, capital requirements, stress capital buffer changes, and resolution-plan expectations can limit capital return or force balance-sheet changes."},{"category":"liquidity_and_funding","severity":"medium","note":"Deposit outflows, higher funding costs, rating downgrades, or market stress could impair liquidity and profit."},{"category":"legal_and_litigation","severity":"medium","note":"JPM remains exposed to investigations, enforcement actions, and litigation; resolutions can carry penalties and reputational damage."},{"category":"operational_cyber_ai","severity":"medium","note":"Cyber attacks, third-party failures, data issues, and AI-related model/control risks remain major operational threats."},{"category":"reputation_and_competition","severity":"low_to_medium","note":"The franchise benefits from scale, but competition from fintechs and peer banks can pressure pricing and market share."}],"full_research":{"company_overview":{"name":"JPMorgan Chase & Co.","ticker":"JPM","cik":"0000019617","sector":"Financials","industry":"Banks","exchange":"NYSE"},"jpm_key_points":["FY2025 revenue and net income were the largest in the peer set.","ROE is the strongest or effectively tied for strongest in the group.","Valuation is premium to BAC/WFC/C but still below MS on price-to-book.","Current macro news is centered on inflation and rates rather than company-specific deterioration."],"peer_rankings":{"roe_rank":["JPM","MS","GS","WFC","BAC","C"],"price_to_book_rank_low_to_high":["C","BAC","WFC","GS","JPM","MS"],"price_to_earnings_rank_low_to_high":["WFC","BAC","JPM","C","GS","MS"],"1m_price_momentum_rank_high_to_low":["MS","C","GS","BAC","JPM","WFC"]},"capital_notes":{"jpm_cet1_percent":14.8,"peer_cet1_status":"Not directly extracted in this pass","note":"JPM capital remains solid; peer CET1 could be added later if needed."},"source_notes":{"jpm_10k_accession":"0001628280-26-008131","jpm_10k_item_1a_and_7":true,"historical_price_end_date_used":"2026-04-28","current_price_snapshot_time":"2026-04-28T19:59:57Z"}}}
+    "timestamp": "Thu Apr 30, 2026 12:00 PM PDT",
+    "label": "noon sweep",
+    "task": "Big Bank Research Report",
+    "report_title": "Big Bank Research Report — Noon Sweep",
+    "report": "## Big Bank Research Report — Noon Sweep\n\n### 1) Working identity match\n**Best public-company match for “Big Bank” in this workflow:** **JPMorgan Chase & Co.**  \n- **Ticker:** `JPM`  \n- **CIK:** `0000019617`  \n- **Exchange:** NYSE  \n- **Sector / Industry:** Financials / Banks  \n- **Confidence:** High, but not absolute — there was no explicit Orion alias map in the provided context, so this is the best evidence-based match.\n\n**Why this match fits:** JPMorgan Chase is the archetypal U.S. “big bank” and the largest U.S. bank by assets in common market usage.\n\n---\n### 2) Company facts\nSource: `get_company_facts(JPM)`  \n- **Legal name:** JPMorgan Chase & Co.  \n- **Location:** New York; U.S.A.  \n- **SIC:** `6021` — National Commercial Banks  \n- **Website:** https://www.jpmorganchase.com  \n- **SEC filings URL:** https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000019617\n\nFrom the latest 10-K (`accession_number=0001628280-26-008131`, filing date `2026-02-13`):\n- **Employees:** 318,512 globally\n- **Operating segments:** CCB, CIB, AWM, plus Corporate\n- **Core business summary:** consumer banking, commercial & investment banking, transaction processing, asset & wealth management\n\n---\n### 3) Latest financial statements\n#### Income statement\nSource: `get_income_statements(JPM, period=ttm)` and quarterly pulls\n\n**FY2025 / TTM**\n- **Report period:** `2025-12-31`\n- **Accession:** `0001628280-26-008131`\n- **Revenue:** `$182.447B`\n- **Gross profit:** `$168.235B`\n- **Operating income:** `$36.029B`\n- **Net income:** `$57.048B`\n- **Diluted EPS:** `$20.02`\n- **Dividends per common share:** `$5.80`\n\n**Latest quarter shown**\n- **2025-Q3 (`report_period=2025-09-30`)**\n  - Revenue: `$46.427B`\n  - Net income: `$14.393B`\n  - EPS: `$5.08`\n- **2025-Q2 (`report_period=2025-06-30`)**\n  - Revenue: `$44.912B`\n  - Net income: `$14.987B`\n  - EPS: `$5.25`\n\n**Trend:**  \nQ3 revenue was up about **3.4% QoQ**, while net income and EPS were slightly lower versus Q2.\n\n#### Balance sheet\nSource: `get_balance_sheets(JPM, period=ttm)` and quarterly pulls\n\n**FY2025 / TTM**\n- **Total assets:** `$4.4249T`\n- **Total liabilities:** `$4.0625T`\n- **Shareholders’ equity:** `$362.438B`\n- **Cash and equivalents:** `$343.338B`\n- **Total debt:** `$64.776B`\n- **Outstanding shares:** `2.697B`\n\n**Latest quarter shown**\n- **2025-Q3**\n  - Total assets: `$4.5602T`\n  - Total liabilities: `$4.2000T`\n  - Shareholders’ equity: `$360.212B`\n  - Cash and equivalents: `$303.436B`\n  - Total debt: `$69.355B`\n\n**Trend:**  \nAssets and equity remained very large and broadly stable; debt rose modestly from Q2 to Q3.\n\n#### Cash flow\nSource: `get_cash_flow_statements(JPM, period=ttm)` and quarterly pulls\n\nFor a bank, cash flow statements are heavily affected by balance-sheet funding/investment movements, so interpret cautiously.\n\n**FY2025 / TTM**\n- Net cash flow from operations: `-$147.782B`\n- Net cash flow from investing: `-$265.565B`\n- Net cash flow from financing: `+$269.533B`\n- Change in cash and equivalents: `-$125.979B`\n\n---\n### 4) Latest valuation and operating metrics\nSource: `get_financial_metrics_snapshot(JPM)`\n\n- **Market cap:** `$846.76B`\n- **Enterprise value:** `$568.20B`\n- **P/E:** `15.31x`\n- **P/B:** `2.34x`\n- **P/S:** `4.64x`\n- **EV/EBITDA:** `7.10x`\n- **ROE:** `15.74%`\n- **ROA:** `1.29%`\n- **Net margin:** `31.27%`\n- **Debt / equity:** `0.179`\n- **Debt / assets:** `0.0146`\n- **Current ratio:** `4.27`\n- **Interest coverage:** `1.74`\n- **Revenue growth:** `1.75%`\n- **Earnings growth:** `0.22%`\n- **Payout ratio:** `29.1%`\n- **Book value per share:** `$130.30`\n- **EPS:** `$20.51` (snapshot metric)\n- **ROIC:** `160.6%` reported by snapshot tool; for banks, ROIC can be less intuitive than ROE/ROA and should be used carefully\n\n**Interpretation:**  \nJPM looks like a large, profitable, moderately valued megabank with solid ROE and a premium-ish book multiple versus smaller banks.\n\n---\n### 5) Current and recent stock performance\nSource: `get_current_stock_price(JPM)` and `get_historical_stock_prices(JPM, interval=month, start=2025-04-30, end=2026-04-30)`\n\n**Current snapshot**\n- **Price:** `$313.80`\n- **Day change:** `+$4.55` (`+1.47%`)\n- **Snapshot time:** `2026-04-30T19:02:36Z`\n\n**Recent performance**\n- **Month-end close 2025-04-30:** `$244.62`\n- **Month-end close 2026-04-30:** `$309.25`\n- **Approx. 12-month return:** `+26.4%` using month-end closes\n- **Using current snapshot vs prior-year close:** `+28.3%`\n\n**Selected monthly closes**\n- 2025-06-30: `$289.91`\n- 2025-09-30: `$315.43`\n- 2025-12-31: `$322.22`\n- 2026-03-31: `$294.16`\n- 2026-04-30: `$309.25`\n\n**Range observed in the last year**\n- Low monthly intraday low: `$238.43` on `2025-04-30`\n- High monthly intraday high: `$337.25` on `2026-01-31`\n\n**Takeaway:**  \nThe stock has had a strong 12-month run, but with some pullback from January highs.\n\n---\n### 6) Earnings and expectations\nSource: `get_earnings(JPM)` and `get_analyst_estimates(JPM)`\n\n#### Last reported earnings\n- **Source filing:** `10-K`\n- **Filing date:** `2026-02-13`\n- **Fiscal period:** `FY2025`\n- **Revenue:** `$182.447B`\n- **EPS (diluted):** `$20.02`\n- **Net income:** `$57.048B`\n- **Net margin:** `31.27%`\n- **Assets:** `$4.4249T`\n- **Equity:** `$362.438B`\n\n#### Analyst estimates — quarterly\n- **2026-06-30:** Revenue `$47.39B`, EPS `$5.34`\n- **2026-09-30:** Revenue `$48.03B`, EPS `$5.39`\n- **2026-12-31:** Revenue `$48.36B`, EPS `$5.36`\n- **2027-03-31:** Revenue `$49.32B`, EPS `$5.61`\n\n#### Analyst estimates — annual\n- **2026-12-31:** Revenue `$192.90B`, EPS `$21.75`\n- **2027-12-31:** Revenue `$200.83B`, EPS `$23.29`\n- **2028-12-31:** Revenue `$211.01B`, EPS `$26.19`\n\n**Earnings view:**  \nConsensus implies continued modest growth from the FY2025 base.\n\n---\n### 7) Insider trading activity\nSource: `get_insider_trades(JPM)`\n\nMost recent insider filings are **net open-market selling** by senior executives on **2026-04-15**:\n\n- **James Dimon** — Chairman & CEO  \n  - `130,488` shares sold at `$306.557`  \n  - Value: `$40.0M`\n- **Maryanne Lake** — CEO CCB  \n  - `6,427` shares sold at `$306.567`  \n  - Value: `$1.97M`\n- **Jeremy Barnum** — CFO  \n  - `5,611` shares sold at `$306.552`  \n  - Value: `$1.72M`\n- **Ashley Bacon** — Chief Risk Officer  \n  - `7,558` shares sold at `$306.554`  \n  - Value: `$2.32M`\n- **Jennifer Piepszak** — COO  \n  - `9,136` shares sold at `$306.558`  \n  - Value: `$2.80M`\n- **Mary E. Erdoes** — CEO, Asset & Wealth Management  \n  - `12,345` shares sold at `$306.566`  \n  - Value: `$3.78M`\n\n**Aggregate of listed open-market sales:** about `180,391` shares and roughly `$55.3M`.\n\n---\n### 8) Institutional ownership highlights\nThe institutional ownership dataset limitation prevented clean JPM holder aggregation in this run.\nRecent ownership-related news highlights came from `get_company_news(JPM)`:\n- **2026-04-29 — MarketBeat**: Zurcher Kantonalbank Zurich Cantonalbank $665.01M stock holdings in JPM — sentiment mildly positive\n- **2026-04-30 — MarketBeat**: 55 North Private Wealth LLC new investment in JPM — sentiment mildly positive\n- **2026-04-29 — MarketBeat**: JPM Holdings lowered by Exane Asset Management — sentiment mildly negative/mixed\n\n---\n### 9) Most relevant recent company news\nSource: `get_company_news(JPM, limit=10)`\n\nRecent items:\n1. **2026-04-30 — Stock Titan**: JPMorgan Chase offers $2.0M callable fixed-rate notes at 5.15% (neutral)\n2. **2026-04-30 — Stock Titan**: [424B2] Prospectus Supplement (neutral)\n3. **2026-04-30 — Stock Titan**: offers 4.60% callable notes maturing May 15, 2031 (neutral)\n4. **2026-04-30 — Stock Titan**: offers $5.9M 5.10% callable notes due 2036 (neutral)\n5. **2026-04-29 — Stock Titan**: €3.35M backs training/apprenticeships for young energy jobseekers (positive)\n6. **2026-04-29 / 2026-04-30 — MarketBeat**: ownership change articles around Zurcher Kantonalbank, 55 North Private Wealth, and Exane Asset Management (mixed/mildly positive)\n\n---\n### 10) Recent SEC filings and notable items\nLatest meaningful annual filing:\n- **Form:** 10-K\n- **Accession:** 0001628280-26-008131\n- **Filing date:** 2026-02-13\n- **Report period:** 2025-12-31\n- **URL:** https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm\n\nRecent 8-K highlights (mostly exhibit/governance/financing):\n- **Accession:** 0000019617-26-000119 (2026-04-24) — By-laws amended effective Apr 21, 2026\n- **Accession:** 0001193125-26-173739 (2026-04-23) — opinion/consent for notes offering\n\n---\n### 11) Bottom-line assessment\nIf “Big Bank” = JPMorgan Chase & Co., then the current read is:\n- Fundamentals: strong, still growing, highly profitable\n- Valuation: not cheap, but reasonable for a quality megabank\n- Stock trend: up strongly over the last year\n- Earnings outlook: analysts expect steady EPS/revenue growth\n- Insiders: recent net selling by senior executives\n- Institutional flow: mixed, but substantial ownership interest\n- News: mostly neutral financing activity with some positive institutional/CSR items\n- Risk posture: regulation/capital/liquidity/cyber/AI/macro sensitivity\n\n---\n### 12) Repository-ready identifiers\n- **Company:** JPMorgan Chase & Co.\n- **Ticker:** JPM\n- **CIK:** 0000019617\n- **Latest annual filing accession:** 0001628280-26-008131\n- **Latest annual filing date:** 2026-02-13\n- **Latest annual report period:** 2025-12-31\n- **Latest current price snapshot time:** 2026-04-30T19:02:36Z\n- **Latest stock price:** $313.80\n- **Latest market cap snapshot:** $846.76B"
   }
-,
-  {
-    "timestamp": "2026-04-30T15:08:34Z",
-    "task": "Big Bank triple-sweep research task",
-    "sweep_type": "morning sweep",
-    "results": {"timestamp_utc":"2026-04-30T15:08:34Z","target":{"ticker":"JPM","company_name":"JPMorgan Chase & Co.","current_price":312.85,"day_change":3.6,"day_change_pct":1.16,"price_snapshot_time_utc":"2026-04-30T15:08:32Z","market_cap":845249946325,"valuation":{"price_to_earnings_ratio":15.28,"price_to_book_ratio":2.33,"enterprise_value_to_ebitda_ratio":7.08,"enterprise_value_to_revenue_ratio":3.11,"price_to_sales_ratio":4.63},"profitability_and_growth":{"return_on_equity_pct":15.74,"return_on_assets_pct":1.29,"net_margin_pct":31.27,"revenue_growth_pct":1.75,"earnings_growth_pct":0.22,"earnings_per_share":20.51,"book_value_per_share":130.3},"balance_sheet_highlights_latest_available":{"report_period":"2025-09-30","period":"quarterly","currency":"USD","total_assets":4560205000000,"shareholders_equity":360212000000,"total_debt":69355000000,"cash_and_equivalents":303436000000},"income_statement_highlights_latest_available":{"report_period":"2025-09-30","period":"quarterly","currency":"USD","revenue":46427000000,"operating_income":8701000000,"net_income":14393000000,"earnings_per_share":5.08,"earnings_per_share_diluted":5.07,"dividends_per_common_share":1.5},"historical_performance_pct":{"1w":-0.05,"1m":6.35,"3m":2.28,"6m":1.1,"ytd_2026":-3.87,"1y":27.9},"news":[{"date":"2026-04-30T10:32:18+00:00","source":"Stock Titan","title":"JPMorgan Chase (JPM) offers 4.60% callable notes maturing May 15, 2031","sentiment":"neutral","url":"https://www.stocktitan.net/sec-filings/JPM/424b2-jpmorgan-chase-co-prospectus-supplement-09c5e461fda3.html"},{"date":"2026-04-30T10:08:07+00:00","source":"Stock Titan","title":"JPMorgan Chase (NYSE: JPM) offers $5.9M 5.10% callable notes due 2036","sentiment":"neutral","url":"https://www.stocktitan.net/sec-filings/JPM/424b2-jpmorgan-chase-co-prospectus-supplement-536d71d1ccf7.html"},{"date":"2026-04-30T07:24:39+00:00","source":"MarketBeat","title":"55 North Private Wealth LLC Makes New Investment in JPMorgan Chase & Co. $JPM","sentiment":"slightly_positive","url":"https://www.marketbeat.com/instant-alerts/filing-55-north-private-wealth-llc-makes-new-investment-in-jpmorgan-chase-co-jpm-2026-04-30/"},{"date":"2026-04-29T12:39:48+00:00","source":"MarketBeat","title":"Zurcher Kantonalbank Zurich Cantonalbank Has $665.01 Million Stock Holdings in JPMorgan Chase & Co. $JPM","sentiment":"neutral","url":"https://www.marketbeat.com/instant-alerts/filing-zurcher-kantonalbank-zurich-cantonalbank-has-66501-million-stock-holdings-in-jpmorgan-chase-co-jpm-2026-04-29/"},{"date":"2026-04-28T17:26:11+00:00","source":"Reuters","title":"JPMorgan CEO says not worried about inflation, risks remain of higher prices","sentiment":"mixed","url":"https://www.reuters.com/business/finance/jpmorgan-ceo-says-not-worried-about-inflation-risks-remain-higher-prices-2026-04-28/"}]},"peers":[{"ticker":"BAC","company_name":"Bank of America Corporation","current_price":53.35,"day_change_pct":0.89,"price_snapshot_time_utc":"2026-04-30T15:08:32Z","market_cap":382804226948,"valuation":{"price_to_earnings_ratio":13.43,"price_to_book_ratio":1.26,"enterprise_value_to_ebitda_ratio":13.43,"enterprise_value_to_revenue_ratio":4.75,"price_to_sales_ratio":3.38},"profitability_and_growth":{"return_on_equity_pct":10.06,"return_on_assets_pct":0.89,"net_margin_pct":26.98,"revenue_growth_pct":5.44,"earnings_growth_pct":2.12,"earnings_per_share":3.97,"book_value_per_share":39.48},"news_available":true,"news":[{"date":"2026-04-29T12:50:14+00:00","source":"MarketBeat","title":"GC Wealth Management RIA LLC Cuts Holdings in Bank of America Corporation $BAC","sentiment":"neutral","url":"https://www.marketbeat.com/instant-alerts/filing-gc-wealth-management-ria-llc-cuts-holdings-in-bank-of-america-corporation-bac-2026-04-29/"},{"date":"2026-04-29T12:43:42+00:00","source":"MarketBeat","title":"Rachor Investment Advisory Services LLC Takes Position in Bank of America Corporation $BAC","sentiment":"neutral","url":"https://www.marketbeat.com/instant-alerts/filing-rachor-investment-advisory-services-llc-takes-position-in-bank-of-america-corporation-bac-2026-04-29/"},{"date":"2026-04-29T12:07:20+00:00","source":"MarketBeat","title":"Joel Isaacson & Co. LLC Sells 24,989 Shares of Bank of America Corporation $BAC","sentiment":"neutral","url":"https://www.marketbeat.com/instant-alerts/filing-joel-isaacson-co-llc-sells-24989-shares-of-bank-of-america-corporation-bac-2026-04-29/"}]},{"ticker":"WFC","company_name":"Wells Fargo & Company","current_price":81.94,"day_change_pct":0.53,"price_snapshot_time_utc":"2026-04-30T15:08:33Z","market_cap":251180353668,"valuation":{"price_to_earnings_ratio":12.05,"price_to_book_ratio":1.41,"enterprise_value_to_ebitda_ratio":8.9,"enterprise_value_to_revenue_ratio":3.49,"price_to_sales_ratio":3.0},"profitability_and_growth":{"return_on_equity_pct":11.9,"return_on_assets_pct":0.96,"net_margin_pct":25.32,"revenue_growth_pct":0.18,"earnings_growth_pct":-0.51,"earnings_per_share":6.81,"book_value_per_share":57.22},"news_available":false,"news":[]},{"ticker":"C","company_name":"Citigroup Inc.","current_price":128.51,"day_change_pct":0.71,"price_snapshot_time_utc":"2026-04-30T15:08:15Z","market_cap":224787492656,"valuation":{"price_to_earnings_ratio":16.82,"price_to_book_ratio":1.06,"enterprise_value_to_ebitda_ratio":10.1,"enterprise_value_to_revenue_ratio":2.85,"price_to_sales_ratio":2.64},"profitability_and_growth":{"return_on_equity_pct":6.74,"return_on_assets_pct":0.54,"net_margin_pct":16.79,"revenue_growth_pct":-0.52,"earnings_growth_pct":-5.09,"earnings_per_share":7.64,"book_value_per_share":113.34},"news_available":false,"news":[]},{"ticker":"GS","company_name":"The Goldman Sachs Group, Inc.","current_price":920.05,"day_change_pct":1.6,"price_snapshot_time_utc":"2026-04-30T15:08:18Z","market_cap":272968175302,"valuation":{"price_to_earnings_ratio":17.01,"price_to_book_ratio":2.18,"enterprise_value_to_ebitda_ratio":27.41,"enterprise_value_to_revenue_ratio":11.3,"price_to_sales_ratio":4.68},"profitability_and_growth":{"return_on_equity_pct":13.74,"return_on_assets_pct":0.95,"net_margin_pct":29.47,"revenue_growth_pct":1.31,"earnings_growth_pct":10.46,"earnings_per_share":54.08,"book_value_per_share":393.49},"news_available":true,"news":[{"date":"2026-04-29T13:28:08+00:00","source":"MarketBeat","title":"Vest Financial LLC Acquires 1,646 Shares of The Goldman Sachs Group, Inc. $GS","sentiment":"neutral","url":"https://www.marketbeat.com/instant-alerts/filing-vest-financial-llc-acquires-1646-shares-of-the-goldman-sachs-group-inc-gs-2026-04-29/"},{"date":"2026-04-29T13:00:02+00:00","source":"Yahoo Finance","title":"The Goldman Sachs Group, Inc. (GS) is Attracting Investor Attention: Here is What You Should Know","sentiment":"slightly_positive","url":"https://finance.yahoo.com/markets/stocks/articles/goldman-sachs-group-inc-gs-130002803.html"},{"date":"2026-04-29T12:29:36+00:00","source":"MarketBeat","title":"GC Wealth Management RIA LLC Lowers Position in The Goldman Sachs Group, Inc. $GS","sentiment":"neutral","url":"https://www.marketbeat.com/instant-alerts/filing-gc-wealth-management-ria-llc-lowers-position-in-the-goldman-sachs-group-inc-gs-2026-04-29/"}]},{"ticker":"MS","company_name":"Morgan Stanley","current_price":188.92,"day_change_pct":0.98,"price_snapshot_time_utc":"2026-04-30T15:08:34Z","market_cap":299819764097,"valuation":{"price_to_earnings_ratio":17.83,"price_to_book_ratio":2.69,"enterprise_value_to_ebitda_ratio":23.0,"enterprise_value_to_revenue_ratio":8.61,"price_to_sales_ratio":4.24},"profitability_and_growth":{"return_on_equity_pct":15.1,"return_on_assets_pct":1.19,"net_margin_pct":23.87,"revenue_growth_pct":3.68,"earnings_growth_pct":7.72,"earnings_per_share":10.59,"book_value_per_share":70.12},"news_available":false,"news":[]}],"banking_context":{"interest_rates_snapshot":[{"bank":"FED","name":"Federal Reserve","rate":3.625,"date":"2026-03-01"},{"bank":"ECB","name":"European Central Bank","rate":2.0,"date":"2026-03-01"},{"bank":"BOJ","name":"Bank of Japan","rate":0.75,"date":"2026-03-01"},{"bank":"BOE","name":"Bank of England","rate":3.75,"date":"2026-03-01"},{"bank":"BOC","name":"Bank of Canada","rate":2.25,"date":"2026-03-01"},{"bank":"RBA","name":"Reserve Bank of Australia","rate":4.1,"date":"2026-03-01"},{"bank":"PBOC","name":"People's Bank of China","rate":3.0,"date":"2026-03-01"},{"bank":"SNB","name":"Swiss National Bank","rate":0.0,"date":"2026-03-01"},{"bank":"RBI","name":"Reserve Bank of India","rate":5.25,"date":"2026-03-01"},{"bank":"BOK","name":"Bank of Korea","rate":2.5,"date":"2026-03-01"}],"macro_takeaway":"Rates remain supportive for bank net interest income, but the backdrop looks later-cycle rather than fresh-tightening. For money-center banks, the key swing factors are deposit competition, credit normalization, and fee/markets activity rather than pure rate expansion."},"summary":["JPM screens as the strongest quality franchise in this peer set: highest ROE at 15.7% and a still-reasonable 15.3x earnings / 2.33x book, versus cheaper-but-lower-return BAC/WFC/C and richer GS/MS on P/B.","Latest available quarter (2025-Q3) showed $46.4B revenue, $14.4B net income, $5.08 EPS, $4.56T assets, and $360.2B equity; the balance sheet remains very large and well-capitalized in absolute terms.","Price action is constructive: JPM is up 27.9% YoY, up 6.35% over the last month, and only modestly down YTD, suggesting the stock has mostly digested earlier gains rather than breaking down.","News flow is mostly neutral/technical (bond issuance, institutional filings). The Reuters CEO comment is the only substantive macro read-through and points to manageable inflation concern rather than acute stress.","For bank comparison, use P/B and ROE first; EV/EBITDA is less informative across banks. JPM currently looks like a premium-quality core name rather than the cheapest multiple in the group."]}
-  }
-,
-{
-  "timestamp": "2026-04-29T08:00:00-07:00",
-  "task": "Big Bank triple-sweep research task",
-  "sweep_type": "morning sweep",
-  "results": {
-    "target": {
-      "ticker": "JPM",
-      "price": 311.45,
-      "change_pct": -0.06,
-      "sentiment": "Provided snapshot",
-      "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-    },
-    "peers": [
-      {
-        "ticker": "BAC",
-        "price": 52.66,
-        "change_pct": 0.06,
-        "sentiment": "Provided snapshot",
-        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-      },
-      {
-        "ticker": "WFC",
-        "price": 81.5,
-        "change_pct": 1.17,
-        "sentiment": "Provided snapshot",
-        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-      },
-      {
-        "ticker": "C",
-        "price": 128.53,
-        "change_pct": -0.47,
-        "sentiment": "Provided snapshot",
-        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-      },
-      {
-        "ticker": "GS",
-        "price": 926.55,
-        "change_pct": -1.2,
-        "sentiment": "Provided snapshot",
-        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-      },
-      {
-        "ticker": "MS",
-        "price": 190.36,
-        "change_pct": 0.09,
-        "sentiment": "Provided snapshot",
-        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-      }
-    ]
-  }
-},
-{
-  "timestamp": "2026-04-29T12:00:00-07:00",
-  "task": "Big Bank triple-sweep research task",
-  "sweep_type": "noon sweep",
-  "results": {
-    "target": {
-      "ticker": "JPM",
-      "price": 309.25,
-      "change_pct": -0.71,
-      "sentiment": "Provided snapshot",
-      "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-    },
-    "peers": [
-      {
-        "ticker": "BAC",
-        "price": 52.88,
-        "change_pct": 0.42,
-        "sentiment": "Provided snapshot",
-        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-      },
-      {
-        "ticker": "WFC",
-        "price": 81.51,
-        "change_pct": 0.01,
-        "sentiment": "Provided snapshot",
-        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-      },
-      {
-        "ticker": "C",
-        "price": 127.61,
-        "change_pct": -0.72,
-        "sentiment": "Provided snapshot",
-        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-      },
-      {
-        "ticker": "GS",
-        "price": 905.6,
-        "change_pct": -2.26,
-        "sentiment": "Provided snapshot",
-        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-      },
-      {
-        "ticker": "MS",
-        "price": 187.08,
-        "change_pct": -1.72,
-        "sentiment": "Provided snapshot",
-        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-      }
-    ]
-  }
-},
-{
-  "timestamp": "2026-04-29T20:00:00-07:00",
-  "task": "Big Bank triple-sweep research task",
-  "sweep_type": "night sweep",
-  "results": {
-    "target": {
-      "ticker": "JPM",
-      "price": 308.96,
-      "change_pct": -0.8,
-      "sentiment": "Provided snapshot",
-      "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-    },
-    "peers": [
-      {
-        "ticker": "BAC",
-        "price": 52.9,
-        "change_pct": 0.46,
-        "sentiment": "Provided snapshot",
-        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-      },
-      {
-        "ticker": "WFC",
-        "price": 81.52,
-        "change_pct": 0.02,
-        "sentiment": "Provided snapshot",
-        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-      },
-      {
-        "ticker": "C",
-        "price": 127.59,
-        "change_pct": -0.73,
-        "sentiment": "Provided snapshot",
-        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-      },
-      {
-        "ticker": "GS",
-        "price": 905.7,
-        "change_pct": -2.25,
-        "sentiment": "Provided snapshot",
-        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-      },
-      {
-        "ticker": "MS",
-        "price": 187.06,
-        "change_pct": -1.73,
-        "sentiment": "Provided snapshot",
-        "findings": "Ticker snapshot provided by agent; qualitative assessment not included in this update."
-      }
-    ]
-  }
-}
 ]
