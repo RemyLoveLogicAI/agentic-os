@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": "2026-04-30T08:27:00-07:00",
+    "source": "/Users/lovelogic/Downloads",
+    "target": "external SSD",
+    "destination": null,
+    "status": "pending",
+    "notes": "Initial entry for Mac Mini -> external SSD migration ledger"
+  },
+  {
+    "timestamp": "2026-04-30T08:27:00-07:00",
+    "source": "/Users/lovelogic/Desktop/DavidAU",
+    "target": "external SSD",
+    "destination": null,
+    "status": "pending",
+    "notes": "Initial entry for Mac Mini -> external SSD migration ledger"
+  },
+  {
+    "timestamp": "2026-04-30T08:27:00-07:00",
+    "source": "/Users/lovelogic/Desktop/Projects",
+    "target": "external SSD",
+    "destination": null,
+    "status": "pending",
+    "notes": "Initial entry for Mac Mini -> external SSD migration ledger"
+  }
+]
