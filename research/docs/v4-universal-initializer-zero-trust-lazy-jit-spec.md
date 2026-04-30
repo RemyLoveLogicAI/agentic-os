@@ -133,7 +133,7 @@ export interface ReceiptLedgerEntry {
 
 export interface ReceiptLedgerState {
   schemaVersion: "v4.receiptLedgerState.v1";
-
+  
   ledgerId: string; // sha256 of ledger configuration preimage
 
   // Optional digest of entire ledger state for checkpoints.

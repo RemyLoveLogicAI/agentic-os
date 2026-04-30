@@ -65,7 +65,7 @@ type ValidationArtifact struct {
 type Signature struct {
   Alg string `json:"alg"` // e.g. "ed25519" or "rsa-pss"
   KeyID string `json:"keyId"`
-  SignatureBytes string `json:"signatureBytes"` // base64url over canonicalJSON(SignatureBytesPreimage: ValidationArtifact with artifactId and signature removed)
+  SignatureBytes string `json:"signatureBytes"` // base64url over canonicalJSON(SignatureBytesPreimage: ValidationArtifact with artifactId removed and signature removed)
 }
 
 type PipelineError struct {
