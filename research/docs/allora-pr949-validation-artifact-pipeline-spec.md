@@ -10,12 +10,9 @@ All implementation notes below assume TUI/CLI-only execution (e.g., go test/go r
 
 ## 1) ValidationArtifact struct (Go)
 
-All structures MUST be serializable to canonical JSON bytes (UTF-8, stable key ordering) before hashing/signing.
+All structures that participate in hashing/signing MUST be serializable to canonical JSON bytes (UTF-8, stable key ordering) before hashing/signing.
 
-Canonical JSON rule (for any hash/sign):
-- Use deterministic key ordering.
-- No insignificant whitespace.
-- Ensure numbers are encoded consistently.
+canonicalJSON is defined authoritatively in research/docs/canonical-json-spec.md and MUST be the same across Go and TypeScript implementations.
 
 ### ValidationArtifact
 
@@ -25,13 +22,13 @@ Go type (reference):
 // ValidationArtifact is the persisted, verifiable record of a spec validation run.
 // It is designed to carry both "direct" validation results and metamorphic evidence.
 //
-// Serialized form MUST be canonical JSON for artifactId computation.
+// Serialized form MUST use canonicalJSON for artifactId computation.
 //
 // NOTE: Field names are part of the public schema.
 type ValidationArtifact struct {
   SchemaVersion string `json:"schemaVersion"` // e.g. "allora.validationArtifact.v1"
 
-  ArtifactID string `json:"artifactId"` // hash(canonicalJSON(ValidationArtifactWithoutArtifactID))
+  ArtifactID string `json:"artifactId"` // sha256(canonicalJSON(ValidationArtifactWithoutArtifactID))
 
   SpecID string `json:"specId"` // stable identifier for the validated Spec
   SpecDigest string `json:"specDigest"` // sha256(canonicalJSON(spec))
@@ -101,7 +98,7 @@ type InvariantEvidence struct {
 
 ArtifactID MUST be computed as:
 - artifactId = sha256( canonicalJSON(ValidationArtifact with artifactId removed) )
-- Represent as lowercase hex.
+- represented as lowercase hex.
 
 ---
 

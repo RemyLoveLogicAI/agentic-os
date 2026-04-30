@@ -8,6 +8,17 @@ All implementation notes below assume TUI/CLI-only execution (e.g., node/tsc/cmd
 
 ---
 
+## 0) Canonical JSON and digest rules (authoritative)
+
+Any digest defined in this document MUST be computed using canonicalJSON as specified in:
+- research/docs/canonical-json-spec.md
+
+Digest representation MUST be lowercase hex.
+
+If a definition states to exclude a field (e.g., “exclude contentDigest from the hash input”), then that field MUST be removed before applying canonicalJSON.
+
+---
+
 ## 1) ReceiptKey hashing
 
 ReceiptKey is a deterministic identifier for a receipt that binds:
@@ -53,14 +64,8 @@ export interface ReceiptKeyPreimage {
 ReceiptKey = sha256( canonicalJSON(ReceiptKeyPreimage) )
 
 Rules:
-- canonicalJSON MUST use stable key ordering and no insignificant whitespace.
 - capabilityIds MUST be normalized (unique, sorted lexicographically) before hashing.
 - Represent output as lowercase hex.
-
-### Normalization helpers (TUI/CLI reference)
-
-When implementing hashing in code, ensure canonicalization is performed in code paths only (no GUI), and provide CLI test vectors:
-- node ./scripts/receiptKeyTestVectors.ts
 
 ---
 
@@ -82,7 +87,7 @@ export interface Receipt {
   schemaVersion: "v4.receipt.v1";
 
   receiptKey: string; // ReceiptKey hex
-  // What was actually authorized and what happened
+
   authorization: {
     operation: string;
     capabilityIds: string[];
@@ -92,11 +97,13 @@ export interface Receipt {
   // Cost/risk accounting evidence
   risk: {
     riskTokenId?: string;
-    costCharged: number; // numeric cost
-    budgetRemainingAfter: number;
+
+    // Fixed-point cost units (integers).
+    // See RiskToken budget semantics below.
+    costChargedUnits: bigint;
+    budgetRemainingAfterUnits: bigint;
   };
 
-  // Bindings
   inputDigest: string;
 
   // Optional outputs / proof / evidence
@@ -106,26 +113,22 @@ export interface Receipt {
   };
 
   // CAS content reference
-  contentDigest: string; // sha256 hex of canonicalJSON(receipt)
+  // Circularity resolution:
+  // contentDigest MUST be computed without the contentDigest field itself.
+  contentDigest: string; // sha256 hex of canonicalJSON(Receipt WITHOUT contentDigest)
 }
 
-// CAS record stored in the ledger.
 export interface ReceiptLedgerEntry {
   schemaVersion: "v4.receiptLedgerEntry.v1";
 
   receiptKey: string; // primary lookup
 
-  // CAS pointers
   receiptContentDigest: string; // must match receipt.contentDigest
   previousEntryDigest?: string; // hash link for tamper-evidence
 
-  // Ledger versioning
   ledgerIndex: number; // monotonically increasing
 
-  // CAS metadata
   cas: {
-    // The ledger CAS condition key/value.
-    // Implementations MUST verify before committing.
     expectedPreviousReceiptContentDigest?: string;
     expectedLedgerIndex?: number;
   };
@@ -133,17 +136,14 @@ export interface ReceiptLedgerEntry {
 
 export interface ReceiptLedgerState {
   schemaVersion: "v4.receiptLedgerState.v1";
+
   ledgerId: string; // sha256 of ledger configuration preimage
 
-  // Optional digest of entire ledger state for checkpoints.
   checkpointDigest?: string;
 
-  // Index namespace separation.
   receipts: {
-    // key -> latest entry digest
     byReceiptKey: Record<string, string>; // receiptKey -> entryDigest
-    // content digest -> receipt
-    casStore: Record<string, Receipt>; // receipt content-addressed
+    casStore: Record<string, Receipt>; // receipt content-addressed by receipt.contentDigest
   };
 }
 ```
@@ -155,15 +155,16 @@ entryDigest MUST be sha256(canonicalJSON(ReceiptLedgerEntry without any computed
 ### CAS write procedure (conceptual)
 
 To append/write a receipt:
-1) Compute receiptKey and receiptContentDigest.
-2) Create ReceiptLedgerEntry candidate with:
-   - previousEntryDigest = current latest digest (if any)
-   - cas.expectedPreviousReceiptContentDigest = current latest digest (if any)
-   - cas.expectedLedgerIndex = current ledgerIndex (if any)
-3) Atomically verify CAS preconditions.
-4) If CAS passes, commit:
+1) Compute receiptKey.
+2) Compute receipt.contentDigest using canonicalJSON(Receipt with contentDigest removed).
+3) Create ReceiptLedgerEntry candidate:
+   - previousEntryDigest = current latest entryDigest (if any)
+   - cas.expectedPreviousReceiptContentDigest = current latest receipt.contentDigest (if any)
+   - cas.expectedLedgerIndex = current ledgerIndex
+4) Atomically verify CAS preconditions.
+5) If CAS passes, commit:
    - store receipt in casStore keyed by receiptContentDigest
-   - update byReceiptKey receiptKey -> entryDigest
+   - update byReceiptKey[receiptKey] = entryDigest
    - update ledgerIndex and checkpointDigest as defined
 
 Failure modes:
@@ -175,9 +176,21 @@ TUI/CLI-only notes:
 
 ---
 
-## 3) RiskToken budget gating
+## 3) RiskToken budget gating (numeric semantics clarified)
 
 RiskToken enforces budget constraints for zero-trust authorization. It prevents spending beyond allowed budgets and supports lazy JIT.
+
+### Fixed-point cost semantics
+
+All cost and budget fields are integers representing fixed-point “cost units”.
+
+RiskToken defines:
+- costDecimals: number (>= 0)
+
+Interpretation:
+- realCost = costUnits / 10^costDecimals
+
+---
 
 ### RiskToken schema
 
@@ -185,21 +198,22 @@ RiskToken enforces budget constraints for zero-trust authorization. It prevents 
 export interface RiskToken {
   schemaVersion: "v4.riskToken.v1";
 
-  riskTokenId: string; // unique identifier
+  riskTokenId: string;
 
-  // Budget policy
+  // Fixed-point definition for all budget arithmetic in this token.
+  costDecimals: number;
+
   budget: {
-    // Maximum total cost allowed for this token.
-    maxCost: number;
+    // Maximum total cost allowed (fixed-point integer units)
+    maxCostUnits: bigint;
 
     // Optional hard ceiling for specific cost classes.
-    // If omitted, all costs share one bucket.
-    perClassMaxCost?: Record<string, number>;
+    perClassMaxCostUnits?: Record<string, bigint>;
   };
 
-  // Current consumption evidence (monotonic)
+  // Monotonic consumption evidence
   consumption: {
-    consumedCost: number; // must be <= maxCost
+    consumedCostUnits: bigint; // must be <= maxCostUnits
   };
 
   // Replay resistance
@@ -207,16 +221,13 @@ export interface RiskToken {
   issuedAtUnixMilli: number;
   expiresAtUnixMilli?: number;
 
-  // Integrity/provenance
   issuer: {
     id: string;
     keyId?: string;
     signatureBytes?: string; // base64url over canonicalRiskTokenPreimage
   };
 
-  // Optional cost classifier mapping hints
   costClasses?: {
-    // e.g. "jit.compile" -> "compile".
     [operation: string]: string;
   };
 }
@@ -224,22 +235,19 @@ export interface RiskToken {
 
 ### Budget gating algorithm
 
-Provide a pure function gateBudget(token, cost, class?) => {allowed, updatedToken}.
-
-Reference interface:
-
 ```ts
 export interface BudgetGateInput {
   token: RiskToken;
-  costToCharge: number; // non-negative
-  costClass?: string; // if perClassMaxCost used
+  costToChargeUnits: bigint; // MUST be non-negative
+  costClass?: string;
   currentUnixMilli: number;
 }
 
 export interface BudgetGateOutput {
   allowed: boolean;
-  // If allowed, consumption MUST update monotonically.
-  updatedConsumption?: { consumedCost: number };
+  updatedToken?: {
+    consumption: { consumedCostUnits: bigint };
+  };
   reason?: {
     code:
       | "expired"
@@ -256,15 +264,13 @@ export function gateBudget(input: BudgetGateInput): BudgetGateOutput;
 
 Constraints:
 - If expiresAtUnixMilli present and currentUnixMilli > expiresAtUnixMilli => denied.
-- If costToCharge < 0 => denied.
-- If cost exceeds remaining budget => denied.
-- updatedConsumption.consumedCost = token.consumption.consumedCost + costToCharge.
+- If costToChargeUnits < 0 => denied.
+- If per-class policy is used and costClass unknown => denied.
+- If cost exceeds remaining budget (in units) => denied.
+- updatedToken.consumption.consumedCostUnits = token.consumption.consumedCostUnits + costToChargeUnits.
 
 Operational note (TUI/CLI-only):
-- Add CLI tests for boundary conditions:
-  - exactly maxCost
-  - just over maxCost
-  - expired token
+- Add CLI tests for boundary conditions (exactly maxCostUnits, just over, expired token).
 
 ---
 
@@ -278,9 +284,9 @@ CapabilityVector negotiation ensures the initializer only activates capabilities
 export type CapabilityVersion = string;
 
 export interface CapabilityEntry {
-  capabilityId: string; // stable identifier
+  capabilityId: string;
   version: CapabilityVersion;
-  // Flags describe behavior contracts; missing flags default to false.
+
   flags?: {
     lazyJit?: boolean;
     deterministic?: boolean;
@@ -292,38 +298,26 @@ export interface CapabilityEntry {
 
 export interface CapabilityVector {
   schemaVersion: "v4.capabilityVector.v1";
-  // normalized unique capabilityId set
   capabilities: CapabilityEntry[];
 }
 ```
 
 ### Negotiation handshake
 
-Two sides:
-- Client/Initializer-producer: Universal Initializer
-- Server/Runtime-acceptor: capability runtime
-
-Reference interfaces:
-
 ```ts
 export interface CapabilityNegotiationRequest {
   schemaVersion: "v4.capabilityNegotiationRequest.v1";
-  negotiationId: string; // UUID/ULID
+  negotiationId: string;
 
-  // Capabilities offered by the client.
   clientVector: CapabilityVector;
 
-  // Trust and risk binding.
   risk: {
     riskTokenId?: string;
-    // If riskTokenId omitted, runtime may require token fetch.
     riskPolicyDigest?: string;
   };
 
-  // Lazy JIT mode selection.
   lazyJit: {
     enabled: boolean;
-    // Maximum number of JIT compilations allowed for this negotiation scope.
     maxLazyJitOps?: number;
   };
 }
@@ -332,46 +326,30 @@ export interface CapabilityNegotiationResponse {
   schemaVersion: "v4.capabilityNegotiationResponse.v1";
   negotiationId: string;
 
-  // Capabilities that runtime agrees to activate.
   activatedCapabilities: CapabilityEntry[];
 
-  // Capabilities rejected with reasons.
   rejectedCapabilities?: Array<{
     capabilityId: string;
-    reason: string; // stable reason code
+    reason: string;
   }>;
 
-  // Contract about JIT receipts.
   receiptPolicy: {
     receiptDomain: string;
-    // e.g., whether to require ReceiptLedger CAS writes for each op.
     requireReceiptLedgerCAS: boolean;
   };
 }
 ```
 
-### Negotiation algorithm (conceptual)
-
-1) Compute common capability set by capabilityId.
-2) For each common capabilityId:
-   - select the highest mutually compatible version (or declared preferred)
-   - intersect flags (runtime flags constrain client flags)
-3) Apply lazy JIT constraints:
-   - if lazyJit.enabled=false => activated capabilities must not require lazy JIT receipts
-4) Apply risk constraints:
-   - only allow activation that can be covered by budget gate for anticipated costs
-
 TUI/CLI-only notes:
-- Provide deterministic negotiation tests:
-  node ./scripts/capabilityNegotiationVectors.ts
+- Provide deterministic negotiation tests via CLI.
+  e.g., node ./scripts/capabilityNegotiationVectors.ts
 
 ---
 
-## Summary of interfaces to implement
+## Summary of interface fixes in this revision
 
-- ReceiptKey hashing from ReceiptKeyPreimage via canonical JSON + sha256.
-- ReceiptLedgerEntry schema with explicit CAS expectations.
-- RiskToken gating contract gateBudget(token, cost, class?).
-- CapabilityVector negotiation request/response and activated/rejected sets.
+- Receipt.contentDigest computed without the contentDigest field itself.
+- canonicalJSON rules factored into a single authoritative file.
+- Risk/cost/budget numeric semantics clarified as fixed-point integer units.
 
 No GUI paths; all tests and verification MUST be runnable via CLI.
