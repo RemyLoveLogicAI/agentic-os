@@ -22,6 +22,14 @@ Inputs to canonicalJSON are restricted to JSON-compatible values:
 
 All values MUST be representable without custom classes.
 
+Bigint note (for serialization compatibility):
+- If a logical value is a bigint/integer that would not be safely representable as a JSON number (e.g., JS Number precision limits), canonicalJSON MUST encode it as a JSON string containing its base-10 decimal representation.
+- The decimal representation MUST be canonical:
+  - no leading plus sign
+  - no exponent (no "e" notation)
+  - no leading zeros (except the value "0" itself)
+  - a negative value MUST use a leading "-" sign.
+
 ---
 
 ## 2) Canonicalization algorithm (deterministic)
@@ -30,7 +38,8 @@ Implementations MUST follow these rules:
 
 ### 2.1 Objects
 - Serialize as JSON object with:
-  - keys in strictly increasing lexicographic order by UTF-8 bytes of the key string.
+  - keys in strictly increasing lexicographic order according to RFC 8785 (JCS) object key ordering.
+    This is based on Unicode character order (JCS-compatible comparison of key strings), not raw UTF-8 byte order.
   - no extra fields.
 - No re-ordering beyond this key sort.
 
@@ -72,5 +81,6 @@ Repository MUST provide CLI test vectors to confirm Go and TS canonicalJSON are 
 - arrays
 - edge-case numbers used by cost/risk fields
 - strings with escape sequences
+- bigint-as-decimal-string fields
 
 (Implementers should add/extend a test file such as scripts/canonicalJsonTestVectors.ts and/or equivalent Go tests.)
