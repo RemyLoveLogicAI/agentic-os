@@ -47,9 +47,15 @@ Implementations MUST follow these rules:
 - Serialize in the original array order.
 
 ### 2.3 Strings
-- Serialize strings using JSON string escaping with:
-  - backslash (\\), quote (\"), and control characters escaped per JSON rules.
-  - the exact escape sequences must be canonical (i.e., choose one deterministic escaping form).
+- Serialize strings using RFC 8785 / JCS-compatible deterministic JSON string escaping:
+  - Always escape:
+    - the quote (\")
+    - the backslash (\\)
+  - Control characters U+0000 through U+001F MUST be escaped using deterministic JSON escapes:
+    - use the named escapes when applicable (\b, \f, \n, \r, \t)
+    - otherwise use \u00XX with uppercase hex digits
+  - U+2028 and U+2029 MUST be escaped as \u2028 and \u2029 (deterministic line-separator handling).
+  - No additional escaping is performed for other characters (preserve code points unless required by the rules above).
 
 ### 2.4 Numbers
 Numbers MUST be encoded deterministically and consistently:
