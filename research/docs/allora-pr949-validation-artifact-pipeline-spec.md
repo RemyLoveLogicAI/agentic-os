@@ -122,7 +122,7 @@ A Spec is a declarative description of:
 // Spec is an immutable, addressable validation definition.
 //
 // SpecID MUST be computed as:
-- SpecID = sha256( canonicalJSON(specPayloadWithoutSpecID) )
+// SpecID = sha256( canonicalJSON(specPayloadWithoutSpecID) )
 type Spec struct {
   SchemaVersion string `json:"schemaVersion"` // e.g. "allora.spec.v1"
 
