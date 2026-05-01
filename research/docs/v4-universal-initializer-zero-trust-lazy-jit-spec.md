@@ -106,8 +106,14 @@ export interface Receipt {
   };
 
   // CAS content reference
-  contentDigest: string; // sha256 hex of canonicalJSON(receipt)
+  contentDigest: string; // sha256 hex of canonicalJSON(ReceiptContentDigestPreimage) where ReceiptContentDigestPreimage excludes contentDigest
 }
+
+export type ReceiptContentDigestPreimage = Omit<Receipt, "contentDigest">;
+
+// Receipt.contentDigest MUST be computed as:
+//   contentDigest = sha256( canonicalJSON(ReceiptContentDigestPreimage) )
+// where ReceiptContentDigestPreimage is identical to Receipt except that the contentDigest field is excluded (prevents circular preimages).
 
 // CAS record stored in the ledger.
 export interface ReceiptLedgerEntry {
@@ -224,7 +230,7 @@ export interface RiskToken {
 
 ### Budget gating algorithm
 
-Provide a pure function gateBudget(token, cost, class?) => {allowed, updatedToken}.
+Provide a pure function gateBudget(input: BudgetGateInput): BudgetGateOutput.
 
 Reference interface:
 
@@ -261,6 +267,9 @@ Constraints:
 - updatedConsumption.consumedCost = token.consumption.consumedCost + costToCharge.
 
 Operational note (TUI/CLI-only):
+- gateBudget MUST return exactly BudgetGateOutput (no other fields):
+  - if allowed=true => updatedConsumption.consumedCost MUST be present and reason MUST be omitted
+  - if allowed=false => updatedConsumption MUST be omitted and reason MUST be present
 - Add CLI tests for boundary conditions:
   - exactly maxCost
   - just over maxCost
