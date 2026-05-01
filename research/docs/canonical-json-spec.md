@@ -53,10 +53,11 @@ Implementations MUST follow these rules:
 
 ### 2.4 Numbers
 Numbers MUST be encoded deterministically and consistently:
-- Input numeric values MUST be finite.
-- Use the JSON number grammar with a canonical representation.
+- Input numeric values MUST be finite (reject NaN/Infinity).
+- Use the JSON number grammar with an RFC 8785 / JCS canonical representation.
+- Treat -0 as 0.
 - Do not emit trailing zeros in a decimal representation.
-- Do not emit unnecessary exponent formatting.
+- Do not emit unnecessary exponent formatting (and do not use exponent form in the canonical output).
 - Equivalent numeric values must produce identical canonical string encodings.
 
 If you choose an existing implementation (recommended):
