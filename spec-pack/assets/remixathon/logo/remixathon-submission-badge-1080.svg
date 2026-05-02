@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080"><defs><linearGradient id="remix-grad-sub" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#7A29FF"/><stop offset="100%" stop-color="#FF2BD6"/></linearGradient></defs><rect width="1080" height="1080" fill="#0A0F25"/><path d="M 540.00 220.00 A 200.00 200.00 0 0 1 705.81 308.16" fill="none" stroke="#FFFFFF" stroke-width="36.00" stroke-linecap="round"/>
+<path d="M 713.21 320.00 A 200.00 200.00 0 0 1 719.76 507.67" fill="none" stroke="#FFFFFF" stroke-width="36.00" stroke-linecap="round"/>
+<path d="M 713.21 520.00 A 200.00 200.00 0 0 1 553.95 619.51" fill="none" stroke="#FFFFFF" stroke-width="36.00" stroke-linecap="round"/>
+<path d="M 540.00 620.00 A 200.00 200.00 0 0 1 374.19 531.84" fill="none" stroke="#FFFFFF" stroke-width="36.00" stroke-linecap="round"/>
+<path d="M 366.79 520.00 A 200.00 200.00 0 0 1 360.24 332.33" fill="none" stroke="#FFFFFF" stroke-width="36.00" stroke-linecap="round"/>
+<path d="M 366.79 320.00 A 200.00 200.00 0 0 1 526.05 220.49" fill="none" stroke="url(#remix-grad-sub)" stroke-width="36.00" stroke-linecap="round"/>
+<circle cx="709.61" cy="314.02" r="19.80" fill="#FFFFFF"/>
+<circle cx="716.59" cy="513.89" r="19.80" fill="#FFFFFF"/>
+<circle cx="546.98" cy="619.88" r="19.80" fill="#FFFFFF"/>
+<circle cx="370.39" cy="525.98" r="19.80" fill="#FFFFFF"/>
+<circle cx="363.41" cy="326.11" r="19.80" fill="#FFFFFF"/>
+<circle cx="533.02" cy="220.12" r="19.80" fill="#FFFFFF"/>
+<path d="M 499.75 342.00 L 633.91 420.00 L 499.75 498.00 Z" fill="#FFFFFF"/><text x="540.0" y="780" text-anchor="middle" font-family="DejaVu Sans, Inter, Helvetica, Arial, sans-serif" font-size="78" font-weight="800" fill="#FFFFFF" letter-spacing="-2">Anything Remixathon</text><text x="540.0" y="860" text-anchor="middle" font-family="DejaVu Sans, Inter, Helvetica, Arial, sans-serif" font-size="38" font-weight="600" fill="url(#remix-grad-sub)" letter-spacing="6">AGENTIC OS · SUBMISSION</text><text x="540.0" y="940" text-anchor="middle" font-family="DejaVu Sans, Inter, Helvetica, Arial, sans-serif" font-size="28" font-weight="400" fill="#B6B9C7" font-style="italic">speak · route · approve · act · verify · remember</text></svg>
