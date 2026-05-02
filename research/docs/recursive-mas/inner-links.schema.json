@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/RemyLoveLogicAI/agentic-os/research/docs/recursive-mas/inner-links.schema.json",
+  "title": "RecursiveMAS Input (recursive-mas/v0.1)",
+  "description": "Schema for the input mas_spec consumed by RecursiveMAS resolve_inner_links() and unroll(). See research/docs/recursive-mas-spec.md.",
+  "type": "object",
+  "required": ["schema_version", "mas_id", "nodes", "links"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "recursive-mas/v0.1"
+    },
+    "mas_id":  { "$ref": "#/$defs/MasId" },
+    "nodes":   { "type": "array", "items": { "$ref": "#/$defs/Node" } },
+    "links":   { "type": "array", "items": { "$ref": "#/$defs/Link" } },
+    "sub_mas": { "type": "array", "items": { "$ref": "#/$defs/SubMasBody" } },
+    "limits":  { "$ref": "#/$defs/Limits" }
+  },
+  "$defs": {
+    "MasId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+)*$",
+      "description": "Dotted lowercase identifier."
+    },
+    "NodeId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "Local node id, unique within its MAS body. The literal '*outer*' is reserved and MUST NOT be declared as a node id."
+    },
+    "PortName": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "Capability": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Opaque capability label preserved by RecursiveMAS for the policy layer."
+    },
+    "Ports": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "in":  { "type": "array", "items": { "$ref": "#/$defs/PortName" }, "uniqueItems": true },
+        "out": { "type": "array", "items": { "$ref": "#/$defs/PortName" }, "uniqueItems": true }
+      },
+      "required": ["in", "out"]
+    },
+    "Node": {
+      "type": "object",
+      "required": ["id", "kind", "ports"],
+      "additionalProperties": false,
+      "properties": {
+        "id":           { "$ref": "#/$defs/NodeId" },
+        "kind":         { "enum": ["agent", "sub_mas", "self_recurse"] },
+        "sub_mas":      { "$ref": "#/$defs/MasId" },
+        "ports":        { "$ref": "#/$defs/Ports" },
+        "capabilities": { "type": "array", "items": { "$ref": "#/$defs/Capability" }, "uniqueItems": true },
+        "annotations":  { "type": "object", "description": "Opaque key/value map preserved through resolution and unrolling." }
+      },
+      "allOf": [
+        {
+          "if":   { "properties": { "kind": { "const": "sub_mas" } } },
+          "then": { "required": ["sub_mas"] }
+        },
+        {
+          "if":   { "properties": { "kind": { "enum": ["agent", "self_recurse"] } } },
+          "then": { "not": { "required": ["sub_mas"] } }
+        }
+      ]
+    },
+    "Endpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["node", "port"],
+      "properties": {
+        "node": {
+          "type": "string",
+          "description": "Either a NodeId or the literal '*outer*' to address the enclosing sub-MAS boundary."
+        },
+        "port": { "$ref": "#/$defs/PortName" }
+      }
+    },
+    "Link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "to"],
+      "properties": {
+        "from":  { "$ref": "#/$defs/Endpoint" },
+        "to":    { "$ref": "#/$defs/Endpoint" },
+        "kind":  { "enum": ["data", "control", "evidence"], "default": "data" },
+        "guard": { "type": "string", "minLength": 1 }
+      }
+    },
+    "SubMasBody": {
+      "type": "object",
+      "required": ["mas_id", "nodes", "links"],
+      "additionalProperties": false,
+      "properties": {
+        "mas_id":  { "$ref": "#/$defs/MasId" },
+        "nodes":   { "type": "array", "items": { "$ref": "#/$defs/Node" } },
+        "links":   { "type": "array", "items": { "$ref": "#/$defs/Link" } },
+        "sub_mas": { "type": "array", "items": { "$ref": "#/$defs/SubMasBody" } },
+        "limits":  { "$ref": "#/$defs/Limits" }
+      }
+    },
+    "Limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_depth": { "type": "integer", "minimum": 0, "maximum": 1024, "default": 4 },
+        "fuel":      { "type": "integer", "minimum": 0, "maximum": 1048576, "default": 64 }
+      }
+    }
+  }
+}
