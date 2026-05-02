@@ -34,7 +34,7 @@
     },
     "QualifiedNodeId": {
       "type": "string",
-      "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+)*#[0-9]+(::[a-z][a-z0-9_]*::[a-z][a-z0-9_]*(\\.[a-z0-9_]+)*#[0-9]+)*::([a-z][a-z0-9_]*|__[a-z][a-z0-9_]*__)$",
+      "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+)*#[0-9]+(::[a-z][a-z0-9_]*::[a-z][a-z0-9_]*(\\.[a-z0-9_]+)*#[0-9]+)*::([a-z][a-z0-9_]*|__outer_in__|__outer_out__|__cap__)$",
       "description": "'<frame_id>::<node_id>' for real nodes, or '<frame_id>::__outer_in__' / '__outer_out__' / '__cap__' for virtual boundary/sink nodes."
     },
     "PortName": {

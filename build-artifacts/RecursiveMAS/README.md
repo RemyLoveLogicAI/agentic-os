@@ -4,8 +4,17 @@ This directory holds the canonical, deterministic artifacts produced by the
 RecursiveMAS reference implementation for the example MAS defined in
 `research/docs/recursive-mas/reference/recursive_mas.py::example_mas_spec()`.
 
-It is the in-repo mirror of the issue-#16 sync target
-`/home/workspace/RemyLoveLogicAI/agentic-os/build-artifacts/RecursiveMAS/`.
+Issue #16 specifies two distinct destinations for these artifacts:
+
+| Destination | Where | Filled by |
+|---|---|---|
+| `/home/workspace/RemyLoveLogicAI/agentic-os/build-artifacts/RecursiveMAS/` | The "Artifacts sync target" | The host workstation that syncs this very directory in-repo. |
+| `/home/workdir/artifacts/RecursiveMAS/` | The "Expected Devin outputs" path inside the Devin container on Modal | Written by the `--also-mirror` flag during reproduction (see below). |
+
+This in-repo `build-artifacts/RecursiveMAS/` directory is the canonical
+copy: it is what gets synced to the workstation path, and it is what the
+reproduction command regenerates byte-for-byte. The Devin-container path
+is a parallel mirror for tooling that lives inside the container.
 
 | File | Purpose |
 |---|---|

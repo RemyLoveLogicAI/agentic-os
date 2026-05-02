@@ -918,12 +918,18 @@ def _unroll_body(
             )
             sub_frame_id_by_node[n.id] = child_fid
         elif n.kind == "self_recurse":
+            # Self-recursion stays inside the same lexical position, so it
+            # MUST inherit the enclosing sub-MAS node (and therefore the
+            # advertised outer port surface). Falling back to None here would
+            # let `_outer_surface` infer a smaller surface from `*outer*`
+            # references in `body.links`, dropping any advertised-but-unused
+            # ports and producing incorrect DAG stitching.
             child_fid = _unroll_body(
                 body,
                 state=state,
                 depth=depth + 1,
                 parent_path=parent_path,
-                enclosing_sub_mas_node=None,
+                enclosing_sub_mas_node=enclosing_sub_mas_node,
                 sub_lookup=local_lookup,
             )
             self_frame_id_by_node[n.id] = child_fid

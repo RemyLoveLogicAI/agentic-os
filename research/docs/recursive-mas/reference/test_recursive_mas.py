@@ -365,6 +365,78 @@ class UnrollTests(unittest.TestCase):
             },
         )
 
+    def test_self_recurse_inherits_outer_port_surface(self) -> None:
+        # The enclosing sub_mas node declares an extra advertised port
+        # (`extra_out`) that the body itself does not reference via *outer*.
+        # Self-recursive frames MUST inherit the *advertised* surface, not the
+        # smaller surface inferred from `*outer*` references.
+        spec = {
+            "schema_version": SCHEMA_VERSION_INPUT,
+            "mas_id": "outer.holder",
+            "nodes": [
+                {
+                    "id": "loop",
+                    "kind": "sub_mas",
+                    "sub_mas": "inner.body",
+                    "ports": {
+                        "in": ["seed"],
+                        "out": ["result", "extra_out"],
+                    },
+                }
+            ],
+            "links": [
+                {
+                    "from": {"node": OUTER, "port": "seed"},
+                    "to": {"node": "loop", "port": "seed"},
+                },
+                {
+                    "from": {"node": "loop", "port": "result"},
+                    "to": {"node": OUTER, "port": "result"},
+                },
+            ],
+            "sub_mas": [
+                {
+                    "mas_id": "inner.body",
+                    "nodes": [
+                        {
+                            "id": "step",
+                            "kind": "agent",
+                            "ports": {"in": ["seed"], "out": ["result"]},
+                        },
+                        {
+                            "id": "again",
+                            "kind": "self_recurse",
+                            "ports": {"in": ["seed"], "out": ["result"]},
+                        },
+                    ],
+                    "links": [
+                        {
+                            "from": {"node": OUTER, "port": "seed"},
+                            "to": {"node": "step", "port": "seed"},
+                        },
+                        {
+                            "from": {"node": "step", "port": "result"},
+                            "to": {"node": "again", "port": "seed"},
+                        },
+                        {
+                            "from": {"node": "again", "port": "result"},
+                            "to": {"node": OUTER, "port": "result"},
+                        },
+                    ],
+                },
+            ],
+        }
+        mas = load_mas(spec)
+        dag = unroll(mas, max_depth=1, fuel=DEFAULT_FUEL, detect_fixed_point=False)
+        body_frames = [f for f in dag.frames if f.mas_id == "inner.body"]
+        self.assertGreaterEqual(len(body_frames), 2)
+        # Every inner.body frame (depth 0, 1, and the depth=2 cap) must carry
+        # the advertised outer-out surface, including `extra_out`.
+        for f in body_frames:
+            outer_out = next(n for n in f.nodes if n.id.endswith("__outer_out__"))
+            self.assertIn("extra_out", outer_out.ports.out, f.frame_id)
+            self.assertIn("extra_out", outer_out.ports.in_, f.frame_id)
+
     def test_emit_build_artifacts(self) -> None:
         with tempfile.TemporaryDirectory() as td:
             out = Path(td) / "RecursiveMAS"

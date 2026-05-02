@@ -74,7 +74,10 @@
       "required": ["node", "port"],
       "properties": {
         "node": {
-          "type": "string",
+          "anyOf": [
+            { "$ref": "#/$defs/NodeId" },
+            { "const": "*outer*" }
+          ],
           "description": "Either a NodeId or the literal '*outer*' to address the enclosing sub-MAS boundary."
         },
         "port": { "$ref": "#/$defs/PortName" }

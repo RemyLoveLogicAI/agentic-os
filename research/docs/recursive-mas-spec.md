@@ -51,7 +51,7 @@ Out of scope:
 | **Outer port** | A named entry/exit on a sub-MAS, addressed from outside as `("*outer*", port_name)` from inside the sub-MAS. |
 | **Inner link** | A directed edge inside a sub-MAS or a sub-MAS boundary edge. |
 | **Self-recurse node** | A `kind: "self_recurse"` node — denotes a recursive invocation of its containing sub-MAS. |
-| **Frame** | One copy of a sub-MAS produced by unrolling, identified by `<mas_id>#<depth>`. |
+| **Frame** | One copy of a sub-MAS produced by unrolling. Identified by `<mas_id>#<depth>` for the root frame, or `<parent_frame>::<calling_node_id>::<mas_id>#<depth>` for nested frames (see §5.2). |
 | **Depth** | The number of self-recursion levels above a frame (root = `0`). |
 | **Fuel** | A monotonically non-increasing integer budget consumed once per produced frame. |
 
@@ -221,29 +221,45 @@ boundary nodes use the reserved suffixes `__outer_in__`, `__outer_out__`,
 
 Given a top-level `mas_spec` and budget `(max_depth, fuel)`:
 
+Fuel and depth are tracked in shared state for the whole unroll. The
+fuel rule is **one fuel unit per produced *non-cap* frame**: cap frames
+(depth-cap, fuel-exhausted, fixed-point) do NOT consume fuel — they are
+the cap that records *why* unrolling stopped. The recursive call does
+not pre-decrement fuel for the child; the child does its own bookkeeping.
+
 ```text
-unroll(mas, depth=0, fuel):
-    if depth > max_depth or fuel <= 0:
-        emit a single sink node:
-            id = "<mas.mas_id>#<depth>::__cap__"
-            kind = "depth_cap" or "fuel_exhausted"
-            ports = { in: <union of self_recurse inputs>, out: [] }
-        return frame, fuel - 1
+unroll(mas, depth=0, parent_path="", state):
+    if depth > state.max_depth:
+        emit cap frame at depth with kind = "depth_cap"
+        return frame_id_at(parent_path, mas, depth)
+    if state.fuel <= 0:
+        emit cap frame at depth with kind = "fuel_exhausted"
+        return frame_id_at(parent_path, mas, depth)
+
+    state.fuel -= 1                 # ← exactly once per produced frame
+
+    if fixed_point_detection_enabled and depth >= 1
+       and prior body in (parent_path, mas.mas_id) is byte-identical:
+        emit cap frame with kind = "fixed_point"
+        return frame_id_at(parent_path, mas, depth)
 
     for each node in mas.nodes:
         if node.kind == "agent":
-            copy verbatim, rename id with frame prefix
+            copy verbatim, rename with frame prefix
         elif node.kind == "sub_mas":
-            recursively unroll the referenced sub-MAS body at depth=0
-            (sub-MAS is *not* the same body as the current self-recurse target)
+            child_fid = unroll(child_body, depth=0,
+                               parent_path = current_frame_id + "::" + node.id,
+                               state)
         elif node.kind == "self_recurse":
-            frame_next, fuel = unroll(mas, depth + 1, fuel - 1)
+            child_fid = unroll(mas, depth = depth + 1,
+                               parent_path = parent_path,    # unchanged
+                               state)
             stitch every link into this self_recurse node onto
-            frame_next's outer-in ports, and every link out of this
-            self_recurse node onto frame_next's outer-out ports.
+            child_fid's outer-in ports, and every link out of this
+            self_recurse node onto child_fid's outer-out ports.
 
     rename all link endpoints according to the renaming above.
-    return frame, fuel
+    return current_frame_id
 ```
 
 ### 5.4 Cap behavior
