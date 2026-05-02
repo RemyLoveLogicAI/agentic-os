@@ -1,57 +1,108 @@
-[Documentation Home](README.md)
+# 📚 agentic-os Documentation
+
+Welcome to the complete documentation for this repository. This documentation is automatically generated and maintained by Woden Docbot.
+
+![Health: Healthy](https://img.shields.io/badge/Health-Healthy-green) ![Files Documented: 3](https://img.shields.io/badge/Files_Documented-3-blue) ![Coverage: 100](https://img.shields.io/badge/Coverage-100-green) ![Last Updated: 2026-05-02](https://img.shields.io/badge/Last_Updated-2026--05--02-gray)
+
+## 🔗 Quick Links
+
+[📂 spec-pack](./spec-pack/README.md)
+
 
 ---
 
-# 📁 _docs
-
-> **Purpose:** Top-level documentation container that groups repository-level documentation and points developers to the spec-pack asset resources and their organization.
-> 
-
-![Organization: Hierarchical](https://img.shields.io/badge/Organization-Hierarchical-blue)
-
-## 📑 Table of Contents
+> A focused repository subtree that stores and prepares media and build assets for the spec-pack remixathon deliverable.
 
 
-- [Overview](#overview)
-- [Subdirectories](#subdirectories)
-- [Architecture Notes](#architecture-notes)
 
----
+## 📖 Overview
 
-## Overview
+agentic-os' spec-pack area is a narrowly scoped container for the assets and build resources used to produce the spec-pack remixathon asset pack. It exists to centralize media files, build artifacts, and the scripts/recipes that transform and package those assets into deliverables for the remixathon. The intent is to isolate packaging and media-processing concerns so contributors can find and modify the material used to produce the spec-pack without sifting through unrelated code.
 
-The _docs directory serves as a documentation index and navigator for repository-level assets and media resources. At the root of this directory there are no files; instead, documentation and build-related media assets are organized under subdirectories. The primary subdirectory present is spec-pack/, which acts as the container for the spec-pack's asset-related resources and build assets used by the remixathon asset pack.
-
-The spec-pack/ subdirectory groups scripts and recipes for the remixathon asset pack and contains an assets/ subdirectory (referenced by the spec-pack root) where all media and build assets are organized. Within _docs, the root level intentionally contains no files and instead points developers to spec-pack/ for any media, build, or asset-processing materials. Together, the empty root and the spec-pack/ subdirectory form a simple, hierarchical documentation and asset layout: _docs provides the logical entry point, while spec-pack/ holds the actual asset materials and build resources.
+The repository structure is deliberate and simple: the spec-pack root is an organizational boundary and index that points to the real content under assets/. The assets/ subtree holds the concrete build and media-processing assets — including scripts and recipes for preparing media, build assets used in packaging, and any media-processing tooling or resources required for remixathon-specific builds. Developers working on packaging, media processing, or remixathon builds should look under assets/ for the actionable scripts and media; the spec-pack root indicates where those resources live and how they are grouped. The architectural approach is minimal and file-oriented: an asset repository boundary that groups scripts, recipes, media-processing resources, and build assets to support reproducible packaging workflows.
 
 
-### File Organization
+### 🧩 Key Components
 
-This directory uses a hierarchical layout: the _docs root contains no files and delegates all asset and build-related materials to the spec-pack/ subdirectory. The spec-pack root serves as a logical grouping that points to an assets/ subdirectory where media and build assets are stored. This keeps the top-level documentation directory minimal and focused on navigation rather than storing assets directly.
+| Component | Purpose | Technologies |
+| --- | --- | --- |
+| **spec-pack** | Logical root and organizational boundary that points developers to the spec-pack's asset collection and build preparation resources. | `scripts`, `recipes`, `build assets` |
+| **assets/** | Primary content holder containing the build and media-processing assets, grouping scripts and recipes used to produce the remixathon asset pack deliverables. | `media-processing`, `scripts`, `recipes` |
 
-## 📂 Subdirectories
 
-This directory contains the following subdirectories:
 
-### [📁 spec-pack](./spec-pack/README.md)
 
-**Purpose:** Holds media and build assets used by the spec-pack, grouping scripts and recipes for the remixathon asset pack and pointing developers to the assets/ subdirectory where materials are organized.
+**Component Architecture:**
 
-![Files: 0](https://img.shields.io/badge/Files-0-blue)
+```mermaid
+graph TD
+    C0[spec-pack]
+    C1[assets/]
+    C0 --> C1
+```
 
----
-## Architecture Notes
+### 🏗️ Architecture
 
-- The _docs directory is deliberately minimal at the root level and functions primarily as a navigation point to spec-pack/, keeping documentation and asset materials separated.
-- spec-pack/ acts as a logical container that points to an assets/ subdirectory where actual media and build assets are stored; this separation supports clearer organization of large media assets away from root-level docs.
+A simple, file-centric asset repository: spec-pack is a logical root that delegates to an assets/ subtree which contains scripts, recipes, and media-processing/build assets used for preparing deliverables.
 
----
+### 💡 Use Cases
 
-## Navigation
+- ✦ Packaging and preparing the spec-pack remixathon asset pack
+- ✦ Media processing and asset transformation using the included scripts and recipes
+- ✦ Providing a clear location for contributors to find and modify build and media assets for remixathon-specific builds
 
-**↑ Parent Directory:** [Go up](../README.md)
-**🔗 Related:** [spec-pack](./spec-pack/README.md)
+
+
+### 🔧 Technologies
+
+![scripts: ](https://img.shields.io/badge/scripts--blue) ![recipes: ](https://img.shields.io/badge/recipes--blue) ![media-processing: ](https://img.shields.io/badge/media--processing--blue) ![build assets: ](https://img.shields.io/badge/build_assets--blue)
 
 ---
 
-*Generated by Woden Docbot*
+## 📑 Documentation Sections
+
+### [spec-pack](./spec-pack/README.md)
+Holds media and build assets used by the spec-pack, primarily grouping scripts and recipes for the remixathon asset pack.
+
+
+This directory is the container for the spec-pack's asset-related resources.
+
+---
+
+## 📊 Documentation Statistics
+
+- **Files Documented**: 3
+- **Directories**: 5
+- **Coverage**: 100%
+- **Last Updated**: 2026-05-02
+
+---
+
+## 🧭 How to Navigate
+
+> ℹ️ **INFO**
+> Each directory has its own README.md with detailed information about that section. Use the breadcrumb navigation at the top of each page to navigate back to parent directories.
+
+### Navigation Features
+
+- **Breadcrumbs** - At the top of each page, showing your current location
+- **Directory READMEs** - Each folder has a comprehensive overview
+- **File Documentation** - Click through to individual file documentation
+- **Search** - Use GitHub's search or your IDE's search functionality
+
+---
+
+## 🤖 About Woden DocBot
+
+This documentation is automatically generated and kept up-to-date by Woden DocBot, an AI-powered documentation assistant. DocBot analyzes code on every pull request and updates documentation to reflect changes.
+
+### Features
+
+- **Automatic Updates** - Documentation updates on every PR
+- **Comprehensive Coverage** - Files, functions, classes, and directories
+- **Smart Navigation** - Breadcrumbs, related files, and parent links
+- **AI-Powered** - Uses Azure GPT models for intelligent documentation generation
+
+---
+
+*Generated by Woden DocBot for agentic-os*
