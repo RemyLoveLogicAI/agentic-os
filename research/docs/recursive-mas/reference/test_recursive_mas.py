@@ -231,6 +231,13 @@ class UnrollTests(unittest.TestCase):
         self.assertGreaterEqual(len(depth_caps), 1)
         # max_depth=1 ⇒ depths 0 and 1 are produced; depth=2 frame is the cap.
         self.assertEqual(depth_caps[0].depth, 2)
+        # Frame ids should carry the parent path of the enclosing root frame
+        # *and* the calling node id ("exec") for the sub-MAS we descended into.
+        for f in depth_caps:
+            self.assertTrue(
+                f.frame_id.startswith("outer.root#0::exec::"),
+                f"expected nested frame_id, got {f.frame_id}",
+            )
 
     def test_fuel_cap_kicks_in(self) -> None:
         dag = unroll(self.mas, max_depth=99, fuel=2, detect_fixed_point=False)
@@ -284,6 +291,79 @@ class UnrollTests(unittest.TestCase):
         for l in d["links"]:
             if l["stitch"] == "self_recurse_in":
                 self.assertIn("__outer_in__", l["to"]["node"])
+
+    def test_cousin_scopes_with_shared_mas_id_get_distinct_frame_ids(self) -> None:
+        # Two cousin sub-MAS positions that happen to reuse the same mas_id
+        # ("shared.helper") must get distinct frame ids in the unrolled DAG.
+        spec = {
+            "schema_version": SCHEMA_VERSION_INPUT,
+            "mas_id": "root.dual",
+            "nodes": [
+                {
+                    "id": "left",
+                    "kind": "sub_mas",
+                    "sub_mas": "shared.helper",
+                    "ports": {"in": ["x"], "out": ["y"]},
+                },
+                {
+                    "id": "right",
+                    "kind": "sub_mas",
+                    "sub_mas": "shared.helper",
+                    "ports": {"in": ["x"], "out": ["y"]},
+                },
+            ],
+            "links": [
+                {
+                    "from": {"node": OUTER, "port": "in_left"},
+                    "to": {"node": "left", "port": "x"},
+                },
+                {
+                    "from": {"node": "left", "port": "y"},
+                    "to": {"node": "right", "port": "x"},
+                },
+                {
+                    "from": {"node": "right", "port": "y"},
+                    "to": {"node": OUTER, "port": "out"},
+                },
+            ],
+            "sub_mas": [
+                {
+                    "mas_id": "shared.helper",
+                    "nodes": [
+                        {
+                            "id": "step",
+                            "kind": "agent",
+                            "ports": {"in": ["x"], "out": ["y"]},
+                        }
+                    ],
+                    "links": [
+                        {
+                            "from": {"node": OUTER, "port": "x"},
+                            "to": {"node": "step", "port": "x"},
+                        },
+                        {
+                            "from": {"node": "step", "port": "y"},
+                            "to": {"node": OUTER, "port": "y"},
+                        },
+                    ],
+                },
+            ],
+        }
+        # Two sibling sub_mas nodes referencing the same body — load_mas
+        # accepts this because the body's mas_id is unique within sub_mas[].
+        mas = load_mas(spec)
+        dag = unroll(mas)
+        helper_frames = [f for f in dag.frames if f.mas_id == "shared.helper"]
+        self.assertEqual(len(helper_frames), 2)
+        ids = {f.frame_id for f in helper_frames}
+        self.assertEqual(len(ids), 2, f"frame ids must be distinct, got {ids}")
+        self.assertEqual(
+            ids,
+            {
+                "root.dual#0::left::shared.helper#0",
+                "root.dual#0::right::shared.helper#0",
+            },
+        )
 
     def test_emit_build_artifacts(self) -> None:
         with tempfile.TemporaryDirectory() as td:

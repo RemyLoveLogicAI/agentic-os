@@ -721,24 +721,39 @@ class UnrolledDag:
         }
 
 
-def _frame_id(mas_id: str, depth: int) -> str:
-    return f"{mas_id}#{depth}"
+def _frame_id(parent_path: str, mas_id: str, depth: int) -> str:
+    """Globally-unique frame id.
+
+    Format:
+      <mas_id>#<depth>                                   (root frame, no parent)
+      <parent_frame_id>::<mas_id>#<depth>                (nested or recursive frame)
+
+    For self-recursion the parent_path is the *enclosing* sub-MAS frame id
+    (i.e. unchanged across self-recursion of the same body), so depths
+    increment but the lexical prefix stays put. For non-recursive sub-MAS
+    descent the parent_path is the calling frame's id, which guarantees that
+    two cousin scopes that happen to share a `mas_id` get distinct frame ids.
+    """
+    base = f"{mas_id}#{depth}"
+    if not parent_path:
+        return base
+    return f"{parent_path}::{base}"
 
 
-def _qual(mas_id: str, depth: int, node_id: str) -> str:
-    return f"{_frame_id(mas_id, depth)}::{node_id}"
+def _qual(frame_id: str, node_id: str) -> str:
+    return f"{frame_id}::{node_id}"
 
 
-def _outer_in_id(mas_id: str, depth: int) -> str:
-    return _qual(mas_id, depth, "__outer_in__")
+def _outer_in_id(frame_id: str) -> str:
+    return _qual(frame_id, "__outer_in__")
 
 
-def _outer_out_id(mas_id: str, depth: int) -> str:
-    return _qual(mas_id, depth, "__outer_out__")
+def _outer_out_id(frame_id: str) -> str:
+    return _qual(frame_id, "__outer_out__")
 
 
-def _cap_id(mas_id: str, depth: int) -> str:
-    return _qual(mas_id, depth, "__cap__")
+def _cap_id(frame_id: str) -> str:
+    return _qual(frame_id, "__cap__")
 
 
 @dataclass
@@ -749,18 +764,19 @@ class _UnrollState:
     frames: list[Frame] = field(default_factory=list)
     links: list[UnrolledLink] = field(default_factory=list)
     evidence: list[dict[str, str]] = field(default_factory=list)
-    canon_by_mas: dict[str, str] = field(default_factory=dict)
+    # Fixed-point key: (parent_path, mas_id) → canonical body bytes.
+    canon_by_scope: dict[tuple[str, str], str] = field(default_factory=dict)
 
 
-def _virtual_outer(mas_id: str, depth: int, in_ports: Sequence[str], out_ports: Sequence[str]) -> tuple[UnrolledNode, UnrolledNode]:
+def _virtual_outer(frame_id: str, in_ports: Sequence[str], out_ports: Sequence[str]) -> tuple[UnrolledNode, UnrolledNode]:
     oi = UnrolledNode(
-        id=_outer_in_id(mas_id, depth),
+        id=_outer_in_id(frame_id),
         kind="agent",
         ports=Ports(in_=tuple(in_ports), out=tuple(in_ports)),
         annotations=(("virtual", "outer_in"),),
     )
     oo = UnrolledNode(
-        id=_outer_out_id(mas_id, depth),
+        id=_outer_out_id(frame_id),
         kind="agent",
         ports=Ports(in_=tuple(out_ports), out=tuple(out_ports)),
         annotations=(("virtual", "outer_out"),),
@@ -773,19 +789,20 @@ def _emit_cap_frame(
     body: MasBody,
     state: _UnrollState,
     depth: int,
+    parent_path: str,
     outer_in_ports: tuple[str, ...],
     outer_out_ports: tuple[str, ...],
     reason: str,
     kind: str,
 ) -> str:
-    fid = _frame_id(body.mas_id, depth)
+    fid = _frame_id(parent_path, body.mas_id, depth)
     cap_node = UnrolledNode(
-        id=_cap_id(body.mas_id, depth),
+        id=_cap_id(fid),
         kind=kind,
         ports=Ports(in_=outer_in_ports, out=()),
         annotations=(("reason", reason),),
     )
-    oi, oo = _virtual_outer(body.mas_id, depth, outer_in_ports, outer_out_ports)
+    oi, oo = _virtual_outer(fid, outer_in_ports, outer_out_ports)
     state.frames.append(
         Frame(
             frame_id=fid,
@@ -813,10 +830,16 @@ def _unroll_body(
     *,
     state: _UnrollState,
     depth: int,
+    parent_path: str,
     enclosing_sub_mas_node: Optional[Node],
     sub_lookup: dict[str, MasBody],
 ) -> str:
     """Unroll a single MasBody at depth `depth`. Returns the frame_id created.
+
+    `parent_path` is the lexical chain of enclosing sub-MAS frame ids; it
+    guarantees that two cousin scopes that share a `mas_id` get globally
+    distinct frame ids. Self-recursion preserves `parent_path` (the recursive
+    call lives in the same lexical position) and only bumps `depth`.
 
     Mutates `state` to append nodes/links/frames/evidence.
     """
@@ -825,38 +848,43 @@ def _unroll_body(
     # Cap conditions
     if depth > state.max_depth:
         return _emit_cap_frame(
-            body=body, state=state, depth=depth,
+            body=body, state=state, depth=depth, parent_path=parent_path,
             outer_in_ports=outer_in_ports, outer_out_ports=outer_out_ports,
             reason="loop.depth_cap_reached", kind="depth_cap",
         )
     if state.fuel <= 0:
         return _emit_cap_frame(
-            body=body, state=state, depth=depth,
+            body=body, state=state, depth=depth, parent_path=parent_path,
             outer_in_ports=outer_in_ports, outer_out_ports=outer_out_ports,
             reason="loop.fuel_exhausted", kind="fuel_exhausted",
         )
 
     state.fuel -= 1
 
-    # Detect a fixed-point: same mas_id seen at lower depth with byte-identical body.
+    # Detect a fixed-point: same body at the same lexical scope, byte-identical,
+    # already seen at a lower depth. Keying by (parent_path, mas_id) prevents
+    # two cousin scopes that share a mas_id from confusing each other.
     body_canon = canonical_json(body.to_dict())
+    scope_key = (parent_path, body.mas_id)
     if state.fixed_point and depth >= 1:
-        prior = state.canon_by_mas.get(body.mas_id)
+        prior = state.canon_by_scope.get(scope_key)
         if prior is not None and prior == body_canon:
             return _emit_cap_frame(
-                body=body, state=state, depth=depth,
+                body=body, state=state, depth=depth, parent_path=parent_path,
                 outer_in_ports=outer_in_ports, outer_out_ports=outer_out_ports,
                 reason="loop.fixed_point_reached", kind="fixed_point",
             )
-    state.canon_by_mas[body.mas_id] = body_canon
+    state.canon_by_scope[scope_key] = body_canon
 
     # Local scope: merge sub_lookup with this body's sub_mas[] (lexical inner shadows outer).
     local_lookup = dict(sub_lookup)
     for sb in body.sub_mas:
         local_lookup[sb.mas_id] = sb
 
+    fid = _frame_id(parent_path, body.mas_id, depth)
+
     # Emit boundary virtual nodes for this frame.
-    oi, oo = _virtual_outer(body.mas_id, depth, outer_in_ports, outer_out_ports)
+    oi, oo = _virtual_outer(fid, outer_in_ports, outer_out_ports)
     frame_nodes: list[UnrolledNode] = [oi, oo]
 
     sub_frame_id_by_node: dict[str, str] = {}
@@ -865,7 +893,7 @@ def _unroll_body(
         if n.kind == "agent":
             frame_nodes.append(
                 UnrolledNode(
-                    id=_qual(body.mas_id, depth, n.id),
+                    id=_qual(fid, n.id),
                     kind="agent",
                     ports=n.ports,
                     capabilities=n.capabilities,
@@ -884,6 +912,7 @@ def _unroll_body(
                 child_body,
                 state=state,
                 depth=0,
+                parent_path=f"{fid}::{n.id}",
                 enclosing_sub_mas_node=n,
                 sub_lookup=local_lookup,
             )
@@ -893,6 +922,7 @@ def _unroll_body(
                 body,
                 state=state,
                 depth=depth + 1,
+                parent_path=parent_path,
                 enclosing_sub_mas_node=None,
                 sub_lookup=local_lookup,
             )
@@ -902,7 +932,6 @@ def _unroll_body(
                 "error.node.bad_kind", f"{body.mas_id}/nodes/id={n.id}", n.kind
             )
 
-    fid = _frame_id(body.mas_id, depth)
     state.frames.append(
         Frame(
             frame_id=fid, mas_id=body.mas_id, depth=depth,
@@ -912,52 +941,51 @@ def _unroll_body(
 
     # Second pass: rewrite links using the qualified ids and stitch boundaries.
     by_id = _node_index(body)
+    self_frame_fid = _frame_id(parent_path, body.mas_id, depth + 1)
     for l in body.links:
         f, t = l.from_, l.to
         src_caps: set[str] = set()
         tgt_caps: set[str] = set()
 
         if f.node == OUTER:
-            from_node_id = _outer_in_id(body.mas_id, depth)
+            from_node_id = _outer_in_id(fid)
             from_port = f.port
             stitch_in = "outer_in"
         else:
             src = by_id[f.node]
             src_caps = set(src.capabilities)
             if src.kind == "self_recurse":
-                from_node_id = _outer_out_id(body.mas_id, depth + 1)
+                from_node_id = _outer_out_id(self_frame_fid)
                 from_port = f.port
                 stitch_in = "self_recurse_out"
             elif src.kind == "sub_mas":
                 child_fid = sub_frame_id_by_node[src.id]
-                child_mas, child_depth = child_fid.split("#")
-                from_node_id = _outer_out_id(child_mas, int(child_depth))
+                from_node_id = _outer_out_id(child_fid)
                 from_port = f.port
                 stitch_in = "outer_out"
             else:
-                from_node_id = _qual(body.mas_id, depth, src.id)
+                from_node_id = _qual(fid, src.id)
                 from_port = f.port
                 stitch_in = "none"
 
         if t.node == OUTER:
-            to_node_id = _outer_out_id(body.mas_id, depth)
+            to_node_id = _outer_out_id(fid)
             to_port = t.port
             stitch_out = "outer_out"
         else:
             tgt = by_id[t.node]
             tgt_caps = set(tgt.capabilities)
             if tgt.kind == "self_recurse":
-                to_node_id = _outer_in_id(body.mas_id, depth + 1)
+                to_node_id = _outer_in_id(self_frame_fid)
                 to_port = t.port
                 stitch_out = "self_recurse_in"
             elif tgt.kind == "sub_mas":
                 child_fid = sub_frame_id_by_node[tgt.id]
-                child_mas, child_depth = child_fid.split("#")
-                to_node_id = _outer_in_id(child_mas, int(child_depth))
+                to_node_id = _outer_in_id(child_fid)
                 to_port = t.port
                 stitch_out = "outer_in"
             else:
-                to_node_id = _qual(body.mas_id, depth, tgt.id)
+                to_node_id = _qual(fid, tgt.id)
                 to_port = t.port
                 stitch_out = "none"
 
@@ -1009,6 +1037,7 @@ def unroll(
         mas.root,
         state=state,
         depth=0,
+        parent_path="",
         enclosing_sub_mas_node=None,
         sub_lookup={},
     )

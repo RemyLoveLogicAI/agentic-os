@@ -29,12 +29,12 @@
   "$defs": {
     "FrameId": {
       "type": "string",
-      "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+)*#[0-9]+$",
-      "description": "Frame identifier of the form '<mas_id>#<depth>'."
+      "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+)*#[0-9]+(::[a-z][a-z0-9_]*::[a-z][a-z0-9_]*(\\.[a-z0-9_]+)*#[0-9]+)*$",
+      "description": "Frame identifier. Root frame: '<mas_id>#<depth>'. Nested frame entered via sub-MAS node N: '<parent_frame_id>::<N>::<mas_id>#<depth>'. Self-recursion preserves the parent path."
     },
     "QualifiedNodeId": {
       "type": "string",
-      "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+)*#[0-9]+::([a-z][a-z0-9_]*|__[a-z][a-z0-9_]*__)$",
+      "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+)*#[0-9]+(::[a-z][a-z0-9_]*::[a-z][a-z0-9_]*(\\.[a-z0-9_]+)*#[0-9]+)*::([a-z][a-z0-9_]*|__[a-z][a-z0-9_]*__)$",
       "description": "'<frame_id>::<node_id>' for real nodes, or '<frame_id>::__outer_in__' / '__outer_out__' / '__cap__' for virtual boundary/sink nodes."
     },
     "PortName": {

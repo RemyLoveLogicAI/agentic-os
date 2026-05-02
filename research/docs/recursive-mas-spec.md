@@ -196,11 +196,26 @@ overall plan becomes a DAG. The transformation MUST be:
 
 ### 5.2 Frame identity
 
-A frame's id is `<mas_id>#<depth>`, where `mas_id` is the sub-MAS body's
-`mas_id` and `depth` is its self-recursion depth (root = `0`). Frame ids
-MUST be unique across the unrolled DAG.
+Frame ids are constructed compositionally from the lexical path:
 
-A node inside a frame is renamed to `<mas_id>#<depth>::<node_id>`.
+| Position | Frame id |
+|---|---|
+| Root MAS (no enclosing frame) | `<mas_id>#<depth>` |
+| Frame entered via a sub-MAS node `N` inside parent frame `P` | `<P>::<N>::<mas_id>#<depth>` |
+| Self-recursion of the current frame | parent path preserved, only `<depth>` increments |
+
+The calling sub-MAS node id is included in the path so that two sibling
+sub-MAS nodes referencing the *same* body (or two cousin scopes that
+happen to share a `mas_id`) get globally distinct frame ids. For
+self-recursion the parent is preserved (the recursive call lives in the
+same lexical position) and only `depth` increments.
+
+Frame ids MUST therefore be globally unique across the unrolled DAG, even
+when the same `mas_id` is reused in unrelated sub-MAS positions.
+
+A node inside a frame is renamed to `<frame_id>::<node_id>`. Virtual
+boundary nodes use the reserved suffixes `__outer_in__`, `__outer_out__`,
+`__cap__`.
 
 ### 5.3 Algorithm
 
@@ -268,27 +283,37 @@ shape is:
   "limits":         { "max_depth": 4, "fuel": 16 },
   "frames": [
     {
-      "frame_id":  "outer.exec_loop#0",
+      "frame_id":  "outer.root#0",
+      "mas_id":    "outer.root",
+      "depth":     0,
+      "nodes":     [ /* renamed agents */ ],
+      "termination": null
+    },
+    {
+      "frame_id":  "outer.root#0::exec::outer.exec_loop#0",
       "mas_id":    "outer.exec_loop",
       "depth":     0,
-      "nodes":     [ /* renamed agents + caps */ ],
+      "nodes":     [ /* renamed agents */ ],
       "termination": null
     },
     /* ... */
     {
-      "frame_id":  "outer.exec_loop#3",
+      "frame_id":  "outer.root#0::exec::outer.exec_loop#3",
       "mas_id":    "outer.exec_loop",
       "depth":     3,
       "nodes":     [ /* ... */ ],
       "termination": {
         "reason": "loop.depth_cap_reached",
-        "node_id": "outer.exec_loop#3::__cap__"
+        "node_id": "outer.root#0::exec::outer.exec_loop#3::__cap__"
       }
     }
   ],
   "links": [ /* renamed inner links + boundary stitches */ ],
   "evidence": [
-    { "kind": "loop.depth_cap_reached", "frame_id": "outer.exec_loop#3" }
+    {
+      "kind": "loop.depth_cap_reached",
+      "frame_id": "outer.root#0::exec::outer.exec_loop#3"
+    }
   ]
 }
 ```
