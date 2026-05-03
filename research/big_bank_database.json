@@ -987,14 +987,47 @@
         "ticker": "JPM",
         "company": "JPMorgan Chase & Co.",
         "price": 311.99,
-        "day_change_percent": "-0.40%",
+        "day_change_percent": -0.4,
         "pe_ratio": "15.2x",
-        "market_cap": "$842.6B",
-        "sentiment": "Neutral / cautious",
-        "findings": "Snapshot: JPMorgan Chase remains the dominant U.S. megabank, trading around $311.99 with a roughly $842.6B market cap, about 15.2x P/E, ROE in the mid-teens, and strong capital/liquidity characteristics. FY2025 delivered about $182.45B revenue, $57.05B net income, and $20.02 diluted EPS, backed by ~$4.42T in assets and ~$362.44B in equity. Catalysts: consensus EPS growth into FY2026/2027, scale advantages across consumer, commercial, markets, and wealth, Europe expansion / national security initiative activity, and ongoing financing access reflected in SEC filings. Risks: recent insider selling, credit-quality normalization, regulatory and capital sensitivity, litigation/compliance noise, NII sensitivity to rates and deposit costs, and broader macro volatility. Outlook: fundamentally constructive and still the quality leader in the group, but the near-term tone stays cautious because the latest report still shows mixed news flow and several caution flags. SEC highlights: recent 8-K debt issuance / note offerings, by-laws amendment, FY2025 10-K filed 2026-02-13 with report period 2025-12-31, and other routine financing/governance disclosures."
+        "market_cap": 842600000000,
+        "sentiment": "Constructive / mildly positive (post-Q1 strength)",
+        "findings": "1) Snapshot: JPMorgan Chase & Co. remained the dominant U.S. megabank around $311.99 with a roughly $842.6B market cap, ~15.2x P/E, ROE in the mid-teens, and strong capital/liquidity. 2) Catalysts: post-Q1 strength, consensus EPS growth into FY2026/2027, scale across consumer/commercial/markets/wealth, Europe expansion, and continued financing access. 3) Risks: recent insider selling, credit normalization, regulatory/capital sensitivity, litigation/compliance noise, NII sensitivity to rates/deposits, and macro volatility. 4) Outlook: fundamentally constructive and still the quality leader, but near-term tone remains cautious because news flow is mixed and caution flags persist. 5) SEC highlights: recent 8-K debt issuance / note offerings, by-laws amendment, FY2025 10-K filed 2026-02-13 for period ended 2025-12-31, plus routine financing/governance disclosures."
       },
-      "peers": [],
-      "summary": "JPM remains a high-quality large-cap bank with strong profitability and a constructive long-term profile, but the near-term tone is cautious given insider selling, regulatory sensitivity, and mixed financing-driven news."
-    }
+      "peers": [
+        {"ticker": "BAC"},
+        {"ticker": "WFC"},
+        {"ticker": "C"},
+        {"ticker": "GS"},
+        {"ticker": "MS"}
+      ],
+      "summary": "Q1 2026 in-line-to-strong fundamentals (revenue +10% YoY, EPS +17% YoY) with improved margins; near-term upside depends on credit staying benign and NII/rate environment."
+    },
+    "summary": "Night sweep log for JPM (JPMorgan Chase)."
+  },
+  {
+    "timestamp": "2026-05-02T20:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "night sweep",
+    "results": {
+      "target": {
+        "ticker": "JPM",
+        "company": "JPMorgan Chase & Co.",
+        "price": 311.99,
+        "day_change_percent": -0.4,
+        "pe_ratio": "15.2x",
+        "market_cap": 842600000000,
+        "sentiment": "Constructive / mildly positive (post-Q1 strength)",
+        "findings": "1) Snapshot: JPMorgan Chase & Co. remained the dominant U.S. megabank around $311.99 with a roughly $842.6B market cap, ~15.2x P/E, ROE in the mid-teens, and strong capital/liquidity. 2) Catalysts: post-Q1 strength, consensus EPS growth into FY2026/2027, scale across consumer/commercial/markets/wealth, Europe expansion, and continued financing access. 3) Risks: recent insider selling, credit normalization, regulatory/capital sensitivity, litigation/compliance noise, NII sensitivity to rates/deposits, and macro volatility. 4) Outlook: fundamentally constructive and still the quality leader, but near-term tone remains cautious because news flow is mixed and caution flags persist. 5) SEC highlights: recent 8-K debt issuance / note offerings, by-laws amendment, FY2025 10-K filed 2026-02-13 for period ended 2025-12-31, plus routine financing/governance disclosures."
+      },
+      "peers": [
+        {"ticker": "BAC"},
+        {"ticker": "WFC"},
+        {"ticker": "C"},
+        {"ticker": "GS"},
+        {"ticker": "MS"}
+      ],
+      "summary": "Q1 2026 in-line-to-strong fundamentals (revenue +10% YoY, EPS +17% YoY) with improved margins; near-term upside depends on credit staying benign and NII/rate environment."
+    },
+    "summary": "Night sweep log for JPM (JPMorgan Chase)."
   }
 ]
