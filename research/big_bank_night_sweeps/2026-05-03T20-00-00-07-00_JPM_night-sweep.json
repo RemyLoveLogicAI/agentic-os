@@ -1,0 +1,140 @@
+{
+  "timestamp": "2026-05-03T20:00:00-07:00",
+  "task": "Big Bank triple-sweep research task",
+  "sweep_type": "night sweep",
+  "target": {
+    "ticker": "JPM"
+  },
+  "results": {
+    "market_snapshot": {
+      "price": 311.99,
+      "day_change_percent": "-0.40%",
+      "market_cap": "842.6B",
+      "enterprise_value": "564.1B",
+      "market_performance_returns": {
+        "1M": "+5.8%",
+        "3M": "+1.4%",
+        "6M": "+1.0%",
+        "1Y": "+23.7%",
+        "52wk_range": {
+          "low": 249.25,
+          "high": 334.61
+        }
+      }
+    },
+    "valuation_metrics": {
+      "pe": 15.23,
+      "pb": 2.32,
+      "ps": 4.62,
+      "roe": "15.74%",
+      "roa": "1.29%",
+      "net_margin": "31.27%",
+      "debt_to_equity": 0.18,
+      "book_value_per_share": 130.3,
+      "eps_ttm": 20.51
+    },
+    "financial_highlights_Q1_2026": {
+      "fiscal_period": "Q1 2026",
+      "filing_date": "2026-05-01",
+      "revenue": "49.84B",
+      "eps": 5.94,
+      "net_income": "16.49B",
+      "operating_income": "14.17B",
+      "assets": "4.90T",
+      "liabilities": "4.54T",
+      "equity": "364.0B",
+      "cash": "312.1B",
+      "total_debt": "68.0B"
+    },
+    "earnings_release_date": "2026-05-01",
+    "news_sentiment_and_headlines": {
+      "sentiment": "neutral to slightly negative",
+      "examples": [
+        {
+          "date": "2026-05-03",
+          "headline": "Villere ST Denis J & Co lowers holdings in JPMorgan Chase & Co."
+        },
+        {
+          "date": "2026-05-03",
+          "headline": "Shares Sold: Confluence Wealth Services in JPMorgan Chase & Co."
+        },
+        {
+          "date": "2026-05-02",
+          "headline": "Shares Sold: M&T Bank Corp in JPMorgan Chase & Co."
+        },
+        {
+          "date": "2026-05-02",
+          "headline": "CPC Advisors reduces position in JPMorgan Chase & Co."
+        },
+        {
+          "date": "2026-05-01",
+          "headline": "JPM filed Form 10-Q"
+        }
+      ]
+    },
+    "insider_activity_cluster": {
+      "date": "2026-04-15",
+      "direction": "predominantly_sells",
+      "summary": "Cluster of open-market sales by senior JPM executives and directors.",
+      "notable_trades": [
+        {
+          "name": "Jamie Dimon",
+          "title": "Chairman & CEO",
+          "shares_sold": 130488,
+          "approx_sale_price": 306.56,
+          "approx_sale_value_usd": 40002401.28
+        },
+        {
+          "name": "Mary E. Erdoes",
+          "title": "CEO, Asset & Wealth Management",
+          "shares_sold": 12345,
+          "approx_sale_price": 306.57,
+          "approx_sale_value_usd": 3784606.65
+        },
+        {
+          "name": "Jennifer Piepszak",
+          "title": "Chief Operating Officer",
+          "shares_sold": 9136,
+          "approx_sale_price": 306.56,
+          "approx_sale_value_usd": 2800733.76
+        },
+        {
+          "name": "Ashley Bacon",
+          "title": "Chief Risk Officer",
+          "shares_sold": 7558,
+          "approx_sale_price": 306.55,
+          "approx_sale_value_usd": 2316904.9
+        },
+        {
+          "name": "Marianne Lake",
+          "title": "CEO, Consumer & Community Banking",
+          "shares_sold": 6427,
+          "approx_sale_price": 306.57,
+          "approx_sale_value_usd": 1970325.39
+        },
+        {
+          "name": "Jeremy Barnum",
+          "title": "Chief Financial Officer",
+          "shares_sold": 5611,
+          "approx_sale_price": 306.55,
+          "approx_sale_value_usd": 1720052.05
+        },
+        {
+          "name": "Douglas B. Petno",
+          "title": "CEO, Commercial Banking",
+          "shares_sold": 5660,
+          "approx_sale_price": 306.58,
+          "approx_sale_value_usd": 1735242.8
+        },
+        {
+          "name": "Lori A. Beer",
+          "title": "Global Chief Information Officer",
+          "shares_sold": 3166,
+          "approx_sale_price": 306.59,
+          "approx_sale_value_usd": 970663.94
+        }
+      ]
+    },
+    "sweep_takeaway": "JPM remains high-quality with strong Q1 YoY earnings growth; near-term trend mixed after a strong run; watch for continuation of momentum amid neutral-to-slightly-negative institutional headline flow."
+  }
+}
