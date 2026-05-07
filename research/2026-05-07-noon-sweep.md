@@ -36,10 +36,19 @@ This record logs the requested noon sweep in a structured format.
   },
   "news_highlights": [
     {
-      "date": "2026-05-01",
-      "headline": "JPMorganChase Files Form 10-Q for the Quarter Ended March 31, 2026",
-      "url": null,
-      "url_note": "No article URL was included in the prompt."
+      "date": "2026-05-06",
+      "headline": "Reuters legal item about settlement",
+      "url": "https://www.reuters.com/legal/government/jpmorgan-tried-settle-sexual-assault-claims-before-lawsuit-spokesperson-says-2026-05-06/"
+    },
+    {
+      "date": "2026-05-07",
+      "headline": "UBS target cut",
+      "url": "https://www.marketbeat.com/instant-alerts/jpmorgan-chase-co-nysejpm-price-target-cut-to-37500-by-analysts-at-ubs-group-2026-05-07/"
+    },
+    {
+      "date": "2026-05-06",
+      "headline": "Barclays buy rating",
+      "url": "https://www.marketbeat.com/instant-alerts/jpmorgan-chase-co-nysejpm-receives-buy-rating-from-barclays-2026-05-06/"
     }
   ],
   "risk_catalysts": [
@@ -50,10 +59,13 @@ This record logs the requested noon sweep in a structured format.
   "uncertainties": [
     "Ticker mapping is treated as JPM but marked inferred/uncertain.",
     "The ROE/ROA/ROIC values were accepted as supplied and not recomputed from the quarter figures.",
-    "No news article URLs were included in the request, so the news section cannot be fully linked from the prompt alone."
+    "News items are recorded as provided, including the exact URLs supplied in the request."
   ],
   "sources": [
     "User-provided sweep data in chat",
+    "https://www.reuters.com/legal/government/jpmorgan-tried-settle-sexual-assault-claims-before-lawsuit-spokesperson-says-2026-05-06/",
+    "https://www.marketbeat.com/instant-alerts/jpmorgan-chase-co-nysejpm-price-target-cut-to-37500-by-analysts-at-ubs-group-2026-05-07/",
+    "https://www.marketbeat.com/instant-alerts/jpmorgan-chase-co-nysejpm-receives-buy-rating-from-barclays-2026-05-06/",
     "https://github.com/RemyLoveLogicAI/agentic-os/blob/8b7aaf17346ddd73c67edd9473d0062c9813deaa/research/2026-05-02-noon-sweep.md",
     "https://github.com/RemyLoveLogicAI/agentic-os/blob/8b7aaf17346ddd73c67edd9473d0062c9813deaa/research/big_bank_database.json"
   ]
