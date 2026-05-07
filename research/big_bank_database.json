@@ -103,7 +103,7 @@
       },
       {
         "ticker": "MS",
-        "price": 189.0,
+        "price": 189.00,
         "day_change": "+0.90%",
         "pe_ratio": "17.83x",
         "market_cap": "$299.9B",
@@ -120,7 +120,7 @@
     "results": {
       "target": {
         "ticker": "JPM",
-        "price": 310.2,
+        "price": 310.20,
         "day_change": "+0.08%",
         "pe_ratio": "15.12x",
         "market_cap": "$836.6B",
@@ -130,7 +130,7 @@
       "peers": [
         {
           "ticker": "BAC",
-          "price": 53.9,
+          "price": 53.90,
           "day_change": "+0.73%",
           "pe_ratio": "13.57x",
           "market_cap": "$386.8B",
@@ -166,7 +166,7 @@
         },
         {
           "ticker": "MS",
-          "price": 189.0,
+          "price": 189.00,
           "day_change": "+0.90%",
           "pe_ratio": "17.83x",
           "market_cap": "$299.9B",
@@ -417,46 +417,11 @@
         "findings": "JPMorgan is expanding its national security initiative in Europe. Truist raised the price target to $332. Quarterly EPS estimates trend upwards through 2028."
       },
       "peers": [
-        {
-          "ticker": "BAC",
-          "price": 53.47,
-          "change_percent": "-0.89%",
-          "pe": "13.46x",
-          "sentiment": "Positive",
-          "notes": "AI edge framed as margin-accretive."
-        },
-        {
-          "ticker": "WFC",
-          "price": 81.53,
-          "change_percent": "-0.54%",
-          "pe": "12.39x",
-          "sentiment": "Neutral",
-          "notes": "No recent news."
-        },
-        {
-          "ticker": "C",
-          "price": 131.64,
-          "change_percent": "-1.06%",
-          "pe": "17.24x",
-          "sentiment": "Neutral",
-          "notes": "No recent news."
-        },
-        {
-          "ticker": "GS",
-          "price": 930.17,
-          "change_percent": "-1.23%",
-          "pe": "17.13x",
-          "sentiment": "Mixed",
-          "notes": "Insider sales noted despite neutral issuance."
-        },
-        {
-          "ticker": "MS",
-          "price": 188.53,
-          "change_percent": "-1.14%",
-          "pe": "17.80x",
-          "sentiment": "Neutral",
-          "notes": "No recent news."
-        }
+        { "ticker": "BAC", "price": 53.47, "change_percent": "-0.89%", "pe": "13.46x", "sentiment": "Positive", "notes": "AI edge framed as margin-accretive." },
+        { "ticker": "WFC", "price": 81.53, "change_percent": "-0.54%", "pe": "12.39x", "sentiment": "Neutral", "notes": "No recent news." },
+        { "ticker": "C", "price": 131.64, "change_percent": "-1.06%", "pe": "17.24x", "sentiment": "Neutral", "notes": "No recent news." },
+        { "ticker": "GS", "price": 930.17, "change_percent": "-1.23%", "pe": "17.13x", "sentiment": "Mixed", "notes": "Insider sales noted despite neutral issuance." },
+        { "ticker": "MS", "price": 188.53, "change_percent": "-1.14%", "pe": "17.80x", "sentiment": "Neutral", "notes": "No recent news." }
       ]
     },
     "summary": "The sector saw a broad decline today with GS leading the dollar loss. JPM remains strong with strategic European expansion and positive analyst sentiment. BAC is highlighted for its AI-related margin narrative."
@@ -514,7 +479,7 @@
       },
       {
         "ticker": "MS",
-        "price": 191.4,
+        "price": 191.40,
         "day_change_percent": 0.37,
         "market_cap": "303.1B",
         "pe_ratio": 18.0,
@@ -1050,7 +1015,7 @@
         {
           "date": "2026-05-05",
           "source": "MarketBeat",
-          "title": "Institutional flow updates for JPMorgan Chase \u2014 mixed selling activity continues",
+          "title": "Institutional flow updates for JPMorgan Chase — mixed selling activity continues",
           "sentiment": "slightly_negative"
         },
         {
@@ -1062,7 +1027,7 @@
         {
           "date": "2026-05-04",
           "source": "Stock Titan",
-          "title": "JPMorgan Chase files [424B2] Prospectus Supplement \u2014 notes offering",
+          "title": "JPMorgan Chase files [424B2] Prospectus Supplement — notes offering",
           "sentiment": "neutral"
         },
         {
@@ -1126,5 +1091,142 @@
       ]
     },
     "concise_summary": "JPMorgan Chase opens the May 5, 2026 morning tape in constructive shape following a strong Q1 2026 report (EPS $5.94, +17.2% YoY; revenue $49.84B, +10.0% YoY; net income $16.49B, +12.6% YoY). The 10-Q was filed May 1 and the balance sheet remains fortress-grade at $4.90T assets and $364B equity. Stock is near $312.80, off slightly from the 2026-01 high of ~$334 but well above the March lows. Valuation at ~15x TTM earnings and ~2.4x book is reasonable for the franchise quality. Analyst consensus implies steady EPS growth to ~$21.75 for FY2026. Near-term tone is neutral-to-mildly-positive: institutional headline flow is mixed-negative but fundamentals and earnings momentum are clearly positive. No major negative catalysts apparent at the morning bell."
+  },
+  {
+    "timestamp": "2026-05-06T20:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "night sweep",
+    "resolved_entity": {
+      "name": "JPMorgan Chase & Co.",
+      "ticker": "JPM",
+      "exchange": "NYSE",
+      "confidence": "high"
+    },
+    "metadata": {
+      "run_date": "2026-05-06",
+      "run_time_pdt": "20:00:00",
+      "price_snapshot_as_of": "2026-05-06T20:31:05Z",
+      "cik": "0000019617",
+      "exchange": "NYSE"
+    },
+    "topline_view": {
+      "price": 314.81,
+      "day_change": 5.41,
+      "day_change_percent": 1.75,
+      "approx_market_cap_usd_B": 844,
+      "note": "Approximate market cap based on reported shares; ignore inconsistent market-cap snapshot from tool.",
+      "sentiment": "Constructive / mildly positive",
+      "key_read": "JPMorgan Chase & Co. is confirmed as the Big Bank entity. Q1 2026 results remain strong, with revenue, EPS, net income, and margins all expanding year over year. The stock is trading higher after the latest news flow, while the main watch-items remain regulatory, legal, and operational risk."
+    },
+    "latest_earnings": {
+      "fiscal_period": "Q1 2026",
+      "report_period": "2026-03-31",
+      "filing_date": "2026-05-01",
+      "revenue_usd_B": 49.84,
+      "revenue_yoy_pct": 10.0,
+      "net_income_usd_B": 16.49,
+      "net_income_yoy_pct": 12.6,
+      "eps": 5.94,
+      "eps_yoy_pct": 17.2,
+      "operating_income_usd_B": 14.17,
+      "operating_margin_pct": 28.4,
+      "net_margin_pct": 33.1
+    },
+    "fy2025_ttm_context": {
+      "revenue_usd_B": 182.45,
+      "net_income_usd_B": 57.05,
+      "eps": 20.05,
+      "dividends_per_share": 5.8
+    },
+    "balance_sheet": {
+      "total_assets_usd_T": 4.9,
+      "shareholders_equity_usd_B": 364.0,
+      "cash_and_equivalents_usd_B": 312.1,
+      "current_debt_usd_B": 68.0
+    },
+    "valuation_metrics": {
+      "ttm_pe": 15.7,
+      "price_to_book": 2.34,
+      "dividend_yield_pct": 1.84,
+      "q1_2026_operating_margin_pct": 28.4,
+      "q1_2026_net_margin_pct": 33.1
+    },
+    "forward_consensus": {
+      "q2_2026_eps": 5.38,
+      "q3_2026_eps": 5.48,
+      "q4_2026_eps": 5.52,
+      "q1_2027_eps": 5.73,
+      "quarterly_revenue_expectation_usd_B_range": [47.9, 50.0]
+    },
+    "news_flow": [
+      {
+        "date": "2026-05-06",
+        "source": "Reuters",
+        "headline": "JPMorgan tried to settle sexual assault claims before lawsuit, spokesperson says",
+        "takeaway": "Potential legal/reputational overhang."
+      },
+      {
+        "date": "2026-05-06",
+        "source": "Stock Titan",
+        "headline": "Priced callable zero-coupon notes due 2056",
+        "takeaway": "Ongoing capital markets activity."
+      },
+      {
+        "date": "2026-05-06",
+        "source": "MarketBeat",
+        "headline": "Barclays gave JPMorgan Chase a Buy rating",
+        "takeaway": "Analyst support."
+      },
+      {
+        "date": "2026-05-07",
+        "source": "MarketBeat",
+        "headline": "Stock was up 1.8% in a market recap-style article",
+        "takeaway": "Price action consistent with constructive tape."
+      }
+    ],
+    "sec_context": {
+      "latest_10q": {
+        "form": "10-Q",
+        "report_period": "2026-03-31",
+        "filing_date": "2026-05-01",
+        "accession": "0000019617-26-000137"
+      },
+      "latest_10k": {
+        "form": "10-K",
+        "fiscal_period": "FY2025"
+      },
+      "recent_8ks": [
+        "Multiple recent 8-Ks in April 2026"
+      ],
+      "key_risk_themes": [
+        "regulatory/legal scrutiny",
+        "litigation/enforcement",
+        "market risk (interest-rate and credit-spread sensitivity)",
+        "credit risk and collateral/counterparty stress",
+        "liquidity and capital constraints",
+        "operational/cyber/data failures",
+        "AI/technology/model risk",
+        "reputation/conduct risk",
+        "geopolitical/country risk"
+      ]
+    },
+    "risks_and_catalysts": {
+      "risks": [
+        "regulatory pressure and higher capital requirements",
+        "litigation/reputation overhang",
+        "credit deterioration",
+        "rate-driven volatility in net interest income and funding costs",
+        "cyber/AI/operational resilience",
+        "consumer and commercial real estate stress or recession risk"
+      ],
+      "catalysts": [
+        "continued revenue and EPS growth with margin expansion",
+        "stable or improving credit quality",
+        "favorable rate environment for net interest income",
+        "shareholder returns via dividends and buybacks",
+        "capital markets activity and balance-sheet strength"
+      ]
+    },
+    "quick_takeaway": "High-quality megabank with strong Q1 2026 growth and solid profitability. Watch the regulatory/legal overhang, rate sensitivity, and operational/cyber risk; forward estimates imply a relatively stable earnings run-rate."
   }
 ]
