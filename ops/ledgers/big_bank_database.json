@@ -103,7 +103,7 @@
       },
       {
         "ticker": "MS",
-        "price": 189.00,
+        "price": 189.0,
         "day_change": "+0.90%",
         "pe_ratio": "17.83x",
         "market_cap": "$299.9B",
@@ -120,7 +120,7 @@
     "results": {
       "target": {
         "ticker": "JPM",
-        "price": 310.20,
+        "price": 310.2,
         "day_change": "+0.08%",
         "pe_ratio": "15.12x",
         "market_cap": "$836.6B",
@@ -130,7 +130,7 @@
       "peers": [
         {
           "ticker": "BAC",
-          "price": 53.90,
+          "price": 53.9,
           "day_change": "+0.73%",
           "pe_ratio": "13.57x",
           "market_cap": "$386.8B",
@@ -166,7 +166,7 @@
         },
         {
           "ticker": "MS",
-          "price": 189.00,
+          "price": 189.0,
           "day_change": "+0.90%",
           "pe_ratio": "17.83x",
           "market_cap": "$299.9B",
@@ -417,11 +417,46 @@
         "findings": "JPMorgan is expanding its national security initiative in Europe. Truist raised the price target to $332. Quarterly EPS estimates trend upwards through 2028."
       },
       "peers": [
-        { "ticker": "BAC", "price": 53.47, "change_percent": "-0.89%", "pe": "13.46x", "sentiment": "Positive", "notes": "AI edge framed as margin-accretive." },
-        { "ticker": "WFC", "price": 81.53, "change_percent": "-0.54%", "pe": "12.39x", "sentiment": "Neutral", "notes": "No recent news." },
-        { "ticker": "C", "price": 131.64, "change_percent": "-1.06%", "pe": "17.24x", "sentiment": "Neutral", "notes": "No recent news." },
-        { "ticker": "GS", "price": 930.17, "change_percent": "-1.23%", "pe": "17.13x", "sentiment": "Mixed", "notes": "Insider sales noted despite neutral issuance." },
-        { "ticker": "MS", "price": 188.53, "change_percent": "-1.14%", "pe": "17.80x", "sentiment": "Neutral", "notes": "No recent news." }
+        {
+          "ticker": "BAC",
+          "price": 53.47,
+          "change_percent": "-0.89%",
+          "pe": "13.46x",
+          "sentiment": "Positive",
+          "notes": "AI edge framed as margin-accretive."
+        },
+        {
+          "ticker": "WFC",
+          "price": 81.53,
+          "change_percent": "-0.54%",
+          "pe": "12.39x",
+          "sentiment": "Neutral",
+          "notes": "No recent news."
+        },
+        {
+          "ticker": "C",
+          "price": 131.64,
+          "change_percent": "-1.06%",
+          "pe": "17.24x",
+          "sentiment": "Neutral",
+          "notes": "No recent news."
+        },
+        {
+          "ticker": "GS",
+          "price": 930.17,
+          "change_percent": "-1.23%",
+          "pe": "17.13x",
+          "sentiment": "Mixed",
+          "notes": "Insider sales noted despite neutral issuance."
+        },
+        {
+          "ticker": "MS",
+          "price": 188.53,
+          "change_percent": "-1.14%",
+          "pe": "17.80x",
+          "sentiment": "Neutral",
+          "notes": "No recent news."
+        }
       ]
     },
     "summary": "The sector saw a broad decline today with GS leading the dollar loss. JPM remains strong with strategic European expansion and positive analyst sentiment. BAC is highlighted for its AI-related margin narrative."
@@ -479,7 +514,7 @@
       },
       {
         "ticker": "MS",
-        "price": 191.40,
+        "price": 191.4,
         "day_change_percent": 0.37,
         "market_cap": "303.1B",
         "pe_ratio": 18.0,
@@ -902,61 +937,244 @@
     "timestamp": "2026-05-01T08:00:00-07:00",
     "task": "Big Bank triple-sweep research - morning sweep",
     "sweep_type": "morning",
-    "target": {"ticker": "JPM", "name": "JPMorgan Chase & Co."},
+    "target": {
+      "ticker": "JPM",
+      "name": "JPMorgan Chase & Co."
+    },
     "summary": "JPM looks technically constructive and fundamentally solid. The stock is around $314, near the upper end of a recent 90-day range after rebounding from a March low. Valuation is reasonable for a large bank at roughly 15.3x earnings and 2.34x book, with ROE around 15.7%. FY2025 showed modest revenue growth and slightly lower net income versus FY2024, but EPS still improved. Analyst estimates point to further EPS growth in FY2026 and beyond. Recent SEC activity is mostly financing-related, and insider filings show notable open-market selling by senior management on April 15. Institutional ownership could not be directly validated via the ownership tool, though recent news headlines suggest some new positions were filed by smaller managers.",
     "results": {
       "as_of": "2026-05-01T15:12:46Z",
-      "entity": {"name": "JPMorgan Chase & Co.", "ticker": "JPM", "cik": "0000019617", "sector": "Financials", "industry": "Banks", "exchange": "NYSE", "location": "New York, U.S.A."},
+      "entity": {
+        "name": "JPMorgan Chase & Co.",
+        "ticker": "JPM",
+        "cik": "0000019617",
+        "sector": "Financials",
+        "industry": "Banks",
+        "exchange": "NYSE",
+        "location": "New York, U.S.A."
+      },
       "market": {
-        "latest_price_snapshot": {"price": 314.21, "day_change": 0.98, "day_change_percent": 0.31},
-        "short_term_price_context": {"latest_close": 313.23, "latest_close_date": "2026-04-30", "five_trading_day_change_percent": 1.61, "one_month_change_percent": 6.36, "rough_90d_range": {"low": 282.84, "low_date": "2026-03-27", "high": 322.4, "high_date": "2026-02-06"}, "rough_90d_change_percent": 1.97, "context_note": "Shares have recovered from a March low and are trading near the upper end of the recent 90-day range."},
-        "current_valuation_snapshot": {"market_cap": 848000919348, "enterprise_value": 569438919348, "price_to_earnings": 15.33, "price_to_book": 2.34, "price_to_sales": 4.65, "ev_to_ebitda": 7.11, "ev_to_revenue": 3.12, "roe": 0.1574, "roa": 0.01289, "net_margin": 0.3127, "debt_to_equity": 0.1787, "current_ratio": 4.2685}
+        "latest_price_snapshot": {
+          "price": 314.21,
+          "day_change": 0.98,
+          "day_change_percent": 0.31
+        },
+        "short_term_price_context": {
+          "latest_close": 313.23,
+          "latest_close_date": "2026-04-30",
+          "five_trading_day_change_percent": 1.61,
+          "one_month_change_percent": 6.36,
+          "rough_90d_range": {
+            "low": 282.84,
+            "low_date": "2026-03-27",
+            "high": 322.4,
+            "high_date": "2026-02-06"
+          },
+          "rough_90d_change_percent": 1.97,
+          "context_note": "Shares have recovered from a March low and are trading near the upper end of the recent 90-day range."
+        },
+        "current_valuation_snapshot": {
+          "market_cap": 848000919348,
+          "enterprise_value": 569438919348,
+          "price_to_earnings": 15.33,
+          "price_to_book": 2.34,
+          "price_to_sales": 4.65,
+          "ev_to_ebitda": 7.11,
+          "ev_to_revenue": 3.12,
+          "roe": 0.1574,
+          "roa": 0.01289,
+          "net_margin": 0.3127,
+          "debt_to_equity": 0.1787,
+          "current_ratio": 4.2685
+        }
       },
       "financials": {
-        "latest_annual_report": {"report_period": "2025-12-31", "fiscal_period": "FY2025", "filing_date": "2026-02-13", "revenue": 182447000000, "operating_income": 36029000000, "net_income": 57048000000, "eps_diluted": 20.02, "total_assets": 4424900000000, "shareholders_equity": 362438000000, "cash_and_equivalents": 343338000000, "total_debt": 64776000000},
-        "prior_year_comparison": {"report_period": "2024-12-31", "revenue": 177556000000, "net_income": 58471000000, "eps_diluted": 19.75, "total_assets": 4002814000000, "shareholders_equity": 344758000000},
-        "year_over_year_trends": {"revenue_growth_percent": 2.75, "net_income_growth_percent": -2.42, "eps_growth_percent": 1.37, "assets_growth_percent": 10.54, "equity_growth_percent": 5.11},
+        "latest_annual_report": {
+          "report_period": "2025-12-31",
+          "fiscal_period": "FY2025",
+          "filing_date": "2026-02-13",
+          "revenue": 182447000000,
+          "operating_income": 36029000000,
+          "net_income": 57048000000,
+          "eps_diluted": 20.02,
+          "total_assets": 4424900000000,
+          "shareholders_equity": 362438000000,
+          "cash_and_equivalents": 343338000000,
+          "total_debt": 64776000000
+        },
+        "prior_year_comparison": {
+          "report_period": "2024-12-31",
+          "revenue": 177556000000,
+          "net_income": 58471000000,
+          "eps_diluted": 19.75,
+          "total_assets": 4002814000000,
+          "shareholders_equity": 344758000000
+        },
+        "year_over_year_trends": {
+          "revenue_growth_percent": 2.75,
+          "net_income_growth_percent": -2.42,
+          "eps_growth_percent": 1.37,
+          "assets_growth_percent": 10.54,
+          "equity_growth_percent": 5.11
+        },
         "latest_quarterly_trend": [
-          {"report_period": "2025-09-30", "fiscal_period": "2025-Q3", "revenue": 46427000000, "net_income": 14393000000, "eps_diluted": 5.07},
-          {"report_period": "2025-06-30", "fiscal_period": "2025-Q2", "revenue": 44912000000, "net_income": 14987000000, "eps_diluted": 5.24}
+          {
+            "report_period": "2025-09-30",
+            "fiscal_period": "2025-Q3",
+            "revenue": 46427000000,
+            "net_income": 14393000000,
+            "eps_diluted": 5.07
+          },
+          {
+            "report_period": "2025-06-30",
+            "fiscal_period": "2025-Q2",
+            "revenue": 44912000000,
+            "net_income": 14987000000,
+            "eps_diluted": 5.24
+          }
         ]
       },
-      "earnings": {"latest_reported": {"report_period": "2025-12-31", "fiscal_period": "FY2025", "filing_date": "2026-02-13", "source_type": "10-K", "revenue": 182447000000, "eps": 20.02, "gross_profit": 168235000000, "operating_income": 36029000000, "net_income": 57048000000, "net_margin": 0.3127}},
+      "earnings": {
+        "latest_reported": {
+          "report_period": "2025-12-31",
+          "fiscal_period": "FY2025",
+          "filing_date": "2026-02-13",
+          "source_type": "10-K",
+          "revenue": 182447000000,
+          "eps": 20.02,
+          "gross_profit": 168235000000,
+          "operating_income": 36029000000,
+          "net_income": 57048000000,
+          "net_margin": 0.3127
+        }
+      },
       "analyst_estimates": {
         "quarterly": [
-          {"fiscal_period": "2026-06-30", "revenue": 47916067816, "eps": 5.38},
-          {"fiscal_period": "2026-09-30", "revenue": 48350475260, "eps": 5.48},
-          {"fiscal_period": "2026-12-31", "revenue": 48662375210, "eps": 5.52},
-          {"fiscal_period": "2027-03-31", "revenue": 49999909780, "eps": 5.73}
+          {
+            "fiscal_period": "2026-06-30",
+            "revenue": 47916067816,
+            "eps": 5.38
+          },
+          {
+            "fiscal_period": "2026-09-30",
+            "revenue": 48350475260,
+            "eps": 5.48
+          },
+          {
+            "fiscal_period": "2026-12-31",
+            "revenue": 48662375210,
+            "eps": 5.52
+          },
+          {
+            "fiscal_period": "2027-03-31",
+            "revenue": 49999909780,
+            "eps": 5.73
+          }
         ],
         "annual": [
-          {"fiscal_period": "2026-12-31", "revenue": 194757409590, "eps": 22.38},
-          {"fiscal_period": "2027-12-31", "revenue": 201919567568, "eps": 23.51},
-          {"fiscal_period": "2028-12-31", "revenue": 212152341008, "eps": 26.22}
+          {
+            "fiscal_period": "2026-12-31",
+            "revenue": 194757409590,
+            "eps": 22.38
+          },
+          {
+            "fiscal_period": "2027-12-31",
+            "revenue": 201919567568,
+            "eps": 23.51
+          },
+          {
+            "fiscal_period": "2028-12-31",
+            "revenue": 212152341008,
+            "eps": 26.22
+          }
         ],
         "takeaway": "Street is looking for continued EPS expansion versus FY2025 actual EPS of 20.02, with FY2026 consensus at 22.38."
       },
       "sec_filings": {
         "recent_filings": [
-          {"filing_type": "8-K", "report_date": "2026-04-23", "filing_date": "2026-04-23", "accession_number": "0001193125-26-173739", "highlights": ["Closed public offerings totaling $10.0bn across four note tranches.", "Offerings included Floating Rate Notes due 2030, Fixed-to-Floating Rate Notes due 2030, 2032, and 2037.", "This is a capital-markets / funding update rather than an operating-risk filing."]},
-          {"filing_type": "8-K", "report_date": "2026-04-21", "filing_date": "2026-04-24", "accession_number": "0000019617-26-000119", "highlights": ["Recent 8-K exists in the feed, but the item text was not retrievable via the available filing-items tool.", "No additional claim made here beyond the filing’s existence."]},
-          {"filing_type": "4", "report_date": "2026-04-15", "filing_date": "2026-04-15", "accession_number": "multiple", "highlights": ["Cluster of Form 4 filings by senior executives and directors on the same date."]}
+          {
+            "filing_type": "8-K",
+            "report_date": "2026-04-23",
+            "filing_date": "2026-04-23",
+            "accession_number": "0001193125-26-173739",
+            "highlights": [
+              "Closed public offerings totaling $10.0bn across four note tranches.",
+              "Offerings included Floating Rate Notes due 2030, Fixed-to-Floating Rate Notes due 2030, 2032, and 2037.",
+              "This is a capital-markets / funding update rather than an operating-risk filing."
+            ]
+          },
+          {
+            "filing_type": "8-K",
+            "report_date": "2026-04-21",
+            "filing_date": "2026-04-24",
+            "accession_number": "0000019617-26-000119",
+            "highlights": [
+              "Recent 8-K exists in the feed, but the item text was not retrievable via the available filing-items tool.",
+              "No additional claim made here beyond the filing’s existence."
+            ]
+          },
+          {
+            "filing_type": "4",
+            "report_date": "2026-04-15",
+            "filing_date": "2026-04-15",
+            "accession_number": "multiple",
+            "highlights": [
+              "Cluster of Form 4 filings by senior executives and directors on the same date."
+            ]
+          }
         ],
         "filing_summary": "Latest substantive disclosure parsed was a debt-issuance 8-K; no obvious adverse SEC signal surfaced in the retrieved items."
       },
       "insider_trades": {
-        "summary": {"date": "2026-04-15", "direction": "predominantly_sells", "notable_pattern": "Several senior executives and the CEO sold shares in the open market; also a couple of board compensation grants were filed on 2026-03-31.", "approx_shares_sold": 180391, "approx_value_usd": 55300455.94},
+        "summary": {
+          "date": "2026-04-15",
+          "direction": "predominantly_sells",
+          "notable_pattern": "Several senior executives and the CEO sold shares in the open market; also a couple of board compensation grants were filed on 2026-03-31.",
+          "approx_shares_sold": 180391,
+          "approx_value_usd": 55300455.94
+        },
         "notable_trades": [
-          {"name": "James Dimon", "title": "Chairman & CEO", "transaction_type": "Open market sale", "shares": 130488, "price_per_share": 306.557, "value_usd": 40002009.82},
-          {"name": "Mary E. Erdoes", "title": "CEO Asset & Wealth Management", "transaction_type": "Open market sale", "shares": 12345, "price_per_share": 306.5657, "value_usd": 3784553.57},
-          {"name": "Jennifer Piepszak", "title": "Chief Operating Officer", "transaction_type": "Open market sale", "shares": 9136, "price_per_share": 306.5579, "value_usd": 2800712.97}
+          {
+            "name": "James Dimon",
+            "title": "Chairman & CEO",
+            "transaction_type": "Open market sale",
+            "shares": 130488,
+            "price_per_share": 306.557,
+            "value_usd": 40002009.82
+          },
+          {
+            "name": "Mary E. Erdoes",
+            "title": "CEO Asset & Wealth Management",
+            "transaction_type": "Open market sale",
+            "shares": 12345,
+            "price_per_share": 306.5657,
+            "value_usd": 3784553.57
+          },
+          {
+            "name": "Jennifer Piepszak",
+            "title": "Chief Operating Officer",
+            "transaction_type": "Open market sale",
+            "shares": 9136,
+            "price_per_share": 306.5579,
+            "value_usd": 2800712.97
+          }
         ]
       },
       "institutional_ownership": {
         "status": "not_directly_validated_via_tool",
         "what_was_seen": [
-          {"source": "news_feed", "headline": "Ticino Wealth Takes Position in JPMorgan Chase & Co. $JPM", "date": "2026-05-01", "confidence": "low_to_moderate"},
-          {"source": "news_feed", "headline": "SageGuard Financial Group LLC Takes $3.28 Million Position in JPMorgan Chase & Co. $JPM", "date": "2026-05-01", "confidence": "low_to_moderate"}
+          {
+            "source": "news_feed",
+            "headline": "Ticino Wealth Takes Position in JPMorgan Chase & Co. $JPM",
+            "date": "2026-05-01",
+            "confidence": "low_to_moderate"
+          },
+          {
+            "source": "news_feed",
+            "headline": "SageGuard Financial Group LLC Takes $3.28 Million Position in JPMorgan Chase & Co. $JPM",
+            "date": "2026-05-01",
+            "confidence": "low_to_moderate"
+          }
         ],
         "note": "The institutional-ownership API returned inconsistent parameter behavior, so I could not reliably validate direct JPM holder changes from the ownership tool itself."
       },
@@ -964,11 +1182,31 @@
         "sentiment": "slightly_positive_to_neutral",
         "summary": "The news flow is dominated by technical-breakout commentary, small-firm position filings, and financing-related headlines. That mix leans mildly positive, but source quality is mixed and several items are automated/aggregated rather than primary reporting.",
         "top_headlines": [
-          {"date": "2026-05-01", "source": "ChartMill", "title": "JPMorgan Chase & Co. (NYSE:JPM) Breakout Setup with Strong Technical and Setup Ratings - ChartMill"},
-          {"date": "2026-05-01", "source": "MarketBeat", "title": "Ticino Wealth Takes Position in JPMorgan Chase & Co. $JPM - MarketBeat"},
-          {"date": "2026-05-01", "source": "MarketBeat", "title": "SageGuard Financial Group LLC Takes $3.28 Million Position in JPMorgan Chase & Co. $JPM - MarketBeat"},
-          {"date": "2026-04-30", "source": "MarketBeat", "title": "JPMorgan Chase & Co. (NYSE:JPM) Shares Up 1.5% - Here's Why - MarketBeat"},
-          {"date": "2026-04-30", "source": "Stock Titan", "title": "JPMorgan Chase (NYSE: JPM) prices $9.09M 5.675% callable notes due 2056 - Stock Titan"}
+          {
+            "date": "2026-05-01",
+            "source": "ChartMill",
+            "title": "JPMorgan Chase & Co. (NYSE:JPM) Breakout Setup with Strong Technical and Setup Ratings - ChartMill"
+          },
+          {
+            "date": "2026-05-01",
+            "source": "MarketBeat",
+            "title": "Ticino Wealth Takes Position in JPMorgan Chase & Co. $JPM - MarketBeat"
+          },
+          {
+            "date": "2026-05-01",
+            "source": "MarketBeat",
+            "title": "SageGuard Financial Group LLC Takes $3.28 Million Position in JPMorgan Chase & Co. $JPM - MarketBeat"
+          },
+          {
+            "date": "2026-04-30",
+            "source": "MarketBeat",
+            "title": "JPMorgan Chase & Co. (NYSE:JPM) Shares Up 1.5% - Here's Why - MarketBeat"
+          },
+          {
+            "date": "2026-04-30",
+            "source": "Stock Titan",
+            "title": "JPMorgan Chase (NYSE: JPM) prices $9.09M 5.675% callable notes due 2056 - Stock Titan"
+          }
         ]
       },
       "source_quality_notes": [
@@ -977,5 +1215,97 @@
         "Institutional ownership data was not directly retrievable in a reliable JPM-filtered form from the available API."
       ]
     }
+  },
+  {
+    "timestamp": "2026-05-08T12:00:00-07:00",
+    "task": "Big Bank triple-sweep research",
+    "sweep_type": "noon_sweep",
+    "target": "JPMorgan Chase & Co. (JPM)",
+    "summary": "Market/financial/news sweep: latest price $301.65 (-1.51% on day); Q1 2026 results strong (revenue $49.84B, net income $16.49B, EPS $5.94); CET1 14.3%; latest filings include 10-Q (2026-05-01) and 8-K (2026-05-07); recent headlines largely flow/filing-driven including an analyst downgrade and preferred/depositary share issuance plus investor sales/flows.",
+    "key_metrics": {
+      "market_snapshot": {
+        "latest_price": "301.65",
+        "day_move": "-4.62 (-1.51%)",
+        "market_cap": "~814.2B",
+        "pe": "14.7x",
+        "pb": "2.25x",
+        "ttm_roe": "15.7%",
+        "ttm_roa": "1.29%",
+        "book_value_per_share": "130.30",
+        "data_time": "2026-05-08T19:01:30Z"
+      },
+      "latest_quarter": {
+        "period": "Q1 2026",
+        "filed": "2026-05-01",
+        "revenue": "49.84B",
+        "revenue_yoy": "+10%",
+        "net_income": "16.49B",
+        "net_income_yoy": "+13%",
+        "diluted_eps": "5.94",
+        "eps_yoy": "+17%",
+        "roe": "19%",
+        "rotce": "23%",
+        "pre_provision_profit": "22.99B",
+        "segment_revenue": {
+          "CCB": "19.57B (+7%)",
+          "CIB": "23.38B (+19%)",
+          "AWM": "6.37B (+11%)"
+        },
+        "credit_capital": {
+          "allowance_for_credit_losses": "31.4B",
+          "cet1_ratio": "14.3%",
+          "slr": "5.6%",
+          "total_assets": "4.90T",
+          "deposits": "2.68T"
+        }
+      }
+    },
+    "sec_highlights": [
+      {
+        "type": "10-Q",
+        "date": "2026-05-01",
+        "highlights": [
+          "Net income up 13%, EPS up 17%, revenue up 10%",
+          "Well-capitalized; solid capital/liquidity",
+          "Early adopted enhanced SLR final rule; current SLR shown in filing",
+          "FY2026 outlook: net interest income ~103B; adjusted expense ~105B",
+          "Visa exchange/tender underway for JPM's 18.6M Visa B-2 shares"
+        ]
+      },
+      {
+        "type": "8-K",
+        "date": "2026-05-07",
+        "highlights": [
+          "Issued/sold 300,000 shares; deposited against delivery of 3,000,000 depositary shares tied to Series PP preferred stock"
+        ]
+      }
+    ],
+    "recent_headlines": [
+      {
+        "date": "2026-05-08",
+        "headline": "Nippon Life Global Investors Americas Inc. Sells 13,450 Shares of JPMorgan Chase & Co. $JPM",
+        "tone": "slightly negative/neutral"
+      },
+      {
+        "date": "2026-05-08",
+        "headline": "Elevated Financial Group LLC Makes New $1.34 Million Investment in JPMorgan Chase & Co. $JPM",
+        "tone": "positive"
+      },
+      {
+        "date": "2026-05-07",
+        "headline": "JPMorgan (JPM) revises tax treatment for Caterpillar-linked callable notes",
+        "tone": "neutral"
+      },
+      {
+        "date": "2026-05-07",
+        "headline": "JPMorgan Chase & Co. (NYSE:JPM) Stock Price Down 2.7% on Analyst Downgrade",
+        "tone": "negative"
+      },
+      {
+        "date": "2026-05-07",
+        "headline": "JPMorgan (NYSE: JPM) sells Series PP preferred via 3M depositary shares",
+        "tone": "neutral"
+      }
+    ]
   }
 ]
