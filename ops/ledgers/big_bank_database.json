@@ -977,5 +977,36 @@
         "Institutional ownership data was not directly retrievable in a reliable JPM-filtered form from the available API."
       ]
     }
+  },
+  {
+    "as_of": "2026-05-08T08:00:00-07:00",
+    "sweep_type": "morning sweep",
+    "ticker": "JPM",
+    "day_move_percent": -1.07,
+    "latest_quarter": {
+      "period": "2026-Q1",
+      "revenue_usd_B": 49.836,
+      "net_income_usd_B": 16.494,
+      "eps_usd": 5.95,
+      "assets_usd_T": 4.900475,
+      "equity_usd_B": 364.038
+    },
+    "key_ratios": {
+      "roe_percent": 8.04,
+      "roa_percent": 2.22,
+      "roic_percent": 6.94,
+      "ratio_note": "Ratios are from the latest available financial-metrics snapshot (TTM-style snapshot) and may not exactly match the single-quarter income statement."
+    },
+    "uncertainties": [
+      "Current price snapshot time is 2026-05-08T15:03:33Z, which is slightly after the requested as_of timestamp.",
+      "ROE/ROA/ROIC are from the metrics snapshot rather than directly recalculated from the quarter-only statements.",
+      "Recent news is from third-party financial news wires/sites and may reflect commentary rather than confirmed company actions."
+    ],
+    "sources": [
+      {"title": "JPMorgan Chase & Co. Q1 2026 Form 10-Q (SEC filing)", "url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm"},
+      {"title": "JPM current stock price snapshot", "url": "https://www.nasdaq.com/market-activity/stocks/jpm"},
+      {"title": "JPMorgan & Co. stock price down on analyst downgrade - MarketBeat", "url": "https://www.marketbeat.com/instant-alerts/jpmorgan-chase-co-nysejpm-stock-price-down-27-on-analyst-downgrade-2026-05-07/"},
+      {"title": "JPMorgan sells Series PP preferred via 3M depositary shares - Stock Titan", "url": "https://www.stocktitan.net/sec-filings/JPM/8-k-jpmorgan-chase-co-reports-material-event-102cfadf85d3.html"}
+    ]
   }
 ]
