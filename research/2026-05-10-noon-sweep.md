@@ -1,0 +1,173 @@
+Big Bank Noon Sweep — 2026-05-10
+
+JPM is the ticker for this sweep. The latest price is about 302.4, the assessment confidence is 0.86, and the news signal is low.
+
+```json
+{
+  "timestamp": "2026-05-10T12:00:00-07:00",
+  "task": "Big Bank triple-sweep research task",
+  "sweep_type": "noon sweep",
+  "results": {
+    "target": {
+      "ticker": "JPM",
+      "company_name": "JPMorgan Chase & Co.",
+      "cik": "0000019617",
+      "sector": "Financials",
+      "industry": "Banks",
+      "exchange": "NYSE",
+      "country": "US",
+      "database_path": "ops/ledgers/big_bank_database.json"
+    },
+    "peers": ["BAC","C","WFC","GS","MS"],
+    "market_price_vol_liquidity": {
+      "as_of": "2026-05-08T20:50:14Z",
+      "latest_price": 302.4,
+      "day_change": -3.87,
+      "day_change_percent": -1.26,
+      "market_cap_usd": 814827421135,
+      "price_to_earnings_ttm": 14.730521315383537,
+      "price_to_book_ttm": 2.248184299480187,
+      "estimated_realized_volatility_30d_annualized": 0.21,
+      "estimated_avg_daily_volume_23d_shares": 8100000,
+      "estimated_avg_daily_dollar_volume_23d_usd": 2490000000,
+      "liquidity_note": "Volatility and trading-liquidity metrics are estimated from the provided public daily price history (2026-04-08 to 2026-05-08); these are not directly reported by the API.",
+      "methodology_note": "Annualized volatility is an approximate close-to-close realized-volatility estimate. Dollar volume uses average close price multiplied by average shares traded."
+    },
+    "fundamentals": {
+      "latest_quarter": {
+        "report_period": "2026-03-31",
+        "fiscal_period": "2026-Q1",
+        "filing_type": "10-Q",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+        "revenue_usd": 49836000000,
+        "revenue_yoy_growth": 0.0999,
+        "net_income_usd": 16494000000,
+        "net_income_yoy_growth": 0.1264,
+        "earnings_per_share_usd": 5.94,
+        "earnings_per_share_yoy_growth": 0.1716,
+        "gross_margin": 0.9496949995986836,
+        "operating_margin": 0.28437274259571393,
+        "net_margin": 0.33096556705995667,
+        "shareholders_equity_usd": 364038000000,
+        "total_assets_usd": 4900475000000,
+        "total_liabilities_usd": 4536437000000,
+        "total_debt_usd": 68048000000,
+        "cash_and_equivalents_usd": 312142000000,
+        "guidance": null,
+        "guidance_note": "No explicit guidance field was available in the retrieved public datasets."
+      },
+      "latest_snapshot_metrics": {
+        "price_to_sales_ttm": 4.466104792816544,
+        "enterprise_value_usd": 536265421135,
+        "enterprise_value_to_ebitda": 6.5054701531546835,
+        "return_on_equity_ttm": 0.1574007140531622,
+        "return_on_assets_ttm": 0.01289249474564397,
+        "return_on_invested_capital_ttm": 1.605816562544709,
+        "revenue_growth_ttm": 0.01753456439658009,
+        "earnings_growth_ttm": 0.0022311624883610617,
+        "operating_income_growth_ttm": -0.017382383622751556,
+        "ebitda_growth_ttm": 0.0297817586728129,
+        "book_value_per_share": 130.30307388099945,
+        "earnings_per_share_ttm": 20.509796872191263,
+        "cash_ratio": 4.268514949959595,
+        "current_ratio": 4.268514949959595,
+        "debt_to_equity": 0.17872298158581607,
+        "debt_to_assets": 0.014638974892087956,
+        "interest_coverage": 1.7415371100533208,
+        "snapshot_note": "TTM ratios are from the latest financial-metrics snapshot. For a bank, some conventional liquidity ratios (e.g., current ratio) are less meaningful than for a non-financial companies."
+      },
+      "signals": [
+        {"type": "growth", "headline": "Q1 revenue rose 10.0% YoY", "confidence": 0.98},
+        {"type": "profitability", "headline": "Q1 net income rose 12.6% YoY and EPS rose 17.2% YoY", "confidence": 0.98},
+        {"type": "margin", "headline": "Q1 operating margin expanded to 28.4%", "confidence": 0.97},
+        {"type": "return", "headline": "TTM ROE is 15.7%", "confidence": 0.96}
+      ]
+    },
+    "news": {
+      "overall_sentiment": "mixed_neutral",
+      "overall_impact": "low",
+      "items": [
+        {
+          "headline": "JPMorgan Chase & Co. $JPM Shares Acquired by Vest Financial LLC - MarketBeat",
+          "source": "MarketBeat",
+          "date": "2026-05-10T11:02:49+00:00",
+          "url": "https://www.marketbeat.com/instant-alerts/filing-jpmorgan-chase-co-jpm-shares-acquired-by-vest-financial-llc-2026-05-10/",
+          "sentiment": "slightly_positive",
+          "impact": "low",
+          "reason": "Institutional accumulation notice; automated filing-style headline, not an operating update."
+        },
+        {
+          "headline": "GC Wealth Management RIA LLC Sells 25,697 Shares of JPMorgan Chase & Co. $JPM - MarketBeat",
+          "source": "MarketBeat",
+          "date": "2026-05-10T08:46:11+00:00",
+          "url": "https://www.marketbeat.com/instant-alerts/filing-gc-wealth-management-ria-llc-sells-25697-shares-of-jpmorgan-chase-co-jpm-2026-05-10/",
+          "sentiment": "slightly_negative",
+          "impact": "low",
+          "reason": "Institutional sale notice; low direct fundamental significance."
+        },
+        {
+          "headline": "KTF Investments LLC Takes $6.45 Million Position in JPMorgan Chase & Co. $JPM - MarketBeat",
+          "source": "MarketBeat",
+          "date": "2026-05-09T09:11:20+00:00",
+          "url": "https://www.marketbeat.com/instant-alerts/filing-ktf-investments-llc-takes-645-million-position-in-jpmorgan-chase-co-jpm-2026-05-09/",
+          "sentiment": "slightly_positive",
+          "impact": "low",
+          "reason": "New position disclosure; low direct business impact."
+        },
+        {
+          "headline": "FARMERS & MERCHANTS TRUST Co OF LONG BEACH Sells 4,840 Shares of JPMorgan Chase & Co. $JPM - MarketBeat",
+          "source": "MarketBeat",
+          "date": "2026-05-09T08:04:44+00:00",
+          "url": "https://www.marketbeat.com/instant-alerts/filing-farmers-merchants-trust-co-of-long-beach-sells-4840-shares-of-jpmorgan-chase-co-jpm-2026-05-09/",
+          "sentiment": "slightly_negative",
+          "impact": "low",
+          "reason": "Institutional sale notice; automated and not an operational catalyst."
+        },
+        {
+          "headline": "JPMorgan Chase & Co. $JPM Shares Sold by Comerica Bank - MarketBeat",
+          "source": "MarketBeat",
+          "date": "2026-05-09T08:04:43+00:00",
+          "url": "https://www.marketbeat.com/instant-alerts/filing-jpmorgan-chase-co-jpm-shares-sold-by-comerica-bank-2026-05-09/",
+          "sentiment": "slightly_negative",
+          "impact": "low",
+          "reason": "Institutional sale notice; low informational value for fundamentals."
+        }
+      ],
+      "news_quality_note": "The retrieved news feed is dominated by automated institutional ownership headlines rather than operating or macro headlines, so the aggregate signal is weak."
+    },
+    "summary": "JPM is trading around $302 with estimated 30-day annualized realized volatility near 21% and strong trading liquidity (~8.1M shares/day, ~ $2.5B/day). The latest quarter shows solid fundamental momentum: revenue +10.0% YoY, net income +12.6% YoY, EPS $5.94 (+17.2% YoY), and operating margin expansion to 28.4%. TTM profitability remains healthy with ROE ~15.7% and P/B ~2.25. Recent news is mostly low-signal institutional ownership updates, so the news tone is mixed-neutral and low impact.",
+    "assessment": {
+      "market_tone": "neutral_to_slightly_positive",
+      "fundamental_tone": "positive",
+      "news_tone": "neutral",
+      "confidence": 0.86
+    },
+    "sources": [
+      {"type": "company_facts", "tool": "get_company_facts", "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000019617", "note": "Company identity and SEC reference."},
+      {"type": "current_price_snapshot", "tool": "get_current_stock_price", "as_of": "2026-05-08T20:50:14Z", "note": "Latest available price snapshot from the public dataset."},
+      {"type": "financial_metrics_snapshot", "tool": "get_financial_metrics_snapshot", "note": "Latest valuation and TTM ratio snapshot."},
+      {"type": "quarterly_financials", "tool": "get_financial_metrics", "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm", "report_period": "2026-03-31"},
+      {"type": "earnings_snapshot", "tool": "get_earnings", "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm", "report_period": "2026-03-31"},
+      {"type": "historical_prices", "tool": "get_historical_stock_prices", "range": "2026-04-08 to 2026-05-08", "note": "Used to estimate volatility and liquidity."},
+      {"type": "sec_filings", "tool": "get_sec_filings", "filings": [
+        {"filing_type": "8-K", "filing_date": "2026-05-07", "report_date": "2026-05-06", "url": "https://www.sec.gov/Archives/edgar/data/19617/000119312526211978/d903351d8k.htm"},
+        {"filing_type": "8-K", "filing_date": "2026-04-23", "report_date": "2026-04-23", "url": "https://www.sec.gov/Archives/edgar/data/19617/000119312526173739/d235028d8k.htm"},
+        {"filing_type": "8-K", "filing_date": "2026-04-24", "report_date": "2026-04-21", "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961726000119/jpm-20260421.htm"}
+      ]},
+      {"type": "news", "tool": "get_company_news", "articles": [
+        "https://www.marketbeat.com/instant-alerts/filing-jpmorgan-chase-co-jpm-shares-acquired-by-vest-financial-llc-2026-05-10/",
+        "https://www.marketbeat.com/instant-alerts/filing-gc-wealth-management-ria-llc-sells-25697-shares-of-jpmorgan-chase-co-jpm-2026-05-10/",
+        "https://www.marketbeat.com/instant-alerts/filing-ktf-investments-llc-takes-645-million-position-in-jpmorgan-chase-co-jpm-2026-05-09/",
+        "https://www.marketbeat.com/instant-alerts/filing-farmers-merchants-trust-co-of-long-beach-sells-4840-shares-of-jpmorgan-chase-co-jpm-2026-05-09/",
+        "https://www.marketbeat.com/instant-alerts/filing-jpmorgan-chase-co-jpm-shares-sold-by-comerica-bank-2026-05-09/"
+      ]}
+    ],
+    "data_quality_notes": [
+      "Guidance was not available in the retrieved public datasets, so it is set to null.",
+      "ROE is included from the latest TTM metrics snapshot; quarterly ROE was unavailable in the quarter-specific metrics payload.",
+      "Current ratio is included only as a snapshot metric; for a bank it is less meaningful than for a non-financial company.",
+      "News results are dominated by automated institutional ownership headlines, so sentiment should be treated as low-confidence and low-impact."
+    ]
+  }
+}
+```
