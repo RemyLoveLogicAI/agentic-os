@@ -1,0 +1,28 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# System deps for cron + healthcheck
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    cron curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install shared requirements
+COPY agents/trend-arbitrage/requirements.txt /tmp/req-trend.txt
+COPY agents/social-content-engine/requirements.txt /tmp/req-social.txt
+COPY agents/micro-saas-factory/requirements.txt /tmp/req-factory.txt
+RUN pip install --no-cache-dir \
+    -r /tmp/req-trend.txt \
+    -r /tmp/req-social.txt \
+    -r /tmp/req-factory.txt
+
+# Copy entire project
+COPY . .
+
+# Make packages importable
+RUN pip install --no-cache-dir -e . 2>/dev/null || true
+
+# Pre-create state directories
+RUN mkdir -p state memory/workspace ops/ledgers
+
+CMD ["python", "--version"]
