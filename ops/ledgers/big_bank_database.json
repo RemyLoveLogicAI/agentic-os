@@ -1147,6 +1147,7 @@
         "day_change_percent": "-1.18%"
       }
     ],
+    "metrics_scope_note": "Valuation-table growth fields are snapshot/TTM style and can differ from latest single-quarter YoY growth rates.",
     "valuation_metrics": {
       "JPM": {"pe": 14.55, "pb": 2.22, "roe": "15.74%", "net_margin": "31.27%", "revenue_growth": "1.75%", "eps_growth": "-0.28%"},
       "BAC": {"pe": 11.78, "pb": 1.18, "roe": "10.50%", "net_margin": "28.14%", "revenue_growth": "-0.80%", "eps_growth": "7.14%"},
