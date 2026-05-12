@@ -1047,4 +1047,57 @@
       "bottom_line": "JPMorgan remains financially strong with solid quarter growth; current valuation is moderate with P/E ~14.7 and ROE ~15.7%. Latest news items appear mostly ownership/position adjustments rather than a clear new operational catalyst."
     }
   }
+,
+{
+  "timestamp": "2026-05-11T22:53:00-07:00",
+  "task": "Big Bank triple-sweep research task",
+  "sweep_type": "banked market data",
+  "results": {
+    "target": {
+      "ticker": "JPM",
+      "price": 299.79,
+      "day_change": "-2.31",
+      "day_change_percent": "-0.76%",
+      "sentiment": "Neutral",
+      "key_findings": ""
+    },
+    "peers": [
+      {
+        "ticker": "BAC",
+        "price": 50.53,
+        "change_percent": "-1.52%",
+        "sentiment": "Neutral",
+        "notes": ""
+      },
+      {
+        "ticker": "C",
+        "price": 125.88,
+        "change_percent": "+0.26%",
+        "sentiment": "Neutral",
+        "notes": ""
+      },
+      {
+        "ticker": "WFC",
+        "price": 73.53,
+        "change_percent": "-2.79%",
+        "sentiment": "Neutral",
+        "notes": ""
+      },
+      {
+        "ticker": "GS",
+        "price": 945.05,
+        "change_percent": "+0.92%",
+        "sentiment": "Neutral",
+        "notes": ""
+      },
+      {
+        "ticker": "MS",
+        "price": 191.07,
+        "change_percent": "-1.05%",
+        "sentiment": "Neutral",
+        "notes": ""
+      }
+    ]
+  }
+}
 ]
