@@ -823,9 +823,10 @@
       "Current ratio is included only as a snapshot metric; for a bank it is less meaningful than for a non-financial company.",
       "News results are dominated by automated institutional ownership headlines, so sentiment should be treated as low-confidence and low-impact."
     ]
-  },
-  {
-    "as_of": "2026-05-13T08:00:00-07:00",
+  }
+},
+{
+  "as_of": "2026-05-13T08:00:00-07:00",
     "sweep_type": "morning sweep",
     "ticker": "JPM",
     "company": "JPMorgan Chase & Co.",
@@ -918,6 +919,174 @@
       "https://www.ft.com/content/113ddfa2-7322-45f2-ac10-59bb1b302444?syn-25a6b1a6=1",
       "https://www.stocktitan.net/news/JPM/jp-morgan-chase-aims-to-help-protect-millions-of-americans-from-qd3okcg9b20w.html",
       "https://seekingalpha.com/news/4591311-jpmorgan-chases-markets-business-hits-record-level---report"
+    ]
+  },
+  {
+    "as_of": "2026-05-13T12:03:14-07:00",
+    "sweep_type": "noon sweep",
+    "ticker": "JPM",
+    "company": "JPMorgan Chase & Co.",
+    "day_move_percent": -1.12,
+    "latest_price_snapshot": {
+      "price": 301.47,
+      "open": null,
+      "high": null,
+      "low": null,
+      "close": null,
+      "volume": null,
+      "timestamp": "2026-05-13T12:03:14-07:00",
+      "source": "get_current_stock_price"
+    },
+    "recent_market_performance": {
+      "1D": {
+        "return_percent": -1.12,
+        "reference": "current intraday last vs prior close (2026-05-12 close 304.88)"
+      },
+      "5D": {
+        "return_percent": -4.26,
+        "reference": "current intraday last vs 2026-05-06 close 314.90"
+      },
+      "1M": {
+        "return_percent": -3.89,
+        "reference": "current intraday last vs 2026-04-13 close 313.68"
+      }
+    },
+    "latest_quarter": {
+      "report_period": "2026-03-31",
+      "fiscal_period": "2026-Q1",
+      "filing_date": "2026-05-01",
+      "source_type": "10-Q",
+      "revenue": 49836000000,
+      "net_income": 16494000000,
+      "eps": {
+        "basic": 5.95,
+        "diluted": 5.94
+      },
+      "roe": 0.1574007140531622,
+      "revenue_yoy_percent": 9.99,
+      "net_income_yoy_percent": 12.64,
+      "eps_yoy_percent": 17.16,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+      "accession_number": "0001628280-26-029344"
+    },
+    "key_ratios": {
+      "pe": 14.6515,
+      "ps": 4.4422,
+      "roe": 0.1574,
+      "roa": 0.0129,
+      "dividend_yield": null,
+      "stability_metrics": {
+        "current_ratio": 4.2685,
+        "debt_to_equity": 0.1787,
+        "debt_to_assets": 0.0146,
+        "interest_coverage": 1.7415,
+        "operating_cash_flow_ratio": -1.8373
+      },
+      "other_context": {
+        "market_cap": 810458228688,
+        "enterprise_value": 531896228688,
+        "price_to_book": 2.2361,
+        "price_to_sales": 4.4422,
+        "ev_to_ebitda": 6.4525
+      }
+    },
+    "news": [
+      {
+        "headline": "JPMorgan Chase & Co (JPM): Funding AI Projects With Eyes on Blockchain - Yahoo Finance",
+        "date": "2026-05-13T17:21:35Z",
+        "summary": "Headline-level coverage about JPMorgan funding AI projects with a blockchain angle.",
+        "sentiment": null,
+        "source": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/news/jpmorgan-chase-co-jpm-funding-172135100.html"
+      },
+      {
+        "headline": "JPMorgan Chase (NYSE: JPM) discloses $1.557T in 13F holdings - Stock Titan",
+        "date": "2026-05-13T13:30:42Z",
+        "summary": "Coverage of a new 13F filing/disclosure tied to JPMorgan's reported holdings.",
+        "sentiment": null,
+        "source": "Stock Titan",
+        "url": "https://www.stocktitan.net/sec-filings/JPM/13f-hr-jpmorgan-chase-co-sec-filing-622af5370d50.html"
+      },
+      {
+        "headline": "JPM, JPMorgan Chase Restructures Investment Banking Division for Efficiency - GuruFocus",
+        "date": "2026-05-13T06:00:31Z",
+        "summary": "Reports on JPMorgan restructuring its investment banking division.",
+        "sentiment": null,
+        "source": "GuruFocus",
+        "url": "https://www.gurufocus.com/news/8854594/jpm-jpmorgan-chase-restructures-investment-banking-division-for-efficiency"
+      },
+      {
+        "headline": "JPMorgan rejigs investment bank leadership in wider overhaul - Reuters",
+        "date": "2026-05-13T03:56:00Z",
+        "summary": "Reuters reports a leadership reshuffle in JPMorgan's investment bank.",
+        "sentiment": null,
+        "source": "Reuters",
+        "url": "https://www.reuters.com/business/finance/jpmorgan-reshuffle-investment-bank-chiefs-wider-overhaul-ft-reports-2026-05-13/"
+      },
+      {
+        "headline": "JPMorgan reshuffles investment bank chiefs amid wider shake-up - Financial Times",
+        "date": "2026-05-13T03:43:57Z",
+        "summary": "Financial Times coverage of the same broader investment bank shake-up.",
+        "sentiment": null,
+        "source": "Financial Times",
+        "url": "https://www.ft.com/content/113ddfa2-7322-45f2-ac10-59bb1b302444?syn-25a6b1a6=1"
+      },
+      {
+        "headline": "JPMorgan Chase & Co. (NYSE:JPM) Stock Price Up 1.6% - Here's What Happened - MarketBeat",
+        "date": "2026-05-12T21:52:24Z",
+        "summary": "Explains the prior session's price move in JPM shares.",
+        "sentiment": null,
+        "source": "MarketBeat",
+        "url": "https://www.marketbeat.com/instant-alerts/jpmorgan-chase-co-nysejpm-stock-price-up-16-heres-what-happened-2026-05-12/"
+      }
+    ],
+    "uncertainties": [
+      "The real-time price snapshot did not include OHLCV fields; open/high/low/close/volume are null in the live snapshot payload.",
+      "News sentiment was not included in the returned payload, so sentiment is left null rather than inferred.",
+      "Dividend yield was not directly provided by the metrics snapshot; leaving it null avoids a derived assumption.",
+      "Operating cash flow ratios can be noisy for banks, so the negative operating_cash_flow_ratio should be treated cautiously.",
+      "1M performance is computed from the nearest available daily close in the returned history, not a calendar-month exact close."
+    ],
+    "sources": [
+      {
+        "type": "current_price",
+        "tool": "get_current_stock_price",
+        "identifier": "JPM @ 2026-05-13T19:03:14Z"
+      },
+      {
+        "type": "historical_prices",
+        "tool": "get_historical_stock_prices",
+        "identifier": "JPM daily bars 2026-04-13 to 2026-05-13"
+      },
+      {
+        "type": "quarterly_financials",
+        "tool": "get_all_financial_statements",
+        "accession_number": "0001628280-26-029344",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm"
+      },
+      {
+        "type": "earnings_snapshot",
+        "tool": "get_earnings",
+        "accession_number": "0001628280-26-029344",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm"
+      },
+      {
+        "type": "financial_metrics_snapshot",
+        "tool": "get_financial_metrics_snapshot",
+        "identifier": "JPM snapshot"
+      },
+      {
+        "type": "news",
+        "tool": "get_company_news",
+        "urls": [
+          "https://finance.yahoo.com/news/jpmorgan-chase-co-jpm-funding-172135100.html",
+          "https://www.stocktitan.net/sec-filings/JPM/13f-hr-jpmorgan-chase-co-sec-filing-622af5370d50.html",
+          "https://www.marketbeat.com/instant-alerts/filing-jpmorgan-chase-co-jpm-shares-bought-by-rwq-financial-management-services-inc-2026-05-13/",
+          "https://www.gurufocus.com/news/8854594/jpm-jpmorgan-chase-restructures-investment-banking-division-for-efficiency",
+          "https://www.reuters.com/business/finance/jpmorgan-reshuffle-investment-bank-chiefs-wider-overhaul-ft-reports-2026-05-13/",
+          "https://www.ft.com/content/113ddfa2-7322-45f2-ac10-59bb1b302444?syn-25a6b1a6=1"
+        ]
+      }
     ]
   }
 ]
