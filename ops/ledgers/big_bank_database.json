@@ -919,5 +919,101 @@
       "https://www.stocktitan.net/news/JPM/jp-morgan-chase-aims-to-help-protect-millions-of-americans-from-qd3okcg9b20w.html",
       "https://seekingalpha.com/news/4591311-jpmorgan-chases-markets-business-hits-record-level---report"
     ]
+  },
+  {
+    "as_of": "2026-05-14T08:00:00-07:00",
+    "sweep_type": "morning sweep",
+    "ticker": "JPM",
+    "company": "JPMorgan Chase & Co.",
+    "day_move_percent": 1.63,
+    "latest_quarter": {
+      "period": "2026-Q1",
+      "report_period_date": "2026-03-31",
+      "filed": "2026-05-01",
+      "filing_type": "10-Q",
+      "revenue_usd_B": 49.84,
+      "net_income_usd_B": 16.49,
+      "eps_usd": 5.94,
+      "assets_usd_T": 4.90,
+      "equity_usd_B": 364.04,
+      "net_margin_percent": 33.1
+    },
+    "key_ratios": {
+      "valuation": {
+        "pe": 14.71,
+        "pb": 2.24,
+        "ps": 4.46,
+        "ev_to_ebitda": 6.49,
+        "ev_to_revenue": 2.93
+      },
+      "profitability": {
+        "roe_percent": 15.74,
+        "roa_percent": 1.29,
+        "roic_percent": 160.58,
+        "net_margin_percent": 31.27
+      },
+      "notes": {
+        "roic_note": "ROIC is less intuitive for banks; treat with caution."
+      }
+    },
+    "latest_price_snapshot": {
+      "price_usd": 301.34,
+      "currency": "USD",
+      "snapshot_timestamp_utc": "2026-05-13T15:03:41Z",
+      "intraday_change_pct": 0.45,
+      "intraday_change_usd": 1.34
+    },
+    "recent_market_performance": {
+      "recent_closes": [
+        {"date": "2026-05-06", "close_usd": 314.90, "daily_move": null},
+        {"date": "2026-05-07", "close_usd": 306.27, "daily_move_percent": -2.74},
+        {"date": "2026-05-08", "close_usd": 302.10, "daily_move_percent": -1.36},
+        {"date": "2026-05-11", "close_usd": 300.00, "daily_move_percent": -0.70},
+        {"date": "2026-05-12", "close_usd": 304.88, "daily_move_percent": 1.63}
+      ],
+      "summary": {
+        "move_1_trading_day_percent": 1.63,
+        "move_2_trading_days_percent": 0.92,
+        "move_5_trading_days_percent": -3.18,
+        "peak_to_latest_range": {"peak_usd": 316.3, "low_usd": 295.6}
+      }
+    },
+    "news": [
+      {
+        "title": "JPMorgan to reshuffle investment bank chiefs on wider overhaul",
+        "source": "Reuters",
+        "timestamp_utc": "2026-05-13T03:56:00Z",
+        "url": "https://www.reuters.com/business/finance/jpmorgan-reshuffle-investment-bank-chiefs-wider-overhaul-ft-reports-2026-05-13/",
+        "why_it_matters": "Most market-relevant recent headline; may be influencing near-term sentiment."
+      },
+      {
+        "title": "JPMorgan set to reshuffle investment bank chiefs amid wider shake-up",
+        "source": "Financial Times",
+        "timestamp_utc": "2026-05-13T03:43:57Z",
+        "url": "https://www.ft.com/content/113ddfa2-7322-45f2-ac10-59bb1b302444?syn-25a6b1a6=1",
+        "why_it_matters": "Corroborates Reuters report; same theme/potential driver."
+      },
+      {
+        "title": "JPMorgan Chase puts $14M behind new tools to stop scams",
+        "source": "Stock Titan",
+        "timestamp_utc": "2026-05-12T13:06:26Z",
+        "url": "https://www.stocktitan.net/news/JPM/jp-morgan-chase-aims-to-help-protect-millions-of-americans-from-qd3okcg9b20w.html",
+        "why_it_matters": "Strategic/corporate initiative; less direct but still notable."
+      },
+      {
+        "title": "JPMorgan Chase’s markets business hits record level - report",
+        "source": "Seeking Alpha",
+        "timestamp_utc": "2026-05-12T15:12:02Z",
+        "url": "https://seekingalpha.com/news/4591311-jpmorgan-chases-markets-business-hits-record-level---report",
+        "why_it_matters": "Secondary-sourced indicator of strong markets activity; potentially supportive."
+      }
+    ],
+    "uncertainties": ["ROIC is less intuitive for banks; treat with caution."],
+    "sources": [
+      "https://www.reuters.com/business/finance/jpmorgan-reshuffle-investment-bank-chiefs-wider-overhaul-ft-reports-2026-05-13/",
+      "https://www.ft.com/content/113ddfa2-7322-45f2-ac10-59bb1b302444?syn-25a6b1a6=1",
+      "https://www.stocktitan.net/news/JPM/jp-morgan-chase-aims-to-help-protect-millions-of-americans-from-qd3okcg9b20w.html",
+      "https://seekingalpha.com/news/4591311-jpmorgan-chases-markets-business-hits-record-level---report"
+    ]
   }
 ]
