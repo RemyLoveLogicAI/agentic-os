@@ -103,7 +103,7 @@
       },
       {
         "ticker": "MS",
-        "price": 189.00,
+        "price": 189.0,
         "day_change": "+0.90%",
         "pe_ratio": "17.83x",
         "market_cap": "$299.9B",
@@ -120,7 +120,7 @@
     "results": {
       "target": {
         "ticker": "JPM",
-        "price": 310.20,
+        "price": 310.2,
         "day_change": "+0.08%",
         "pe_ratio": "15.12x",
         "market_cap": "$836.6B",
@@ -130,7 +130,7 @@
       "peers": [
         {
           "ticker": "BAC",
-          "price": 53.90,
+          "price": 53.9,
           "day_change": "+0.73%",
           "pe_ratio": "13.57x",
           "market_cap": "$386.8B",
@@ -166,7 +166,7 @@
         },
         {
           "ticker": "MS",
-          "price": 189.00,
+          "price": 189.0,
           "day_change": "+0.90%",
           "pe_ratio": "17.83x",
           "market_cap": "$299.9B",
@@ -417,11 +417,46 @@
         "findings": "JPMorgan is expanding its national security initiative in Europe. Truist raised the price target to $332. Quarterly EPS estimates trend upwards through 2028."
       },
       "peers": [
-        { "ticker": "BAC", "price": 53.47, "change_percent": "-0.89%", "pe": "13.46x", "sentiment": "Positive", "notes": "AI edge framed as margin-accretive." },
-        { "ticker": "WFC", "price": 81.53, "change_percent": "-0.54%", "pe": "12.39x", "sentiment": "Neutral", "notes": "No recent news." },
-        { "ticker": "C", "price": 131.64, "change_percent": "-1.06%", "pe": "17.24x", "sentiment": "Neutral", "notes": "No recent news." },
-        { "ticker": "GS", "price": 930.17, "change_percent": "-1.23%", "pe": "17.13x", "sentiment": "Mixed", "notes": "Insider sales noted despite neutral issuance." },
-        { "ticker": "MS", "price": 188.53, "change_percent": "-1.14%", "pe": "17.80x", "sentiment": "Neutral", "notes": "No recent news." }
+        {
+          "ticker": "BAC",
+          "price": 53.47,
+          "change_percent": "-0.89%",
+          "pe": "13.46x",
+          "sentiment": "Positive",
+          "notes": "AI edge framed as margin-accretive."
+        },
+        {
+          "ticker": "WFC",
+          "price": 81.53,
+          "change_percent": "-0.54%",
+          "pe": "12.39x",
+          "sentiment": "Neutral",
+          "notes": "No recent news."
+        },
+        {
+          "ticker": "C",
+          "price": 131.64,
+          "change_percent": "-1.06%",
+          "pe": "17.24x",
+          "sentiment": "Neutral",
+          "notes": "No recent news."
+        },
+        {
+          "ticker": "GS",
+          "price": 930.17,
+          "change_percent": "-1.23%",
+          "pe": "17.13x",
+          "sentiment": "Mixed",
+          "notes": "Insider sales noted despite neutral issuance."
+        },
+        {
+          "ticker": "MS",
+          "price": 188.53,
+          "change_percent": "-1.14%",
+          "pe": "17.80x",
+          "sentiment": "Neutral",
+          "notes": "No recent news."
+        }
       ]
     },
     "summary": "The sector saw a broad decline today with GS leading the dollar loss. JPM remains strong with strategic European expansion and positive analyst sentiment. BAC is highlighted for its AI-related margin narrative."
@@ -479,7 +514,7 @@
       },
       {
         "ticker": "MS",
-        "price": 191.40,
+        "price": 191.4,
         "day_change_percent": 0.37,
         "market_cap": "303.1B",
         "pe_ratio": 18.0,
@@ -789,7 +824,10 @@
         {
           "headline": "JPMorgan Chase (JPM) Successfully Closes Multi-Billion Dollar Note Offerings",
           "sentiment": "Neutral to positive",
-          "link": "https://www.gurufocus.com/news/8814296/jpmorgan-chase-jpm-successfully-closes-multibultin?"}],
+          "link": "https://www.gurufocus.com/news/8814296/jpmorgan-chase-jpm-successfully-closes-multibultin?"
+        }
+      ]
+    },
     "summary": "JPMorgan remains the quality leader on profitability, but Q4 miss and insider selling drove a negative short-term tone.",
     "assessment": {
       "market_tone": "neutral_to_slightly_positive",
@@ -798,24 +836,76 @@
       "confidence": 0.86
     },
     "sources": [
-      {"type": "company_facts", "tool": "get_company_facts", "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000019617", "note": "Company identity and SEC reference."},
-      {"type": "current_price_snapshot", "tool": "get_current_stock_price", "as_of": "2026-05-08T20:50:14Z", "note": "Latest available price snapshot from the public dataset."},
-      {"type": "financial_metrics_snapshot", "tool": "get_financial_metrics_snapshot", "note": "Latest valuation and TTM ratio snapshot."},
-      {"type": "quarterly_financials", "tool": "get_financial_metrics", "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm", "report_period": "2026-03-31"},
-      {"type": "earnings_snapshot", "tool": "get_earnings", "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm", "report_period": "2026-03-31"},
-      {"type": "historical_prices", "tool": "get_historical_stock_prices", "range": "2026-04-08 to 2026-05-08", "note": "Used to estimate volatility and liquidity."},
-      {"type": "sec_filings", "tool": "get_sec_filings", "filings": [
-        {"filing_type": "8-K", "filing_date": "2026-05-07", "report_date": "2026-05-06", "url": "https://www.sec.gov/Archives/edgar/data/19617/000119312526211978/d903351d8k.htm"},
-        {"filing_type": "8-K", "filing_date": "2026-04-23", "report_date": "2026-04-23", "url": "https://www.sec.gov/Archives/edgar/data/19617/000119312526173739/d235028d8k.htm"},
-        {"filing_type": "8-K", "filing_date": "2026-04-24", "report_date": "2026-04-21", "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961726000119/jpm-20260421.htm"}
-      ]},
-      {"type": "news", "tool": "get_company_news", "articles": [
-        "https://www.marketbeat.com/instant-alerts/filing-jpmorgan-chase-co-jpm-shares-acquired-by-vest-financial-llc-2026-05-10/",
-        "https://www.marketbeat.com/instant-alerts/filing-gc-wealth-management-ria-llc-sells-25697-shares-of-jpmorgan-chase-co-jpm-2026-05-10/",
-        "https://www.marketbeat.com/instant-alerts/filing-ktf-investments-llc-takes-645-million-position-in-jpmorgan-chase-co-jpm-2026-05-09/",
-        "https://www.marketbeat.com/instant-alerts/filing-farmers-merchants-trust-co-of-long-beach-sells-4840-shares-of-jpmorgan-chase-co-jpm-2026-05-09/",
-        "https://www.marketbeat.com/instant-alerts/filing-jpmorgan-chase-co-jpm-shares-sold-by-comerica-bank-2026-05-09/"
-      ]}
+      {
+        "type": "company_facts",
+        "tool": "get_company_facts",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000019617",
+        "note": "Company identity and SEC reference."
+      },
+      {
+        "type": "current_price_snapshot",
+        "tool": "get_current_stock_price",
+        "as_of": "2026-05-08T20:50:14Z",
+        "note": "Latest available price snapshot from the public dataset."
+      },
+      {
+        "type": "financial_metrics_snapshot",
+        "tool": "get_financial_metrics_snapshot",
+        "note": "Latest valuation and TTM ratio snapshot."
+      },
+      {
+        "type": "quarterly_financials",
+        "tool": "get_financial_metrics",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+        "report_period": "2026-03-31"
+      },
+      {
+        "type": "earnings_snapshot",
+        "tool": "get_earnings",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+        "report_period": "2026-03-31"
+      },
+      {
+        "type": "historical_prices",
+        "tool": "get_historical_stock_prices",
+        "range": "2026-04-08 to 2026-05-08",
+        "note": "Used to estimate volatility and liquidity."
+      },
+      {
+        "type": "sec_filings",
+        "tool": "get_sec_filings",
+        "filings": [
+          {
+            "filing_type": "8-K",
+            "filing_date": "2026-05-07",
+            "report_date": "2026-05-06",
+            "url": "https://www.sec.gov/Archives/edgar/data/19617/000119312526211978/d903351d8k.htm"
+          },
+          {
+            "filing_type": "8-K",
+            "filing_date": "2026-04-23",
+            "report_date": "2026-04-23",
+            "url": "https://www.sec.gov/Archives/edgar/data/19617/000119312526173739/d235028d8k.htm"
+          },
+          {
+            "filing_type": "8-K",
+            "filing_date": "2026-04-24",
+            "report_date": "2026-04-21",
+            "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961726000119/jpm-20260421.htm"
+          }
+        ]
+      },
+      {
+        "type": "news",
+        "tool": "get_company_news",
+        "articles": [
+          "https://www.marketbeat.com/instant-alerts/filing-jpmorgan-chase-co-jpm-shares-acquired-by-vest-financial-llc-2026-05-10/",
+          "https://www.marketbeat.com/instant-alerts/filing-gc-wealth-management-ria-llc-sells-25697-shares-of-jpmorgan-chase-co-jpm-2026-05-10/",
+          "https://www.marketbeat.com/instant-alerts/filing-ktf-investments-llc-takes-645-million-position-in-jpmorgan-chase-co-jpm-2026-05-09/",
+          "https://www.marketbeat.com/instant-alerts/filing-farmers-merchants-trust-co-of-long-beach-sells-4840-shares-of-jpmorgan-chase-co-jpm-2026-05-09/",
+          "https://www.marketbeat.com/instant-alerts/filing-jpmorgan-chase-co-jpm-shares-sold-by-comerica-bank-2026-05-09/"
+        ]
+      }
     ],
     "data_quality_notes": [
       "Guidance was not available in the retrieved public datasets, so it is set to null.",
@@ -838,7 +928,7 @@
       "revenue_usd_B": 49.84,
       "net_income_usd_B": 16.49,
       "eps_usd": 5.94,
-      "assets_usd_T": 4.90,
+      "assets_usd_T": 4.9,
       "equity_usd_B": 364.04,
       "net_margin_percent": 33.1
     },
@@ -869,17 +959,40 @@
     },
     "recent_market_performance": {
       "recent_closes": [
-        {"date": "2026-05-06", "close_usd": 314.90, "daily_move": null},
-        {"date": "2026-05-07", "close_usd": 306.27, "daily_move_percent": -2.74},
-        {"date": "2026-05-08", "close_usd": 302.10, "daily_move_percent": -1.36},
-        {"date": "2026-05-11", "close_usd": 300.00, "daily_move_percent": -0.70},
-        {"date": "2026-05-12", "close_usd": 304.88, "daily_move_percent": 1.63}
+        {
+          "date": "2026-05-06",
+          "close_usd": 314.9,
+          "daily_move": null
+        },
+        {
+          "date": "2026-05-07",
+          "close_usd": 306.27,
+          "daily_move_percent": -2.74
+        },
+        {
+          "date": "2026-05-08",
+          "close_usd": 302.1,
+          "daily_move_percent": -1.36
+        },
+        {
+          "date": "2026-05-11",
+          "close_usd": 300.0,
+          "daily_move_percent": -0.7
+        },
+        {
+          "date": "2026-05-12",
+          "close_usd": 304.88,
+          "daily_move_percent": 1.63
+        }
       ],
       "summary": {
         "move_1_trading_day_percent": 1.63,
         "move_2_trading_days_percent": 0.92,
         "move_5_trading_days_percent": -3.18,
-        "peak_to_latest_range": {"peak_usd": 316.3, "low_usd": 295.6}
+        "peak_to_latest_range": {
+          "peak_usd": 316.3,
+          "low_usd": 295.6
+        }
       }
     },
     "news": [
@@ -905,19 +1018,606 @@
         "why_it_matters": "Strategic/corporate initiative; less direct but still notable."
       },
       {
-        "title": "JPMorgan Chase’s markets business hits record level - report",
+        "title": "JPMorgan Chase\u2019s markets business hits record level - report",
         "source": "Seeking Alpha",
         "timestamp_utc": "2026-05-12T15:12:02Z",
         "url": "https://seekingalpha.com/news/4591311-jpmorgan-chases-markets-business-hits-record-level---report",
         "why_it_matters": "Secondary-sourced indicator of strong markets activity; potentially supportive."
       }
     ],
-    "uncertainties": ["ROIC is less intuitive for banks; treat with caution."],
+    "uncertainties": [
+      "ROIC is less intuitive for banks; treat with caution."
+    ],
     "sources": [
       "https://www.reuters.com/business/finance/jpmorgan-reshuffle-investment-bank-chiefs-wider-overhaul-ft-reports-2026-05-13/",
       "https://www.ft.com/content/113ddfa2-7322-45f2-ac10-59bb1b302444?syn-25a6b1a6=1",
       "https://www.stocktitan.net/news/JPM/jp-morgan-chase-aims-to-help-protect-millions-of-americans-from-qd3okcg9b20w.html",
       "https://seekingalpha.com/news/4591311-jpmorgan-chases-markets-business-hits-record-level---report"
     ]
+  },
+  {
+    "timestamp": "2026-05-14T20:41:18Z",
+    "mode": "night sweep",
+    "sweep_payload": {
+      "task": "Big Bank triple-sweep research",
+      "bank": {
+        "name": "JPMorgan Chase & Co.",
+        "ticker": "JPM",
+        "cik": "0000019617"
+      },
+      "run_context": {
+        "mode": "night sweep",
+        "timestamp_utc": "2026-05-14T20:41:18Z",
+        "note": "All values below are taken from the latest API responses available during the sweep."
+      },
+      "market_snapshot": {
+        "source": "get_current_stock_price",
+        "fields_returned": [
+          "snapshot.ticker",
+          "snapshot.price",
+          "snapshot.day_change",
+          "snapshot.day_change_percent",
+          "snapshot.time",
+          "snapshot.time_milliseconds"
+        ],
+        "data": {
+          "ticker": "JPM",
+          "price": 299.99,
+          "day_change": null,
+          "day_change_percent": null,
+          "time": "2026-05-14T20:41:18Z",
+          "time_milliseconds": 1778791278779
+        },
+        "notes": [
+          "volume was not returned by the API snapshot",
+          "market_cap was not in this endpoint, but is included in the financial metrics snapshot below"
+        ]
+      },
+      "recent_historical_performance": {
+        "source": "get_historical_stock_prices",
+        "fields_returned": [
+          "ticker",
+          "prices[].open",
+          "prices[].close",
+          "prices[].high",
+          "prices[].low",
+          "prices[].volume",
+          "prices[].time",
+          "pagination"
+        ],
+        "range": {
+          "start_date": "2026-05-01",
+          "end_date": "2026-05-14",
+          "interval": "day"
+        },
+        "last_5_trading_days": [
+          {
+            "time": "2026-05-06",
+            "open": 311.45,
+            "close": 314.9,
+            "high": 316.26,
+            "low": 311.35,
+            "volume": 8629538
+          },
+          {
+            "time": "2026-05-07",
+            "open": 314.65,
+            "close": 306.27,
+            "high": 316.3,
+            "low": 306.14,
+            "volume": 8359599,
+            "daily_return_pct": -2.74
+          },
+          {
+            "time": "2026-05-08",
+            "open": 308.25,
+            "close": 302.1,
+            "high": 308.99,
+            "low": 300.5,
+            "volume": 9464267,
+            "daily_return_pct": -1.36
+          },
+          {
+            "time": "2026-05-11",
+            "open": 302.1,
+            "close": 300.0,
+            "high": 303.19,
+            "low": 298.88,
+            "volume": 9511957,
+            "daily_return_pct": -0.7
+          },
+          {
+            "time": "2026-05-12",
+            "open": 300.02,
+            "close": 304.88,
+            "high": 306.06,
+            "low": 295.55,
+            "volume": 9498214,
+            "daily_return_pct": 1.63
+          }
+        ],
+        "summary": {
+          "close_2026_05_06": 314.9,
+          "close_2026_05_12": 304.88,
+          "period_return_pct": -3.18
+        },
+        "note": "The API returned 8 trading sessions in the requested window; the last 5 trading days above are derived from those raw closes."
+      },
+      "financial_metrics_snapshot": {
+        "source": "get_financial_metrics_snapshot",
+        "fields_returned": [
+          "snapshot.ticker",
+          "snapshot.market_cap",
+          "snapshot.enterprise_value",
+          "snapshot.price_to_book_ratio",
+          "snapshot.price_to_earnings_ratio",
+          "snapshot.price_to_sales_ratio",
+          "snapshot.enterprise_value_to_ebitda_ratio",
+          "snapshot.enterprise_value_to_revenue_ratio",
+          "snapshot.free_cash_flow_yield",
+          "snapshot.peg_ratio",
+          "snapshot.gross_margin",
+          "snapshot.operating_margin",
+          "snapshot.net_margin",
+          "snapshot.return_on_equity",
+          "snapshot.return_on_assets",
+          "snapshot.return_on_invested_capital",
+          "snapshot.asset_turnover",
+          "snapshot.current_ratio",
+          "snapshot.cash_ratio",
+          "snapshot.operating_cash_flow_ratio",
+          "snapshot.debt_to_equity",
+          "snapshot.debt_to_assets",
+          "snapshot.interest_coverage",
+          "snapshot.revenue_growth",
+          "snapshot.earnings_growth",
+          "snapshot.book_value_growth",
+          "snapshot.earnings_per_share_growth",
+          "snapshot.operating_income_growth",
+          "snapshot.ebitda_growth",
+          "snapshot.payout_ratio",
+          "snapshot.earnings_per_share",
+          "snapshot.book_value_per_share"
+        ],
+        "data": {
+          "ticker": "JPM",
+          "market_cap": 808597276349,
+          "enterprise_value": 530035276349,
+          "price_to_book_ratio": 2.230994753168818,
+          "price_to_earnings_ratio": 14.617892213574535,
+          "price_to_sales_ratio": 4.4319570963019395,
+          "enterprise_value_to_ebitda_ratio": 6.429891867929106,
+          "enterprise_value_to_revenue_ratio": 2.905146570505407,
+          "free_cash_flow_yield": null,
+          "peg_ratio": -52.633636981244685,
+          "gross_margin": 0.9221034053725191,
+          "operating_margin": 0.9344796022954611,
+          "net_margin": 0.31268258727192005,
+          "return_on_equity": 0.1574007140531622,
+          "return_on_assets": 0.01289249474564397,
+          "return_on_invested_capital": 1.605816562544709,
+          "asset_turnover": 0.040610988964514046,
+          "current_ratio": 4.268514949959595,
+          "cash_ratio": 4.268514949959595,
+          "operating_cash_flow_ratio": -1.8372847640952321,
+          "debt_to_equity": 0.17872298158581607,
+          "debt_to_assets": 0.014638974892087956,
+          "interest_coverage": 1.7415371100533208,
+          "revenue_growth": 0.01753456439658009,
+          "earnings_growth": 0.0022311624883610617,
+          "book_value_growth": 0.006179694180093944,
+          "earnings_per_share_growth": -0.0027772909211619618,
+          "operating_income_growth": -0.017382383622751556,
+          "ebitda_growth": 0.0297817586728129,
+          "payout_ratio": 0.2914212592904221,
+          "earnings_per_share": 20.509796872191263,
+          "book_value_per_share": 130.30307388099945
+        }
+      },
+      "latest_earnings": {
+        "source": "get_earnings",
+        "fields_returned": [
+          "report_period",
+          "fiscal_period",
+          "currency",
+          "ticker",
+          "source_type",
+          "filing_date",
+          "filing_datetime",
+          "filing_window",
+          "filing_url",
+          "accession_number",
+          "quarterly.*",
+          "signals[]"
+        ],
+        "data": {
+          "report_period": "2026-03-31",
+          "fiscal_period": "2026-Q1",
+          "currency": "USD",
+          "ticker": "JPM",
+          "source_type": "10-Q",
+          "filing_date": "2026-05-01",
+          "filing_datetime": "2026-05-01T16:18:43-04:00",
+          "filing_window": "AFTER_HOURS",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+          "accession_number": "0001628280-26-029344",
+          "quarterly": {
+            "revenue": 49836000000,
+            "revenue_yoy_chg": 0.0999,
+            "earnings_per_share": 5.94,
+            "earnings_per_share_yoy_chg": 0.1716,
+            "gross_profit": 47329000000,
+            "gross_profit_yoy_chg": 0.1267,
+            "gross_margin": 0.9496949995986836,
+            "gross_margin_yoy_chg_bps": 226.4,
+            "gross_margin_yoy_chg_pct": 0.0244,
+            "operating_income": 14172000000,
+            "operating_income_yoy_chg": 0.3468,
+            "operating_margin": 0.28437274259571393,
+            "operating_margin_yoy_chg_bps": 521.3,
+            "operating_margin_yoy_chg_pct": 0.2245,
+            "net_income": 16494000000,
+            "net_income_yoy_chg": 0.1264,
+            "net_margin": 0.33096556705995667,
+            "net_margin_yoy_chg_bps": 77.9,
+            "net_margin_yoy_chg_pct": 0.0241,
+            "weighted_average_shares": 2716200000,
+            "weighted_average_shares_diluted": 2720200000,
+            "cash_and_equivalents": 312142000000,
+            "change_in_cash_and_equivalents": -31196000000,
+            "total_debt": 68048000000,
+            "total_assets": 4900475000000,
+            "total_liabilities": 4536437000000,
+            "shareholders_equity": 364038000000,
+            "net_cash_flow_from_operations": -211761000000,
+            "net_cash_flow_from_operations_yoy_chg": 0.1591,
+            "net_cash_flow_from_investing": -217769000000,
+            "net_cash_flow_from_investing_yoy_chg": -0.8443,
+            "net_cash_flow_from_financing": 400677000000,
+            "net_cash_flow_from_financing_yoy_chg": 0.2598,
+            "capital_expenditure": null,
+            "free_cash_flow": null
+          },
+          "signals": [
+            {
+              "type": "MARGIN_EXPANSION",
+              "metric": "operating_margin",
+              "period": "2026-Q1",
+              "headline": "Operating margin expanded 521bps year-over-year to 28.4%",
+              "details": {
+                "margin": "operating_margin",
+                "bps": 521.3,
+                "current": 0.28437274259571393
+              }
+            },
+            {
+              "type": "EPS_INCREASE",
+              "metric": "earnings_per_share",
+              "period": "2026-Q1",
+              "headline": "EPS grew 17.2% year-over-year to $5.94",
+              "details": {
+                "current": 5.94,
+                "yoy_chg": 0.1716
+              }
+            }
+          ]
+        }
+      },
+      "analyst_estimates": {
+        "source": "get_analyst_estimates",
+        "quarterly": {
+          "fields_returned": [
+            "fiscal_period",
+            "period",
+            "revenue",
+            "earnings_per_share"
+          ],
+          "data": [
+            {
+              "fiscal_period": "2026-06-30",
+              "period": "quarterly",
+              "revenue": 47916067816,
+              "earnings_per_share": 5.38
+            },
+            {
+              "fiscal_period": "2026-09-30",
+              "period": "quarterly",
+              "revenue": 48350475260,
+              "earnings_per_share": 5.48
+            },
+            {
+              "fiscal_period": "2026-12-31",
+              "period": "quarterly",
+              "revenue": 48662375210,
+              "earnings_per_share": 5.52
+            },
+            {
+              "fiscal_period": "2027-03-31",
+              "period": "quarterly",
+              "revenue": 49999909780,
+              "earnings_per_share": 5.73
+            }
+          ]
+        },
+        "annual": {
+          "fields_returned": [
+            "fiscal_period",
+            "period",
+            "revenue",
+            "earnings_per_share"
+          ],
+          "data": [
+            {
+              "fiscal_period": "2026-12-31",
+              "period": "annual",
+              "revenue": 194757409590,
+              "earnings_per_share": 22.38
+            },
+            {
+              "fiscal_period": "2027-12-31",
+              "period": "annual",
+              "revenue": 201919567568,
+              "earnings_per_share": 23.51
+            },
+            {
+              "fiscal_period": "2028-12-31",
+              "period": "annual",
+              "revenue": 212152341008,
+              "earnings_per_share": 26.22
+            }
+          ]
+        }
+      },
+      "sec_filings": {
+        "source": "get_sec_filings",
+        "fields_returned": [
+          "filings[].cik",
+          "filings[].accession_number",
+          "filings[].filing_type",
+          "filings[].report_date",
+          "filings[].filing_date",
+          "filings[].ticker",
+          "filings[].url"
+        ],
+        "recent_filings": [
+          {
+            "filing_type": "8-K",
+            "report_date": "2026-05-06",
+            "filing_date": "2026-05-07",
+            "accession_number": "0001193125-26-211978",
+            "url": "https://www.sec.gov/Archives/edgar/data/19617/000119312526211978/d903351d8k.htm"
+          },
+          {
+            "filing_type": "8-K",
+            "report_date": "2026-04-23",
+            "filing_date": "2026-04-23",
+            "accession_number": "0001193125-26-173739",
+            "url": "https://www.sec.gov/Archives/edgar/data/19617/000119312526173739/d235028d8k.htm"
+          },
+          {
+            "filing_type": "8-K",
+            "report_date": "2026-04-21",
+            "filing_date": "2026-04-24",
+            "accession_number": "0000019617-26-000119",
+            "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961726000119/jpm-20260421.htm"
+          },
+          {
+            "filing_type": "8-K",
+            "report_date": "2026-04-14",
+            "filing_date": "2026-04-14",
+            "accession_number": "0001628280-26-025013",
+            "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026025013/jpm-20260414.htm"
+          },
+          {
+            "filing_type": "8-K",
+            "report_date": "2026-04-14",
+            "filing_date": "2026-04-14",
+            "accession_number": "0001628280-26-024990",
+            "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026024990/jpm-20260414.htm"
+          },
+          {
+            "filing_type": "10-Q",
+            "report_date": "2026-03-31",
+            "filing_date": "2026-05-01",
+            "accession_number": "0001628280-26-029344",
+            "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026029344/jpm-20260331.htm"
+          }
+        ],
+        "key_item_extract": {
+          "source": "get_sec_filing_items",
+          "retrieved": true,
+          "latest_8k": {
+            "accession_number": "0001193125-26-211978",
+            "filing_url": "https://www.sec.gov/Archives/edgar/data/19617/0001193125-26-211978-index.html",
+            "item": "Item 8.01",
+            "name": "Other Events",
+            "text": "On May 7, 2026, the Company completed the issuance and sale of 300,000 Shares, which Shares were deposited against delivery of Depositary Receipts evidencing 3,000,000 Depositary Shares, pursuant to an Underwriting Agreement, dated April 30, 2026, among the Company, J.P. Morgan Securities LLC and the other several underwriters named therein. The sale of the Depositary Shares was made pursuant to the Company's Registration Statement on Form S-3 (File No. 333-285537), as amended. In connection with this offering, the legal opinion as to the legality of the Depositary Shares and the Series PP Preferred Stock is being filed as Exhibit 5.1 to this Current Report on Form 8-K."
+          },
+          "latest_10q": {
+            "status": "not retrieved",
+            "note": "The filing-item endpoint returned 'No filings found for JPM' for the 10-Q item request, so no 10-Q text excerpt was available via the tool during the sweep."
+          }
+        }
+      },
+      "insider_trades": {
+        "source": "get_insider_trades",
+        "fields_returned": [
+          "insider_trades"
+        ],
+        "data": [],
+        "note": "No recent insider trades were returned by the API for the requested lookback window."
+      },
+      "institutional_ownership": {
+        "source": "get_institutional_ownership",
+        "status": "unavailable",
+        "note": "The ownership API had parameter validation conflicts during the sweep. I could retrieve the investor-name index list, but the ticker-only ownership query path did not complete successfully, so no JPM holder/change table is included here.",
+        "attempted_paths": [
+          "ticker-only ownership query",
+          "investor-only ownership query",
+          "ownership query with both ticker and investor"
+        ]
+      },
+      "macro_rates": {
+        "source": "get_interest_rates_snapshot",
+        "fields_returned": [
+          "interest_rates[].bank",
+          "interest_rates[].name",
+          "interest_rates[].rate",
+          "interest_rates[].date"
+        ],
+        "data": [
+          {
+            "bank": "FED",
+            "name": "Federal Reserve",
+            "rate": 3.625,
+            "date": "2026-04-01"
+          },
+          {
+            "bank": "ECB",
+            "name": "European Central Bank",
+            "rate": 2.0,
+            "date": "2026-04-01"
+          },
+          {
+            "bank": "BOJ",
+            "name": "Bank of Japan",
+            "rate": 0.75,
+            "date": "2026-04-01"
+          },
+          {
+            "bank": "BOE",
+            "name": "Bank of England",
+            "rate": 3.75,
+            "date": "2026-04-01"
+          },
+          {
+            "bank": "BOC",
+            "name": "Bank of Canada",
+            "rate": 2.25,
+            "date": "2026-04-01"
+          },
+          {
+            "bank": "RBA",
+            "name": "Reserve Bank of Australia",
+            "rate": 4.1,
+            "date": "2026-04-01"
+          },
+          {
+            "bank": "PBOC",
+            "name": "People's Bank of China",
+            "rate": 3.0,
+            "date": "2026-04-01"
+          },
+          {
+            "bank": "SNB",
+            "name": "Swiss National Bank",
+            "rate": 0.0,
+            "date": "2026-04-01"
+          },
+          {
+            "bank": "RBI",
+            "name": "Reserve Bank of India",
+            "rate": 5.25,
+            "date": "2026-03-01"
+          },
+          {
+            "bank": "BOK",
+            "name": "Bank of Korea",
+            "rate": 2.5,
+            "date": "2026-04-01"
+          }
+        ],
+        "banking_note": "Fed policy remains restrictive enough to matter for net interest income, deposit pricing, and credit stress sensitivity."
+      },
+      "company_news": {
+        "source": "get_company_news",
+        "fields_returned": [
+          "news[].ticker",
+          "news[].title",
+          "news[].source",
+          "news[].date",
+          "news[].url"
+        ],
+        "items": [
+          {
+            "date": "2026-05-14T20:50:31+00:00",
+            "source": "Stock Titan",
+            "title": "JPMorgan Chase (NYSE: JPM) prices $7M callable notes, 4.60% coupon through 2031",
+            "url": "https://www.stocktitan.net/sec-filings/JPM/424b2-jpmorgan-chase-co-prospectus-supplement-cf2187d6ec4f.html",
+            "sentiment": "neutral"
+          },
+          {
+            "date": "2026-05-14T19:52:19+00:00",
+            "source": "Reuters",
+            "title": "JPMorgan's bet on early-stage companies pays off in leading global tech investment banking",
+            "url": "https://www.reuters.com/legal/transactional/jpmorgans-bet-early-stage-companies-pays-off-leading-global-tech-investment-banking-2026-05-14/",
+            "sentiment": "positive"
+          },
+          {
+            "date": "2026-05-14T15:30:03+00:00",
+            "source": "Yahoo Finance",
+            "title": "Why Is JPMorgan Chase & Co. (JPM) Down 1.9% Since Last Earnings Report?",
+            "url": "https://finance.yahoo.com/markets/stocks/articles/why-jpmorgan-chase-co-jpm-153003463.html",
+            "sentiment": "negative"
+          },
+          {
+            "date": "2026-05-14T14:44:55+00:00",
+            "source": "Stock Titan",
+            "title": "JPMorgan (JPM) prices 5.75% callable notes, $1,000 par, maturity 2046",
+            "url": "https://www.stocktitan.net/sec-filings/JPM/424b2-jpmorgan-chase-co-prospectus-supplement-d095cdc13b77.html",
+            "sentiment": "neutral"
+          },
+          {
+            "date": "2026-05-14T11:52:00+00:00",
+            "source": "The Business Journals",
+            "title": "Houston could be focal point for JPMorgan Chase's $1.5 trillion security and resiliency initiative",
+            "url": "https://www.bizjournals.com/houston/news/2026/05/14/houston-major-focus-jpmorgan-chase-initiative.html",
+            "sentiment": "positive"
+          },
+          {
+            "date": "2026-05-14T06:05:52+00:00",
+            "source": "Reuters",
+            "title": "JPMorgan rejigs investment bank leadership in wider overhaul",
+            "url": "https://www.reuters.com/business/finance/jpmorgan-reshuffle-investment-bank-chiefs-wider-overhaul-ft-reports-2026-05-13/",
+            "sentiment": "mixed"
+          },
+          {
+            "date": "2026-05-13T21:11:32+00:00",
+            "source": "thestreet.com",
+            "title": "How many employees does JPMorgan Chase have in 2026? Its workforce, locations, and layoffs explained",
+            "url": "https://www.thestreet.com/investing/stocks/jpmorgan-chase-employees",
+            "sentiment": "neutral"
+          },
+          {
+            "date": "2026-05-13T17:21:35+00:00",
+            "source": "Yahoo Finance",
+            "title": "JPMorgan Chase & Co (JPM): Funding AI Projects With Eyes on Blockchain",
+            "url": "https://finance.yahoo.com/news/jpmorgan-chase-co-jpm-funding-172135100.html",
+            "sentiment": "positive"
+          },
+          {
+            "date": "2026-05-13T13:30:42+00:00",
+            "source": "Stock Titan",
+            "title": "JPMorgan Chase (NYSE: JPM) discloses $1.557T in 13F holdings",
+            "url": "https://www.stocktitan.net/sec-filings/JPM/13f-hr-jpmorgan-chase-co-sec-filing-622af5370d50.html",
+            "sentiment": "neutral"
+          }
+        ],
+        "sentiment_note": "The API did not return a sentiment field; the labels above are a simple qualitative read based on the article titles and source context."
+      },
+      "ledger_notes": {
+        "overall_readthrough": [
+          "Q1 2026 earnings were strong: EPS +17.2% YoY, revenue +10.0% YoY, and operating margin expanded materially.",
+          "Valuation remains moderate for a large-cap bank at ~14.6x P/E and ~2.23x P/B per the snapshot.",
+          "Macro backdrop is still bank-relevant: the Fed is at 3.625% and other major central banks remain in mixed easing/holding regimes.",
+          "News flow is mixed-to-positive overall, with notable capital-markets activity and strategic/investment-banking positives offset by some post-earnings share-price weakness."
+        ],
+        "missing_or_partial": [
+          "Volume was not returned by the current stock snapshot endpoint.",
+          "Institutional ownership changes could not be fully retrieved due API validation issues.",
+          "10-Q filing text excerpts were not retrievable via the filing-items endpoint during the sweep."
+        ]
+      }
+    }
   }
 ]
