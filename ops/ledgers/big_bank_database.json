@@ -685,111 +685,112 @@
     "timestamp": "2026-04-26T08:00:00-07:00",
     "task": "Big Bank triple-sweep research task",
     "sweep_type": "morning sweep",
-    "target": {
-      "ticker": "JPM",
-      "company": "JPMorgan Chase & Co",
-      "price_current": 308.16,
-      "day_change_pct": -1.13,
-      "day_change_abs": -3.53,
-      "performance_1m_return_pct": 6.6,
-      "performance_ytd_return_pct": -3.3,
-      "performance_since_2025_12_31_to_intraday_pct": -4.4,
-      "market_cap_usd_B": 831.36,
-      "enterprise_value_usd_B": 552.8,
-      "valuation_multiples": {
-        "PE": 15.03,
-        "PB": 2.29,
-        "PS": 4.56,
-        "EV_EBITDA": 6.91,
-        "EV_Revenue": 3.03
-      },
-      "profitability": {
-        "ROE": 15.74,
-        "ROA": 1.29,
-        "net_margin": 31.27
-      },
-      "earnings_latest": {
-        "quarter": "FY2025 Q4",
-        "revenue_B": 45.8,
-        "eps": 4.64,
-        "eps_est": 4.91,
-        "eps_surprise": "MISS",
-        "net_income_B": 12.69,
-        "revenue_change_yoy_pct": -1.35,
-        "net_income_change_yoy_pct": -9.63,
-        "annual": {
-          "FY2025": {
-            "revenue_B": 182.45,
-            "eps": 20.02,
-            "eps_est": 19.94,
-            "eps_surprise": "BEAT",
-            "net_income_B": 55.68
+    "results": {
+      "target": {
+        "ticker": "JPM",
+        "company": "JPMorgan Chase & Co",
+        "price_current": 308.16,
+        "day_change_pct": -1.13,
+        "day_change_abs": -3.53,
+        "performance_1m_return_pct": 6.6,
+        "performance_ytd_return_pct": -3.3,
+        "performance_since_2025_12_31_to_intraday_pct": -4.4,
+        "market_cap_usd_B": 831.36,
+        "enterprise_value_usd_B": 552.8,
+        "valuation_multiples": {
+          "PE": 15.03,
+          "PB": 2.29,
+          "PS": 4.56,
+          "EV_EBITDA": 6.91,
+          "EV_Revenue": 3.03
+        },
+        "profitability": {
+          "ROE": 15.74,
+          "ROA": 1.29,
+          "net_margin": 31.27
+        },
+        "earnings_latest": {
+          "quarter": "FY2025 Q4",
+          "revenue_B": 45.8,
+          "eps": 4.64,
+          "eps_est": 4.91,
+          "eps_surprise": "MISS",
+          "net_income_B": 12.69,
+          "revenue_change_yoy_pct": -1.35,
+          "net_income_change_yoy_pct": -9.63,
+          "annual": {
+            "FY2025": {
+              "revenue_B": 182.45,
+              "eps": 20.02,
+              "eps_est": 19.94,
+              "eps_surprise": "BEAT",
+              "net_income_B": 55.68
+            }
           }
-        }
-      },
-      "sec_latest_10k_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm",
-      "sec_latest_8k_url": "https://www.sec.gov/Archives/edgar/data/19617/000119312526173739/d235028d8k.htm",
-      "insider_trades_2026-04-15": [
-        {
-          "name": "James Dimon",
-          "shares_sold": 130488,
-          "approx_sale_price": 306.56,
-          "approx_sale_value_usd": 40002401.28,
-          "shares_after_transaction": 1680625
         },
-        {
-          "name": "Mary E. Erdoes",
-          "shares_sold": 12345,
-          "approx_sale_price": 306.57,
-          "approx_sale_value_usd": 3784606.65
-        },
-        {
-          "name": "Jennifer Piepszak",
-          "shares_sold": 9136,
-          "approx_sale_price": 306.56,
-          "approx_sale_value_usd": 2800733.76
-        },
-        {
-          "name": "Ashley Bacon",
-          "shares_sold": 7558,
-          "approx_sale_price": 306.55,
-          "approx_sale_value_usd": 2316904.9
-        },
-        {
-          "name": "Marianne Lake",
-          "shares_sold": 6427,
-          "approx_sale_price": 306.57,
-          "approx_sale_value_usd": 1970325.39
-        },
-        {
-          "name": "Jeremy Barnum",
-          "shares_sold": 5611,
-          "approx_sale_price": 306.55,
-          "approx_sale_value_usd": 1720052.05
-        },
-        {
-          "name": "Douglas B. Petno",
-          "shares_sold": 5660,
-          "approx_sale_price": 306.58,
-          "approx_sale_value_usd": 1735242.8
-        },
-        {
-          "name": "Lori A. Beer",
-          "shares_sold": 3166,
-          "approx_sale_price": 306.59,
-          "approx_sale_value_usd": 970663.94
-        }
-      ],
-      "news_top_5": [
-        {
-          "headline": "Have JPMorgan Chase Insiders Been Selling Stock?",
-          "sentiment": "Negative / cautionary",
-          "link": "https://simplywall.st/stocks/us/banks/nyse-jpm/jpmorgan-chase/news/have-jpmorgan-chase-insiders-been-selling-stock"
-        },
-        {
-          "headline": "JPMorgan Chase (JPM) Successfully Closes Multi-Billion Dollar Note Offerings",
-          "sentiment": "Neutral to positive",
-          "link": "https://www.gurufocus.com/news/8814296/jpmorgan-chase-jpm-successfully-closes-multibultin?"}],
+        "sec_latest_10k_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm",
+        "sec_latest_8k_url": "https://www.sec.gov/Archives/edgar/data/19617/000119312526173739/d235028d8k.htm",
+        "insider_trades_2026-04-15": [
+          {
+            "name": "James Dimon",
+            "shares_sold": 130488,
+            "approx_sale_price": 306.56,
+            "approx_sale_value_usd": 40002401.28,
+            "shares_after_transaction": 1680625
+          },
+          {
+            "name": "Mary E. Erdoes",
+            "shares_sold": 12345,
+            "approx_sale_price": 306.57,
+            "approx_sale_value_usd": 3784606.65
+          },
+          {
+            "name": "Jennifer Piepszak",
+            "shares_sold": 9136,
+            "approx_sale_price": 306.56,
+            "approx_sale_value_usd": 2800733.76
+          },
+          {
+            "name": "Ashley Bacon",
+            "shares_sold": 7558,
+            "approx_sale_price": 306.55,
+            "approx_sale_value_usd": 2316904.9
+          },
+          {
+            "name": "Marianne Lake",
+            "shares_sold": 6427,
+            "approx_sale_price": 306.57,
+            "approx_sale_value_usd": 1970325.39
+          },
+          {
+            "name": "Jeremy Barnum",
+            "shares_sold": 5611,
+            "approx_sale_price": 306.55,
+            "approx_sale_value_usd": 1720052.05
+          },
+          {
+            "name": "Douglas B. Petno",
+            "shares_sold": 5660,
+            "approx_sale_price": 306.58,
+            "approx_sale_value_usd": 1735242.8
+          },
+          {
+            "name": "Lori A. Beer",
+            "shares_sold": 3166,
+            "approx_sale_price": 306.59,
+            "approx_sale_value_usd": 970663.94
+          }
+        ],
+        "news_top_5": [
+          {
+            "headline": "Have JPMorgan Chase Insiders Been Selling Stock?",
+            "sentiment": "Negative / cautionary",
+            "link": "https://simplywall.st/stocks/us/banks/nyse-jpm/jpmorgan-chase/news/have-jpmorgan-chase-insiders-been-selling-stock"
+          },
+          {
+            "headline": "JPMorgan Chase (JPM) Successfully Closes Multi-Billion Dollar Note Offerings",
+            "sentiment": "Neutral to positive",
+            "link": "https://www.gurufocus.com/news/8814296/jpmorgan-chase-jpm-successfully-closes-multibultin?"}],
     "summary": "JPMorgan remains the quality leader on profitability, but Q4 miss and insider selling drove a negative short-term tone.",
     "assessment": {
       "market_tone": "neutral_to_slightly_positive",
@@ -822,102 +823,6 @@
       "ROE is included from the latest TTM metrics snapshot; quarterly ROE was unavailable in the quarter-specific metrics payload.",
       "Current ratio is included only as a snapshot metric; for a bank it is less meaningful than for a non-financial company.",
       "News results are dominated by automated institutional ownership headlines, so sentiment should be treated as low-confidence and low-impact."
-    ]
-  },
-  {
-    "as_of": "2026-05-13T08:00:00-07:00",
-    "sweep_type": "morning sweep",
-    "ticker": "JPM",
-    "company": "JPMorgan Chase & Co.",
-    "day_move_percent": 1.63,
-    "latest_quarter": {
-      "period": "2026-Q1",
-      "report_period_date": "2026-03-31",
-      "filed": "2026-05-01",
-      "filing_type": "10-Q",
-      "revenue_usd_B": 49.84,
-      "net_income_usd_B": 16.49,
-      "eps_usd": 5.94,
-      "assets_usd_T": 4.90,
-      "equity_usd_B": 364.04,
-      "net_margin_percent": 33.1
-    },
-    "key_ratios": {
-      "valuation": {
-        "pe": 14.71,
-        "pb": 2.24,
-        "ps": 4.46,
-        "ev_to_ebitda": 6.49,
-        "ev_to_revenue": 2.93
-      },
-      "profitability": {
-        "roe_percent": 15.74,
-        "roa_percent": 1.29,
-        "roic_percent": 160.58,
-        "net_margin_percent": 31.27
-      },
-      "notes": {
-        "roic_note": "ROIC is less intuitive for banks; treat with caution."
-      }
-    },
-    "latest_price_snapshot": {
-      "price_usd": 301.34,
-      "currency": "USD",
-      "snapshot_timestamp_utc": "2026-05-13T15:03:41Z",
-      "intraday_change_pct": 0.45,
-      "intraday_change_usd": 1.34
-    },
-    "recent_market_performance": {
-      "recent_closes": [
-        {"date": "2026-05-06", "close_usd": 314.90, "daily_move": null},
-        {"date": "2026-05-07", "close_usd": 306.27, "daily_move_percent": -2.74},
-        {"date": "2026-05-08", "close_usd": 302.10, "daily_move_percent": -1.36},
-        {"date": "2026-05-11", "close_usd": 300.00, "daily_move_percent": -0.70},
-        {"date": "2026-05-12", "close_usd": 304.88, "daily_move_percent": 1.63}
-      ],
-      "summary": {
-        "move_1_trading_day_percent": 1.63,
-        "move_2_trading_days_percent": 0.92,
-        "move_5_trading_days_percent": -3.18,
-        "peak_to_latest_range": {"peak_usd": 316.3, "low_usd": 295.6}
-      }
-    },
-    "news": [
-      {
-        "title": "JPMorgan to reshuffle investment bank chiefs on wider overhaul",
-        "source": "Reuters",
-        "timestamp_utc": "2026-05-13T03:56:00Z",
-        "url": "https://www.reuters.com/business/finance/jpmorgan-reshuffle-investment-bank-chiefs-wider-overhaul-ft-reports-2026-05-13/",
-        "why_it_matters": "Most market-relevant recent headline; may be influencing near-term sentiment."
-      },
-      {
-        "title": "JPMorgan set to reshuffle investment bank chiefs amid wider shake-up",
-        "source": "Financial Times",
-        "timestamp_utc": "2026-05-13T03:43:57Z",
-        "url": "https://www.ft.com/content/113ddfa2-7322-45f2-ac10-59bb1b302444?syn-25a6b1a6=1",
-        "why_it_matters": "Corroborates Reuters report; same theme/potential driver."
-      },
-      {
-        "title": "JPMorgan Chase puts $14M behind new tools to stop scams",
-        "source": "Stock Titan",
-        "timestamp_utc": "2026-05-12T13:06:26Z",
-        "url": "https://www.stocktitan.net/news/JPM/jp-morgan-chase-aims-to-help-protect-millions-of-americans-from-qd3okcg9b20w.html",
-        "why_it_matters": "Strategic/corporate initiative; less direct but still notable."
-      },
-      {
-        "title": "JPMorgan Chase’s markets business hits record level - report",
-        "source": "Seeking Alpha",
-        "timestamp_utc": "2026-05-12T15:12:02Z",
-        "url": "https://seekingalpha.com/news/4591311-jpmorgan-chases-markets-business-hits-record-level---report",
-        "why_it_matters": "Secondary-sourced indicator of strong markets activity; potentially supportive."
-      }
-    ],
-    "uncertainties": ["ROIC is less intuitive for banks; treat with caution."],
-    "sources": [
-      "https://www.reuters.com/business/finance/jpmorgan-reshuffle-investment-bank-chiefs-wider-overhaul-ft-reports-2026-05-13/",
-      "https://www.ft.com/content/113ddfa2-7322-45f2-ac10-59bb1b302444?syn-25a6b1a6=1",
-      "https://www.stocktitan.net/news/JPM/jp-morgan-chase-aims-to-help-protect-millions-of-americans-from-qd3okcg9b20w.html",
-      "https://seekingalpha.com/news/4591311-jpmorgan-chases-markets-business-hits-record-level---report"
     ]
   }
 ]
