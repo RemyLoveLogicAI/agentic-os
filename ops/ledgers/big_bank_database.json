@@ -823,212 +823,219 @@
       "News results are dominated by automated institutional ownership headlines, so sentiment should be treated as low-confidence and low-impact."
     ]
   }
-}
   ,
   {
-    "timestamp": "2026-05-15T20:00:00-07:00",
+    "timestamp": "2026-05-16T08:00:00-07:00",
     "task": "Big Bank triple-sweep research task",
-    "sweep_type": "night sweep",
-    "target": {
-      "ticker": "JPM",
-      "cik": "0000019617"
-    },
+    "sweep_type": "morning sweep",
     "results": {
-      "timestamp": "2026-05-15T20:00:00-07:00",
-      "task": "Big Bank triple-sweep research task",
-      "sweep_type": "night sweep",
-      "results": {
-        "target": {
-          "ticker": "JPM",
-          "company_name": "JPMorgan Chase & Co.",
-          "cik": "0000019617",
-          "sector": "Financials",
-          "industry": "Banks",
-          "exchange": "NYSE",
-          "country": "US",
-          "database_path": "ops/ledgers/big_bank_database.json"
+      "target": {
+        "ticker": "JPM",
+        "company_name": "JPMorgan Chase & Co.",
+        "cik": "0000019617",
+        "sector": "Financials",
+        "industry": "Banks",
+        "exchange": "NYSE",
+        "country": "United States",
+        "database_path": "ops/ledgers/big_bank_database.json"
+      },
+      "peers": [
+        {
+          "ticker": "BAC",
+          "company_name": "Bank of America Corp."
         },
-        "peers": [
-          "BAC",
-          "C",
-          "WFC",
-          "GS",
-          "MS"
-        ],
-        "market_price_vol_liquidity": {
-          "as_of": "2026-05-15T20:06:21Z",
-          "latest_price": 297.69,
-          "market_cap_usd": 793400000000,
-          "price_to_earnings_ttm": 13.8,
-          "price_to_book_ttm": 2.18,
-          "price_to_sales_ttm": 4.24,
-          "enterprise_value_usd": 1390000000000,
-          "enterprise_value_to_ebitda": 16.89,
-          "return_on_equity_ttm": 0.159,
-          "return_on_assets_ttm": 0.012,
-          "net_margin_ttm": 0.308,
-          "book_value_per_share": 134.03
+        {
+          "ticker": "C",
+          "company_name": "Citigroup Inc."
         },
-        "fundamentals": {
-          "latest_quarter": {
-            "report_period": "2026-03-31",
-            "fiscal_period": "2026-Q1",
-            "filing_type": "10-Q",
-            "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
-            "revenue_usd": 49840000000,
-            "revenue_yoy_growth": 0.0999,
-            "net_income_usd": 16490000000,
-            "net_income_yoy_growth": 0.1264,
-            "operating_income_usd": 14170000000,
-            "operating_income_yoy_growth": 0.3468,
-            "earnings_per_share_usd": 5.94,
-            "earnings_per_share_yoy_growth": 0.1716,
-            "operating_margin": 0.284,
-            "net_margin": 0.331,
-            "shareholders_equity_usd": 364000000000,
-            "total_assets_usd": 4900000000000,
-            "total_liabilities_usd": 4540000000000,
-            "guidance": null,
-            "guidance_note": "No explicit guidance field was provided in the supplied research brief."
+        {
+          "ticker": "WFC",
+          "company_name": "Wells Fargo & Co."
+        },
+        {
+          "ticker": "GS",
+          "company_name": "The Goldman Sachs Group, Inc."
+        },
+        {
+          "ticker": "MS",
+          "company_name": "Morgan Stanley"
+        }
+      ],
+      "market_price_vol_liquidity": {
+        "last_price": 297.69,
+        "snapshot_time_utc": "2026-05-15T20:06:21Z",
+        "day_change": null,
+        "day_change_percent": null,
+        "market_cap": 802879567714,
+        "recent_close_data": {
+          "last_available_close_date": "2026-05-13",
+          "last_available_close": 300.25,
+          "recent_4_session_close_range": {
+            "low": 300.0,
+            "high": 304.88,
+            "range_percent": 1.62
           },
-          "latest_snapshot_metrics": {
-            "price_to_sales_ttm": 4.24,
-            "enterprise_value_usd": 1390000000000,
-            "enterprise_value_to_ebitda": 16.89,
-            "return_on_equity_ttm": 0.159,
-            "return_on_assets_ttm": 0.012,
-            "revenue_growth_ttm": 0.0248,
-            "earnings_growth_ttm": 0.0329,
-            "earnings_per_share_ttm": 20.05,
-            "book_value_per_share": 134.03,
-            "net_margin_ttm": 0.308,
-            "snapshot_note": "TTM ratios are from the supplied research brief and should be treated as a point-in-time snapshot."
+          "recent_4_session_intraday_range": {
+            "low": 295.55,
+            "high": 308.99,
+            "range_percent": 4.42
           },
-          "signals": [
-            {
-              "type": "growth",
-              "headline": "Q1 revenue rose 10.0% YoY to $49.84B",
-              "confidence": 0.98
-            },
-            {
-              "type": "profitability",
-              "headline": "Q1 net income rose 12.6% YoY and EPS rose 17.2% YoY",
-              "confidence": 0.98
-            },
-            {
-              "type": "margin",
-              "headline": "Q1 operating margin and net margin remained strong at 28.4% and 33.1%",
-              "confidence": 0.97
-            },
-            {
-              "type": "return",
-              "headline": "TTM ROE is 15.9% with ROA at 1.2%",
-              "confidence": 0.96
-            }
+          "recent_4_session_avg_volume": 9045991
+        },
+        "liquidity_comment": "Deeply liquid large-cap financial; recent average volume was about 9.0M shares/day over the latest 4 recorded sessions."
+      },
+      "fundamentals": {
+        "latest_quarter": {
+          "report_period": "2026-03-31",
+          "fiscal_period": "2026-Q1",
+          "filing_date": "2026-05-01",
+          "source_type": "10-Q",
+          "revenue": 49836000000,
+          "revenue_yoy_chg": 0.0999,
+          "eps": 5.94,
+          "eps_yoy_chg": 0.1716,
+          "net_income": 16494000000,
+          "net_income_yoy_chg": 0.1264,
+          "operating_income": 14172000000,
+          "operating_margin": 0.28437274259571393,
+          "assets": 4900475000000,
+          "liabilities": 4536437000000,
+          "shareholders_equity": 364038000000,
+          "cash_and_equivalents": 312142000000,
+          "total_debt": 68048000000
+        },
+        "ttm": {
+          "report_period": "2025-12-31",
+          "revenue": 182447000000,
+          "net_income": 57048000000,
+          "eps": 20.02,
+          "dividends_per_common_share": 5.8,
+          "operating_income": 36029000000,
+          "interest_expense": 97898000000
+        },
+        "valuation_and_return_ratios": {
+          "price_to_earnings_ratio": 13.795,
+          "price_to_book_ratio": 2.179,
+          "price_to_sales_ratio": 4.243,
+          "enterprise_value_to_ebitda_ratio": 16.891,
+          "enterprise_value_to_revenue_ratio": 9.170586359688297,
+          "return_on_equity": 0.159,
+          "return_on_assets": 0.012,
+          "return_on_invested_capital": 0.014,
+          "payout_ratio": 0.277,
+          "revenue_growth": 0.024807204283983843,
+          "earnings_growth": 0.032865789048328875,
+          "earnings_per_share_growth": 0.04252793529098429,
+          "operating_income_growth": 0.02878081653282417
+        },
+        "balance_sheet_snapshot": {
+          "total_assets": 4900475000000,
+          "shareholders_equity": 364038000000,
+          "outstanding_shares": 2679511418,
+          "total_debt": 68048000000,
+          "book_value_per_share": 134.025
+        },
+        "analyst_estimates": {
+          "next_quarter": {
+            "fiscal_period": "2026-06-30",
+            "revenue": 47916067816,
+            "eps": 5.38
+          },
+          "forward_quarters": [
+            { "fiscal_period": "2026-09-30", "revenue": 48350475260, "eps": 5.48 },
+            { "fiscal_period": "2026-12-31", "revenue": 48662375210, "eps": 5.52 },
+            { "fiscal_period": "2027-03-31", "revenue": 49999909780, "eps": 5.73 }
           ]
-        },
-        "news": {
-          "overall_sentiment": "mixed_neutral",
-          "overall_impact": "low",
-          "items": [
-            {
-              "headline": "JPMorgan (JPM) issues $5.05M callable notes, 4.60% coupon to 2031",
-              "source": "Stock Titan",
-              "date": "2026-05-15",
-              "url": null,
-              "sentiment": "neutral",
-              "impact": "low",
-              "reason": "Financing headline; low direct operating signal."
-            },
-            {
-              "headline": "JPMorgan Chase prices $7M callable notes, 4.60% coupon through 2031",
-              "source": "Stock Titan",
-              "date": "2026-05-14",
-              "url": null,
-              "sentiment": "neutral",
-              "impact": "low",
-              "reason": "Capital markets issuance; not an operating update."
-            },
-            {
-              "headline": "JPMorgan's bet on early-stage companies pays off in leading global tech investment banking",
-              "source": "Reuters",
-              "date": "2026-05-14",
-              "url": null,
-              "sentiment": "slightly_positive",
-              "impact": "medium",
-              "reason": "Strategic and reputationally supportive; highlights banking franchise strength."
-            },
-            {
-              "headline": "Why Is JPMorgan Chase & Co. (JPM) Down 1.9% Since Last Earnings Report?",
-              "source": "Yahoo Finance",
-              "date": "2026-05-14",
-              "url": null,
-              "sentiment": "slightly_negative",
-              "impact": "low",
-              "reason": "Market reaction headline; more price commentary than fundamental news."
-            },
-            {
-              "headline": "JPMorgan prices 5.75% callable notes, $1,000 par, maturity 2046",
-              "source": "Stock Titan",
-              "date": "2026-05-14",
-              "url": null,
-              "sentiment": "neutral",
-              "impact": "low",
-              "reason": "Additional debt issuance; low direct fundamental signal."
-            }
-          ],
-          "news_quality_note": "Recent headlines are a mix of financing, market-reaction, and strategic banking coverage; signal is moderately useful but still low-to-medium impact overall."
-        },
-        "summary": "JPM remains the quality leader in the group with strong profitability, a solid Q1 earnings beat on revenue and EPS growth, and a stable capital-markets/news backdrop. The latest snapshot shows a $297.69 share price, $793.4B market cap, 13.8x P/E, 2.18x P/B, and 15.9% ROE. Recent headlines were mostly note issuances, alongside a supportive Reuters piece on JPMorgan's tech investment-banking franchise.",
-        "assessment": {
-          "market_tone": "neutral_to_slightly_positive",
-          "fundamental_tone": "positive",
-          "news_tone": "mixed_neutral",
-          "confidence": 0.91
-        },
-        "sources": [
+        }
+      },
+      "news": {
+        "overall_sentiment": "mixed_to_slightly_positive",
+        "items": [
           {
-            "type": "company_facts",
-            "tool": "provided_research_brief",
-            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000019617",
-            "note": "Company identity and SEC reference."
+            "date": "2026-05-15T22:41:00+00:00",
+            "source": "Investing.com",
+            "title": "JPMorgan Chase co-CEO Petno sells $1.7m in JPM stock",
+            "url": "https://m.investing.com/news/insider-trading-news/jpmorgan-chase-coceo-petno-sells-17m-in-jpm-stock-93CH-4694226?ampMode=1",
+            "sentiment": "slightly_negative",
+            "sentiment_basis": "headline_based"
           },
           {
-            "type": "current_price_snapshot",
-            "tool": "provided_research_brief",
-            "as_of": "2026-05-15T20:06:21Z",
-            "note": "Latest available price snapshot from the supplied research brief."
+            "date": "2026-05-15T22:35:10+00:00",
+            "source": "Stock Titan",
+            "title": "[Form 4] JPMORGAN CHASE & CO Insider Trading Activity",
+            "url": "https://www.stocktitan.net/sec-filings/JPM/form-4-jpmorgan-chase-co-insider-trading-activity-775289298972.html",
+            "sentiment": "neutral",
+            "sentiment_basis": "headline_based"
           },
           {
-            "type": "financial_metrics_snapshot",
-            "tool": "provided_research_brief",
-            "report_period": "2026-03-31",
-            "note": "Latest valuation and TTM ratio snapshot."
+            "date": "2026-05-15T22:35:09+00:00",
+            "source": "Stock Titan",
+            "title": "JPMorgan (JPM) Co-CEO Petno logs sale and 270K-share gifts",
+            "url": "https://www.stocktitan.net/sec-filings/JPM/form-4-jpmorgan-chase-coceo-petno-logs-sale-and-270k-share-gifts-ac3394bac632.html",
+            "sentiment": "slightly_negative",
+            "sentiment_basis": "headline_based"
           },
           {
-            "type": "quarterly_financials",
-            "tool": "provided_research_brief",
-            "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
-            "report_period": "2026-03-31"
+            "date": "2026-05-15T22:35:07+00:00",
+            "source": "Stock Titan",
+            "title": "CIO Lori Beer of JPMorgan Chase (JPM) reports open-market sale of 3,165 shares",
+            "url": "https://www.stocktitan.net/sec-filings/JPM/form-4-jpmorgan-chase-coiio-lori-beer-reports-open-market-sale-of-3-165-shares-e839e6d85453.html",
+            "sentiment": "slightly_negative",
+            "sentiment_basis": "headline_based"
           },
           {
-            "type": "news",
-            "tool": "provided_research_brief",
-            "articles": [
-              "JPMorgan (JPM) issues $5.05M callable notes, 4.60% coupon to 2031",
-              "JPMorgan Chase prices $7M callable notes, 4.60% coupon through 2031",
-              "JPMorgan's bet on early-stage companies pays off in leading global tech investment banking",
-              "Why Is JPMorgan Chase & Co. (JPM) Down 1.9% Since Last Earnings Report?",
-              "JPMorgan prices 5.75% callable notes, $1,000 par, maturity 2046"
-            ]
+            "date": "2026-05-15T20:29:38+00:00",
+            "source": "Stock Titan",
+            "title": "JPMorgan Chase declares dividends on Series II, OO and PP preferreds",
+            "url": "https://www.stocktitan.net/news/JPM/jp-morgan-chase-declares-preferred-stock-3v4yj00b5u88.html",
+            "sentiment": "positive",
+            "sentiment_basis": "headline_based"
           }
-        ],
-        "data_quality_notes": [
-          "The supplied research brief did not include a day-change figure for the close; the snapshot uses only the provided latest price timestamp.",
-          "TTM metrics were used as supplied and are recorded as a point-in-time snapshot.",
-          "News URLs were not provided in the brief, so the file stores headlines directly in the news items."
         ]
-      }
+      },
+      "summary": "JPMorgan Chase is trading around $297.69 with deep liquidity and a recent average volume near 9.0M shares/day. Q1 2026 was strong, with revenue up ~10% y/y, EPS up ~17% y/y, and net income up ~12.6%; TTM EPS is about $20.02 and TTM ROE is 15.9%, while recent news is mixed, dominated by insider-sale headlines offset by a preferred dividend declaration.",
+      "assessment": {
+        "stance": "constructive_positive",
+        "thesis": "JPM looks fundamentally solid for the morning sweep: the franchise continues to deliver double-digit quarterly growth, strong profitability, and a reasonable valuation for a large-cap bank.",
+        "positives": [
+          "Q1 2026 revenue and EPS both grew at a healthy double-digit pace year over year.",
+          "TTM ROE of 15.9% indicates strong capital efficiency for a money-center bank.",
+          "Valuation remains moderate at roughly 13.8x TTM EPS and 2.18x book.",
+          "Analyst quarterly EPS estimates remain above $5.3 through the next several quarters."
+        ],
+        "risks": [
+          "Recent headline flow includes multiple insider sale reports, which may weigh on sentiment short term.",
+          "Bank fundamentals are sensitive to credit quality, rates, and macro conditions.",
+          "Some automated news items are syndicated and should be confirmed with primary filings if used for trading decisions."
+        ],
+        "watch_items": [
+          "Any shift in credit costs or net interest income guidance.",
+          "Updated quarterly deposit growth, capital ratios, and buyback/dividend commentary.",
+          "Whether insider-sale headlines broaden or remain isolated."
+        ]
+      },
+      "sources": [
+        { "tool": "get_company_facts", "ticker": "JPM", "source": "Company profile" },
+        { "tool": "get_current_stock_price", "ticker": "JPM", "snapshot_time_utc": "2026-05-15T20:06:21Z" },
+        { "tool": "get_historical_stock_prices", "ticker": "JPM", "start_date": "2026-05-08", "end_date": "2026-05-13", "interval": "day" },
+        { "tool": "get_financial_metrics", "ticker": "JPM", "report_period": "2026-03-31", "period": "ttm", "accession_number": "0001628280-26-029344", "filing_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026029344/jpm-20260331.htm" },
+        { "tool": "get_earnings", "ticker": "JPM", "report_period": "2026-03-31", "filing_date": "2026-05-01", "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm" },
+        { "tool": "get_analyst_estimates", "ticker": "JPM", "period": "quarterly" },
+        { "tool": "get_company_news", "ticker": "JPM", "items": [
+          "https://m.investing.com/news/insider-trading-news/jpmorgan-chase-coceo-petno-sells-17m-in-jpm-stock-93CH-4694226?ampMode=1",
+          "https://www.stocktitan.net/sec-filings/JPM/form-4-jpmorgan-chase-co-operating-activity-775289298972.html",
+          "https://www.stocktitan.net/sec-filings/JPM/form-4-jpmorgan-chase-coceo-petno-logs-sale-and-270k-share-gifts-ac3394bac632.html",
+          "https://www.stocktitan.net/sec-filings/JPM/form-4-jpmorgan-chase-coiio-lori-beer-reports-open-market-sale-of-3-165-shares-e839e6d85453.html",
+          "https://www.stocktitan.net/news/JPM/jp-morgan-chase-declares-preferred-stock-3v4yj00b5u88.html"
+        ] }
+      ],
+      "data_quality_notes": [
+        "News coverage is dominated by syndicated/automated headlines; sentiment was inferred from headlines because the feed did not provide a machine sentiment score.",
+        "Bank valuation metrics such as EV/EBITDA and free-cash-flow yield are less meaningful than for non-financial companies; P/B, ROE, and earnings are more useful.",
+        "The live price snapshot and trailing financial metrics are timestamped slightly differently, so small discrepancies versus TTM snapshots are expected.",
+        "Liquidity was inferred from recent trading volume because bid-ask spread and order-book depth were not available.",
+        "Insider-sale headlines are real-time but should be confirmed against the underlying Form 4 filings before relying on them operationally."
+      ]
     }
   }
 ]
