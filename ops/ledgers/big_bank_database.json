@@ -117,63 +117,65 @@
     "timestamp": "2026-04-19T12:00:00-07:00",
     "task": "Big Bank triple-sweep research task",
     "sweep_type": "noon sweep",
-    "target": {
-      "ticker": "JPM",
-      "price": 310.20,
-      "day_change": "+0.08%",
-      "pe_ratio": "15.12x",
-      "market_cap": "$836.6B",
-      "sentiment": "Mildly Positive",
-      "findings": "Aggressive AI integration via 'Proxy IQ' platform. Facing class-action lawsuit regarding infrastructure for a $328M crypto Ponzi scheme."
-    },
-    "peers": [
-      {
-        "ticker": "BAC",
-        "price": 53.90,
-        "day_change": "+0.73%",
-        "pe_ratio": "13.57x",
-        "market_cap": "$386.8B",
-        "sentiment": "Mixed",
-        "findings": "Increasing development spend by 10% in 2026 for AI and digital transformation; $13B tech spend in 2025."
-      },
-      {
-        "ticker": "WFC",
-        "price": 81.39,
-        "day_change": "+0.17%",
-        "pe_ratio": "12.37x",
-        "market_cap": "$251.1B",
-        "sentiment": "Neutral",
-        "findings": "Continued multi-year restructuring; shareholder pressure to appoint an independent board chair at upcoming annual meeting."
-      },
-      {
-        "ticker": "C",
-        "price": 132.18,
-        "day_change": "+2.20%",
-        "pe_ratio": "17.31x",
-        "market_cap": "$231.2B",
-        "sentiment": "Neutral",
-        "findings": "CEO Jane Fraser highlighted systematic end-to-end AI embedding for wealth management advisor support."
-      },
-      {
-        "ticker": "GS",
-        "price": 926.39,
-        "day_change": "+2.93%",
-        "pe_ratio": "17.13x",
-        "market_cap": "$274.9B",
+    "results": {
+      "target": {
+        "ticker": "JPM",
+        "price": 310.20,
+        "day_change": "+0.08%",
+        "pe_ratio": "15.12x",
+        "market_cap": "$836.6B",
         "sentiment": "Mildly Positive",
-        "findings": "Leveraging AI for broad efficiency gains; signals potential tech-driven reduction in certain roles."
+        "findings": "Aggressive AI integration via 'Proxy IQ' platform. Facing class-action lawsuit regarding infrastructure for a $328M crypto Ponzi scheme."
       },
-      {
-        "ticker": "MS",
-        "price": 189.00,
-        "day_change": "+0.90%",
-        "pe_ratio": "17.83x",
-        "market_cap": "$299.9B",
-        "sentiment": "Positive",
-        "findings": "Record Q1 net revenue ($20.6B) and EPS ($3.43). Wealth management record $8.5B. Bitcoin holdings surpassed $100M."
-      }
-    ],
-    "summary": "Sector shifting toward growth via AI integration. Morgan Stanley leads with record Q1 earnings and institutional crypto adoption. JPM remains dominant but faces legal noise."
+      "peers": [
+        {
+          "ticker": "BAC",
+          "price": 53.90,
+          "day_change": "+0.73%",
+          "pe_ratio": "13.57x",
+          "market_cap": "$386.8B",
+          "sentiment": "Mixed",
+          "findings": "Increasing development spend by 10% in 2026 for AI and digital transformation; $13B tech spend in 2025."
+        },
+        {
+          "ticker": "WFC",
+          "price": 81.39,
+          "day_change": "+0.17%",
+          "pe_ratio": "12.37x",
+          "market_cap": "$251.1B",
+          "sentiment": "Neutral",
+          "findings": "Continued multi-year restructuring; shareholder pressure to appoint an independent board chair at upcoming annual meeting."
+        },
+        {
+          "ticker": "C",
+          "price": 132.18,
+          "day_change": "+2.20%",
+          "pe_ratio": "17.31x",
+          "market_cap": "$231.2B",
+          "sentiment": "Neutral",
+          "findings": "CEO Jane Fraser highlighted systematic end-to-end AI embedding for wealth management advisor support."
+        },
+        {
+          "ticker": "GS",
+          "price": 926.39,
+          "day_change": "+2.93%",
+          "pe_ratio": "17.13x",
+          "market_cap": "$274.9B",
+          "sentiment": "Mildly Positive",
+          "findings": "Leveraging AI for broad efficiency gains; signals potential tech-driven reduction in certain roles."
+        },
+        {
+          "ticker": "MS",
+          "price": 189.00,
+          "day_change": "+0.90%",
+          "pe_ratio": "17.83x",
+          "market_cap": "$299.9B",
+          "sentiment": "Positive",
+          "findings": "Record Q1 net revenue ($20.6B) and EPS ($3.43). Wealth management record $8.5B. Bitcoin holdings surpassed $100M."
+        }
+      ],
+      "summary": "Sector shifting toward growth via AI integration. Morgan Stanley leads with record Q1 earnings and institutional crypto adoption. JPM remains dominant but faces legal noise."
+    }
   },
   {
     "timestamp": "2026-04-19T20:01:00-07:00",
@@ -1035,6 +1037,114 @@
         "The live price snapshot and trailing financial metrics are timestamped slightly differently, so small discrepancies versus TTM snapshots are expected.",
         "Liquidity was inferred from recent trading volume because bid-ask spread and order-book depth were not available.",
         "Insider-sale headlines are real-time but should be confirmed against the underlying Form 4 filings before relying on them operationally."
+      ]
+    }
+  }
+  ,
+  {
+    "timestamp": "2026-05-11T12:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "noon sweep",
+    "results": {
+      "report_meta": {
+        "as_of": "2026-05-11T12:00:00-07:00",
+        "report_date": "2026-05-11",
+        "sweep_type": "noon sweep",
+        "task": "Big Bank triple-sweep research task",
+        "target_ticker": "JPM",
+        "universe": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
+        "source_database": "ops/ledgers/big_bank_database.json",
+        "generated_by": "financial research agent",
+        "confidence": 0.86
+      },
+      "macro": {
+        "sector_tone": "Neutral to slightly negative",
+        "market_context": [
+          "JPM traded at $300.33, down 0.59% on the noon snapshot.",
+          "The bank tape remains mixed, with low-signal institutional ownership headlines dominating the feed.",
+          "No fresh macro shock was reflected in the noon research inputs."
+        ],
+        "policy_and_rates": {
+          "rate_shock": "none_observed",
+          "capital_and_regulation": "still_a_watch_item",
+          "cyber_and_ai": "still_a_durable_theme"
+        },
+        "sector_watch_items": [
+          "Credit quality and provisioning",
+          "Net interest income sensitivity to rates and deposit costs",
+          "Capital and liquidity discipline",
+          "Cybersecurity / AI investment"
+        ]
+      },
+      "securities": {
+        "target": {
+          "ticker": "JPM",
+          "company_name": "JPMorgan Chase & Co.",
+          "exchange": "NYSE",
+          "price_current": 300.33,
+          "day_change_percent": -0.59,
+          "market_cap_usd_B": 811.5,
+          "valuation_snapshot": {
+            "P_E": 14.67,
+            "P_B": 2.24,
+            "P_S": 4.45,
+            "EV_EBITDA": 6.47
+          },
+          "profitability_snapshot": {
+            "ROE": 15.74,
+            "ROA": 1.29,
+            "net_margin": 31.27
+          },
+          "latest_quarter": {
+            "report_period": "2026-03-31",
+            "fiscal_period": "2026-Q1",
+            "revenue_B": 49.836,
+            "net_income_B": 16.494,
+            "eps": 5.94,
+            "revenue_yoy_growth_pct": 9.99,
+            "net_income_yoy_growth_pct": 12.64,
+            "eps_yoy_growth_pct": 17.16
+          },
+          "theme": "Quality megabank; fundamentals intact despite noon pullback."
+        },
+        "peers": [
+          {
+            "ticker": "BAC",
+            "company_name": "Bank of America Corporation",
+            "stance": "neutral",
+            "note": "Commercial-bank peer; AI and margin narrative remains supportive, but tape is mixed."
+          },
+          {
+            "ticker": "C",
+            "company_name": "Citigroup Inc.",
+            "stance": "neutral",
+            "note": "Middling valuation and limited catalyst flow at the noon checkpoint."
+          },
+          {
+            "ticker": "WFC",
+            "company_name": "Wells Fargo & Company",
+            "stance": "neutral",
+            "note": "Thin news flow; steady but unexciting relative performance."
+          },
+          {
+            "ticker": "GS",
+            "company_name": "The Goldman Sachs Group, Inc.",
+            "stance": "mixed",
+            "note": "Markets exposure keeps the tape more volatile; AI operating-model work remains a longer-term theme."
+          },
+          {
+            "ticker": "MS",
+            "company_name": "Morgan Stanley",
+            "stance": "slightly_positive",
+            "note": "Wealth-management strength and AI integration continue to support sentiment."
+          }
+        ]
+      },
+      "cross_sectional_takeaways": [
+        "JPM remains the sector anchor on scale and profitability.",
+        "Commercial banks and investment banks continue to diverge on catalysts and price action.",
+        "Noon news flow is still dominated by low-signal institutional ownership headlines rather than a fresh macro or earnings catalyst.",
+        "AI enablement, cybersecurity, and capital-return discipline remain the most durable cross-bank themes."
       ]
     }
   }
