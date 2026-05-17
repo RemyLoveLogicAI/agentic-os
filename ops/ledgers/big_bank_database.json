@@ -117,65 +117,63 @@
     "timestamp": "2026-04-19T12:00:00-07:00",
     "task": "Big Bank triple-sweep research task",
     "sweep_type": "noon sweep",
-    "results": {
-      "target": {
-        "ticker": "JPM",
-        "price": 310.20,
-        "day_change": "+0.08%",
-        "pe_ratio": "15.12x",
-        "market_cap": "$836.6B",
-        "sentiment": "Mildly Positive",
-        "findings": "Aggressive AI integration via 'Proxy IQ' platform. Facing class-action lawsuit regarding infrastructure for a $328M crypto Ponzi scheme."
+    "target": {
+      "ticker": "JPM",
+      "price": 310.20,
+      "day_change": "+0.08%",
+      "pe_ratio": "15.12x",
+      "market_cap": "$836.6B",
+      "sentiment": "Mildly Positive",
+      "findings": "Aggressive AI integration via 'Proxy IQ' platform. Facing class-action lawsuit regarding infrastructure for a $328M crypto Ponzi scheme."
+    },
+    "peers": [
+      {
+        "ticker": "BAC",
+        "price": 53.90,
+        "day_change": "+0.73%",
+        "pe_ratio": "13.57x",
+        "market_cap": "$386.8B",
+        "sentiment": "Mixed",
+        "findings": "Increasing development spend by 10% in 2026 for AI and digital transformation; $13B tech spend in 2025."
       },
-      "peers": [
-        {
-          "ticker": "BAC",
-          "price": 53.90,
-          "day_change": "+0.73%",
-          "pe_ratio": "13.57x",
-          "market_cap": "$386.8B",
-          "sentiment": "Mixed",
-          "findings": "Increasing development spend by 10% in 2026 for AI and digital transformation; $13B tech spend in 2025."
-        },
-        {
-          "ticker": "WFC",
-          "price": 81.39,
-          "day_change": "+0.17%",
-          "pe_ratio": "12.37x",
-          "market_cap": "$251.1B",
-          "sentiment": "Neutral",
-          "findings": "Continued multi-year restructuring; shareholder pressure to appoint an independent board chair at upcoming annual meeting."
-        },
-        {
-          "ticker": "C",
-          "price": 132.18,
-          "day_change": "+2.20%",
-          "pe_ratio": "17.31x",
-          "market_cap": "$231.2B",
-          "sentiment": "Neutral",
-          "findings": "CEO Jane Fraser highlighted systematic end-to-end AI embedding for wealth management advisor support."
-        },
-        {
-          "ticker": "GS",
-          "price": 926.39,
-          "day_change": "+2.93%",
-          "pe_ratio": "17.13x",
-          "market_cap": "$274.9B",
-          "sentiment": "Mildly Positive",
-          "findings": "Leveraging AI for broad efficiency gains; signals potential tech-driven reduction in certain roles."
-        },
-        {
-          "ticker": "MS",
-          "price": 189.00,
-          "day_change": "+0.90%",
-          "pe_ratio": "17.83x",
-          "market_cap": "$299.9B",
-          "sentiment": "Positive",
-          "findings": "Record Q1 net revenue ($20.6B) and EPS ($3.43). Wealth management record $8.5B. Bitcoin holdings surpassed $100M."
-        }
-      ],
-      "summary": "Sector shifting toward growth via AI integration. Morgan Stanley leads with record Q1 earnings and institutional crypto adoption. JPM remains dominant but faces legal noise."
-    }
+      {
+        "ticker": "WFC",
+        "price": 81.39,
+        "day_change": "+0.17%",
+        "pe_ratio": "12.37x",
+        "market_cap": "$251.1B",
+        "sentiment": "Neutral",
+        "findings": "Continued multi-year restructuring; shareholder pressure to appoint an independent board chair at upcoming annual meeting."
+      },
+      {
+        "ticker": "C",
+        "price": 132.18,
+        "day_change": "+2.20%",
+        "pe_ratio": "17.31x",
+        "market_cap": "$231.2B",
+        "sentiment": "Neutral",
+        "findings": "CEO Jane Fraser highlighted systematic end-to-end AI embedding for wealth management advisor support."
+      },
+      {
+        "ticker": "GS",
+        "price": 926.39,
+        "day_change": "+2.93%",
+        "pe_ratio": "17.13x",
+        "market_cap": "$274.9B",
+        "sentiment": "Mildly Positive",
+        "findings": "Leveraging AI for broad efficiency gains; signals potential tech-driven reduction in certain roles."
+      },
+      {
+        "ticker": "MS",
+        "price": 189.00,
+        "day_change": "+0.90%",
+        "pe_ratio": "17.83x",
+        "market_cap": "$299.9B",
+        "sentiment": "Positive",
+        "findings": "Record Q1 net revenue ($20.6B) and EPS ($3.43). Wealth management record $8.5B. Bitcoin holdings surpassed $100M."
+      }
+    ],
+    "summary": "Sector shifting toward growth via AI integration. Morgan Stanley leads with record Q1 earnings and institutional crypto adoption. JPM remains dominant but faces legal noise."
   },
   {
     "timestamp": "2026-04-19T20:01:00-07:00",
@@ -1145,6 +1143,448 @@
         "Commercial banks and investment banks continue to diverge on catalysts and price action.",
         "Noon news flow is still dominated by low-signal institutional ownership headlines rather than a fresh macro or earnings catalyst.",
         "AI enablement, cybersecurity, and capital-return discipline remain the most durable cross-bank themes."
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-05-17T12:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "noon sweep",
+    "run_label": "noon-sweep",
+    "entry_type": "big_bank_noon_sweep",
+    "universe": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
+    "data_as_of": {
+      "prices": "2026-05-15",
+      "news": "2026-05-17",
+      "earnings_and_filings": "2026-05-15"
+    },
+    "summary": {
+      "leader_by_quality": "JPM",
+      "leader_by_short_term_momentum": "MS",
+      "cheap_peers": ["BAC", "WFC", "C"],
+      "premium_peers": ["JPM", "GS", "MS"],
+      "core_readthrough": "Earnings were broadly constructive across the group, with JPM, BAC, C, GS, and MS all showing beats or strong growth. WFC was the softest on revenue but still beat EPS. Price action is more mixed: GS and MS held up best over the last week, while JPM, BAC, and C drifted lower despite solid fundamentals, suggesting valuation/expectations and macro-rate concerns remain important."
+    },
+    "tickers": {
+      "JPM": {
+        "price_snapshot": {
+          "current_price": 297.69,
+          "day_change": null,
+          "day_change_percent": null,
+          "5d_close_change_percent": -0.77,
+          "5d_range": {
+            "low": 295.55,
+            "high": 306.06
+          }
+        },
+        "financial_metrics": {
+          "market_cap": 802879567714,
+          "pe": 14.51,
+          "pb": 2.22,
+          "roe": 0.1574,
+          "revenue_growth": 0.0175,
+          "eps_growth": -0.0028,
+          "debt_to_equity": 0.1787
+        },
+        "latest_relevant_public_item": {
+          "headline": "Q1 2026 EPS $5.94 (+17.2% YoY) on revenue of $49.8B (+10.0% YoY); operating margin expanded 521 bps",
+          "source": "earnings/10-Q",
+          "sentiment": "positive",
+          "impact": "high"
+        },
+        "news_feed_note": "Company-news feed skewed to low-signal ownership/insider items; fundamentals remain the main catalyst.",
+        "key_takeaway": "Best-in-class balance sheet and profitability profile; slight weekly pullback looks more like consolidation than fundamental deterioration."
+      },
+      "BAC": {
+        "price_snapshot": {
+          "current_price": 49.62,
+          "day_change": -0.23,
+          "day_change_percent": -0.46,
+          "5d_close_change_percent": -1.84,
+          "5d_range": {
+            "low": 49.3,
+            "high": 51.39
+          }
+        },
+        "financial_metrics": {
+          "market_cap": 353197316700,
+          "pe": 11.7,
+          "pb": 1.17,
+          "roe": 0.105,
+          "revenue_growth": -0.008,
+          "eps_growth": 0.0714,
+          "debt_to_equity": 1.2758
+        },
+        "latest_relevant_public_item": {
+          "headline": "Q1 2026 EPS $1.11 beat by 11.0%; revenue $30.3B beat by 1.3% and net income rose 16.1% YoY",
+          "source": "earnings/10-Q",
+          "sentiment": "positive",
+          "impact": "high"
+        },
+        "news_feed_note": "Company-news feed was mostly automated/institutional holdings chatter; limited incremental signal.",
+        "key_takeaway": "Cheaper valuation than JPM/GS/MS, but the stock has lagged over the past week despite a clean earnings beat."
+      },
+      "C": {
+        "price_snapshot": {
+          "current_price": 123.41,
+          "day_change": -1.41,
+          "day_change_percent": -1.13,
+          "5d_close_change_percent": -1.94,
+          "5d_range": {
+            "low": 122.73,
+            "high": 128.09
+          }
+        },
+        "financial_metrics": {
+          "market_cap": 210485252017,
+          "pe": 12.44,
+          "pb": 1.0,
+          "roe": 0.0835,
+          "revenue_growth": 0.0559,
+          "eps_growth": 0.299,
+          "debt_to_equity": 1.7995
+        },
+        "latest_relevant_public_item": {
+          "headline": "Q1 2026 EPS $3.06 beat by 15.9%; revenue $24.6B beat by 4.0%; FY26 ROTE guidance reaffirmed at 10%–11%",
+          "source": "earnings/10-Q",
+          "sentiment": "positive",
+          "impact": "high"
+        },
+        "news_feed_note": "No company-news results were returned in the feed; latest SEC/earnings release used as the relevant public catalyst.",
+        "key_takeaway": "Looks inexpensive on P/B, but the market is still discounting the turnaround; earnings/guidance were constructive, yet shares remain soft."
+      },
+      "WFC": {
+        "price_snapshot": {
+          "current_price": 73.39,
+          "day_change": null,
+          "day_change_percent": null,
+          "5d_close_change_percent": -0.26,
+          "5d_range": {
+            "low": 72.78,
+            "high": 75.25
+          }
+        },
+        "financial_metrics": {
+          "market_cap": 224587306965,
+          "pe": 10.78,
+          "pb": 1.26,
+          "roe": 0.119,
+          "revenue_growth": 0.0018,
+          "eps_growth": 0.0347,
+          "debt_to_equity": 1.212
+        },
+        "latest_relevant_public_item": {
+          "headline": "Q1 2026 EPS $1.60 beat by 1.3%, but revenue missed by 1.1%; net income rose 7.3% YoY",
+          "source": "earnings/10-Q",
+          "sentiment": "mixed",
+          "impact": "medium",
+          "reason": "EPS beat offsets a modest revenue miss; trend is stable but less compelling than peers with cleaner top-line momentum."
+        },
+        "news_feed_note": "No company-news results were returned in the feed; latest SEC/earnings release used as the relevant public catalyst.",
+        "key_takeaway": "One of the cheapest names in the group, but revenue growth remains muted and the equity is trading more like a steady-state bank."
+      },
+      "GS": {
+        "price_snapshot": {
+          "current_price": 948.84,
+          "day_change": null,
+          "day_change_percent": null,
+          "5d_close_change_percent": 0.42,
+          "5d_range": {
+            "low": 920.79,
+            "high": 975.66
+          }
+        },
+        "financial_metrics": {
+          "market_cap": 279914841342,
+          "pe": 16.07,
+          "pb": 2.28,
+          "roe": 0.1481,
+          "revenue_growth": 0.0647,
+          "eps_growth": 0.092,
+          "debt_to_equity": 5.0418
+        },
+        "latest_relevant_public_item": {
+          "headline": "Q1 2026 EPS $17.55 beat by 7.6%; revenue $17.2B beat by 1.7%; Q2 2026 dividend guidance initiated at $4.50/share",
+          "source": "earnings/8-K",
+          "sentiment": "positive",
+          "impact": "high"
+        },
+        "news_feed_note": "Company-news feed mainly showed automated ownership/filing headlines, which are low incremental signal.",
+        "key_takeaway": "Trading/markets franchise still earning a premium; strong earnings and capital return guidance support the stock, though it has pulled back from the week’s highs."
+      },
+      "MS": {
+        "price_snapshot": {
+          "current_price": 192.22,
+          "day_change": null,
+          "day_change_percent": null,
+          "5d_close_change_percent": 0.59,
+          "5d_range": {
+            "low": 186.45,
+            "high": 194.95
+          }
+        },
+        "financial_metrics": {
+          "market_cap": 303580008728,
+          "pe": 16.82,
+          "pb": 2.66,
+          "roe": 0.1578,
+          "revenue_growth": 0.0381,
+          "eps_growth": 0.0802,
+          "debt_to_equity": 4.2248
+        },
+        "latest_relevant_public_item": {
+          "headline": "Q1 2026 EPS $3.43 beat by 12.5%; revenue $20.6B beat by 3.9%; net income rose 30.7% YoY",
+          "source": "earnings/8-K",
+          "sentiment": "positive",
+          "impact": "high"
+        },
+        "news_feed_note": "No company-news results were returned in the feed; latest SEC/earnings release used as the relevant public catalyst.",
+        "key_takeaway": "Best short-term price action in the peer set alongside strong wealth/capital-markets execution; still trades at a premium multiple."
+      }
+    },
+    "comparison_notes": {
+      "performance": [
+        "JPM: strongest quality profile, but shares are slightly softer over the last week.",
+        "BAC: earnings were solid, yet price action remains weak relative to the beat.",
+        "C: good earnings/guidance, but the market still treats it as a turnaround story.",
+        "WFC: cheapest among the large retail/commercial peers, but revenue softness caps enthusiasm.",
+        "GS: solid weekly resilience with a strong earnings/guidance backdrop.",
+        "MS: best recent momentum, backed by a clean beat and growth in wealth/capital markets."
+      ],
+      "key_drivers": [
+        "Earnings beats across most of the group.",
+        "Guidance/capital return was constructive for C and GS.",
+        "Macro/rates remain the main cross-current for NII and deposit behavior in JPM/BAC/C/WFC.",
+        "Credit quality and commercial real estate remain the key downside risk for retail/commercial banks.",
+        "Capital markets and advisory/trading volatility matter most for GS and MS."
+      ],
+      "notable_risks": [
+        "Net interest income compression if rates fall faster than deposit costs reset.",
+        "Credit normalization, especially consumer and CRE exposure.",
+        "Regulatory/capital requirements, particularly for the large money-center banks.",
+        "Trading and IB volatility for GS/MS if deal flow or market volumes slow.",
+        "Valuation risk for JPM/MS/GS if earnings momentum moderates."
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-05-17T12:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "noon sweep",
+    "run_label": "noon-sweep",
+    "entry_type": "big_bank_noon_sweep",
+    "universe": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
+    "data_as_of": {
+      "prices": "2026-05-15",
+      "news": "2026-05-17",
+      "earnings_and_filings": "2026-05-15"
+    },
+    "summary": {
+      "leader_by_quality": "JPM",
+      "leader_by_short_term_momentum": "MS",
+      "cheap_peers": ["BAC", "WFC", "C"],
+      "premium_peers": ["JPM", "GS", "MS"],
+      "core_readthrough": "Earnings were broadly constructive across the group, with JPM, BAC, C, GS, and MS all showing beats or strong growth. WFC was the softest on revenue but still beat EPS. Price action is more mixed: GS and MS held up best over the last week, while JPM, BAC, and C drifted lower despite solid fundamentals, suggesting valuation/expectations and macro-rate concerns remain important."
+    },
+    "tickers": {
+      "JPM": {
+        "price_snapshot": {
+          "current_price": 297.69,
+          "day_change": null,
+          "day_change_percent": null,
+          "5d_close_change_percent": -0.77,
+          "5d_range": {
+            "low": 295.55,
+            "high": 306.06
+          }
+        },
+        "financial_metrics": {
+          "market_cap": 802879567714,
+          "pe": 14.51,
+          "pb": 2.22,
+          "roe": 0.1574,
+          "revenue_growth": 0.0175,
+          "eps_growth": -0.0028,
+          "debt_to_equity": 0.1787
+        },
+        "latest_relevant_public_item": {
+          "headline": "Q1 2026 EPS $5.94 (+17.2% YoY) on revenue of $49.8B (+10.0% YoY); operating margin expanded 521 bps",
+          "source": "earnings/10-Q",
+          "sentiment": "positive",
+          "impact": "high"
+        },
+        "news_feed_note": "Company-news feed skewed to low-signal ownership/insider items; fundamentals remain the main catalyst.",
+        "key_takeaway": "Best-in-class balance sheet and profitability profile; slight weekly pullback looks more like consolidation than fundamental deterioration."
+      },
+      "BAC": {
+        "price_snapshot": {
+          "current_price": 49.62,
+          "day_change": -0.23,
+          "day_change_percent": -0.46,
+          "5d_close_change_percent": -1.84,
+          "5d_range": {
+            "low": 49.3,
+            "high": 51.39
+          }
+        },
+        "financial_metrics": {
+          "market_cap": 353197316700,
+          "pe": 11.7,
+          "pb": 1.17,
+          "roe": 0.105,
+          "revenue_growth": -0.008,
+          "eps_growth": 0.0714,
+          "debt_to_equity": 1.2758
+        },
+        "latest_relevant_public_item": {
+          "headline": "Q1 2026 EPS $1.11 beat by 11.0%; revenue $30.3B beat by 1.3% and net income rose 16.1% YoY",
+          "source": "earnings/10-Q",
+          "sentiment": "positive",
+          "impact": "high"
+        },
+        "news_feed_note": "Company-news feed was mostly automated/institutional holdings chatter; limited incremental signal.",
+        "key_takeaway": "Cheaper valuation than JPM/GS/MS, but the stock has lagged over the past week despite a clean earnings beat."
+      },
+      "C": {
+        "price_snapshot": {
+          "current_price": 123.41,
+          "day_change": -1.41,
+          "day_change_percent": -1.13,
+          "5d_close_change_percent": -1.94,
+          "5d_range": {
+            "low": 122.73,
+            "high": 128.09
+          }
+        },
+        "financial_metrics": {
+          "market_cap": 210485252017,
+          "pe": 12.44,
+          "pb": 1.0,
+          "roe": 0.0835,
+          "revenue_growth": 0.0559,
+          "eps_growth": 0.299,
+          "debt_to_equity": 1.7995
+        },
+        "latest_relevant_public_item": {
+          "headline": "Q1 2026 EPS $3.06 beat by 15.9%; revenue $24.6B beat by 4.0%; FY26 ROTE guidance reaffirmed at 10%–11%",
+          "source": "earnings/10-Q",
+          "sentiment": "positive",
+          "impact": "high"
+        },
+        "news_feed_note": "No company-news results were returned in the feed; latest SEC/earnings release used as the relevant public catalyst.",
+        "key_takeaway": "Looks inexpensive on P/B, but the market is still discounting the turnaround; earnings/guidance were constructive, yet shares remain soft."
+      },
+      "WFC": {
+        "price_snapshot": {
+          "current_price": 73.39,
+          "day_change": null,
+          "day_change_percent": null,
+          "5d_close_change_percent": -0.26,
+          "5d_range": {
+            "low": 72.78,
+            "high": 75.25
+          }
+        },
+        "financial_metrics": {
+          "market_cap": 224587306965,
+          "pe": 10.78,
+          "pb": 1.26,
+          "roe": 0.119,
+          "revenue_growth": 0.0018,
+          "eps_growth": 0.0347,
+          "debt_to_equity": 1.212
+        },
+        "latest_relevant_public_item": {
+          "headline": "Q1 2026 EPS $1.60 beat by 1.3%, but revenue missed by 1.1%; net income rose 7.3% YoY",
+          "source": "earnings/10-Q",
+          "sentiment": "mixed",
+          "impact": "medium",
+          "reason": "EPS beat offsets a modest revenue miss; trend is stable but less compelling than peers with cleaner top-line momentum."
+        },
+        "news_feed_note": "No company-news results were returned in the feed; latest SEC/earnings release used as the relevant public catalyst.",
+        "key_takeaway": "One of the cheapest names in the group, but revenue growth remains muted and the equity is trading more like a steady-state bank."
+      },
+      "GS": {
+        "price_snapshot": {
+          "current_price": 948.84,
+          "day_change": null,
+          "day_change_percent": null,
+          "5d_close_change_percent": 0.42,
+          "5d_range": {
+            "low": 920.79,
+            "high": 975.66
+          }
+        },
+        "financial_metrics": {
+          "market_cap": 279914841342,
+          "pe": 16.07,
+          "pb": 2.28,
+          "roe": 0.1481,
+          "revenue_growth": 0.0647,
+          "eps_growth": 0.092,
+          "debt_to_equity": 5.0418
+        },
+        "latest_relevant_public_item": {
+          "headline": "Q1 2026 EPS $17.55 beat by 7.6%; revenue $17.2B beat by 1.7%; Q2 2026 dividend guidance initiated at $4.50/share",
+          "source": "earnings/8-K",
+          "sentiment": "positive",
+          "impact": "high"
+        },
+        "news_feed_note": "Company-news feed mainly showed automated ownership/filing headlines, which are low incremental signal.",
+        "key_takeaway": "Trading/markets franchise still earning a premium; strong earnings and capital return guidance support the stock, though it has pulled back from the week’s highs."
+      },
+      "MS": {
+        "price_snapshot": {
+          "current_price": 192.22,
+          "day_change": null,
+          "day_change_percent": null,
+          "5d_close_change_percent": 0.59,
+          "5d_range": {
+            "low": 186.45,
+            "high": 194.95
+          }
+        },
+        "financial_metrics": {
+          "market_cap": 303580008728,
+          "pe": 16.82,
+          "pb": 2.66,
+          "roe": 0.1578,
+          "revenue_growth": 0.0381,
+          "eps_growth": 0.0802,
+          "debt_to_equity": 4.2248
+        },
+        "latest_relevant_public_item": {
+          "headline": "Q1 2026 EPS $3.43 beat by 12.5%; revenue $20.6B beat by 3.9%; net income rose 30.7% YoY",
+          "source": "earnings/8-K",
+          "sentiment": "positive",
+          "impact": "high"
+        },
+        "news_feed_note": "No company-news results were returned in the feed; latest SEC/earnings release used as the relevant public catalyst.",
+        "key_takeaway": "Best short-term price action in the peer set alongside strong wealth/capital-markets execution; still trades at a premium multiple."
+      }
+    },
+    "comparison_notes": {
+      "performance": [
+        "JPM: strongest quality profile, but shares are slightly softer over the last week.",
+        "BAC: earnings were solid, yet price action remains weak relative to the beat.",
+        "C: good earnings/guidance, but the market still treats it as a turnaround story.",
+        "WFC: cheapest among the large retail/commercial peers, but revenue softness caps enthusiasm.",
+        "GS: solid weekly resilience with a strong earnings/guidance backdrop.",
+        "MS: best recent momentum, backed by a clean beat and growth in wealth/capital markets."
+      ],
+      "key_drivers": [
+        "Earnings beats across most of the group.",
+        "Guidance/capital return was constructive for C and GS.",
+        "Macro/rates remain the main cross-current for NII and deposit behavior in JPM/BAC/C/WFC.",
+        "Credit quality and commercial real estate remain the key downside risk for retail/commercial banks.",
+        "Capital markets and advisory/trading volatility matter most for GS and MS."
+      ],
+      "notable_risks": [
+        "Net interest income compression if rates fall faster than deposit costs reset.",
+        "Credit normalization, especially consumer and CRE exposure.",
+        "Regulatory/capital requirements, particularly for the large money-center banks.",
+        "Trading and IB volatility for GS/MS if deal flow or market volumes slow.",
+        "Valuation risk for JPM/MS/GS if earnings momentum moderates."
       ]
     }
   }
