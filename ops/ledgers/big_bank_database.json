@@ -823,7 +823,8 @@
       "News results are dominated by automated institutional ownership headlines, so sentiment should be treated as low-confidence and low-impact."
     ]
   }
-  ,
+  }
+  },
   {
     "timestamp": "2026-05-16T08:00:00-07:00",
     "task": "Big Bank triple-sweep research task",
@@ -1035,6 +1036,269 @@
         "The live price snapshot and trailing financial metrics are timestamped slightly differently, so small discrepancies versus TTM snapshots are expected.",
         "Liquidity was inferred from recent trading volume because bid-ask spread and order-book depth were not available.",
         "Insider-sale headlines are real-time but should be confirmed against the underlying Form 4 filings before relying on them operationally."
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-05-16T20:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "night sweep",
+    "results": {
+      "as_of": "2026-05-16T00:00:00-04:00",
+      "target": {
+        "ticker": "JPM",
+        "company_name": "JPMorgan Chase & Co.",
+        "cik": "0000019617",
+        "sector": "Financials",
+        "industry": "Banks",
+        "exchange": "NYSE",
+        "country": "US",
+        "database_path": "ops/ledgers/big_bank_database.json"
+      },
+      "peers": [
+        {
+          "ticker": "BAC",
+          "company_name": "Bank of America Corp."
+        },
+        {
+          "ticker": "C",
+          "company_name": "Citigroup Inc."
+        },
+        {
+          "ticker": "WFC",
+          "company_name": "Wells Fargo & Co."
+        },
+        {
+          "ticker": "GS",
+          "company_name": "The Goldman Sachs Group, Inc."
+        },
+        {
+          "ticker": "MS",
+          "company_name": "Morgan Stanley"
+        },
+        {
+          "ticker": "BK",
+          "company_name": "The Bank of New York Mellon Corporation"
+        },
+        {
+          "ticker": "USB",
+          "company_name": "U.S. Bancorp"
+        },
+        {
+          "ticker": "PNC",
+          "company_name": "The PNC Financial Services Group, Inc."
+        },
+        {
+          "ticker": "TFC",
+          "company_name": "Truist Financial Corporation"
+        },
+        {
+          "ticker": "SCHW",
+          "company_name": "The Charles Schwab Corporation"
+        }
+      ],
+      "peer_basket_note": "Curated large-bank comp set for JPM; not directly returned by the API.",
+      "market": {
+        "current_price_usd": 297.69,
+        "current_price_time_utc": "2026-05-15T20:06:21Z",
+        "market_cap_usd": 793359043430,
+        "price_returns_pct": {
+          "1M": {
+            "ref_date": "2026-04-15",
+            "ref_close_usd": 305.93,
+            "return_pct": -2.69
+          },
+          "3M": {
+            "ref_date": "2026-02-13",
+            "ref_close_usd": 302.55,
+            "return_pct": -1.61
+          },
+          "YTD": {
+            "ref_date": "2025-12-31",
+            "ref_close_usd": 322.22,
+            "return_pct": -7.61
+          },
+          "1Y": {
+            "ref_date": "2025-05-19",
+            "ref_close_usd": 264.88,
+            "return_pct": 12.37,
+            "note": "1Y uses first available trading day in the returned series."
+          }
+        },
+        "volatility": {
+          "annualized_estimate_pct": 23.0,
+          "note": "Estimated from the 1Y daily price series; not directly returned by the API."
+        },
+        "liquidity": {
+          "recent_average_daily_volume_shares_est": 9000000,
+          "latest_available_volume_shares": 7709525,
+          "latest_available_price_date": "2026-05-13",
+          "trading_note": "Typical recent volume was roughly 6M-11M shares/day, with event spikes above 18M shares."
+        },
+        "range_1y": {
+          "low_usd": 261.04,
+          "high_usd": 334.61
+        }
+      },
+      "fundamentals": {
+        "latest_quarter": {
+          "report_period": "2026-03-31",
+          "fiscal_period": "2026-Q1",
+          "filing_type": "10-Q",
+          "filing_date": "2026-05-01",
+          "revenue_usd": 49836000000,
+          "eps_usd": 5.94,
+          "net_income_usd": 16494000000,
+          "operating_income_usd": 14172000000,
+          "net_margin_pct": 33.1,
+          "revenue_yoy_pct": 9.99,
+          "eps_yoy_pct": 17.16,
+          "signals": [
+            "Operating margin expanded 521 bps YoY to 28.4%",
+            "EPS grew 17.2% YoY to $5.94"
+          ]
+        },
+        "ttm_or_fy2025": {
+          "report_period": "2025-12-31",
+          "fiscal_period": "FY2025",
+          "revenue_usd": 182447000000,
+          "net_income_usd": 57048000000,
+          "eps_usd": 20.05,
+          "diluted_eps_usd": 20.02,
+          "dividends_per_common_share_usd": 5.8,
+          "weighted_average_diluted_shares": 2781500000
+        },
+        "balance_sheet_latest": {
+          "report_period": "2026-03-31",
+          "fiscal_period": "2026-Q1",
+          "total_assets_usd": 4900475000000,
+          "total_liabilities_usd": 4536437000000,
+          "shareholders_equity_usd": 364038000000,
+          "cash_and_equivalents_usd": 312142000000,
+          "total_debt_usd": 68048000000,
+          "outstanding_shares": 2679511418
+        },
+        "key_metrics_ttm": {
+          "pe_ratio": 13.795,
+          "pb_ratio": 2.179,
+          "ps_ratio": 4.243,
+          "roe_pct": 15.9,
+          "roa_pct": 1.2,
+          "revenue_growth_pct": 2.4807204283983843,
+          "earnings_growth_pct": 3.2865789048328875,
+          "eps_growth_pct": 4.252793529098429,
+          "book_value_per_share_usd": 134.025,
+          "earnings_per_share_usd": 21.3238078018993,
+          "payout_ratio_pct": 27.7,
+          "debt_to_equity": 12.461,
+          "debt_to_assets": 0.2516970293696019,
+          "free_cash_flow_yield_pct": -13.57569449695231,
+          "note": "Some leverage and cash-flow ratios are bank-style/GAAP-derived and are less comparable than for non-financials."
+        },
+        "analyst_estimates": {
+          "2026E": {
+            "revenue_usd": 194757409590,
+            "eps_usd": 22.38
+          },
+          "2027E": {
+            "revenue_usd": 201919567568,
+            "eps_usd": 23.51
+          },
+          "2028E": {
+            "revenue_usd": 212152341008,
+            "eps_usd": 26.22
+          },
+          "implied_forward_pe_2026E": 13.31,
+          "implied_forward_pe_2027E": 12.67
+        }
+      },
+      "news": {
+        "headline_count": 10,
+        "selected_headlines": [
+          {
+            "date_utc": "2026-05-14T19:52:19+00:00",
+            "source": "Reuters",
+            "headline": "JPMorgan's bet on early-stage companies pays off in leading global tech investment banking",
+            "sentiment": "positive",
+            "impact": "Positive strategic signal; supports franchise strength in tech investment banking.",
+            "reliability": "high"
+          },
+          {
+            "date_utc": "2026-05-15T22:41:00+00:00",
+            "source": "Investing.com",
+            "headline": "JPMorgan Chase co-CEO Petno sells $1.7m in JPM stock",
+            "sentiment": "slightly negative",
+            "impact": "Mild overhang only; insider sale is worth noting but not necessarily a fundamental concern.",
+            "reliability": "medium"
+          },
+          {
+            "date_utc": "2026-05-15T20:29:38+00:00",
+            "source": "Stock Titan",
+            "headline": "JPMorgan Chase declares dividends on Series II, OO and PP preferreds",
+            "sentiment": "neutral",
+            "impact": "Routine capital-management update; no major fundamental signal.",
+            "reliability": "medium_low"
+          },
+          {
+            "date_utc": "2026-05-15T16:11:42+00:00",
+            "source": "Stock Titan",
+            "headline": "JPMorgan (JPM) issues $5.05M callable notes, 4.60% coupon to 2031",
+            "sentiment": "neutral",
+            "impact": "Routine funding activity; indicates ongoing balance-sheet/debt management.",
+            "reliability": "medium_low"
+          }
+        ],
+        "overall_news_read": "Mixed but slightly constructive. The Reuters piece is the strongest signal; most other items are routine financing or automated SEC-style updates."
+      },
+      "assessment": {
+        "one_line": "JPM looks like a high-quality, profitable money-center bank with solid Q1 momentum, reasonable valuation, and stable franchise strength; recent stock performance has softened, but fundamentals remain resilient.",
+        "bullish_points": [
+          "Q1 revenue and EPS both grew strongly YoY.",
+          "ROE remains healthy at ~15.9% with a premium-but-not-extreme P/B of ~2.18x.",
+          "Analyst estimates still imply continued EPS growth through 2028."
+        ],
+        "cautions": [
+          "YTD performance is negative, so momentum has cooled versus year-end levels.",
+          "Some bank-derived ratios and cash-flow fields are less intuitive than for industrial companies.",
+          "Recent news flow includes an insider sale, though it is small relative to JPM's scale."
+        ],
+        "stance": "slightly positive"
+      },
+      "sources_used": [
+        {
+          "source": "get_company_facts"
+        },
+        {
+          "source": "get_current_stock_price"
+        },
+        {
+          "source": "get_historical_stock_prices"
+        },
+        {
+          "source": "get_financial_metrics_snapshot"
+        },
+        {
+          "source": "get_all_financial_statements"
+        },
+        {
+          "source": "get_earnings"
+        },
+        {
+          "source": "get_company_news"
+        },
+        {
+          "source": "get_sec_filings"
+        },
+        {
+          "source": "get_analyst_estimates"
+        }
+      ],
+      "data_quality_notes": [
+        "Peer basket is curated manually for a large-bank comparison set; the API did not return a direct peer list.",
+        "Price history endpoint returned daily closes through 2026-05-13; latest live price snapshot is 2026-05-15T20:06:21Z.",
+        "Volatility and liquidity are estimated from the OHLCV series because the API does not provide explicit realized-volatility or average-volume summary fields.",
+        "For banks, EV, cash-flow, current-ratio, and margin fields can be less comparable or less intuitive than for non-financial companies.",
+        "News feed includes automated SEC/press-aggregation items; Reuters is weighted highest for signal quality."
       ]
     }
   }
