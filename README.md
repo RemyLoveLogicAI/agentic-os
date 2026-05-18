@@ -54,10 +54,36 @@ Agentic OS closes all three gaps.
 
 ## Quickstart
 
+### Prerequisites
+
+- [Bun](https://bun.sh) v1.1+
+
+### Install & Run
+
+```bash
+# Clone
+git clone https://github.com/RemyLoveLogicAI/agentic-os.git
+cd agentic-os
+
+# Install dependencies
+bun install
+
+# Start the operator console
+bun run dev
+# → http://localhost:4200
+
+# Run tests
+bun test
+
+# Submit a command via API
+curl -X POST http://localhost:4200/api/command \
+  -H "Content-Type: application/json" \
+  -d '{"command": "check status"}'
+```
+
 ### Read the Spec
 
 ```bash
-# Clone or download
 open spec-pack/README.md
 ```
 
@@ -165,12 +191,13 @@ This repo is the **spec and operating narrative**.
 
 Implementation follows a phase-0 slice:
 
-- [ ] Voice clarification loop
-- [ ] Deterministic router
-- [ ] Approval gate
-- [ ] One safe desktop action
-- [ ] One safe API action
-- [ ] Evidence logging
+- [x] Voice clarification loop
+- [x] Deterministic router
+- [x] Approval gate
+- [x] One safe desktop action
+- [x] One safe API action
+- [x] Evidence logging
+- [x] Operator console
 
 ---
 

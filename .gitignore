@@ -23,3 +23,10 @@ Thumbs.db
 # Temp files
 *.tmp
 *.temp
+
+# Environment
+.env
+.env.*
+
+# Evidence (runtime data)
+ops/ledgers/evidence/

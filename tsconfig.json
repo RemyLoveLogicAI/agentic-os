@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@agentic-os/core": ["./packages/core/index.ts"],
+      "@agentic-os/routing": ["./packages/routing/index.ts"],
+      "@agentic-os/policy": ["./packages/policy/index.ts"]
+    }
+  },
+  "include": [
+    "packages/**/*.ts",
+    "services/**/*.ts",
+    "apps/**/*.ts",
+    "agents/**/*.ts",
+    "tests/**/*.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}
