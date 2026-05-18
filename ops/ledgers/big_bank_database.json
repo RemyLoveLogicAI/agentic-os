@@ -1015,13 +1015,18 @@
         ]
       },
       "sources": [
-        { "tool": "get_company_facts", "ticker": "JPM", "source": "Company profile" },
-        { "tool": "get_current_stock_price", "ticker": "JPM", "snapshot_time_utc": "2026-05-15T20:06:21Z" },
-        { "tool": "get_historical_stock_prices", "ticker": "JPM", "start_date": "2026-05-08", "end_date": "2026-05-13", "interval": "day" },
-        { "tool": "get_financial_metrics", "ticker": "JPM", "report_period": "2026-03-31", "period": "ttm", "accession_number": "0001628280-26-029344", "filing_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026029344/jpm-20260331.htm" },
-        { "tool": "get_earnings", "ticker": "JPM", "report_period": "2026-03-31", "filing_date": "2026-05-01", "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm" },
-        { "tool": "get_analyst_estimates", "ticker": "JPM", "period": "quarterly" },
-        { "tool": "get_company_news", "ticker": "JPM", "items": [
+        { "type": "company_facts", "tool": "get_company_facts", "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000019617", "note": "Company identity and SEC reference." },
+        { "type": "current_price_snapshot", "tool": "get_current_stock_price", "snapshot_time_utc": "2026-05-15T20:06:21Z", "note": "Latest available price snapshot from the public dataset." },
+        { "type": "financial_metrics_snapshot", "tool": "get_financial_metrics_snapshot", "note": "Latest valuation and TTM ratio snapshot." },
+        { "type": "quarterly_financials", "tool": "get_financial_metrics", "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm", "report_period": "2026-03-31" },
+        { "type": "earnings_snapshot", "tool": "get_earnings", "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm", "report_period": "2026-03-31" },
+        { "type": "historical_prices", "tool": "get_historical_stock_prices", "range": "2026-04-08 to 2026-05-08", "note": "Used to estimate volatility and liquidity." },
+        { "type": "sec_filings", "tool": "get_sec_filings", "filings": [
+          { "filing_type": "8-K", "filing_date": "2026-05-07", "report_date": "2026-05-06", "url": "https://www.sec.gov/Archives/edgar/data/19617/000119312526211978/d903351d8k.htm" },
+          { "filing_type": "8-K", "filing_date": "2026-04-23", "report_date": "2026-04-23", "url": "https://www.sec.gov/Archives/edgar/data/19617/000119312526173739/d235028d8k.htm" },
+          { "filing_type": "8-K", "filing_date": "2026-04-24", "report_date": "2026-04-21", "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961726000119/jpm-20260421.htm" }
+        ] },
+        { "type": "news", "tool": "get_company_news", "articles": [
           "https://m.investing.com/news/insider-trading-news/jpmorgan-chase-coceo-petno-sells-17m-in-jpm-stock-93CH-4694226?ampMode=1",
           "https://www.stocktitan.net/sec-filings/JPM/form-4-jpmorgan-chase-co-operating-activity-775289298972.html",
           "https://www.stocktitan.net/sec-filings/JPM/form-4-jpmorgan-chase-coceo-petno-logs-sale-and-270k-share-gifts-ac3394bac632.html",
@@ -1037,8 +1042,7 @@
         "Insider-sale headlines are real-time but should be confirmed against the underlying Form 4 filings before relying on them operationally."
       ]
     }
-  }
-  ,
+  },
   {
     "timestamp": "2026-05-11T12:00:00-07:00",
     "task": "Big Bank triple-sweep research task",
