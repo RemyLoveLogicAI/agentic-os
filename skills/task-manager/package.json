@@ -1,0 +1,39 @@
+{
+  "name": "@agentic-os/task-manager",
+  "version": "0.1.0",
+  "description": "Kanban task management skill for Agentic OS — claw3d hermes GUI",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./ui": {
+      "import": "./dist/ui/index.js",
+      "types": "./dist/ui/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  },
+  "files": [
+    "dist",
+    "SKILL.md"
+  ],
+  "keywords": [
+    "agentic-os",
+    "kanban",
+    "task-manager",
+    "claw3d",
+    "hermes"
+  ],
+  "license": "MIT"
+}
