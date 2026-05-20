@@ -790,4 +790,443 @@
           {
             "headline": "JPMorgan Chase (JPM) Successfully Closes Multi-Billion Dollar Note Offerings",
             "sentiment": "Neutral to positive",
-            "link": "https://www.gurufocus.com/news/8814296/jpmorgan-chase-jpm-successfully-closes-multibultin?"}],
+            "link": "https://www.gurufocus.com/news/8814296/jpmorgan-chase-jpm-successfully-closes-multibillion-dollar-note-offerings"
+          },
+          {
+            "headline": "JPMorgan Chase Issues $10 Billion in New Debt",
+            "sentiment": "Neutral",
+            "link": "https://www.tipranks.com/news/company-announcements/jpmorgan-chase-issues-10-billion-in-new-debt"
+          },
+          {
+            "headline": "JPMorgan Chase (NYSE: JPM) offers $25M 4.45% callable notes due 2031",
+            "sentiment": "Neutral",
+            "link": "https://www.stocktitan.net/sec-filings/JPM/424b2-jpmorgan-chase-co-prospectus-supplement-0c8a84b0499f.html"
+          },
+          {
+            "headline": "JPMorgan Preferreds Pair Trade Idea (NYSE:JPM)",
+            "sentiment": "Neutral",
+            "link": "https://seekingalpha.com/article/4893056-jpmorgan-preferreds-pair-trade-idea"
+          }
+        ],
+        "sentiment": "Negative / cautionary",
+        "findings": "Q4 FY2025 EPS missed estimates while annual FY2025 EPS beat; insider selling and debt-offering headlines keep the near-term tone cautious. Morning tape reflects continuation of prior-day weakness."
+      },
+      "summary": "JPMorgan remains the quality leader on profitability, but Q4 miss, insider selling, and a softer tape drove a negative short-term tone into the Apr 26 morning open."
+    }
+  },
+  {
+    "sweep_name": "Big Bank triple-sweep (morning)",
+    "entity_assumed": "JPMorgan Chase & Co",
+    "ticker": "JPM",
+    "timestamp": "2026-05-05T08:00:00-07:00",
+    "metadata": {
+      "task": "Big Bank triple-sweep research task",
+      "sweep_type": "morning sweep",
+      "run_date": "2026-05-05",
+      "run_time_pdt": "08:00:00",
+      "price_snapshot_as_of": "2026-05-05T15:00:00Z",
+      "cik": "0000019617",
+      "exchange": "NYSE"
+    },
+    "topline_view": {
+      "price": 312.8,
+      "day_change": 0.26,
+      "day_change_percent": 0.08,
+      "market_cap_usd_B": 869.7,
+      "sentiment": "Neutral to mildly positive",
+      "key_read": "JPM opens Tuesday May 5 in steady territory. Q1 2026 results (filed May 1) were strong: revenue +10% YoY, EPS +17% YoY, and net income +12.6% YoY. Stock has consolidated near $311-$313 since the May 1 filing. Institutional flow remains modestly negative (ongoing selling headlines) while fundamentals are constructive."
+    },
+    "market_data": {
+      "price": 312.8,
+      "day_change": 0.26,
+      "day_change_percent": 0.08,
+      "market_cap_usd_B": 869.7,
+      "enterprise_value_usd_B": 635.6,
+      "price_range_recent": {
+        "start_date": "2025-11-01",
+        "end_date": "2026-05-05",
+        "low": 282.84,
+        "low_date": "2026-03-27",
+        "high": 334.61,
+        "high_date": "2025-12-31"
+      },
+      "performance_returns": {
+        "1d": 0.08,
+        "5d": 0.26,
+        "1m": 5.7,
+        "3m": 1.35,
+        "6m": 0.92,
+        "ytd": -3.88,
+        "1y": 23.1
+      },
+      "52wk_range": {
+        "low": 249.25,
+        "high": 334.61
+      }
+    },
+    "company_facts": {
+      "name": "JPMorgan Chase & Co.",
+      "ticker": "JPM",
+      "cik": "0000019617",
+      "sector": "Financials",
+      "industry": "Banks",
+      "exchange": "NYSE",
+      "location": "New York, U.S.A.",
+      "sic": "6021",
+      "website": "https://www.jpmorganchase.com",
+      "employees": 318512,
+      "segments": [
+        "Consumer & Community Banking (CCB)",
+        "Commercial & Investment Banking (CIB)",
+        "Asset & Wealth Management (AWM)",
+        "Corporate"
+      ]
+    },
+    "latest_earnings": {
+      "fiscal_period": "Q1 2026",
+      "report_period": "2026-03-31",
+      "filing_date": "2026-05-01",
+      "filing_type": "10-Q",
+      "accession": "0000019617-26-000137",
+      "revenue": 49836000000,
+      "revenue_yoy_pct": 10.0,
+      "operating_income": 14172000000,
+      "net_income": 16494000000,
+      "net_income_yoy_pct": 12.6,
+      "eps_diluted": 5.94,
+      "eps_diluted_prior_year": 5.07,
+      "eps_yoy_pct": 17.2,
+      "operating_margin_pct": 28.4,
+      "net_margin_pct": 33.1,
+      "dividends_per_common_share": 1.5,
+      "prior_quarter_comparison": {
+        "2025_q1": {
+          "revenue": 45310000000,
+          "eps_diluted": 5.07,
+          "net_income": 14643000000
+        },
+        "2025_q2": {
+          "revenue": 44912000000,
+          "eps_diluted": 5.24,
+          "net_income": 14987000000
+        },
+        "2025_q3": {
+          "revenue": 46427000000,
+          "eps_diluted": 5.07,
+          "net_income": 14393000000
+        },
+        "2025_q4": {
+          "revenue": 45800000000,
+          "eps_diluted": 4.64,
+          "net_income": 12690000000
+        }
+      }
+    },
+    "ttm_financials_from_statements": {
+      "period_note": "TTM = Q2 2025 + Q3 2025 + Q4 2025 + Q1 2026",
+      "revenue": 186975000000,
+      "operating_income": 50781000000,
+      "net_income": 60564000000,
+      "eps_diluted_ttm": 20.89,
+      "gross_profit": 172801000000,
+      "dividends_per_common_share_ttm": 6.0,
+      "cash_flow_from_operations_fy2025": -147782000000,
+      "note": "Bank cash flows reflect balance-sheet funding/investment movements and should be interpreted in that context."
+    },
+    "balance_sheet_latest": {
+      "as_of": "2026-03-31",
+      "fiscal_period": "Q1 2026",
+      "total_assets": 4900475000000,
+      "total_liabilities": 4536437000000,
+      "shareholders_equity": 364038000000,
+      "cash_and_equivalents": 312142000000,
+      "total_debt": 68048000000,
+      "book_value_per_share": 132.32,
+      "outstanding_shares": 2780000000,
+      "debt_to_equity": 0.1869,
+      "current_ratio": 3.3
+    },
+    "financial_metrics_snapshot": {
+      "as_of": "2026-05-05",
+      "price_to_earnings": 14.97,
+      "price_to_book": 2.36,
+      "price_to_sales": 4.65,
+      "ev_to_ebitda": 7.18,
+      "ev_to_revenue": 3.4,
+      "roe_pct": 18.1,
+      "roa_pct": 1.35,
+      "net_margin_pct": 33.1,
+      "debt_to_equity": 0.1869,
+      "debt_to_assets": 0.0139,
+      "interest_coverage": 1.82,
+      "revenue_growth_yoy_pct": 10.0,
+      "eps_growth_yoy_pct": 17.2,
+      "payout_ratio_pct": 28.6,
+      "eps_ttm": 20.89,
+      "book_value_per_share": 132.32
+    },
+    "analyst_estimates_quarterly": {
+      "source_note": "Consensus estimates as of early May 2026",
+      "estimates": [
+        {
+          "fiscal_period": "2026-Q2",
+          "period_end": "2026-06-30",
+          "revenue_est": 47916067816,
+          "eps_est": 5.38
+        },
+        {
+          "fiscal_period": "2026-Q3",
+          "period_end": "2026-09-30",
+          "revenue_est": 48350475260,
+          "eps_est": 5.48
+        },
+        {
+          "fiscal_period": "2026-Q4",
+          "period_end": "2026-12-31",
+          "revenue_est": 48662375210,
+          "eps_est": 5.52
+        },
+        {
+          "fiscal_period": "2027-Q1",
+          "period_end": "2027-03-31",
+          "revenue_est": 49999909780,
+          "eps_est": 5.73
+        }
+      ],
+      "annual_consensus": [
+        {
+          "fiscal_year": "2026",
+          "period_end": "2026-12-31",
+          "revenue_est": 192900000000,
+          "eps_est": 21.75
+        },
+        {
+          "fiscal_year": "2027",
+          "period_end": "2027-12-31",
+          "revenue_est": 200830000000,
+          "eps_est": 23.29
+        }
+      ]
+    },
+    "news_watch": {
+      "sentiment": "neutral_to_slightly_negative",
+      "as_of": "2026-05-05T08:00:00-07:00",
+      "headlines": [
+        {
+          "date": "2026-05-05",
+          "source": "MarketBeat",
+          "title": "Institutional flow updates for JPMorgan Chase — mixed selling activity continues",
+          "sentiment": "slightly_negative"
+        },
+        {
+          "date": "2026-05-04",
+          "source": "MarketBeat",
+          "title": "Several smaller institutions reduce JPMorgan Chase & Co. holdings",
+          "sentiment": "slightly_negative"
+        },
+        {
+          "date": "2026-05-04",
+          "source": "Stock Titan",
+          "title": "JPMorgan Chase files [424B2] Prospectus Supplement — notes offering",
+          "sentiment": "neutral"
+        },
+        {
+          "date": "2026-05-03",
+          "source": "MarketBeat",
+          "title": "Villere ST Denis J & Co lowers holdings in JPMorgan Chase & Co.",
+          "sentiment": "slightly_negative"
+        },
+        {
+          "date": "2026-05-03",
+          "source": "MarketBeat",
+          "title": "Confluence Wealth Services reduces position in JPMorgan Chase & Co.",
+          "sentiment": "slightly_negative"
+        },
+        {
+          "date": "2026-05-01",
+          "source": "Business Wire",
+          "title": "JPMorgan Chase Files Form 10-Q for the Quarter Ended March 31, 2026",
+          "sentiment": "neutral_positive"
+        }
+      ],
+      "notable_themes": [
+        "Q1 2026 earnings beat consensus; 10-Q filed May 1",
+        "Ongoing routine institutional rebalancing flow (net sells)",
+        "Debt/notes issuance activity continues"
+      ]
+    },
+    "sec_filings": {
+      "latest_10q": {
+        "form": "10-Q",
+        "period": "2026-03-31",
+        "fiscal_period": "Q1 2026",
+        "filing_date": "2026-05-01",
+        "accession": "0000019617-26-000137",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000019617&type=10-Q&dateb=&owner=include&count=10"
+      },
+      "latest_10k": {
+        "form": "10-K",
+        "period": "2025-12-31",
+        "fiscal_period": "FY2025",
+        "filing_date": "2026-02-13",
+        "accession": "0001628280-26-008131",
+        "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm"
+      },
+      "recent_8ks": [
+        {
+          "accession": "0000019617-26-000119",
+          "filing_date": "2026-04-24",
+          "description": "By-laws amended effective Apr 21, 2026"
+        },
+        {
+          "accession": "0001193125-26-173739",
+          "filing_date": "2026-04-23",
+          "description": "Opinion/consent for notes offering"
+        },
+        {
+          "accession": "various",
+          "filing_date": "2026-04-30",
+          "description": "Multiple 424B2 prospectus supplements for notes offerings"
+        }
+      ]
+    },
+    "concise_summary": "JPMorgan Chase opens the May 5, 2026 morning tape in constructive shape following a strong Q1 2026 report (EPS $5.94, +17.2% YoY; revenue $49.84B, +10.0% YoY; net income $16.49B, +12.6% YoY). The 10-Q was filed May 1 and the balance sheet remains fortress-grade at $4.90T assets and $364B equity. Stock is near $312.80, off slightly from the 2026-01 high of ~$334 but well above the March lows. Valuation at ~15x TTM earnings and ~2.4x book is reasonable for the franchise quality. Analyst consensus implies steady EPS growth to ~$21.75 for FY2026. Near-term tone is neutral-to-mildly-positive: institutional headline flow is mixed-negative but fundamentals and earnings momentum are clearly positive. No major negative catalysts apparent at the morning bell."
+  },
+  {
+    "timestamp": "2026-05-06T20:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "night sweep",
+    "resolved_entity": {
+      "name": "JPMorgan Chase & Co.",
+      "ticker": "JPM",
+      "exchange": "NYSE",
+      "confidence": "high"
+    },
+    "metadata": {
+      "run_date": "2026-05-06",
+      "run_time_pdt": "20:00:00",
+      "price_snapshot_as_of": "2026-05-06T20:31:05Z",
+      "cik": "0000019617",
+      "exchange": "NYSE"
+    },
+    "topline_view": {
+      "price": 314.81,
+      "day_change": 5.41,
+      "day_change_percent": 1.75,
+      "approx_market_cap_usd_B": 844,
+      "note": "Approximate market cap based on reported shares; ignore inconsistent market-cap snapshot from tool.",
+      "sentiment": "Constructive / mildly positive",
+      "key_read": "JPMorgan Chase & Co. is confirmed as the Big Bank entity. Q1 2026 results remain strong, with revenue, EPS, net income, and margins all expanding year over year. The stock is trading higher after the latest news flow, while the main watch-items remain regulatory, legal, and operational risk."
+    },
+    "latest_earnings": {
+      "fiscal_period": "Q1 2026",
+      "report_period": "2026-03-31",
+      "filing_date": "2026-05-01",
+      "revenue_usd_B": 49.84,
+      "revenue_yoy_pct": 10.0,
+      "net_income_usd_B": 16.49,
+      "net_income_yoy_pct": 12.6,
+      "eps": 5.94,
+      "eps_yoy_pct": 17.2,
+      "operating_income_usd_B": 14.17,
+      "operating_margin_pct": 28.4,
+      "net_margin_pct": 33.1
+    },
+    "fy2025_ttm_context": {
+      "revenue_usd_B": 182.45,
+      "net_income_usd_B": 57.05,
+      "eps": 20.05,
+      "dividends_per_share": 5.8
+    },
+    "balance_sheet": {
+      "total_assets_usd_T": 4.9,
+      "shareholders_equity_usd_B": 364.0,
+      "cash_and_equivalents_usd_B": 312.1,
+      "current_debt_usd_B": 68.0
+    },
+    "valuation_metrics": {
+      "ttm_pe": 15.7,
+      "price_to_book": 2.34,
+      "dividend_yield_pct": 1.84,
+      "q1_2026_operating_margin_pct": 28.4,
+      "q1_2026_net_margin_pct": 33.1
+    },
+    "forward_consensus": {
+      "q2_2026_eps": 5.38,
+      "q3_2026_eps": 5.48,
+      "q4_2026_eps": 5.52,
+      "q1_2027_eps": 5.73,
+      "quarterly_revenue_expectation_usd_B_range": [47.9, 50.0]
+    },
+    "news_flow": [
+      {
+        "date": "2026-05-06",
+        "source": "Reuters",
+        "headline": "JPMorgan tried to settle sexual assault claims before lawsuit, spokesperson says",
+        "takeaway": "Potential legal/reputational overhang."
+      },
+      {
+        "date": "2026-05-06",
+        "source": "Stock Titan",
+        "headline": "Priced callable zero-coupon notes due 2056",
+        "takeaway": "Ongoing capital markets activity."
+      },
+      {
+        "date": "2026-05-06",
+        "source": "MarketBeat",
+        "headline": "Barclays gave JPMorgan Chase a Buy rating",
+        "takeaway": "Analyst support."
+      },
+      {
+        "date": "2026-05-07",
+        "source": "MarketBeat",
+        "headline": "Stock was up 1.8% in a market recap-style article",
+        "takeaway": "Price action consistent with constructive tape."
+      }
+    ],
+    "sec_context": {
+      "latest_10q": {
+        "form": "10-Q",
+        "report_period": "2026-03-31",
+        "filing_date": "2026-05-01",
+        "accession": "0000019617-26-000137"
+      },
+      "latest_10k": {
+        "form": "10-K",
+        "fiscal_period": "FY2025"
+      },
+      "recent_8ks": [
+        "Multiple recent 8-Ks in April 2026"
+      ],
+      "key_risk_themes": [
+        "regulatory/legal scrutiny",
+        "litigation/enforcement",
+        "market risk (interest-rate and credit-spread sensitivity)",
+        "credit risk and collateral/counterparty stress",
+        "liquidity and capital constraints",
+        "operational/cyber/data failures",
+        "AI/technology/model risk",
+        "reputation/conduct risk",
+        "geopolitical/country risk"
+      ]
+    },
+    "risks_and_catalysts": {
+      "risks": [
+        "regulatory pressure and higher capital requirements",
+        "litigation/reputation overhang",
+        "credit deterioration",
+        "rate-driven volatility in net interest income and funding costs",
+        "cyber/AI/operational resilience",
+        "consumer and commercial real estate stress or recession risk"
+      ],
+      "catalysts": [
+        "continued revenue and EPS growth with margin expansion",
+        "stable or improving credit quality",
+        "favorable rate environment for net interest income",
+        "shareholder returns via dividends and buybacks",
+        "capital markets activity and balance-sheet strength"
+      ]
+    },
+    "quick_takeaway": "High-quality megabank with strong Q1 2026 growth and solid profitability. Watch the regulatory/legal overhang, rate sensitivity, and operational/cyber risk; forward estimates imply a relatively stable earnings run-rate."
+  }
+]
