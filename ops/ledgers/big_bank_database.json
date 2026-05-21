@@ -788,7 +788,10 @@
           {
             "headline": "JPMorgan Chase (JPM) Successfully Closes Multi-Billion Dollar Note Offerings",
             "sentiment": "Neutral to positive",
-            "link": "https://www.gurufocus.com/news/8814296/jpmorgan-chase-jpm-successfully-closes-multibultin?"}],
+            "link": "https://www.gurufocus.com/news/8814296/jpmorgan-chase-jpm-successfully-closes-multibultin?"
+          }
+        ]
+      },
     "summary": "JPMorgan remains the quality leader on profitability, but Q4 miss and insider selling drove a negative short-term tone.",
     "assessment": {
       "market_tone": "neutral_to_slightly_positive",
@@ -822,6 +825,7 @@
       "Current ratio is included only as a snapshot metric; for a bank it is less meaningful than for a non-financial company.",
       "News results are dominated by automated institutional ownership headlines, so sentiment should be treated as low-confidence and low-impact."
     ]
+  }
   }
   ,
   {
@@ -1591,5 +1595,112 @@
         "Valuation risk for JPM/MS/GS if earnings momentum moderates."
       ]
     }
+  },
+  {
+    "timestamp": "2026-05-19T08:00:00-07:00",
+    "task": "Big Bank triple-sweep research (morning sweep)",
+    "sweep_type": "morning",
+    "run_label": "2026-05-19-morning",
+    "entry_type": "sweep",
+    "universe": "Big Bank",
+    "data_as_of": "2026-05-19",
+    "summary": "JPM drifted lower over the last month (-5.81%) despite strong underlying fundamentals and earnings; recent dividend and capital-return messaging remains positive.",
+    "tickers": {
+      "JPM": {
+        "company_name": "JPMorgan Chase & Co.",
+        "ticker": "JPM",
+        "market_snapshot": {
+          "price": 298.57,
+          "day_change": "+0.76 (+0.26%)",
+          "market_cap": "~806.2B",
+          "recent_performance": {
+            "1D": "+0.26%",
+            "1W": "-2.07%",
+            "1M": "-5.81%"
+          }
+        },
+        "financial_metrics": {
+          "ttm_revenue": "182.45B",
+          "ttm_net_income": "57.05B",
+          "ttm_eps": "20.02-20.05",
+          "roe": "15.7%",
+          "roa": "1.29%",
+          "net_margin": "31.3%",
+          "pe": "14.58x",
+          "pb": "2.22x",
+          "ev_ebitda": "6.40x",
+          "ev_revenue": "2.89x",
+          "book_value_per_share": 130.3,
+          "debt_to_equity": "~0.19x (banking metric caveat)"
+        },
+        "earnings_snapshot": {
+          "most_recent_quarter": "Q1 2026",
+          "filed_date": "2026-05-01",
+          "revenue": "49.84B (+10.0% YoY)",
+          "eps": "5.94 (+17.2% YoY)",
+          "net_income": "16.49B (+12.6% YoY)",
+          "fy2026_eps_estimate": 22.38,
+          "implied_forward_pe_on_fy2026_eps": "~13.3x"
+        },
+        "analyst_estimates": {
+          "fy2026_eps": 22.38,
+          "fy2027_eps": 23.51,
+          "fy2028_eps": 26.22,
+          "quarterly_eps_estimates": [
+            { "period_end": "2026-06-30", "eps": 5.38 },
+            { "period_end": "2026-09-30", "eps": 5.48 },
+            { "period_end": "2026-12-31", "eps": 5.52 },
+            { "period_end": "2027-03-31", "eps": 5.73 }
+          ]
+        },
+        "recent_news": [
+          {
+            "date": "2026-05-18",
+            "headline": "JPMorganChase declares common stock dividend",
+            "sentiment": "positive",
+            "note": "Capital return/dividend announcement."
+          },
+          {
+            "date": "2026-05-18",
+            "headline": "JPMorgan Chase prices 5.275% callable notes due 2036",
+            "sentiment": "neutral",
+            "note": "Financing/capital markets activity."
+          },
+          {
+            "date": "2026-05-18",
+            "headline": "JPM trading up ~1%",
+            "sentiment": "mildly positive",
+            "note": "Low-signal price action."
+          },
+          {
+            "date": "2026-05-19",
+            "headline": "NWM Advisors LLC bought 15,710 JPM shares",
+            "sentiment": "mildly positive",
+            "note": "Small institutional flow."
+          },
+          {
+            "date": "2026-05-18",
+            "headline": "JPM listed among 'Dogs of the Dow' picks",
+            "sentiment": "mildly positive",
+            "note": "Promotional/listicle mention."
+          }
+        ],
+        "sec_filings": [
+          { "filing_type": "10-Q", "filing_date": "2026-05-01", "importance": "key", "note": "Latest major filing." },
+          { "filing_type": "8-K", "filing_date": "2026-05-07", "importance": "supplemental", "note": "Item-level details not extracted." },
+          { "filing_type": "8-K", "filing_date": "2026-04-23", "importance": "supplemental", "note": "Item-level details not extracted." },
+          { "filing_type": "8-K", "filing_date": "2026-04-24", "importance": "supplemental", "note": "Item-level details not extracted." },
+          { "filing_type": "8-K", "filing_date": "2026-04-14", "importance": "supplemental", "note": "Two filings dated 2026-04-14; item-level details not extracted." }
+        ],
+        "bottom_line": "Big Bank maps to JPM; fundamentals remain strong with solid profitability and reasonable valuation, while the recent monthly pullback contrasts with supportive earnings and dividend/capital return signaling."
+      }
+    },
+    "cross_sectional_takeaways": [
+      "Big Bank best maps to JPMorgan Chase & Co. (JPM).",
+      "JPM shares pulled back over the last month even as core profitability and Q1 growth remained strong.",
+      "Recent dividend declaration and capital-return messaging are supportive for sentiment.",
+      "The 2026-05-01 10-Q is the key filing; recent 8-Ks are relevant but item-level detail is not extracted here.",
+      "Valuation still reads reasonable versus profitability (solid ROE/net margin with mid-teens P/E and low-teens forward P/E)."
+    ]
   }
 ]
