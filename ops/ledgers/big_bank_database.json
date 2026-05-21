@@ -1591,5 +1591,67 @@
         "Valuation risk for JPM/MS/GS if earnings momentum moderates."
       ]
     }
+  },
+  {
+    "timestamp": "2026-05-03T20:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "night sweep",
+    "summary": "JPM closed the May 3 night tape at $311.99 (-0.40%), holding near the midpoint of its recent range. Q1 2026 results remain the fundamental anchor: revenue $49.84B, EPS $5.94, net income $16.49B. News flow was neutral-mixed, driven by the May 1 10-Q filing and a cluster of MarketBeat-reported institutional reductions on May 2–3. The Apr 15 insider-selling cluster by senior executives (led by Jamie Dimon) remains the most notable supply-side signal.",
+    "results": {
+      "target": {
+        "ticker": "JPM",
+        "price": 311.99,
+        "day_change_percent": "-0.40%",
+        "pe_ratio": 15.23,
+        "p_b": 2.32,
+        "p_s": 4.62,
+        "roe": "15.74%",
+        "roa": "1.29%",
+        "net_margin": "31.27%",
+        "debt_to_equity": 0.18,
+        "book_value_per_share": 130.30,
+        "eps_ttm": 20.51
+      },
+      "financials": {
+        "latest_quarter": {
+          "report_period": "2026-03-31",
+          "fiscal_period": "2026-Q1",
+          "earnings_release_date": "2026-05-01",
+          "revenue": "49.84B",
+          "eps": 5.94,
+          "net_income": "16.49B",
+          "operating_income": "14.17B",
+          "assets": "4.90T",
+          "liabilities": "4.54T",
+          "equity": "364.0B",
+          "cash": "312.1B",
+          "total_debt": "68.0B"
+        }
+      },
+      "insider_trades": {
+        "summary": {
+          "date": "2026-04-15",
+          "direction": "predominantly_sells",
+          "notable_pattern": "Cluster of open-market sales by senior executives on the same date.",
+          "approx_shares_sold": 180391,
+          "approx_value_usd": 55300455.94
+        },
+        "notable_trades": [
+          {"name": "James Dimon", "title": "Chairman & CEO", "transaction_type": "Open market sale", "shares": 130488, "price_per_share": 306.557, "value_usd": 40002009.82},
+          {"name": "Mary E. Erdoes", "title": "CEO Asset & Wealth Management", "transaction_type": "Open market sale", "shares": 12345, "price_per_share": 306.5657, "value_usd": 3784553.57},
+          {"name": "Jennifer Piepszak", "title": "Chief Operating Officer", "transaction_type": "Open market sale", "shares": 9136, "price_per_share": 306.5579, "value_usd": 2800712.97}
+        ]
+      },
+      "news": {
+        "sentiment": "neutral_mixed",
+        "summary": "Post-earnings news flow dominated by routine institutional portfolio reductions reported by MarketBeat on May 2–3 and the 10-Q filing on May 1. No material adverse headlines; flow is consistent with a large-cap bank in a steady hold pattern.",
+        "top_headlines": [
+          {"date": "2026-05-01", "source": "Business Wire", "title": "JPMorganChase Files Form 10-Q for the Quarter Ended March 31, 2026"},
+          {"date": "2026-05-02", "source": "MarketBeat", "title": "JPMorgan Chase & Co. Shares Sold by M&T Bank Corp"},
+          {"date": "2026-05-02", "source": "MarketBeat", "title": "CPC Advisors LLC Reduces Stock Position in JPMorgan Chase & Co."},
+          {"date": "2026-05-03", "source": "MarketBeat", "title": "Several Institutional Investors Reduce Holdings in JPMorgan Chase & Co."}
+        ]
+      }
+    }
   }
 ]
