@@ -1591,5 +1591,122 @@
         "Valuation risk for JPM/MS/GS if earnings momentum moderates."
       ]
     }
+  },
+  {
+    "timestamp": "2026-05-05T08:00:00-07:00",
+    "task": "Big Bank triple-sweep research task",
+    "sweep_type": "morning sweep",
+    "sweep_name": "Big Bank Morning Sweep — 2026-05-05",
+    "entity_assumed": "JPMorgan Chase & Co.",
+    "metrics": {
+      "as_of": "2026-05-05T08:00:00-07:00",
+      "ticker": "JPM",
+      "price": 311.99,
+      "day_change_percent": "-0.40%",
+      "market_cap_B": 842.6,
+      "enterprise_value_B": 564.1,
+      "pe": 15.23,
+      "pb": 2.32,
+      "ps": 4.62,
+      "roe": "15.74%",
+      "roa": "1.29%",
+      "net_margin": "31.27%",
+      "debt_to_equity": 0.18,
+      "book_value_per_share": 130.3,
+      "eps_ttm": 20.51,
+      "performance_returns": {
+        "1M": "+5.8%",
+        "3M": "+1.4%",
+        "6M": "+1.0%",
+        "1Y": "+23.7%",
+        "52wk_range": {"low": 249.25, "high": 334.61}
+      },
+      "latest_quarter": {
+        "fiscal_period": "Q1 2026",
+        "report_period": "2026-03-31",
+        "filing_date": "2026-05-01",
+        "revenue": "49.84B",
+        "eps": 5.94,
+        "net_income": "16.49B",
+        "operating_income": "14.17B",
+        "operating_margin": "28.4%",
+        "assets": "4.90T",
+        "liabilities": "4.54T",
+        "equity": "364.0B",
+        "cash": "312.1B",
+        "total_debt": "68.0B"
+      },
+      "prior_year_comparison": {
+        "report_period": "2024-12-31",
+        "annual_revenue": "177.556B",
+        "annual_net_income": "58.471B",
+        "annual_eps": 19.75,
+        "total_assets": "4.003T",
+        "shareholders_equity": "344.758B"
+      }
+    },
+    "news_watch": {
+      "sentiment": "neutral to slightly negative",
+      "top_headlines": [
+        {"date": "2026-05-03", "source": "MarketBeat", "headline": "Villere ST Denis J & Co lowers holdings in JPMorgan Chase & Co.", "sentiment": "slightly negative"},
+        {"date": "2026-05-03", "source": "MarketBeat", "headline": "Shares Sold: Confluence Wealth Services in JPMorgan Chase & Co.", "sentiment": "slightly negative"},
+        {"date": "2026-05-02", "source": "MarketBeat", "headline": "Shares Sold: M&T Bank Corp in JPMorgan Chase & Co.", "sentiment": "slightly negative"},
+        {"date": "2026-05-02", "source": "MarketBeat", "headline": "CPC Advisors reduces position in JPMorgan Chase & Co.", "sentiment": "slightly negative"},
+        {"date": "2026-05-01", "source": "SEC EDGAR", "headline": "JPM filed Form 10-Q (Q1 2026, period ending 2026-03-31)", "sentiment": "neutral"}
+      ],
+      "sentiment_interpretation": "Headline flow is dominated by small institutional position reductions — a mildly cautious signal but not a fundamental catalyst. The Q1 2026 10-Q filing is the most significant recent disclosure.",
+      "watch_items": [
+        "Credit quality trends, especially consumer delinquencies and commercial real estate exposure.",
+        "Net interest income sensitivity to any Fed rate changes.",
+        "Continuation of institutional position-reduction headlines and potential follow-on selling pressure.",
+        "Any new 8-K filings or guidance updates from management.",
+        "Macro backdrop: Fed policy, yield curve, and broader financial sector sentiment."
+      ]
+    },
+    "sec_filings": {
+      "latest_10q": {
+        "filing_type": "10-Q",
+        "report_period": "2026-03-31",
+        "fiscal_period": "Q1 2026",
+        "filing_date": "2026-05-01",
+        "highlights": [
+          "Q1 2026 net income $16.49B; EPS $5.94 — strong YoY improvement vs Q1 2025 EPS $5.07.",
+          "Revenue $49.84B; operating income $14.17B; operating margin 28.4%.",
+          "Total assets $4.90T; equity $364.0B; cash $312.1B; total debt $68.0B.",
+          "Balance sheet and liquidity remain strong; no adverse regulatory signals in the filing."
+        ]
+      },
+      "recent_8k": [
+        {
+          "filing_type": "8-K",
+          "report_date": "2026-04-21",
+          "filing_date": "2026-04-24",
+          "accession_number": "0000019617-26-000119",
+          "highlights": ["By-laws amended effective Apr 21, 2026."]
+        },
+        {
+          "filing_type": "8-K",
+          "report_date": "2026-04-23",
+          "filing_date": "2026-04-23",
+          "accession_number": "0001193125-26-173739",
+          "highlights": ["Closed public offerings totaling $10.0B across four note tranches (capital-markets / funding update)."]
+        }
+      ],
+      "insider_trades": {
+        "cluster_date": "2026-04-15",
+        "direction": "predominantly_sells",
+        "summary": "Cluster of open-market sales by senior JPM executives and directors; approximately 180,391 shares sold for ~$55.3M in aggregate.",
+        "notable_trades": [
+          {"name": "Jamie Dimon", "title": "Chairman & CEO", "shares_sold": 130488, "approx_price": 306.56, "approx_value_usd": 40002401.28},
+          {"name": "Mary E. Erdoes", "title": "CEO, Asset & Wealth Management", "shares_sold": 12345, "approx_price": 306.57, "approx_value_usd": 3784606.65},
+          {"name": "Jennifer Piepszak", "title": "Chief Operating Officer", "shares_sold": 9136, "approx_price": 306.56, "approx_value_usd": 2800733.76},
+          {"name": "Ashley Bacon", "title": "Chief Risk Officer", "shares_sold": 7558, "approx_price": 306.55, "approx_value_usd": 2316904.90},
+          {"name": "Marianne Lake", "title": "CEO, Consumer & Community Banking", "shares_sold": 6427, "approx_price": 306.57, "approx_value_usd": 1970325.39},
+          {"name": "Jeremy Barnum", "title": "Chief Financial Officer", "shares_sold": 5611, "approx_price": 306.55, "approx_value_usd": 1720052.05}
+        ]
+      },
+      "filing_summary": "Most recent substantive disclosure is the Q1 2026 10-Q filed 2026-05-01, showing strong earnings growth. No adverse regulatory signals detected in the retrieved filing set."
+    },
+    "concise_summary": "JPMorgan Chase & Co. (JPM) enters the May 5, 2026 morning session with a stable-to-constructive fundamental posture following the Q1 2026 10-Q filing (2026-05-01). Q1 2026 results delivered EPS of $5.94 (up from $5.07 YoY) on revenue of $49.84B — affirming franchise strength. Near-term price action remains modestly soft around $311.99 (-0.40%) with headline flow dominated by small institutional position reductions, yielding a neutral-to-slightly-negative news tone. Valuation is reasonable at approximately 15.2x earnings and 2.32x book with ROE at 15.74%. The April 15 insider selling cluster (~$55M across senior leadership) remains the most notable directional signal. Overall posture: high-quality large-cap bank, near-term tape slightly subdued but fundamentals intact."
   }
 ]
