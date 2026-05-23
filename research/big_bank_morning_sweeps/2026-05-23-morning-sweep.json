@@ -1,0 +1,385 @@
+{
+  "timestamp": "2026-05-23T15:00:00Z",
+  "task": "morning sweep",
+  "sweep_type": "morning_sweep",
+  "run_label": "morning_sweep",
+  "entry_type": "big_bank_morning_sweep",
+  "target": {
+    "ticker": "JPM",
+    "company_name": "JPMorgan Chase & Co."
+  },
+  "peers": [
+    { "ticker": "JPM", "company_name": "JPMorgan Chase & Co." },
+    { "ticker": "BAC", "company_name": "Bank of America Corp." },
+    { "ticker": "C", "company_name": "Citigroup Inc." },
+    { "ticker": "WFC", "company_name": "Wells Fargo & Co." },
+    { "ticker": "GS", "company_name": "The Goldman Sachs Group, Inc." },
+    { "ticker": "MS", "company_name": "Morgan Stanley" }
+  ],
+  "market_price_vol_liquidity": {
+    "JPM": {
+      "last_price": 306.34,
+      "day_change_percent": 1.44,
+      "market_cap_usd_b": 826.2,
+      "volume_m": 9.3,
+      "recent_range": { "low": 295.70, "high": 301.98, "type": "recent_close_range" }
+    },
+    "BAC": {
+      "last_price": 51.79,
+      "day_change_percent": 1.09,
+      "market_cap_usd_b": 367.5,
+      "volume_m": 27.5,
+      "recent_range": { "low": 49.77, "high": 51.49, "type": "recent_close_range" }
+    },
+    "C": {
+      "last_price": 125.18,
+      "day_change_percent": 0.29,
+      "market_cap_usd_b": 213.5,
+      "volume_m": 6.8,
+      "recent_range": { "low": 119.97, "high": 125.22, "type": "recent_close_range" }
+    },
+    "WFC": {
+      "last_price": 76.38,
+      "day_change_percent": 0.75,
+      "market_cap_usd_b": 233.7,
+      "volume_m": 14.7,
+      "recent_range": { "low": 73.42, "high": 75.81, "type": "recent_close_range" }
+    },
+    "GS": {
+      "last_price": 996.85,
+      "day_change_percent": 1.50,
+      "market_cap_usd_b": 294.0,
+      "volume_m": 2.45,
+      "recent_range": { "low": 928.74, "high": 988.17, "type": "recent_close_range" }
+    },
+    "MS": {
+      "last_price": 201.00,
+      "day_change_percent": 1.63,
+      "market_cap_usd_b": 317.0,
+      "volume_m": 7.2,
+      "recent_range": { "low": 189.58, "high": 197.77, "type": "recent_close_range" }
+    }
+  },
+  "fundamentals": {
+    "report_period": "2026-03-31",
+    "tickers": {
+      "JPM": {
+        "latest_quarter": {
+          "revenue_usd_b": 49.8,
+          "eps_usd": 5.94,
+          "net_income_usd_b": 16.5,
+          "operating_margin_pct": 28.4,
+          "total_assets_usd_t": 4.90,
+          "cash_and_equivalents_usd_b": 312.1,
+          "debt_usd_b": 68.0
+        },
+        "ttm": {
+          "revenue_usd_b": 182.4,
+          "eps_usd": 20.02,
+          "net_income_usd_b": 57.0
+        }
+      },
+      "BAC": {
+        "latest_quarter": {
+          "revenue_usd_b": 30.3,
+          "eps_usd": 1.11,
+          "net_income_usd_b": 8.6,
+          "operating_margin_pct": 23.5,
+          "total_assets_usd_t": 3.50,
+          "cash_and_equivalents_usd_b": 242.5,
+          "debt_usd_b": 383.6
+        },
+        "ttm": {
+          "revenue_usd_b": 112.2,
+          "eps_usd": 4.26,
+          "net_income_usd_b": 31.6
+        }
+      },
+      "C": {
+        "latest_quarter": {
+          "revenue_usd_b": 24.6,
+          "eps_usd": 3.06,
+          "net_income_usd_b": 5.8,
+          "operating_margin_pct": 5.1,
+          "total_assets_usd_t": 2.78,
+          "cash_and_equivalents_usd_b": 385.7,
+          "debt_usd_b": 379.6
+        },
+        "ttm": {
+          "revenue_usd_b": 90.0,
+          "eps_usd": 9.92,
+          "net_income_usd_b": 17.6
+        }
+      },
+      "WFC": {
+        "latest_quarter": {
+          "revenue_usd_b": 21.4,
+          "eps_usd": 1.60,
+          "net_income_usd_b": 5.3,
+          "operating_margin_pct": 38.1,
+          "total_assets_usd_t": 2.21,
+          "cash_and_equivalents_usd_b": 174.8,
+          "debt_usd_b": 216.2
+        },
+        "ttm": {
+          "revenue_usd_b": 83.9,
+          "eps_usd": 6.81,
+          "net_income_usd_b": 21.2
+        }
+      },
+      "GS": {
+        "latest_quarter": {
+          "revenue_usd_b": 17.2,
+          "eps_usd": 17.55,
+          "net_income_usd_b": 5.6,
+          "operating_margin_pct": -12.0,
+          "total_assets_usd_t": 2.06,
+          "cash_and_equivalents_usd_b": 179.5,
+          "debt_usd_b": 619.0
+        },
+        "ttm": {
+          "revenue_usd_b": 62.1,
+          "eps_usd": 59.06,
+          "net_income_usd_b": 18.2
+        }
+      },
+      "MS": {
+        "latest_quarter": {
+          "revenue_usd_b": 20.6,
+          "eps_usd": 3.43,
+          "net_income_usd_b": 5.6,
+          "operating_margin_pct": 18.4,
+          "total_assets_usd_t": 1.58,
+          "cash_and_equivalents_usd_b": 133.5,
+          "debt_usd_b": 482.8
+        },
+        "ttm": {
+          "revenue_usd_b": 73.3,
+          "eps_usd": 11.44,
+          "net_income_usd_b": 18.0
+        }
+      }
+    }
+  },
+  "valuation_ratios": {
+    "JPM": { "pe_ratio": 14.9, "pb_ratio": 2.28, "roe_pct": 15.7, "roa_pct": 1.29, "ev_ebitda": 6.64, "debt_to_equity": 0.18 },
+    "BAC": { "pe_ratio": 12.2, "pb_ratio": 1.22, "roe_pct": 10.5, "roa_pct": 0.90, "ev_ebitda": 12.01, "debt_to_equity": 1.28 },
+    "C": { "pe_ratio": 12.6, "pb_ratio": 1.01, "roe_pct": 8.35, "roa_pct": 0.63, "ev_ebitda": 8.62, "debt_to_equity": 1.80 },
+    "WFC": { "pe_ratio": 11.2, "pb_ratio": 1.31, "roe_pct": 11.9, "roa_pct": 0.96, "ev_ebitda": 8.24, "debt_to_equity": 1.21 },
+    "GS": { "pe_ratio": 16.9, "pb_ratio": 2.39, "roe_pct": 14.8, "roa_pct": 0.88, "ev_ebitda": 29.51, "debt_to_equity": 5.04 },
+    "MS": { "pe_ratio": 17.6, "pb_ratio": 2.77, "roe_pct": 15.8, "roa_pct": 1.14, "ev_ebitda": 25.19, "debt_to_equity": 4.22 }
+  },
+  "analyst_estimates": {
+    "JPM": { "next_q_eps_usd": 5.38, "next_q_revenue_usd_b": 47.9, "forward_4q_eps_sum_usd": 22.11, "forward_4q_revenue_sum_usd_b": 194.9 },
+    "BAC": { "next_q_eps_usd": 1.70, "next_q_revenue_usd_b": 21.7, "forward_4q_eps_sum_usd": 7.14, "forward_4q_revenue_sum_usd_b": 88.7 },
+    "C": { "next_q_eps_usd": 13.68, "next_q_revenue_usd_b": 15.7, "forward_4q_eps_sum_usd": 58.55, "forward_4q_revenue_sum_usd_b": 63.2 },
+    "WFC": { "next_q_eps_usd": 2.72, "next_q_revenue_usd_b": 18.7, "forward_4q_eps_sum_usd": 11.56, "forward_4q_revenue_sum_usd_b": 76.6 },
+    "GS": { "next_q_eps_usd": 2.58, "next_q_revenue_usd_b": 23.0, "forward_4q_eps_sum_usd": 10.92, "forward_4q_revenue_sum_usd_b": 92.2 },
+    "MS": { "next_q_eps_usd": 2.58, "next_q_revenue_usd_b": 23.0, "forward_4q_eps_sum_usd": 10.92, "forward_4q_revenue_sum_usd_b": 92.2 }
+  },
+  "news": {
+    "JPM": [
+      {
+        "headline": "JPMorgan Chase co-CEO Petno sells $1.7m in JPM stock",
+        "link": "https://m.investing.com/news/insider-trading-news/jpmorgan-chase-coceo-petno-sells-17m-in-jpm-stock-93CH-4694226?ampMode=1",
+        "sentiment": "slightly_negative"
+      },
+      {
+        "headline": "[Form 4] JPMORGAN CHASE & CO Insider Trading Activity",
+        "link": "https://www.stocktitan.net/sec-filings/JPM/form-4-jpmorgan-chase-co-insider-trading-activity-775289298972.html",
+        "sentiment": "neutral"
+      },
+      {
+        "headline": "JPMorgan (JPM) Co-CEO Petno logs sale and 270K-share gifts",
+        "link": "https://www.stocktitan.net/sec-filings/JPM/form-4-jpmorgan-chase-coceo-petno-logs-sale-and-270k-share-gifts-ac3394bac632.html",
+        "sentiment": "slightly_negative"
+      },
+      {
+        "headline": "CIO Lori Beer of JPMorgan Chase (JPM) reports open-market sale of 3,165 shares",
+        "link": "https://www.stocktitan.net/sec-filings/JPM/form-4-jpmorgan-chase-coiio-lori-beer-reports-open-market-sale-of-3-165-shares-e839e6d85453.html",
+        "sentiment": "slightly_negative"
+      },
+      {
+        "headline": "JPMorgan Chase declares dividends on Series II, OO and PP preferreds",
+        "link": "https://www.stocktitan.net/news/JPM/jp-morgan-chase-declares-preferred-stock-3v4yj00b5u88.html",
+        "sentiment": "positive"
+      }
+    ],
+    "BAC": [
+      {
+        "headline": "BAC slips while banks rally",
+        "link": "https://www.tradingview.com/news/zacks:bac-slips-while-banks-rally/",
+        "sentiment": "mixed"
+      },
+      {
+        "headline": "Bank of America hires Richard Hardegree",
+        "link": "https://finance.yahoo.com/news/bank-of-america-hires-richard-hardegree-2026-05-23.html",
+        "sentiment": "positive"
+      },
+      {
+        "headline": "Bank of America Corp.'s outlook shows opportunity for 2026",
+        "link": "https://finviz.com/news/100651/bank-of-america-corps-outlook-shows-opportunity-for-2026",
+        "sentiment": "positive"
+      }
+    ],
+    "GS": [
+      {
+        "headline": "Hedge fund group increases stake in The Goldman Sachs Group, Inc. (GS)",
+        "link": "https://www.marketbeat.com/instant-alerts/filing-hedge-fund-group-increases-stake-in-the-goldman-sachs-group-inc-gs-2026-05-23/",
+        "sentiment": "positive"
+      },
+      {
+        "headline": "Holdings in Goldman Sachs Group Inc. boosted",
+        "link": "https://www.marketbeat.com/instant-alerts/filing-holdings-in-goldman-sachs-group-inc-the-gs-boosted-2026-05-23/",
+        "sentiment": "positive"
+      },
+      {
+        "headline": "The Goldman Sachs Group, Inc. (GS) hits new 1-year high",
+        "link": "https://www.marketbeat.com/instant-alerts/the-goldman-sachs-group-inc-gs-hits-new-1-year-high-2026-05-23/",
+        "sentiment": "positive"
+      },
+      {
+        "headline": "Goldman Sachs / SpaceX IPO mandate alternatives push",
+        "link": "https://finance.yahoo.com/news/goldman-sachs-spacex-ipo-mandate-alternatives-2026-05-23.html",
+        "sentiment": "positive"
+      }
+    ],
+    "WFC": [],
+    "C": [],
+    "MS": []
+  },
+  "summary": "JPM has the best blend of scale, profitability, and capital efficiency in the set. BAC remains cheaper on valuation, WFC is the cheapest on P/E, C screens well on P/B but still looks weaker on operating quality, and GS/MS carry higher multiples while retaining strong ROE and better momentum. News flow is strongest for GS, with JPM constructive and BAC more mixed.",
+  "summary_takeaways": [
+    "JPM has the best blend of scale, profitability, and capital efficiency in the set.",
+    "BAC remains cheaper on valuation, especially versus the premium money-center names.",
+    "WFC is the cheapest on P/E among the big commercial banks.",
+    "C screens well on P/B, but operating income and profitability remain weaker than JPM and WFC.",
+    "GS and MS carry higher multiples, but both retain strong ROE profiles and better momentum in this tape.",
+    "News flow is strongest for GS, with JPM also constructive and BAC more mixed."
+  ],
+  "assessment": {
+    "stance": "mildly_bullish",
+    "thesis": "The morning sweep is constructive: JPM remains the quality anchor, BAC and WFC offer relative value, and GS/MS keep momentum supported by headline flow and strong profitability. Credit, rates, and regulatory capital remain the key cross-currents.",
+    "positives": [
+      "JPM remains the sector anchor on scale, profitability, and capital efficiency.",
+      "BAC and WFC remain valuation-supportive compared with the premium money-center names.",
+      "GS news flow is clearly constructive, and MS retains the best momentum in the set."
+    ],
+    "risks": [
+      "Bank margins and NII remain sensitive to the rates backdrop and deposit competition.",
+      "Credit-cycle deterioration would pressure the whole peer set.",
+      "Regulatory capital requirements could cap upside for the large money-center banks."
+    ],
+    "watch_items": [
+      "Bank margin sensitivity",
+      "Credit-cycle conditions",
+      "Regulatory capital requirements"
+    ],
+    "confidence": 0.78
+  },
+  "sources": [
+    {
+      "type": "sec",
+      "ticker": "JPM",
+      "label": "latest 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm"
+    },
+    {
+      "type": "sec",
+      "ticker": "JPM",
+      "label": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/19617/000119312526211978/d903351d8k.htm"
+    },
+    {
+      "type": "sec",
+      "ticker": "JPM",
+      "label": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/19617/000119312526173739/d235028d8k.htm"
+    },
+    {
+      "type": "sec",
+      "ticker": "JPM",
+      "label": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961726000119/jpm-20260421.htm"
+    },
+    {
+      "type": "news",
+      "ticker": "JPM",
+      "headline": "JPMorgan Chase co-CEO Petno sells $1.7m in JPM stock",
+      "url": "https://m.investing.com/news/insider-trading-news/jpmorgan-chase-coceo-petno-sells-17m-in-jpm-stock-93CH-4694226?ampMode=1"
+    },
+    {
+      "type": "news",
+      "ticker": "JPM",
+      "headline": "[Form 4] JPMORGAN CHASE & CO Insider Trading Activity",
+      "url": "https://www.stocktitan.net/sec-filings/JPM/form-4-jpmorgan-chase-co-insider-trading-activity-775289298972.html"
+    },
+    {
+      "type": "news",
+      "ticker": "JPM",
+      "headline": "JPMorgan (JPM) Co-CEO Petno logs sale and 270K-share gifts",
+      "url": "https://www.stocktitan.net/sec-filings/JPM/form-4-jpmorgan-chase-coceo-petno-logs-sale-and-270k-share-gifts-ac3394bac632.html"
+    },
+    {
+      "type": "news",
+      "ticker": "JPM",
+      "headline": "CIO Lori Beer of JPMorgan Chase (JPM) reports open-market sale of 3,165 shares",
+      "url": "https://www.stocktitan.net/sec-filings/JPM/form-4-jpmorgan-chase-coiio-lori-beer-reports-open-market-sale-of-3-165-shares-e839e6d85453.html"
+    },
+    {
+      "type": "news",
+      "ticker": "JPM",
+      "headline": "JPMorgan Chase declares dividends on Series II, OO and PP preferreds",
+      "url": "https://www.stocktitan.net/news/JPM/jp-morgan-chase-declares-preferred-stock-3v4yj00b5u88.html"
+    },
+    {
+      "type": "news",
+      "ticker": "BAC",
+      "headline": "BAC slips while banks rally",
+      "url": "https://www.tradingview.com/news/zacks:bac-slips-while-banks-rally/"
+    },
+    {
+      "type": "news",
+      "ticker": "BAC",
+      "headline": "Bank of America hires Richard Hardegree",
+      "url": "https://finance.yahoo.com/news/bank-of-america-hires-richard-hardegree-2026-05-23.html"
+    },
+    {
+      "type": "news",
+      "ticker": "BAC",
+      "headline": "Bank of America Corp.'s outlook shows opportunity for 2026",
+      "url": "https://finviz.com/news/100651/bank-of-america-corps-outlook-shows-opportunity-for-2026"
+    },
+    {
+      "type": "news",
+      "ticker": "GS",
+      "headline": "Hedge fund group increases stake in The Goldman Sachs Group, Inc. (GS)",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-hedge-fund-group-increases-stake-in-the-goldman-sachs-group-inc-gs-2026-05-23/"
+    },
+    {
+      "type": "news",
+      "ticker": "GS",
+      "headline": "Holdings in Goldman Sachs Group Inc. boosted",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-holdings-in-goldman-sachs-group-inc-the-gs-boosted-2026-05-23/"
+    },
+    {
+      "type": "news",
+      "ticker": "GS",
+      "headline": "The Goldman Sachs Group, Inc. (GS) hits new 1-year high",
+      "url": "https://www.marketbeat.com/instant-alerts/the-goldman-sachs-group-inc-gs-hits-new-1-year-high-2026-05-23/"
+    },
+    {
+      "type": "news",
+      "ticker": "GS",
+      "headline": "Goldman Sachs / SpaceX IPO mandate alternatives push",
+      "url": "https://finance.yahoo.com/news/goldman-sachs-spacex-ipo-mandate-alternatives-2026-05-23.html"
+    }
+  ],
+  "data_quality_notes": [
+    "News coverage is incomplete relative to the full market tape.",
+    "Sentiment was not machine-scored; tone is inferred manually from headlines.",
+    "Operating income is not fully comparable across bank peers.",
+    "Recent price history is incomplete, so range and trend context should be treated as partial.",
+    "Some news items are syndicated or aggregation-style headlines and should be treated as lower-confidence than primary filings or company releases."
+  ]
+}
