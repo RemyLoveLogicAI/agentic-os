@@ -1,0 +1,239 @@
+[
+  {
+    "entries": [
+      {
+        "timestamp": "2026-05-24T08:00:00-07:00",
+        "task": "Big Bank triple-sweep research task",
+        "sweep_type": "morning sweep",
+        "results": {
+          "report_meta": {
+            "as_of": "2026-05-24T08:00:00-07:00",
+            "report_date": "2026-05-24",
+            "sweep_type": "morning sweep",
+            "task": "Big Bank triple-sweep research task",
+            "target_ticker": "JPM",
+            "universe": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
+            "source_database": "ops/ledgers/big_bank_database.json",
+            "generated_by": "financial research agent"
+          },
+          "target": {
+            "ticker": "JPM",
+            "company_name": "JPMorgan Chase & Co.",
+            "exchange": "NYSE",
+            "price": 306.34,
+            "day_change_percent": "+1.44%",
+            "market_cap": "$826.2B",
+            "volume": "9.3M",
+            "recent_close_range": {
+              "low": 295.70,
+              "high": 301.98
+            },
+            "latest_quarter": {
+              "report_period": "2026-03-31",
+              "revenue_B": 49.836,
+              "eps": 5.94,
+              "net_income_B": 16.494,
+              "operating_margin_pct": 28.4
+            },
+            "valuation": {
+              "ttm_revenue_B": 182.4,
+              "ttm_eps": 20.02,
+              "ttm_net_income_B": 57.0,
+              "p_e": 14.9,
+              "p_b": 2.28,
+              "ev_ebitda": 6.64,
+              "debt_to_equity": 0.18
+            },
+            "profitability": {
+              "roe_pct": 15.7,
+              "roa_pct": 1.29,
+              "net_margin_pct": 31.3
+            }
+          },
+          "peers": [
+            {
+              "ticker": "BAC",
+              "company_name": "Bank of America Corporation",
+              "price": 51.79,
+              "day_change_percent": "+1.09%",
+              "market_cap": "$367.5B",
+              "volume": "27.5M",
+              "recent_close_range": {
+                "low": 49.77,
+                "high": 51.49
+              },
+              "comparison_note": "Cheaper valuation versus JPM and the premium money-center names."
+            },
+            {
+              "ticker": "C",
+              "company_name": "Citigroup Inc.",
+              "price": 125.18,
+              "day_change_percent": "+0.29%",
+              "market_cap": "$213.5B",
+              "volume": "6.8M",
+              "recent_close_range": {
+                "low": 119.97,
+                "high": 125.22
+              },
+              "comparison_note": "Screens well on P/B, but profitability and operating income remain weaker."
+            },
+            {
+              "ticker": "WFC",
+              "company_name": "Wells Fargo & Company",
+              "price": 76.38,
+              "day_change_percent": "+0.75%",
+              "market_cap": "$233.7B",
+              "volume": "14.7M",
+              "recent_close_range": {
+                "low": 73.42,
+                "high": 75.81
+              },
+              "comparison_note": "Cheapest on P/E among the big commercial banks."
+            },
+            {
+              "ticker": "GS",
+              "company_name": "The Goldman Sachs Group, Inc.",
+              "price": 996.85,
+              "day_change_percent": "+1.50%",
+              "market_cap": "$294.0B",
+              "volume": "2.45M",
+              "recent_close_range": {
+                "low": 928.74,
+                "high": 988.17
+              },
+              "comparison_note": "Carries a higher multiple, but retains strong ROE and better momentum."
+            },
+            {
+              "ticker": "MS",
+              "company_name": "Morgan Stanley",
+              "price": 201.00,
+              "day_change_percent": "+1.63%",
+              "market_cap": "$317.0B",
+              "volume": "7.2M",
+              "recent_close_range": {
+                "low": 189.58,
+                "high": 197.77
+              },
+              "comparison_note": "Carries a higher multiple, but retains strong ROE and better momentum."
+            }
+          ],
+          "news_highlights": [
+            {
+              "ticker": "JPM",
+              "title": "JPMorgan Chase reports constructive wealth-products and callable-notes headlines",
+              "link": "https://finance.yahoo.com/news/jpmorgan-chase-wealth-products-2026-05-23.html",
+              "sentiment": "constructive"
+            },
+            {
+              "ticker": "JPM",
+              "title": "JPMorgan Chase shares updated higher amid market-beat coverage",
+              "link": "https://www.marketbeat.com/instant-alerts/jpmorgan-chase-co-jpm-shares-updated-2026-05-23/",
+              "sentiment": "constructive"
+            },
+            {
+              "ticker": "GS",
+              "title": "Goldman Sachs momentum / 1-year-high coverage remains supportive",
+              "link": "https://www.marketbeat.com/instant-alerts/the-goldman-sachs-group-inc-gs-hits-new-1-year-high-2026-05-23/",
+              "sentiment": "positive"
+            },
+            {
+              "ticker": "BAC",
+              "title": "Bank of America coverage remains mixed versus peers",
+              "link": "https://www.tradingview.com/news/zacks:bac-slips-while-banks-rally/",
+              "sentiment": "mixed"
+            }
+          ],
+          "takeaways": [
+            "JPM has the best blend of scale, profitability, and capital efficiency in the set.",
+            "BAC remains cheaper on valuation, especially versus the premium money-center names.",
+            "WFC is the cheapest on P/E among the big commercial banks.",
+            "C screens well on P/B, but operating income and profitability remain weaker than JPM and WFC.",
+            "GS and MS carry higher multiples, but both retain strong ROE profiles and better momentum in this tape."
+          ]
+        },
+        "summary": "JPM remains the quality leader in the Big Bank group: Q1 2026 delivered double-digit revenue and EPS growth, profitability stayed strong, and the stock finished the session with a constructive tone.",
+        "assessment": {
+          "stance": "mildly_bullish_on_JPM_BAC_WFC",
+          "thesis": "The sector remains stable with JPM leading on scale and profitability, while valuation still leaves room for selective upside in JPM, BAC, and WFC.",
+          "positives": [
+            "JPM has the best blend of scale, profitability, and capital efficiency in the peer set.",
+            "BAC and WFC remain cheaper valuation plays versus the premium names.",
+            "GS and MS still have strong ROE profiles and better momentum."
+          ],
+          "risks": [
+            "Bank margin sensitivity remains a key macro driver.",
+            "Credit-cycle conditions could pressure the group.",
+            "Regulatory capital requirements remain a watch item."
+          ],
+          "watch_items": [
+            "Bank margin sensitivity",
+            "Credit-cycle conditions",
+            "Regulatory capital requirements"
+          ]
+        },
+        "sources": [
+          {
+            "type": "company_facts",
+            "tool": "provided_research_brief",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000019617",
+            "note": "Company identity and SEC reference."
+          },
+          {
+            "type": "current_price_snapshot",
+            "tool": "provided_research_brief",
+            "as_of": "2026-05-23T15:00:00Z",
+            "note": "Latest available price snapshot used for the morning sweep artifact."
+          },
+          {
+            "type": "financial_metrics_snapshot",
+            "tool": "provided_research_brief",
+            "report_period": "2026-03-31",
+            "note": "Latest valuation and TTM ratio snapshot."
+          },
+          {
+            "type": "quarterly_financials",
+            "tool": "provided_research_brief",
+            "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+            "report_period": "2026-03-31"
+          },
+          {
+            "type": "earnings_snapshot",
+            "tool": "provided_research_brief",
+            "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+            "report_period": "2026-03-31"
+          },
+          {
+            "type": "news",
+            "tool": "provided_research_brief",
+            "articles": [
+              "https://www.marketbeat.com/instant-alerts/filing-pinnacle-financial-partners-says-jpmorgan-chase-co-jpm-position-value-updated-2026-05-23/",
+              "https://www.marketbeat.com/instant-alerts/jpmorgan-chase-co-jpm-shares-updated-2026-05-23/",
+              "https://finance.yahoo.com/news/jpmorgan-chase-wealth-products-2026-05-23.html",
+              "https://www.stocktitan.net/news/JPM/jpmorgan-chase-prices-callable-notes-2026-05-23.html",
+              "https://www.marketbeat.com/instant-alerts/the-goldman-sachs-group-inc-gs-hits-new-1-year-high-2026-05-23/"
+            ]
+          },
+          {
+            "type": "research_artifact",
+            "tool": "file_reference",
+            "path": "research/2026-05-23-morning-sweep.md",
+            "note": "Source narrative summary for the morning sweep."
+          },
+          {
+            "type": "ledger_target",
+            "tool": "file_reference",
+            "path": "ops/ledgers/big_bank_database.json",
+            "note": "Canonical central Big Bank database."
+          }
+        ],
+        "data_quality_notes": [
+          "This 2026-05-24 entry carries forward the latest available 2026-05-23 morning snapshot; no newer market quote was surfaced in the repository.",
+          "News coverage is incomplete relative to the full market tape.",
+          "Sentiment was not machine-scored; tone is inferred manually from headlines.",
+          "Operating income is not fully comparable across bank peers.",
+          "Recent price history is incomplete, so range and trend context should be treated as partial."
+        ]
+      }
+    ]
+  }
+]
