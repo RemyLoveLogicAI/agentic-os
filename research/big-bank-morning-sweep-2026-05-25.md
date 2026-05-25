@@ -2,43 +2,53 @@
 
 **Timestamp:** `2026-05-25T08:00:00-07:00`
 
-## Overview
-Big Bank refers to JPMorgan Chase & Co. (JPM).
+## 1. Overview
+Big Bank interpreted as JPMorgan Chase & Co. (JPM).
 
 Peer set: BAC, C, WFC, GS, MS.
 
-## Market and valuation
-- Price: $306.34
+## 2. Market snapshot and valuation
+- Latest price: $306.34
 - Market cap: $826.2B
 - Enterprise value: $547.6B
+- Day change: +1.44%
 - P/E: 14.9
 - P/B: 2.28
+- EV/EBITDA: 6.64
+- EV/Revenue: 3.00
 - ROE: 15.7%
-- Dividend payout ratio: 29.1%
 - Book value per share: $130.30
+- Dividend payout ratio: 29.1%
 
-## Latest quarter highlights
-- Revenue: $49.84B (+10.0% YoY)
-- Net income: $16.49B (+12.6% YoY)
-- Diluted EPS: $5.94 (+17.2% YoY)
-- Operating income: $14.17B (+34.7% YoY)
+## 3. Latest quarter: Q1 2026
+- Revenue: $49.84B (+9.99% YoY)
+- Net income: $16.49B (+12.64% YoY)
+- Diluted EPS: $5.94 (+17.16% YoY)
+- Operating income: $14.17B (+34.68% YoY)
 - Net margin: 33.1%
+- Operating margin: 28.4%
+- Total assets: $4.90T
+- Shareholders' equity: $364.0B
+- Cash and equivalents: $312.1B
+- Total debt: $68.0B
 
-## Headline summary
-Dividend declared $1.50/share; neutral-to-positive; no clear negative catalyst.
+## 4. News highlights and risks
+- Dividend declared: $1.50/share; likely impact: Positive/neutral.
+- Other headlines: Neutral-to-positive overall; no clear adverse catalyst in the latest news batch.
 
-## Risks
-- NII sensitivity
-- Credit cycle risk
-- Market activity dependence
-- Regulatory and capital constraints
-- Valuation compression
+Risks:
+- Net interest income sensitivity
+- Credit-cycle risk
+- Market activity dependence (IB/trading volatility)
+- Regulatory/capital requirements
+- Valuation compression risk
 
-## Actionable takeaways
-- Positive bias on quality.
-- Valuation is not distressed.
-- Watch NII, credit losses, reserves, and capital ratios.
+## 5. Assessment and actionable takeaways
+Assessment: Strong latest quarter and reasonable-to-premium valuation for a high-quality large bank; sentiment stable with dividend as the clearest actionable item.
 
-## Data quality
-- Assumption that Big Bank refers to JPM.
-- data caveat: financial-news snapshot without direct citations from tools
+Actionable takeaways:
+- Core thesis: high-quality franchise with strong earnings momentum; dividend support.
+- Valuation is not distressed; pullbacks may offer better entry.
+- Watch next: NII trends, credit losses/charge-offs, reserve builds, capital ratios, deposit competition, and whether earnings strength is durable.
+
+Final note on other banks: BAC, C, WFC, GS, and MS remain the peer set for context, but the current sweep was centered on JPM.
