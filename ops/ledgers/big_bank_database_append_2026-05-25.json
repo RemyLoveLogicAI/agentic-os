@@ -1,0 +1,77 @@
+{
+  "entries": [
+    {
+      "timestamp": "2026-05-25T08:00:00-07:00",
+      "task": "Big Bank triple-sweep research task",
+      "sweep_type": "morning sweep",
+      "results": {
+        "target": {
+          "name": "JPMorgan Chase & Co.",
+          "ticker": "JPM",
+          "assumption": "Big Bank refers to JPMorgan Chase & Co. (JPM)"
+        },
+        "peers": [
+          {
+            "ticker": "BAC",
+            "name": "Bank of America Corporation"
+          },
+          {
+            "ticker": "C",
+            "name": "Citigroup Inc."
+          },
+          {
+            "ticker": "WFC",
+            "name": "Wells Fargo & Company"
+          },
+          {
+            "ticker": "GS",
+            "name": "The Goldman Sachs Group, Inc."
+          },
+          {
+            "ticker": "MS",
+            "name": "Morgan Stanley"
+          }
+        ],
+        "market_valuation": {
+          "price": 306.34,
+          "market_cap_b": 826.2,
+          "enterprise_value_b": 547.6,
+          "pe_ratio": 14.9,
+          "pb_ratio": 2.28,
+          "roe_pct": 15.7,
+          "dividend_payout_pct": 29.1,
+          "book_value_per_share": 130.30
+        },
+        "latest_quarter_highlights": {
+          "revenue_b": 49.84,
+          "revenue_yoy_pct": 10.0,
+          "net_income_b": 16.49,
+          "net_income_yoy_pct": 12.6,
+          "diluted_eps": 5.94,
+          "diluted_eps_yoy_pct": 17.2,
+          "operating_income_b": 14.17,
+          "operating_income_yoy_pct": 34.7,
+          "net_margin_pct": 33.1
+        },
+        "headline_summary": "Dividend declared $1.50/share; neutral-to-positive; no clear negative catalyst.",
+        "risks": [
+          "NII sensitivity",
+          "Credit cycle risk",
+          "Market activity dependence",
+          "Regulatory and capital constraints",
+          "Valuation compression"
+        ],
+        "actionable_takeaways": [
+          "Positive bias on quality.",
+          "Valuation is not distressed.",
+          "Watch NII, credit losses, reserves, and capital ratios."
+        ],
+        "data_quality_notes": [
+          "Assumption that Big Bank refers to JPM.",
+          "data caveat: financial-news snapshot without direct citations from tools"
+        ],
+        "full_report": "# Big Bank Morning Sweep — 2026-05-25 08:00 AM PDT\n\n**Timestamp:** `2026-05-25T08:00:00-07:00`\n\n## Overview\nBig Bank refers to JPMorgan Chase & Co. (JPM).\n\nPeer set: BAC, C, WFC, GS, MS.\n\n## Market and valuation\n- Price: $306.34\n- Market cap: $826.2B\n- Enterprise value: $547.6B\n- P/E: 14.9\n- P/B: 2.28\n- ROE: 15.7%\n- Dividend payout ratio: 29.1%\n- Book value per share: $130.30\n\n## Latest quarter highlights\n- Revenue: $49.84B (+10.0% YoY)\n- Net income: $16.49B (+12.6% YoY)\n- Diluted EPS: $5.94 (+17.2% YoY)\n- Operating income: $14.17B (+34.7% YoY)\n- Net margin: 33.1%\n\n## Headline summary\nDividend declared $1.50/share; neutral-to-positive; no clear negative catalyst.\n\n## Risks\n- NII sensitivity\n- Credit cycle risk\n- Market activity dependence\n- Regulatory and capital constraints\n- Valuation compression\n\n## Actionable takeaways\n- Positive bias on quality.\n- Valuation is not distressed.\n- Watch NII, credit losses, reserves, and capital ratios.\n\n## Data quality\n- Assumption that Big Bank refers to JPM.\n- data caveat: financial-news snapshot without direct citations from tools"
+      }
+    }
+  ]
+}
