@@ -1,0 +1,77 @@
+{
+  "entries": [
+    {
+      "timestamp": "2026-05-26T08:00:00-07:00",
+      "task": "Big Bank triple-sweep research task",
+      "sweep_type": "morning sweep",
+      "results": {
+        "target": {
+          "name": "JPMorgan Chase & Co.",
+          "ticker": "JPM",
+          "company_resolution": "Big Bank refers to JPMorgan Chase & Co. (JPM)"
+        },
+        "market_snapshot_time_utc": "2026-05-26T15:00:38Z",
+        "market_snapshot": {
+          "last_price": 308.03,
+          "day_move": 1.65,
+          "day_move_pct": 0.54,
+          "market_cap_b": 831.95,
+          "enterprise_value_b": 553.39
+        },
+        "valuation": {
+          "pe_ratio": 15.0,
+          "pb_ratio": 2.3,
+          "ev_ebitda": 6.71,
+          "ev_revenue": 3.03
+        },
+        "balance_liquidity": {
+          "cash_b": 312.14,
+          "total_debt_b": 68.05,
+          "shareholders_equity_b": 364.04,
+          "current_ratio": 4.27
+        },
+        "financials": {
+          "q1_2026": {
+            "revenue_b": 49.84,
+            "revenue_yoy_pct": 9.99,
+            "eps": 5.94,
+            "eps_yoy_pct": 17.16,
+            "net_income_b": 16.49,
+            "net_income_yoy_pct": 12.64,
+            "operating_margin_pct": 28.4,
+            "operating_margin_yoy_bps": 521
+          },
+          "ttm": {
+            "revenue_b": 182.45,
+            "net_income_b": 57.05,
+            "eps": 20.05,
+            "book_value_per_share": 130.3,
+            "roe_pct": 15.7,
+            "net_margin_pct": 31.3
+          }
+        },
+        "recent_news_events": [
+          {
+            "date": "2026-05-25",
+            "source": "TradingView/Zacks",
+            "headline": "JPM, WFC & Others Clear Key Regulatory Hurdle on Living Wills",
+            "url": "https://www.tradingview.com/news/zacks:28f1decff094b:0-jpm-wfc-others-clear-key-regulatory-hurdle-on-living-wills/"
+          },
+          {
+            "date": "2026-05-24",
+            "source": "Yahoo Finance",
+            "headline": "JPMorgan Chase & Co. (JPM) Declares Quarterly Dividend of $1.50 per Share",
+            "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-chase-co-jpm-declares-172140604.html"
+          },
+          {
+            "date": "2026-05-01",
+            "source": "SEC",
+            "headline": "Q1 2026 10-Q filed",
+            "url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm"
+          }
+        ],
+        "short_synthesis": "JPM starts firmer (+0.54%), with solid fundamentals: double-digit y/y EPS and revenue growth, expanding operating margin, and very strong liquidity/capital. Valuation is about 15x earnings and 2.3x book. Near-term positives include regulatory relief on living wills and dividend stability. Watch rate sensitivity and the credit cycle; the move is modest."
+      }
+    }
+  ]
+}
