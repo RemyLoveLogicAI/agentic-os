@@ -1,0 +1,104 @@
+{
+  "entries": [
+    {
+      "timestamp": "2026-05-26T12:00:00-07:00",
+      "task": "Big Bank triple-sweep research task",
+      "sweep_type": "noon sweep",
+      "results": {
+        "target": {
+          "name": "JPMorgan Chase & Co.",
+          "ticker": "JPM",
+          "assumption": "Big Bank refers to JPMorgan Chase (JPM)"
+        },
+        "peers": [
+          {
+            "ticker": "BAC",
+            "name": "Bank of America Corporation"
+          },
+          {
+            "ticker": "C",
+            "name": "Citigroup Inc."
+          },
+          {
+            "ticker": "WFC",
+            "name": "Wells Fargo & Company"
+          },
+          {
+            "ticker": "GS",
+            "name": "The Goldman Sachs Group, Inc."
+          },
+          {
+            "ticker": "MS",
+            "name": "Morgan Stanley"
+          }
+        ],
+        "market_valuation": {
+          "price": 305.81,
+          "market_cap_b": 825.4,
+          "enterprise_value_b": null,
+          "pe_ratio": 14.9,
+          "pb_ratio": 2.28,
+          "roe_pct": 19.0,
+          "book_value_per_share": null,
+          "dividend_payout_pct": null
+        },
+        "latest_quarter_highlights": {
+          "revenue_b": 49.84,
+          "revenue_yoy_pct": 10.0,
+          "net_income_b": 16.49,
+          "net_income_yoy_pct": 13.0,
+          "diluted_eps": 5.94,
+          "diluted_eps_yoy_pct": 17.0,
+          "net_interest_income_b": 25.37,
+          "net_interest_income_yoy_pct": 9.0
+        },
+        "balance_sheet_snapshot": {
+          "assets_t": 4.9,
+          "deposits_t": 2.68,
+          "loans_t": 1.5,
+          "cet1_pct": 14.3,
+          "lcr_pct": 112.0
+        },
+        "segment_highlights": {
+          "CCB": {
+            "net_revenue_b": 19.57,
+            "net_revenue_yoy_pct": 7.0
+          },
+          "CIB": {
+            "net_revenue_b": 23.38,
+            "net_revenue_yoy_pct": 19.0,
+            "investment_banking_yoy_pct": 28.0,
+            "markets_yoy_pct": 20.0
+          },
+          "AWM": {
+            "net_revenue_b": 6.37,
+            "net_revenue_yoy_pct": 11.0,
+            "aum_t": 4.8,
+            "aum_yoy_pct": 16.0
+          }
+        },
+        "headline_summary": "JPMorgan delivered a strong 1Q26 with broad-based strength across CCB, CIB, and AWM, while maintaining solid capital and liquidity metrics.",
+        "risks": [
+          "NII sensitivity to rates, deposit costs, and funding mix",
+          "Credit-cycle and loan-loss normalization risk",
+          "Valuation compression if expectations reset",
+          "Capital and regulatory constraints",
+          "Markets and investment-banking cyclicality"
+        ],
+        "actionable_takeaways": [
+          "Quality remains the core thesis: JPM is still the scale leader with strong profitability and a well-capitalized balance sheet.",
+          "The 1Q26 print supports the bull case with double-digit revenue, net income, and EPS growth plus healthy NII growth.",
+          "CCB, CIB, and AWM all contributed to the upside, indicating broad franchise strength rather than one-off performance.",
+          "CET1 at 14.3% and LCR at 112% indicate the balance sheet remains resilient.",
+          "Monitor NII, credit losses, deposits, and any change in valuation discipline after the strong quarter."
+        ],
+        "data_quality_notes": [
+          "Fields without values in the readout were set to null.",
+          "Day change / intraday move was not provided in the readout.",
+          "Enterprise value and dividend payout ratio were not provided in the readout."
+        ],
+        "full_report": "# Big Bank Noon Sweep — 2026-05-26 12:00 PM PDT\n\n**Big Bank assumption:** JPMorgan Chase & Co. (JPM)\n\n## Market / valuation\n- Price: $305.81\n- Market cap: ~$825.4B\n- P/E: 14.9x\n- P/B: 2.28x\n- ROE: 19%\n\n## 1Q26 financial highlights\n- Revenue: $49.84B (+10% YoY)\n- Net income: $16.49B (+13% YoY)\n- EPS: $5.94 (+17% YoY)\n- Net interest income: $25.37B (+9% YoY)\n\n## Balance sheet / capital\n- Assets: $4.90T\n- Deposits: $2.68T\n- Loans: $1.50T\n- CET1: 14.3%\n- LCR: 112%\n\n## Segment highlights\n- CCB net revenue: $19.57B (+7% YoY)\n- CIB net revenue: $23.38B (+19% YoY)\n  - Investment banking: +28% YoY\n  - Markets: +20% YoY\n- AWM net revenue: $6.37B (+11% YoY)\n  - AUM: $4.8T (+16% YoY)\n\n## Risks\n- NII sensitivity to rates and deposit costs\n- Credit-cycle / loan-loss risk\n- Valuation compression if expectations reset\n- Capital / regulatory constraints\n- Markets and investment-banking cyclicality\n\n## Actionable takeaways\n- JPM remains the quality leader in the Big Bank set.\n- 1Q26 showed strong across-the-board growth.\n- Capital and liquidity remain solid.\n- CCB, CIB, and AWM all contributed positively.\n- Watch NII, credit, deposits, and valuation discipline going forward."
+      }
+    }
+  ]
+}
