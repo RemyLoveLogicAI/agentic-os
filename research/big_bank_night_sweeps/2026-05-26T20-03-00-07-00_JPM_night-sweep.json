@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-05-26T20:03:00-07:00",
+  "task": "Big Bank triple-sweep research task",
+  "sweep_type": "night sweep",
+  "target": {
+    "ticker": "JPM",
+    "company_name": "JPMorgan Chase & Co.",
+    "cik": "0000019617",
+    "exchange": "NYSE"
+  },
+  "summary": "Big Bank maps to JPMorgan Chase & Co. (NYSE:JPM; CIK 0000019617). Latest available snapshot places JPM around $306.34 with a market cap near $826.2B, TTM P/E around 14.9x, P/B around 2.28x, and ROE around 15.7%. Q1 2026 revenue grew 10.0% YoY to $49.84B and EPS grew 17.2% YoY to $5.94. News flow remains mixed-to-positive, with supportive dividend/capital-return and AI/wealth-management themes, while the main risks are credit quality, rates/deposit costs, regulatory capital sensitivity, and macro volatility.",
+  "assessment": {
+    "market_tone": "neutral_to_slightly_positive",
+    "fundamental_tone": "positive",
+    "news_tone": "mixed_to_positive",
+    "confidence": 0.89
+  },
+  "sources": [
+    {
+      "type": "company_facts",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000019617"
+    },
+    {
+      "type": "latest_quarter_filing",
+      "url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm"
+    },
+    {
+      "type": "reference_research_artifact",
+      "url": "repo://RemyLoveLogicAI/agentic-os/sha/d945855c760acbc5bdc8c606f6272b9940fd4848/contents/research/2026-05-25/big-bank-morning-sweep-2026-05-25.md"
+    }
+  ],
+  "data_quality_notes": [
+    "Used the latest available morning sweep snapshot because no later night quote was surfaced in the repo.",
+    "Financial and valuation figures are taken from the existing JPM research artifacts.",
+    "The Big Bank identifier is JPM."
+  ]
+}
