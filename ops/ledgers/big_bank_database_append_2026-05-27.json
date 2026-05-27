@@ -1,0 +1,167 @@
+{
+  "timestamp": "2026-05-27T08:00:00-07:00",
+  "task": "Big Bank triple-sweep research task",
+  "sweep_type": "morning sweep",
+  "entries": [
+    {
+      "timestamp": "2026-05-27T08:00:00-07:00",
+      "task": "Big Bank triple-sweep research task",
+      "sweep_type": "morning sweep",
+      "run_label": "morning_sweep",
+      "entry_type": "universe_snapshot",
+      "universe": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
+      "results": {
+        "target": {
+          "ticker": "JPM",
+          "company_name": "JPMorgan Chase & Co.",
+          "price_current": 302.25,
+          "day_change_pct": -1.46,
+          "valuation": {
+            "pe_ratio": 14.71
+          },
+          "profitability": {
+            "return_on_equity": 15.7
+          },
+          "latest_quarter": {
+            "report_period": "2026-03-31",
+            "revenue_usd": 49.84,
+            "net_income_usd": 16.49,
+            "earnings_per_share_usd": 5.94
+          },
+          "news": {
+            "items": [
+              {
+                "date": "2026-05-27",
+                "source": "Yahoo Finance",
+                "title": "JPMorgan Chase & Co. (JPM) – Among the 10 Best Blue Chip Stocks to Buy for Your Retirement Portfolio",
+                "summary": "Most other JPM headlines in the feed were automated ownership alerts."
+              }
+            ]
+          }
+        },
+        "peers": [
+          {
+            "ticker": "BAC",
+            "price_current": 51.98,
+            "day_change_pct": -0.42,
+            "valuation": {
+              "pe_ratio": 12.24
+            },
+            "profitability": {
+              "return_on_equity": 10.5
+            },
+            "latest_quarter": {
+              "report_period": "2026-03-31",
+              "revenue_usd": 30.27,
+              "net_income_usd": 8.58,
+              "earnings_per_share_usd": 1.11
+            }
+          },
+          {
+            "ticker": "C",
+            "price_current": 125.97,
+            "day_change_pct": -0.70,
+            "valuation": {
+              "pe_ratio": 12.70
+            },
+            "profitability": {
+              "return_on_equity": 8.4
+            },
+            "latest_quarter": {
+              "report_period": "2026-03-31",
+              "revenue_usd": 24.63,
+              "net_income_usd": 5.79,
+              "earnings_per_share_usd": 3.06
+            }
+          },
+          {
+            "ticker": "WFC",
+            "price_current": 76.23,
+            "day_change_pct": -1.66,
+            "valuation": {
+              "pe_ratio": 11.29
+            },
+            "profitability": {
+              "return_on_equity": 11.9
+            },
+            "latest_quarter": {
+              "report_period": "2026-03-31",
+              "revenue_usd": 21.45,
+              "net_income_usd": 5.25,
+              "earnings_per_share_usd": 1.60
+            }
+          },
+          {
+            "ticker": "GS",
+            "price_current": 996.47,
+            "day_change_pct": 0.20,
+            "valuation": {
+              "pe_ratio": 16.84
+            },
+            "profitability": {
+              "return_on_equity": 14.8
+            },
+            "latest_quarter": {
+              "report_period": "2026-03-31",
+              "revenue_usd": 17.23,
+              "net_income_usd": 5.63,
+              "earnings_per_share_usd": 17.55
+            }
+          },
+          {
+            "ticker": "MS",
+            "price_current": 200.82,
+            "day_change_pct": -0.47,
+            "valuation": {
+              "pe_ratio": 17.54
+            },
+            "profitability": {
+              "return_on_equity": 15.8
+            },
+            "latest_quarter": {
+              "report_period": "2026-03-31",
+              "revenue_usd": 20.58,
+              "net_income_usd": 5.64,
+              "earnings_per_share_usd": 3.43
+            }
+          }
+        ],
+        "universe_takeaways": [
+          "Mixed group; WFC (+2.26%) and MS (+2.02%) best 1-week trend.",
+          "Cheapest P/B in dataset: C (1.02x) and BAC (1.23x).",
+          "Guidance signals: C reaffirmed FY2026 ROTCE 10%-11%; GS initiated Q2 dividend guidance $4.50/share."
+        ]
+      },
+      "summary": {
+        "best_daily_performer": "GS",
+        "largest_price_up": "WFC (+2.26% 1-week)",
+        "highest_roe": "MS (~15.8%)",
+        "confidence": 0.62
+      },
+      "assessment": {
+        "stance": "constructive_positive",
+        "thesis": "Profitability remains supportive across the Big Bank set, with day-to-day price moves generally muted and valuations still judged against a moderately restrictive rate backdrop.",
+        "risks": [
+          "Credit/rates sensitivity.",
+          "Sparse news signal in the provided feed; verify via filings/press."
+        ],
+        "watch_items": [
+          "Any updates to credit costs / NII guidance.",
+          "Capital return and capital ratio commentary."
+        ],
+        "confidence": 0.62
+      },
+      "sources": [
+        {
+          "type": "financial-search-agent",
+          "tool": "financial-search-agent",
+          "note": "Big Bank morning sweep."
+        }
+      ],
+      "data_quality_notes": [
+        "CET1 not surfaced by the financial-search-agent run.",
+        "News coverage sparse for several tickers; only surfaced items included."
+      ]
+    }
+  ]
+}
