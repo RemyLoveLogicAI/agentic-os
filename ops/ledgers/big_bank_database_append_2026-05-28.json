@@ -1,0 +1,138 @@
+{
+  "timestamp": "2026-05-28T12:00:00-07:00",
+  "task": "Big Bank triple-sweep research task",
+  "sweep_type": "noon sweep",
+  "entries": [
+    {
+      "timestamp": "2026-05-28T12:00:00-07:00",
+      "task": "Big Bank triple-sweep research task",
+      "sweep_type": "noon sweep",
+      "run_label": "noon_sweep",
+      "entry_type": "universe_snapshot",
+      "universe": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
+      "results": {
+        "company": {
+          "name": "JPMorgan Chase & Co.",
+          "ticker": "JPM",
+          "cik": "0000019617"
+        },
+        "as_of_utc": "2026-05-28T19:02:21Z",
+        "stock_price_snapshot": {
+          "price": 296.47,
+          "day_change": -2.81,
+          "day_change_percent": -0.94,
+          "market_cap": 798402493971,
+          "currency": "USD"
+        },
+        "price_performance": [
+          {
+            "window": "1M",
+            "start_date": "2026-04-28",
+            "start_close": 311.45,
+            "current_price": 296.47,
+            "return_percent": -4.81
+          },
+          {
+            "window": "3M",
+            "start_date": "2026-02-27",
+            "start_close": 300.30,
+            "current_price": 296.47,
+            "return_percent": -1.28
+          },
+          {
+            "window": "1Y",
+            "start_date": "2025-05-28",
+            "start_close": 263.49,
+            "current_price": 296.47,
+            "return_percent": 12.52
+          }
+        ],
+        "financials": {
+          "latest_quarter": {
+            "report_period": "2026-03-31",
+            "fiscal_period": "2026-Q1",
+            "revenue": 49836000000,
+            "net_income": 16494000000,
+            "diluted_eps": 5.94,
+            "operating_income": 14172000000,
+            "gross_profit": 47329000000,
+            "shareholders_equity": 364038000000,
+            "total_assets": 4900475000000,
+            "total_debt": 68048000000,
+            "cash_and_equivalents": 312142000000,
+            "revenue_growth": 0.0882,
+            "earnings_growth": 0.2725,
+            "net_margin": 0.324,
+            "book_value_per_share": 134.025
+          },
+          "ttm": {
+            "income_statement_report_period": "2025-12-31",
+            "balance_sheet_report_period": "2026-03-31",
+            "revenue": 182447000000,
+            "net_income": 57048000000,
+            "diluted_eps": 20.02,
+            "operating_income": 36029000000,
+            "gross_profit": 168235000000,
+            "shareholders_equity": 364038000000,
+            "total_assets": 4900475000000,
+            "total_debt": 68048000000,
+            "cash_and_equivalents": 312142000000,
+            "revenue_growth": 0.0248,
+            "earnings_growth": 0.0329,
+            "net_margin": 0.308,
+            "roe": 0.159,
+            "roa": 0.012,
+            "roic": 0.014,
+            "book_value_per_share": 134.025,
+            "payout_ratio": 0.277
+          }
+        },
+        "valuation_multiples_current": {
+          "price_to_earnings": 14.4336,
+          "price_to_book": 2.2029,
+          "price_to_sales": 4.3761,
+          "enterprise_value_to_ebitda": 6.3062,
+          "enterprise_value_to_revenue": 2.8493,
+          "enterprise_value": 519840493971
+        },
+        "news_summary": {
+          "coverage_window": "2026-05-27 to 2026-05-28",
+          "overall_sentiment": "mixed_to_slightly_positive",
+          "sentiment_available": false,
+          "sentiment_note": "No machine sentiment field was returned by the news feed; overall tone is inferred from headline content.",
+          "highlights": [
+            {
+              "date": "2026-05-28T13:44:00+00:00",
+              "source": "Stock Titan",
+              "title": "New J.P. Morgan ETF blends U.S. stocks with managed futures for diversification",
+              "url": "https://www.stocktitan.net/news/JPM/j-p-morgan-asset-management-launches-jp-morgan-managed-futures-plus-xjmbqs835a2t.html",
+              "inferred_tone": "positive"
+            },
+            {
+              "date": "2026-05-27T20:14:00+00:00",
+              "source": "Business Wire",
+              "title": "JPMorganChase Announcement Concerning Preferred Stock",
+              "url": "https://www.businesswire.com/news/home/20260527140393/en/JPMorganChase-Announcement-Concerning-Preferred-Stock",
+              "inferred_tone": "neutral"
+            },
+            {
+              "date": "2026-05-27T18:12:13+00:00",
+              "source": "Reuters",
+              "title": "JPMorgan CEO sees expenses climbing; eyes up to $20 billion M&A opportunity",
+              "url": "https://www.reuters.com/world/jpmorgan-ceo-sees-investment-banking-fees-rising-10-or-more-second-quarter-2026-05-27/",
+              "inferred_tone": "mixed"
+            },
+            {
+              "date": "2026-05-27T21:45:02+00:00",
+              "source": "Yahoo Finance",
+              "title": "JPMorgan Chase & Co. (JPM) Stock Slides as Market Rises: Facts to Know Before You Trade",
+              "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-chase-co-jpm-stock-214502665.html",
+              "inferred_tone": "slightly_negative"
+            }
+          ],
+          "concise_summary": "Recent coverage centers on a new JPM-organized ETF launch, a preferred stock announcement, and Reuters reporting that CEO commentary points to higher expenses but also a sizeable M&A opportunity. Market commentary was mildly negative on the day due to stock weakness, while product/newsflow remains constructive overall."
+        }
+      }
+    }
+  ]
+}
