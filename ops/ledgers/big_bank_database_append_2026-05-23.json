@@ -119,7 +119,126 @@
           "EV and TTM ratio fields are point-in-time estimates from the supplied brief and should be treated as approximate.",
           "News coverage is a mix of strategic, financing, and ownership-style items, so sentiment should be treated as moderate-confidence rather than high-confidence."
         ]
+      },
+      {
+        "timestamp": "2026-05-28T20:00:00-07:00",
+        "task": "Big Bank triple-sweep research task",
+        "sweep_type": "night sweep",
+        "results": {
+          "target": {
+            "ticker": "JPM",
+            "company_name": "JPMorgan Chase & Co.",
+            "price": 306.34,
+            "day_change_percent": "+1.44%",
+            "pe_ratio": "14.9x",
+            "sentiment": "Neutral to slightly positive",
+            "findings": "Q1 2026 fundamentals remain solid: revenue of $49.84B (+10.0% YoY), EPS of $5.94 (+17.2% YoY), net income of $16.49B (+12.6% YoY), strong balance-sheet capacity, and a constructive mix of AI, wealth, and balance-sheet optimization headlines."
+          },
+          "peers": [
+            {
+              "ticker": "BAC",
+              "price": 51.84,
+              "change_percent": "+1.19%",
+              "pe": "12.2x",
+              "sentiment": "Neutral",
+              "notes": "Cheaper valuation; supportive earnings backdrop and a constructive tape."
+            },
+            {
+              "ticker": "C",
+              "price": 125.3,
+              "change_percent": "+0.38%",
+              "pe": "12.6x",
+              "sentiment": "Neutral",
+              "notes": "Inexpensive on book, but still treated as a turnaround story."
+            },
+            {
+              "ticker": "WFC",
+              "price": 76.45,
+              "change_percent": "+0.84%",
+              "pe": "11.2x",
+              "sentiment": "Neutral",
+              "notes": "Cheapest on P/E among the commercial peers; steady but less compelling growth."
+            },
+            {
+              "ticker": "GS",
+              "price": 999.73,
+              "change_percent": "+1.79%",
+              "pe": "16.9x",
+              "sentiment": "Positive",
+              "notes": "Momentum supportive; strong Q1 earnings and capital-return guidance remain constructive."
+            },
+            {
+              "ticker": "MS",
+              "price": 202.08,
+              "change_percent": "+2.18%",
+              "pe": "17.7x",
+              "sentiment": "Positive",
+              "notes": "Best short-term momentum in the peer set; strong wealth and capital-markets execution."
+            }
+          ]
+        },
+        "summary": "JPM remains the quality leader in the Big Bank group: Q1 2026 delivered double-digit revenue and EPS growth, profitability stayed strong, and the stock finished the session with a constructive tone. News flow is mixed to positive, led by AI deployment, wealth-products coverage, and selective balance-sheet optimization, while the main risks remain rates, credit, and regulatory sensitivity.",
+        "assessment": {
+          "market_tone": "neutral_to_slightly_positive",
+          "fundamental_tone": "positive",
+          "news_tone": "mixed_to_positive",
+          "confidence": 0.89
+        },
+        "sources": [
+          {
+            "type": "company_facts",
+            "tool": "provided_research_brief",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000019617",
+            "note": "Company identity and SEC reference."
+          },
+          {
+            "type": "current_price_snapshot",
+            "tool": "provided_research_brief",
+            "as_of": "2026-05-23T15:00:00Z",
+            "note": "Latest available price snapshot used for the night sweep artifact."
+          },
+          {
+            "type": "financial_metrics_snapshot",
+            "tool": "provided_research_brief",
+            "report_period": "2026-03-31",
+            "note": "Latest valuation and TTM ratio snapshot."
+          },
+          {
+            "type": "quarterly_financials",
+            "tool": "provided_research_brief",
+            "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+            "report_period": "2026-03-31"
+          },
+          {
+            "type": "earnings_snapshot",
+            "tool": "provided_research_brief",
+            "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+            "report_period": "2026-03-31"
+          },
+          {
+            "type": "news",
+            "tool": "provided_research_brief",
+            "articles": [
+              "https://www.reuters.com/markets/deals/jpmorgan-reportedly-looking-offload-about-4b-private-equity-linked-loans-2026-05-22/",
+              "https://www.reuters.com/business/finance/jpmorgan-rolling-out-ai-tools-global-investment-banking-2026-05-21/",
+              "https://www.marketbeat.com/instant-alerts/jpmorgan-chase-co-jpm-shares-updated-2026-05-23/",
+              "https://www.marketbeat.com/instant-alerts/filing-pinnacle-financial-partners-says-jpmorgan-chase-co-jpm-position-value-updated-2026-05-23/",
+              "https://finance.yahoo.com/news/jpmorgan-chase-wealth-products-2026-05-23.html"
+            ]
+          },
+          {
+            "type": "research_artifact",
+            "tool": "file_reference",
+            "path": "research/big_bank_night_sweeps/2026-05-28T20-00-00-07-00_JPM_night-sweep.json",
+            "note": "Companion append-only ledger reference."
+          }
+        ],
+        "data_quality_notes": [
+          "The night sweep uses the latest available morning quote snapshot because no later intraday quote was surfaced in the brief.",
+          "EV and TTM ratio fields are point-in-time estimates from the supplied brief and should be treated as approximate.",
+          "News coverage is a mix of strategic, financing, and ownership-style items, so sentiment should be treated as moderate-confidence rather than high-confidence."
+        ]
       }
-    }
+    ]
   }
 ]

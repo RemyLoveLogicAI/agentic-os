@@ -1,0 +1,469 @@
+{
+  "timestamp": "2026-05-28T20:00:00-07:00",
+  "task": "Big Bank triple-sweep research task",
+  "sweep_type": "night sweep",
+  "target": {
+    "ticker": "JPM",
+    "company_name": "JPMorgan Chase & Co.",
+    "cik": "0000019617",
+    "sector": "Financials",
+    "industry": "Banks",
+    "exchange": "NYSE",
+    "country": "US",
+    "database_path": "ops/ledgers/big_bank_database.json"
+  },
+  "peers": ["BAC", "C", "WFC", "GS", "MS"],
+  "market_price_vol_liquidity": {
+    "as_of": "2026-05-23T15:00:00Z",
+    "latest_price": 306.34,
+    "market_cap_usd": 826200000000,
+    "price_to_earnings_ttm": 14.9,
+    "price_to_book_ttm": 2.28,
+    "price_to_sales_ttm": 4.53,
+    "enterprise_value_usd": 571900000000,
+    "enterprise_value_to_ebitda": 6.64,
+    "return_on_equity_ttm": 0.157,
+    "return_on_assets_ttm": 0.0129,
+    "net_margin_ttm": 0.31,
+    "book_value_per_share": 134.025
+  },
+  "fundamentals": {
+    "latest_quarter": {
+      "report_period": "2026-03-31",
+      "fiscal_period": "2026-Q1",
+      "filing_type": "10-Q",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+      "revenue_usd": 49836000000,
+      "revenue_yoy_growth": 0.1,
+      "net_income_usd": 16494000000,
+      "net_income_yoy_growth": 0.1264,
+      "operating_income_usd": 14172000000,
+      "operating_income_yoy_growth": 0.3468,
+      "earnings_per_share_usd": 5.94,
+      "earnings_per_share_yoy_growth": 0.172,
+      "operating_margin": 0.284,
+      "net_margin": 0.331,
+      "shareholders_equity_usd": 364038000000,
+      "total_assets_usd": 4900475000000,
+      "total_liabilities_usd": 4536437000000,
+      "guidance": null,
+      "guidance_note": "No explicit guidance field was present in the supplied research brief."
+    },
+    "latest_snapshot_metrics": {
+      "price_to_sales_ttm": 4.53,
+      "enterprise_value_usd": 571900000000,
+      "enterprise_value_to_ebitda": 6.64,
+      "return_on_equity_ttm": 0.157,
+      "return_on_assets_ttm": 0.0129,
+      "revenue_growth_ttm": 0.0248,
+      "earnings_growth_ttm": 0.033,
+      "earnings_per_share_ttm": 20.02,
+      "book_value_per_share": 134.025,
+      "net_margin_ttm": 0.31,
+      "snapshot_note": "TTM ratios were taken from the latest public sweep inputs and rounded for the stored research artifact."
+    },
+    "signals": [
+      {
+        "type": "growth",
+        "headline": "Q1 revenue rose 10.0% YoY to $49.84B",
+        "confidence": 0.98
+      },
+      {
+        "type": "profitability",
+        "headline": "Q1 EPS rose 17.2% YoY and net income rose 12.6% YoY",
+        "confidence": 0.98
+      },
+      {
+        "type": "margin",
+        "headline": "Operating margin remained strong at 28.4% in the latest quarter",
+        "confidence": 0.97
+      },
+      {
+        "type": "return",
+        "headline": "TTM ROE remains near 15.7% with ROA around 1.3%",
+        "confidence": 0.96
+      }
+    ]
+  },
+  "news": {
+    "overall_sentiment": "mixed_to_positive",
+    "overall_impact": "medium",
+    "items": [
+      {
+        "headline": "JPMorgan reportedly looking to offload about $4B of private-equity-linked loans",
+        "source": "Reuters",
+        "date": "2026-05-22",
+        "url": "https://www.reuters.com/markets/deals/jpmorgan-reportedly-looking-offload-about-4b-private-equity-linked-loans-2026-05-22/",
+        "sentiment": "slightly_negative",
+        "impact": "medium",
+        "reason": "Balance-sheet optimization is notable, but it is still a financing / portfolio-management headline rather than a core operating catalyst."
+      },
+      {
+        "headline": "JPMorgan rolling out AI tools in global investment banking",
+        "source": "Reuters",
+        "date": "2026-05-21",
+        "url": "https://www.reuters.com/business/finance/jpmorgan-rolling-out-ai-tools-global-investment-banking-2026-05-21/",
+        "sentiment": "slightly_positive",
+        "impact": "medium",
+        "reason": "Supports the productivity and franchise-expansion narrative in investment banking."
+      },
+      {
+        "headline": "JPMorgan Chase & Co. $JPM Shares Up Updated at MarketBeat",
+        "source": "MarketBeat",
+        "date": "2026-05-23",
+        "url": "https://www.marketbeat.com/instant-alerts/jpmorgan-chase-co-jpm-shares-updated-2026-05-23/",
+        "sentiment": "slightly_positive",
+        "impact": "low",
+        "reason": "Ownership / positioning headline with limited direct operating signal."
+      },
+      {
+        "headline": "JPMorgan Chase & Co. $JPM Position Value Updated by Pinnacle Financial Partners",
+        "source": "MarketBeat",
+        "date": "2026-05-23",
+        "url": "https://www.marketbeat.com/instant-alerts/filing-pinnacle-financial-partners-says-jpmorgan-chase-co-jpm-position-value-updated-2026-05-23/",
+        "sentiment": "slightly_positive",
+        "impact": "low",
+        "reason": "Another ownership-style update; useful context but low immediate fundamental impact."
+      },
+      {
+        "headline": "JPMorgan Chase wealth products draw fresh attention",
+        "source": "Yahoo Finance",
+        "date": "2026-05-23",
+        "url": "https://finance.yahoo.com/news/jpmorgan-chase-wealth-products-2026-05-23.html",
+        "sentiment": "positive",
+        "impact": "medium",
+        "reason": "Highlights the breadth of the wealth-management franchise and broader customer engagement."
+      }
+    ],
+    "news_quality_note": "The feed is a mix of strategic, financing, and ownership-style items. Signal quality is useful but still lower than primary filings and earnings releases."
+  },
+  "summary": "JPMorgan Chase remains a high-quality large-bank franchise with strong Q1 2026 growth, solid profitability, and a constructive short-term tape. The latest snapshot shows the stock around $306.34, market cap near $826.2B, and valuation in the mid-teens on TTM earnings. News flow is mixed to positive, led by AI deployment, wealth-management coverage, and selective balance-sheet optimization, while the main risks remain rates, credit, and regulatory sensitivity.",
+  "assessment": {
+    "market_tone": "neutral_to_slightly_positive",
+    "fundamental_tone": "positive",
+    "news_tone": "mixed_to_positive",
+    "confidence": 0.89
+  },
+  "sources": [
+    {
+      "type": "company_facts",
+      "tool": "provided_research_brief",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000019617",
+      "note": "Company identity and SEC reference."
+    },
+    {
+      "type": "current_price_snapshot",
+      "tool": "provided_research_brief",
+      "as_of": "2026-05-23T15:00:00Z",
+      "note": "Latest available price snapshot used for the night sweep artifact."
+    },
+    {
+      "type": "financial_metrics_snapshot",
+      "tool": "provided_research_brief",
+      "report_period": "2026-03-31",
+      "note": "Latest valuation and TTM ratio snapshot."
+    },
+    {
+      "type": "quarterly_financials",
+      "tool": "provided_research_brief",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+      "report_period": "2026-03-31"
+    },
+    {
+      "type": "earnings_snapshot",
+      "tool": "provided_research_brief",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+      "report_period": "2026-03-31"
+    },
+    {
+      "type": "historical_prices",
+      "tool": "provided_research_brief",
+      "range": "2026-05-13 to 2026-05-23",
+      "note": "Used to infer volatility and liquidity context."
+    },
+    {
+      "type": "news",
+      "tool": "provided_research_brief",
+      "articles": [
+        "https://www.reuters.com/markets/deals/jpmorgan-reportedly-looking-offload-about-4b-private-equity-linked-loans-2026-05-22/",
+        "https://www.reuters.com/business/finance/jpmorgan-rolling-out-ai-tools-global-investment-banking-2026-05-21/",
+        "https://www.marketbeat.com/instant-alerts/jpmorgan-chase-co-jpm-shares-updated-2026-05-23/",
+        "https://www.marketbeat.com/instant-alerts/filing-pinnacle-financial-partners-says-jpmorgan-chase-co-jpm-position-value-updated-2026-05-23/",
+        "https://finance.yahoo.com/news/jpmorgan-chase-wealth-products-2026-05-23.html"
+      ]
+    }
+  ],
+  "data_quality_notes": [
+    "The night sweep uses the latest available morning price snapshot because no later intraday quote was surfaced in the brief.",
+    "EV and TTM ratio fields were estimated from the supplied market snapshot and rounded for storage.",
+    "News coverage is a mix of strategic and filing-style items, so sentiment should be treated as moderate-confidence rather than high-confidence."
+  ],
+  "raw_research_payload": {
+    "ticker": "JPM",
+    "company_name": "JPMorgan Chase & Co.",
+    "timestamp": "2026-05-29T03:00:00Z",
+    "company_facts": {
+      "cik": "0000019617",
+      "sector": "Financials",
+      "industry": "Banks",
+      "exchange": "NYSE",
+      "sec_filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000019617"
+    },
+    "market_price_snapshot": {
+      "current_price": 306.34,
+      "snapshot_time": "2026-05-23T15:00:00Z",
+      "market_cap": 826200000000,
+      "day_change": 1.44,
+      "day_change_percent": 1.44,
+      "recent_price_performance": {
+        "latest_close": 306.34,
+        "as_of_close_date": "2026-05-23",
+        "sample_window_low": 295.7,
+        "sample_window_high": 306.34
+      }
+    },
+    "key_financial_metrics": {
+      "latest_ttm_metrics": {
+        "report_period": "2026-03-31",
+        "fiscal_period": "2026-Q1",
+        "accession_number": "0001628280-26-029344",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+        "market_cap": 826200000000,
+        "enterprise_value": 571900000000,
+        "pe_ratio": 14.9,
+        "pb_ratio": 2.28,
+        "ps_ratio": 4.53,
+        "roe": 0.157,
+        "roa": 0.0129,
+        "revenue_growth": 0.0248,
+        "earnings_growth": 0.033,
+        "net_margin": 0.31,
+        "eps_ttm": 20.02,
+        "book_value_per_share": 134.025,
+        "fcf_per_share": -39.652
+      },
+      "latest_quarter_actuals": {
+        "report_period": "2026-03-31",
+        "fiscal_period": "2026-Q1",
+        "revenue": 49836000000,
+        "revenue_yoy_pct": 10.0,
+        "eps": 5.94,
+        "eps_yoy_pct": 17.2,
+        "net_income": 16494000000,
+        "net_margin": 0.331,
+        "operating_income": 14172000000,
+        "operating_margin": 0.284,
+        "total_assets": 4900475000000,
+        "shareholders_equity": 364038000000,
+        "cash_and_equivalents": 312142000000,
+        "total_debt": 68048000000,
+        "filing_type": "10-Q",
+        "filing_date": "2026-05-01",
+        "accession_number": "0001628280-26-029344",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm"
+      }
+    },
+    "earnings_highlights": {
+      "latest_report": {
+        "period": "2026-Q1",
+        "filing_date": "2026-05-01",
+        "after_hours": true,
+        "revenue": 49836000000,
+        "eps": 5.94,
+        "revenue_yoy_pct": 10.0,
+        "eps_yoy_pct": 17.2,
+        "net_income": 16494000000,
+        "operating_margin_bps_yoy": 521.3,
+        "signals": [
+          "EPS rose 17.2% y/y",
+          "Operating margin expanded 521 bps y/y",
+          "Revenue grew 10.0% y/y"
+        ]
+      },
+      "analyst_estimates": {
+        "quarterly": [
+          {
+            "fiscal_period": "2026-06-30",
+            "revenue": 47916067816,
+            "eps": 5.38
+          },
+          {
+            "fiscal_period": "2026-09-30",
+            "revenue": 48350475260,
+            "eps": 5.48
+          },
+          {
+            "fiscal_period": "2026-12-31",
+            "revenue": 48662375210,
+            "eps": 5.52
+          },
+          {
+            "fiscal_period": "2027-03-31",
+            "revenue": 49999909780,
+            "eps": 5.73
+          }
+        ],
+        "annual": [
+          {
+            "fiscal_period": "2026-12-31",
+            "revenue": 194757409590,
+            "eps": 22.38
+          },
+          {
+            "fiscal_period": "2027-12-31",
+            "revenue": 201919567568,
+            "eps": 23.51
+          },
+          {
+            "fiscal_period": "2028-12-31",
+            "revenue": 212152341008,
+            "eps": 26.22
+          }
+        ],
+        "vs_latest_actual": {
+          "latest_actual_q1_eps": 5.94,
+          "next_known_quarter_eps_estimate": 5.38,
+          "fy2025_eps_actual": 20.05,
+          "fy2026_eps_estimate": 22.38,
+          "fy2026_eps_growth_vs_fy2025_pct": 11.6
+        }
+      }
+    },
+    "macro_context": {
+      "interest_rates_snapshot_date": "2026-04-01",
+      "rates": {
+        "FED": 3.625,
+        "ECB": 2.0,
+        "BOE": 3.75,
+        "BOC": 2.25
+      },
+      "assessment": "Policy rates remain moderately elevated versus pre-tightening norms, which is broadly supportive for bank net interest income, though further easing could gradually normalize spreads and pressure margin expansion."
+    },
+    "insider_trading_activity": {
+      "recent_trades": [
+        {
+          "name": "Marianne Lake",
+          "title": "CEO CCB",
+          "transaction_date": "2026-05-15",
+          "type": "Open market sale",
+          "shares": 6427,
+          "price": 298.3555,
+          "value": 1917530.8
+        },
+        {
+          "name": "Mary E. Erdoes",
+          "title": "CEO Asset & Wealth Management",
+          "transaction_date": "2026-05-15",
+          "type": "Open market sale",
+          "shares": 6648,
+          "price": 298.3644,
+          "value": 1983526.53
+        },
+        {
+          "name": "Lori A Beer",
+          "title": "Chief Information Officer",
+          "transaction_date": "2026-05-15",
+          "type": "Open market sale",
+          "shares": 3165,
+          "price": 300.05,
+          "value": 949658.25
+        }
+      ],
+      "readthrough": "Recent insider activity is net negative to neutral, with clustered executive sales around the low-$300s and no fresh insider buy signal in the latest available feed."
+    },
+    "institutional_ownership_and_changes": {
+      "status": "partial",
+      "note": "Ownership-style headlines were available, but direct institutional holdings changes were not fully surfaced in the research brief.",
+      "recent_ownership_related_news": [
+        {
+          "date": "2026-05-23T09:14:42Z",
+          "title": "JPMorgan Chase & Co. $JPM Position Value Updated by Pinnacle Financial Partners",
+          "url": "https://www.marketbeat.com/instant-alerts/filing-pinnacle-financial-partners-says-jpmorgan-chase-co-jpm-position-value-updated-2026-05-23/",
+          "sentiment": "slightly_positive"
+        },
+        {
+          "date": "2026-05-23T08:01:00Z",
+          "title": "JPMorgan Chase & Co. $JPM Shares Up Updated at MarketBeat",
+          "url": "https://www.marketbeat.com/instant-alerts/jpmorgan-chase-co-jpm-shares-updated-2026-05-23/",
+          "sentiment": "slightly_positive"
+        },
+        {
+          "date": "2026-05-22T14:12:00Z",
+          "title": "Reuters: JPMorgan reportedly looking to offload about $4B of private-equity-linked loans",
+          "url": "https://www.reuters.com/markets/deals/jpmorgan-reportedly-looking-offload-about-4b-private-equity-linked-loans-2026-05-22/",
+          "sentiment": "slightly_negative"
+        }
+      ]
+    },
+    "latest_company_news": {
+      "overall_sentiment": "mixed_to_positive",
+      "items": [
+        {
+          "date": "2026-05-23T15:06:00Z",
+          "source": "Yahoo Finance",
+          "title": "JPMorgan Chase wealth products draw fresh attention",
+          "url": "https://finance.yahoo.com/news/jpmorgan-chase-wealth-products-2026-05-23.html",
+          "sentiment": "positive"
+        },
+        {
+          "date": "2026-05-23T14:41:00Z",
+          "source": "MarketBeat",
+          "title": "JPMorgan Chase & Co. $JPM Position Value Updated by Pinnacle Financial Partners",
+          "url": "https://www.marketbeat.com/instant-alerts/filing-pinnacle-financial-partners-says-jpmorgan-chase-co-jpm-position-value-updated-2026-05-23/",
+          "sentiment": "positive"
+        },
+        {
+          "date": "2026-05-23T13:55:00Z",
+          "source": "MarketBeat",
+          "title": "JPMorgan Chase & Co. $JPM Shares Up Updated at MarketBeat",
+          "url": "https://www.marketbeat.com/instant-alerts/jpmorgan-chase-co-jpm-shares-updated-2026-05-23/",
+          "sentiment": "positive"
+        },
+        {
+          "date": "2026-05-22T14:12:00Z",
+          "source": "Reuters",
+          "title": "JPMorgan reportedly looking to offload about $4B of private-equity-linked loans",
+          "url": "https://www.reuters.com/markets/deals/jpmorgan-reportedly-looking-offload-about-4b-private-equity-linked-loans-2026-05-22/",
+          "sentiment": "slightly_negative"
+        },
+        {
+          "date": "2026-05-21T18:47:00Z",
+          "source": "Reuters",
+          "title": "JPMorgan rolling out AI tools in global investment banking",
+          "url": "https://www.reuters.com/business/finance/jpmorgan-rolling-out-ai-tools-global-investment-banking-2026-05-21/",
+          "sentiment": "slightly_positive"
+        }
+      ]
+    },
+    "outlook_assessment": {
+      "summary": "JPMorgan remains fundamentally strong: Q1 2026 delivered double-digit revenue growth, strong EPS growth, and stable profitability near a 16% ROE profile. The stock has recovered into the low-$300s, valuation is still reasonable for a quality megabank, and the latest news flow is constructive-to-mixed rather than alarming. The main near-term debate is still rates, credit costs, and how aggressively management uses the balance sheet. ",
+      "stance": "neutral_to_slightly_positive",
+      "bull_points": [
+        "Q1 2026 revenue and EPS both grew at a healthy double-digit pace year over year.",
+        "TTM ROE remains around 15.7%, indicating strong capital efficiency for a money-center bank.",
+        "Valuation remains moderate relative to the franchise quality and scale.",
+        "Analyst earnings estimates continue to point to mid-20s EPS in the out years."
+      ],
+      "bear_points": [
+        "Recent headline flow still includes low-level financing and ownership noise.",
+        "Bank fundamentals remain sensitive to credit quality, rates, and macro conditions.",
+        "Further easing in policy rates could compress spreads over time."
+      ]
+    },
+    "sources": {
+      "company_facts": "provided_research_brief",
+      "financial_statements": [
+        "provided_research_brief"
+      ],
+      "earnings": "provided_research_brief",
+      "analyst_estimates": "provided_research_brief",
+      "price": [
+        "provided_research_brief"
+      ],
+      "filings": "provided_research_brief",
+      "macro": "provided_research_brief",
+      "insider_trades": "provided_research_brief",
+      "news": "provided_research_brief"
+    }
+  }
+}
