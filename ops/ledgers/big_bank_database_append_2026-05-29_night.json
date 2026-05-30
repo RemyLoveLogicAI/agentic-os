@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-05-29T20:00:00-07:00",
+  "task": "Big Bank triple-sweep research task",
+  "sweep_type": "night sweep",
+  "entries": [
+    {
+      "timestamp": "2026-05-29T20:00:00-07:00",
+      "task": "Big Bank triple-sweep research task",
+      "sweep_type": "night sweep",
+      "run_label": "night_sweep",
+      "entry_type": "universe_snapshot",
+      "universe": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
+      "results": {
+        "target": {"ticker": "JPM", "company_name": "JPMorgan Chase & Co.", "cik": "0000019617"},
+        "as_of_utc": "2026-05-29T20:35:00Z",
+        "stock_price_snapshot": {"price": 299.08, "day_change": 2.35, "day_change_percent": 0.79, "market_cap": 806655413039, "currency": "USD"},
+        "valuation_multiples_current": {"price_to_earnings": 14.58, "price_to_book": 2.23, "price_to_sales": 4.42},
+        "profitability_current": {"roe": 0.1574, "roa": 0.0129},
+        "latest_quarter": {"fiscal_period": "2026-Q1", "report_period": "2026-03-31", "revenue_usd": 49836000000, "eps_usd": 5.94, "net_income_usd": 16494000000},
+        "news_summary": {"coverage_window": "2026-05-29", "overall_sentiment": "mixed_to_slightly_positive", "items": [
+          {"date": "2026-05-29", "source": "Seeking Alpha", "headline": "JPMorgan will fight CLARITY Act in current form, Jamie Dimon says"},
+          {"date": "2026-05-29", "source": "Stock Titan", "headline": "JPMorgan Chase offers 5.50% callable notes due May 29, 2041"},
+          {"date": "2026-05-29", "source": "Stock Titan", "headline": "JPMorgan Chase prices $2M callable notes, 5.25% coupon to 2038"}
+        ]},
+        "peers": [
+          {"ticker": "BAC", "price": 51.64, "day_change_percent": 1.71, "pe_ratio": 12.13, "pb_ratio": 1.22, "roe": 0.1050},
+          {"ticker": "C", "price": 125.7, "day_change_percent": null, "pe_ratio": 12.67, "pb_ratio": 1.02, "roe": 0.0835},
+          {"ticker": "WFC", "price": 77.53, "day_change_percent": null, "pe_ratio": 11.39, "pb_ratio": 1.33, "roe": 0.1190},
+          {"ticker": "GS", "price": 1024.48, "day_change_percent": null, "pe_ratio": 17.35, "pb_ratio": 2.46, "roe": 0.1481},
+          {"ticker": "MS", "price": 207.99, "day_change_percent": null, "pe_ratio": 18.18, "pb_ratio": 2.87, "roe": 0.1578}
+        ],
+        "universe_summary": {
+          "best_daily_performer": {"ticker": "BAC", "day_change_percent": 1.71},
+          "highest_roe_estimate": {"ticker": "MS", "roe": 0.1578},
+          "main_watch_items": [
+            "Interest-rate path / net interest income sensitivity",
+            "Credit quality / reserve build risk",
+            "Capital markets rebound (M&A, trading)",
+            "Regulatory / legislative risk",
+            "Capital return pace"
+          ],
+          "universe_takeaway": "All six posted constructive Q1 results; MS and JPM screen best on ROE; C screens cheapest on P/B; BAC was the strongest daily mover."
+        }
+      }
+    }
+  ]
+}
