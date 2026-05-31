@@ -17,7 +17,7 @@ Start here to understand the system:
 3. `spec-pack/phase-0-build-plan.md` — current build focus (the proof slice)
 4. `spec-pack/repo-layout.md` — planned folder topology
 
-Diagrams live in `spec-pack/assets/` as PNG. Diagram source files use **D2 syntax** (`.d2` alongside `.png`).
+Diagrams live in `spec-pack/assets/` as PNG. The intended convention (per `CONTRIBUTING.md`) is to store D2 source files (`.d2`) alongside rendered PNGs, but no `.d2` sources exist yet.
 
 ## Nine-Layer Architecture
 
