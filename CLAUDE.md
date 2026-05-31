@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Repo Is
 
-Agentic OS is a **spec-first, pre-implementation** repository. As of May 2026, it contains architecture specifications, research data, and operational ledgers — no runnable application code yet. The `.gitignore` anticipates a Node/Bun/Next.js stack, but no package.json or source directories exist yet. Phase 0 (the first shippable slice) is the active build focus.
+Agentic OS is a **spec-first, pre-implementation** repository. It contains architecture specifications, research data, and operational ledgers — no runnable application code yet (no `package.json`, no `apps/`, `services/`, or `packages/` directories). The `.gitignore` anticipates a Node/Bun/Next.js stack for when implementation begins. Phase 0 (the first shippable slice) is the active build focus.
 
-There are no build, lint, or test commands to run. When implementation begins, `spec-pack/repo-layout.md` defines the intended folder topology.
+There are no build, lint, or test commands to run. When implementation begins, `spec-pack/repo-layout.md` defines the intended folder topology (note: `spec-pack/` serves as the docs directory — that file refers to it as `docs/`, but the actual directory is `spec-pack/`).
 
 ## Canonical Reading Order
 
@@ -36,6 +36,25 @@ The system converts spoken intent into verified, auditable action through nine l
 | Ambient state and storytelling | Visible system health UX | glyphy pets, CYOA |
 
 The core data flow: `Voice → Command Router → Policy/Approval Gate → Execution Plane → Evidence Capture → Memory/Identity`
+
+### Component Name to Code Location
+
+Concept names used in the spec differ from planned folder names. Reference this table when implementing:
+
+| Concept Name | Planned Code Location |
+|---|---|
+| Spokenly MCP (voice clarification) | `services/spokenly-mcp-bridge/` |
+| Voice Orion (command parser) | `apps/voice-orion/` |
+| Command Palette | `apps/command-palette/` |
+| DLAM / R1 (desktop control) | `apps/desktop-control/` |
+| Operator Console | `apps/operator-console/` |
+| OpenClaw (orchestration) | `integrations/openclaw/` |
+| R.I.P. (canonical memory sync) | `services/rip-canon-sync/` |
+| Knowledge Graph sync | `services/knowledge-graph-sync/` |
+| Aegis / Violet Covenant (policy) | `services/approval-gate/`, `packages/policy/` |
+| zopack | `skills/zopack/` |
+| glyphy pets | `skills/glyphy-pets/` |
+| Voice agent daemon | `skills/voice-agent-daemon/` |
 
 ## Governance Principles
 
