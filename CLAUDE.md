@@ -79,19 +79,19 @@ agentic-os/
 │       └── storage_migration.json  # Mac Mini → external SSD migration log
 └── research/           # Research sweep outputs
     ├── *.md            # Markdown sweep reports (named by date and sweep type)
-    ├── big_bank_database.json      # Mirror of ops/ledgers/big_bank_database.json
+    ├── big_bank_database.json      # Optional copy of ops/ledgers/big_bank_database.json (may lag)
     ├── night-sweeps/   # Night sweep markdown reports
     └── big_bank_night_sweeps/      # Night sweep JSON outputs
 ```
 
-The `ops/ledgers/big_bank_database.json` and `research/big_bank_database.json` are both used as landing targets for sweep appends — treat `ops/ledgers/` as the canonical ledger location.
+Always append sweep data to `ops/ledgers/big_bank_database.json` — that is the canonical ledger. `research/big_bank_database.json` is an optional manual copy that may lag behind and should not be used as an append target.
 
 ## Research Sweep Convention
 
 The repo runs recurring **Big Bank triple-sweep** research tasks on JPMorgan Chase (JPM) and its peers (BAC, WFC, C, GS, MS). Each sweep produces:
 
 - A **Markdown report** in `research/` named `YYYY-MM-DD-{sweep-type}-sweep.md`
-- A **JSON entry** appended to `ops/ledgers/big_bank_database.json` (and mirrored in `research/big_bank_database.json`)
+- A **JSON entry** appended to `ops/ledgers/big_bank_database.json`
 
 The JSON ledger is an append-only array. Each entry includes `timestamp`, `sweep_type`, and a `results` block with `target` (JPM) and `peers`. The "Big Bank" alias maps to JPM (JPMorgan Chase & Co., ticker `JPM`, CIK `0000019617`).
 
