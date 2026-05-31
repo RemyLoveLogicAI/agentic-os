@@ -53,14 +53,17 @@ def _db() -> sqlite3.Connection:
     return conn
 
 
-def save_signal(payload: dict, agent: str = "unknown") -> int:
+def save_signal(payload: dict, agent: str) -> int:
     """Persist a transient signal record to SQLite."""
+    run_id = payload.get("run_id")
+    if not run_id:
+        raise ValueError("payload.run_id is required for save_signal")
     conn = _db()
     try:
         ts = datetime.now(timezone.utc).isoformat()
         cur = conn.execute(
             "INSERT INTO signals (agent, run_id, payload, ts) VALUES (?, ?, ?, ?)",
-            (agent, payload.get("run_id", ""), json.dumps(payload), ts),
+            (agent, run_id, json.dumps(payload), ts),
         )
         conn.commit()
         return cur.lastrowid
@@ -70,35 +73,37 @@ def save_signal(payload: dict, agent: str = "unknown") -> int:
 
 def save_artifact(agent: str, payload: dict) -> int:
     """Persist a durable artifact to SQLite and a Markdown file in knowledge/."""
-    conn = _db()
-    try:
-        ts = datetime.now(timezone.utc).isoformat()
-        cur = conn.execute(
-            "INSERT INTO artifacts (agent, run_id, payload, ts) VALUES (?, ?, ?, ?)",
-            (agent, payload.get("run_id", ""), json.dumps(payload), ts),
-        )
-        conn.commit()
-        lastrowid = cur.lastrowid
-    finally:
-        conn.close()
+    run_id = payload.get("run_id")
+    if not run_id:
+        raise ValueError("payload.run_id is required for save_artifact")
 
-    # Write Markdown snapshot to knowledge base
     ts = datetime.now(timezone.utc).isoformat()
-    fname = f"{payload.get('run_id', 'artifact')}.md"
-    kb_path = _knowledge_dir(agent) / fname
-    lines = [f"# Artifact: {payload.get('run_id', '')}", f"**Recorded:** {ts}", "", "```json"]
+    # Write Markdown file before DB commit so a file-write failure prevents commit
+    safe_name = run_id.replace("/", "_").replace("\\", "_")
+    kb_path = _knowledge_dir(agent) / f"{safe_name}.md"
+    lines = [f"# Artifact: {run_id}", f"**Recorded:** {ts}", "", "```json"]
     lines.append(json.dumps(payload, indent=2))
     lines.append("```")
     kb_path.write_text("\n".join(lines))
 
-    return lastrowid
+    conn = _db()
+    try:
+        cur = conn.execute(
+            "INSERT INTO artifacts (agent, run_id, payload, ts) VALUES (?, ?, ?, ?)",
+            (agent, run_id, json.dumps(payload), ts),
+        )
+        conn.commit()
+        return cur.lastrowid
+    finally:
+        conn.close()
 
 
 def load_knowledge(agent: str, key: str | None = None) -> str:
     """Load durable knowledge for an agent. key selects a specific .md file."""
     kd = _knowledge_dir(agent)
     if key:
-        candidates = list(kd.glob(f"{key}*.md"))
+        safe_key = key.replace("/", "_").replace("\\", "_")
+        candidates = sorted(kd.glob(f"{safe_key}*.md"), key=lambda p: p.stat().st_mtime)
         if candidates:
             return candidates[-1].read_text()
         return ""

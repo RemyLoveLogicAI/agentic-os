@@ -15,7 +15,7 @@ Each entry maps to a `VoltAgent/awesome-agent-skills` compatible server.
 |---|---|---|
 | Firecrawl | `firecrawl/firecrawl-build-interact` | Multi-step browser flows: login, scrape, paginate |
 | Browserbase | `browserbase/browser` | Remote isolated cloud browser; no local Chromium |
-| Playwright | `openai/playwright` | Navigation, form fill, data extraction |
+| Playwright | `playwright` (`@playwright/mcp`) | Navigation, form fill, data extraction |
 
 ## Distribution
 

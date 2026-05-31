@@ -35,7 +35,7 @@ Raw notes:
 """
 
 
-def compact_session(agent: str, run_id: str) -> str | None:
+async def compact_session(agent: str, run_id: str) -> str | None:
     """Compact runtime notes for agent/run_id into a knowledge artifact."""
     runtime_dir = MEMORY_ROOT / agent / "runtime"
     knowledge_dir = MEMORY_ROOT / agent / "knowledge"
@@ -44,17 +44,20 @@ def compact_session(agent: str, run_id: str) -> str | None:
 
     runtime_files = sorted(runtime_dir.glob(f"{run_id}*.md"))
     if not runtime_files:
-        # Nothing to compact — write a minimal marker
         marker = knowledge_dir / f"{run_id}-compact.md"
         marker.write_text(f"## Session {run_id} Compact\n\n- No runtime notes recorded.\n")
-        return None
+        _prune_runtime(runtime_dir)
+        return str(marker)
 
     raw_notes = "\n\n---\n\n".join(f.read_text() for f in runtime_files)
 
     model_name = os.environ.get("COMPACTION_MODEL", "claude-haiku-4-5-20251001")
     llm = ChatAnthropic(model=model_name, temperature=0, max_tokens=600)
-    response = llm.invoke([HumanMessage(content=COMPACTION_PROMPT.format(run_id=run_id, raw_notes=raw_notes[:8000]))])
-    summary = response.content
+    try:
+        response = await llm.ainvoke([HumanMessage(content=COMPACTION_PROMPT.format(run_id=run_id, raw_notes=raw_notes[:8000]))])
+        summary = response.content if isinstance(response.content, str) else str(response.content)
+    except Exception as exc:
+        summary = f"## Session {run_id} Compact\n\n- Compaction failed: {type(exc).__name__}"
 
     compact_path = knowledge_dir / f"{run_id}-compact.md"
     compact_path.write_text(summary)
@@ -73,7 +76,7 @@ def write_runtime_note(agent: str, run_id: str, content: str):
         f.write(f"\n\n<!-- {ts} -->\n{content}")
 
 
-def _prune_runtime(runtime_dir: Path):
+def _prune_runtime(runtime_dir: Path) -> None:
     """Delete runtime files older than RUNTIME_TTL_DAYS."""
     cutoff = datetime.now(timezone.utc) - timedelta(days=RUNTIME_TTL_DAYS)
     for f in runtime_dir.glob("*.md"):

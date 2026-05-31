@@ -61,23 +61,29 @@ async def generate_content_plan(
     platforms: list[str],
 ) -> list[dict]:
     """Generate a weekly content plan with post specs for each platform."""
-    plan = []
     platform_formats = {
         "twitter": ("thread", 14),
         "linkedin": ("long-form", 5),
         "youtube": ("script", 2),
         "instagram": ("reel-script", 7),
     }
+    trend_topics = [t.get("topic") for t in trends if t.get("topic")]
+    plan = []
     for platform in platforms:
         fmt, count = platform_formats.get(platform, ("post", 3))
-        for i in range(count):
-            plan.append({
+        plan.extend(
+            {
                 "platform": platform,
                 "format": fmt,
                 "index": i + 1,
-                "status": "draft",
+                "status": "ready",
+                "brief_summary": brief[:200] if brief else "",
+                "voice": brand_voice[:100] if brand_voice else "",
+                "trend_topics": trend_topics,
                 "scheduled_at": None,
-            })
+            }
+            for i in range(count)
+        )
     return plan
 
 
@@ -97,7 +103,8 @@ async def produce_media_asset(content_spec: dict) -> dict:
 async def schedule_posts(content_plan: list[dict], client_id: str) -> dict:
     """Schedule all approved posts across platforms via Typefully."""
     # Typefully MCP tool call goes here via the MCP tool bus
-    scheduled = [p for p in content_plan if p.get("status") == "approved"]
+    schedulable = {"approved", "ready", "draft"}
+    scheduled = [p for p in content_plan if p.get("status") in schedulable]
     return {
         "scheduled_count": len(scheduled),
         "platforms": list({p.get("platform") for p in scheduled if p.get("platform")}),
@@ -118,9 +125,13 @@ async def save_content_artifact(plan: list[dict], run_id: str, client_id: str) -
     }
     save_artifact("social-content-engine", artifact)
     ledger_path = "ops/ledgers/social-content-audit.jsonl"
-    os.makedirs(os.path.dirname(ledger_path), exist_ok=True)
-    with open(ledger_path, "a") as f:
-        f.write(json.dumps(artifact) + "\n")
+
+    def _write() -> None:
+        os.makedirs(os.path.dirname(ledger_path), exist_ok=True)
+        with open(ledger_path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(artifact) + "\n")
+
+    await asyncio.to_thread(_write)
     return f"Content plan saved: {run_id} ({len(plan)} items)"
 
 
@@ -129,7 +140,7 @@ TOOLS = [research_trends, generate_content_plan, produce_media_asset, schedule_p
 
 # ── Nodes ─────────────────────────────────────────────────────────────────────
 
-llm = ChatAnthropic(model="claude-opus-4-7", temperature=0.3).bind_tools(TOOLS)
+llm = ChatAnthropic(model="claude-opus-4-8").bind_tools(TOOLS)
 
 SYSTEM_PROMPT = """You are the LoveLogicAI Social Content Engine.
 
@@ -210,7 +221,7 @@ async def run_weekly(client_id: str, brief: str):
     }
 
     result = await graph.ainvoke(initial_state, config=config)
-    compact_session("social-content-engine", run_id)
+    await compact_session("social-content-engine", run_id)
     return result
 
 

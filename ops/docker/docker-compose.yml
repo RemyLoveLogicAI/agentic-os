@@ -9,7 +9,7 @@ x-agent-base: &agent-base
     context: ../..
     dockerfile: ops/docker/Dockerfile.agent
   restart: always
-  environment:
+  environment: &env-base
     ANTHROPIC_API_KEY: "${ANTHROPIC_API_KEY}"
     CHECKPOINT_BACKEND: "${CHECKPOINT_BACKEND:-sqlite}"
     CHECKPOINT_TABLE: "${CHECKPOINT_TABLE:-lovelogic-checkpoints}"
@@ -38,14 +38,14 @@ services:
     <<: *agent-base
     container_name: lovelogic-trend-arbitrage
     environment:
-      <<: *agent-base
+      <<: *env-base
       MUSASHI_API_URL: "${MUSASHI_API_URL}"
       MUSASHI_API_KEY: "${MUSASHI_API_KEY}"
       AGENT: "trend-arbitrage"
     command: >
       sh -c "
-        echo '*/2 * * * * cd /app && python -m agents.trend-arbitrage.agent >> /app/ops/ledgers/trend-arbitrage.log 2>&1' | crontab - &&
-        crond -f
+        echo '*/2 * * * * cd /app && /usr/local/bin/python -m agents.trend-arbitrage.agent >> /app/ops/ledgers/trend-arbitrage.log 2>&1' | crontab - &&
+        cron -f
       "
     labels:
       lovelogic.agent: "trend-arbitrage"
@@ -56,14 +56,14 @@ services:
     <<: *agent-base
     container_name: lovelogic-social-content
     environment:
-      <<: *agent-base
+      <<: *env-base
       CLIENT_ID: "${CLIENT_ID:-lovelogicai}"
       CONTENT_BRIEF: "${CONTENT_BRIEF:-Focus on AI agent infrastructure and the agentic-os launch.}"
       AGENT: "social-content-engine"
     command: >
       sh -c "
-        echo '0 8 * * 1 cd /app && python -m agents.social-content-engine.agent >> /app/ops/ledgers/social-content.log 2>&1' | crontab - &&
-        crond -f
+        echo '0 8 * * 1 cd /app && /usr/local/bin/python -m agents.social-content-engine.agent >> /app/ops/ledgers/social-content.log 2>&1' | crontab - &&
+        cron -f
       "
     labels:
       lovelogic.agent: "social-content-engine"
@@ -74,19 +74,17 @@ services:
     <<: *agent-base
     container_name: lovelogic-micro-saas-factory
     environment:
-      <<: *agent-base
+      <<: *env-base
       CLOUDFLARE_ACCOUNT_ID: "${CLOUDFLARE_ACCOUNT_ID}"
       CLOUDFLARE_API_TOKEN: "${CLOUDFLARE_API_TOKEN}"
       PRODUCT_IDEA: "${PRODUCT_IDEA:-}"
       AGENT: "micro-saas-factory"
     command: >
-      sh -c "
-        if [ -n \"$$PRODUCT_IDEA\" ]; then
-          cd /app && python -m agents.micro-saas-factory.agent
-        else
-          echo 'No PRODUCT_IDEA set — factory is idle. Set PRODUCT_IDEA and restart.' && sleep infinity
-        fi
-      "
+      sh -c "if [ -n \"$$PRODUCT_IDEA\" ]; then
+        cd /app && /usr/local/bin/python -m agents.micro-saas-factory.agent;
+      else
+        echo 'No PRODUCT_IDEA set — factory is idle. Set PRODUCT_IDEA and restart.' && sleep infinity;
+      fi"
     labels:
       lovelogic.agent: "micro-saas-factory"
       lovelogic.trigger: "manual"

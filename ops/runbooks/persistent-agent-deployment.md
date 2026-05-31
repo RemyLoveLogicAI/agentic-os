@@ -50,14 +50,18 @@ pip install langgraph-cli
 langgraph deploy --config langgraph.json
 ```
 
-Set a 7-day TTL on checkpoint records in DynamoDB to control storage costs:
+Install the DynamoDB backend and configure it:
+
+```bash
+pip install langgraph-checkpoint-aws
+```
 
 ```python
-from langgraph.checkpoint.dynamodb import DynamoDBSaver
+from langgraph_checkpoint_aws import DynamoDBSaver
 
 checkpointer = DynamoDBSaver(
     table_name="lovelogic-checkpoints",
-    ttl_seconds=7 * 24 * 60 * 60,
+    region_name="us-east-1",
 )
 ```
 
@@ -81,8 +85,9 @@ The `compact_session()` function is called automatically at the end of each agen
 To manually trigger compaction for a stale workspace:
 
 ```python
+import asyncio
 from packages.memory.compaction import compact_session
-compact_session("trend-arbitrage", "run-20260512T000000")
+asyncio.run(compact_session("trend-arbitrage", "run-20260512T000000"))
 ```
 
 Runtime files older than `RUNTIME_TTL_DAYS` (default: 7) are pruned automatically.
@@ -109,4 +114,4 @@ result = await graph.ainvoke(new_message, config=config)
 | Social Content Engine | `ops/ledgers/social-content-audit.jsonl` |
 | Micro-SaaS Factory | `ops/ledgers/micro-saas-factory-audit.jsonl` |
 
-Each line is a newline-delimited JSON artifact written before any publish or deploy action.
+Each line is a newline-delimited JSON artifact written before any publish action. For the Micro-SaaS Factory, the ledger entry is written after the Cloudflare deploy but before the Product Hunt launch post.

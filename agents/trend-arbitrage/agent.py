@@ -79,7 +79,9 @@ async def publish_signal_thread(opportunities: list[dict]) -> dict:
     if not opportunities:
         return {"published": False, "reason": "no_opportunities"}
 
-    top = opportunities[:3]
+    top = [o for o in opportunities if o.get("urgency", 0) >= 7][:3]
+    if not top:
+        return {"published": False, "reason": "no_high_urgency_opportunities"}
     thread_lines = ["🧠 AI Arbitrage Signal — " + datetime.now(timezone.utc).strftime("%b %d %H:%M UTC"), ""]
     for i, opp in enumerate(top, 1):
         thread_lines.append(
@@ -103,9 +105,13 @@ async def log_evidence(signal: dict, run_id: str) -> str:
     }
     save_signal(artifact, agent="trend-arbitrage")
     ledger_path = "ops/ledgers/trend-arbitrage-audit.jsonl"
-    os.makedirs(os.path.dirname(ledger_path), exist_ok=True)
-    with open(ledger_path, "a") as f:
-        f.write(json.dumps(artifact) + "\n")
+
+    def _write() -> None:
+        os.makedirs(os.path.dirname(ledger_path), exist_ok=True)
+        with open(ledger_path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(artifact) + "\n")
+
+    await asyncio.to_thread(_write)
     return f"Evidence logged: {run_id}"
 
 
@@ -114,7 +120,7 @@ TOOLS = [fetch_musashi_feed, detect_arbitrage_spreads, publish_signal_thread, lo
 
 # ── Nodes ─────────────────────────────────────────────────────────────────────
 
-llm = ChatAnthropic(model="claude-opus-4-7", temperature=0).bind_tools(TOOLS)
+llm = ChatAnthropic(model="claude-opus-4-8").bind_tools(TOOLS)
 
 SYSTEM_PROMPT = """You are the LoveLogicAI Trend Arbitrage Agent.
 
@@ -183,7 +189,7 @@ async def run_once(thread_id: str = "trend-arbitrage-main"):
     result = await graph.ainvoke(initial_state, config=config)
 
     # Compact session memory after each run
-    compact_session("trend-arbitrage", run_id)
+    await compact_session("trend-arbitrage", run_id)
 
     return result
 

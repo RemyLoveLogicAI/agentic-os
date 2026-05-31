@@ -20,9 +20,17 @@ RUN pip install --no-cache-dir \
 COPY . .
 
 # Make packages importable
-RUN pip install --no-cache-dir -e . 2>/dev/null || true
+RUN pip install --no-cache-dir -e .
 
-# Pre-create state directories
-RUN mkdir -p state memory/workspace ops/ledgers
+# Create non-root user and grant ownership of runtime dirs
+RUN groupadd --gid 1001 agentuser && \
+    useradd --uid 1001 --gid 1001 --no-create-home agentuser && \
+    mkdir -p state memory/workspace ops/ledgers && \
+    chown -R agentuser:agentuser /app
 
-CMD ["python", "--version"]
+USER agentuser
+
+HEALTHCHECK --interval=30s --timeout=10s --retries=3 \
+    CMD pgrep cron > /dev/null || exit 1
+
+CMD ["sh", "-c", "echo 'No command override — start via docker-compose.' && exit 1"]
