@@ -1,639 +1,321 @@
 {
-  "timestamp": "2026-05-31T08:00:00-07:00",
-  "task": "Big Bank triple-sweep research task",
-  "sweep_type": "morning sweep",
-  "run_label": "morning_sweep",
+  "timestamp": "2026-05-31T12:00:00-07:00",
+  "task": "Big Bank noon sweep",
+  "sweep_type": "noon",
+  "run_label": "Big Bank triple-sweep",
   "entries": [
     {
       "timestamp": "2026-05-31T08:00:00-07:00",
-      "task": "Big Bank triple-sweep research task",
+      "task": "Big Bank morning sweep",
       "sweep_type": "morning sweep",
       "run_label": "morning_sweep",
       "entry_type": "universe_snapshot",
       "universe": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
       "results": {
-        "market_snapshot": [
-          {
-            "ticker": "JPM",
-            "current_price": 296.74,
-            "price_time": "2026-05-30T14:54:21Z",
-            "change_1d_abs": -2.57,
-            "change_1d_pct": -0.86,
-            "change_5d_abs": -9.64,
-            "change_5d_pct": -3.15,
-            "reference_closes": {
-              "prev_close": 299.31,
-              "five_day_close": 306.38
-            }
-          },
-          {
-            "ticker": "BAC",
-            "current_price": 51.21,
-            "price_time": "2026-05-30T14:55:22Z",
-            "change_1d_abs": -0.39,
-            "change_1d_pct": -0.76,
-            "change_5d_abs": -0.59,
-            "change_5d_pct": -1.14,
-            "reference_closes": {
-              "prev_close": 51.6,
-              "five_day_close": 51.8
-            }
-          },
-          {
-            "ticker": "C",
-            "current_price": 124.69,
-            "price_time": "2026-05-30T14:55:58Z",
-            "change_1d_abs": -1.21,
-            "change_1d_pct": -0.96,
-            "change_5d_abs": -0.4,
-            "change_5d_pct": -0.32,
-            "reference_closes": {
-              "prev_close": 125.9,
-              "five_day_close": 125.09
-            }
-          },
-          {
-            "ticker": "WFC",
-            "current_price": 76.66,
-            "price_time": "2026-05-30T14:54:48Z",
-            "change_1d_abs": -0.88,
-            "change_1d_pct": -1.14,
-            "change_5d_abs": 0.26,
-            "change_5d_pct": 0.34,
-            "reference_closes": {
-              "prev_close": 77.54,
-              "five_day_close": 76.4
-            }
-          },
-          {
-            "ticker": "GS",
-            "current_price": 1020.94,
-            "price_time": "2026-05-30T14:53:51Z",
-            "change_1d_abs": -4.62,
-            "change_1d_pct": -0.45,
-            "change_5d_abs": 24.21,
-            "change_5d_pct": 2.43,
-            "reference_closes": {
-              "prev_close": 1025.56,
-              "five_day_close": 996.73
-            }
-          },
-          {
-            "ticker": "MS",
-            "current_price": 203.8,
-            "price_time": "2026-05-30T14:54:56Z",
-            "change_1d_abs": -4.2,
-            "change_1d_pct": -2.02,
-            "change_5d_abs": 2.77,
-            "change_5d_pct": 1.38,
-            "reference_closes": {
-              "prev_close": 208,
-              "five_day_close": 201.03
-            }
+        "summary": "Morning snapshot captured JPM at $296.74 (-0.86%), BAC at $51.21 (-0.76%), C at $124.69 (-0.96%), WFC at $76.66 (-1.14%), GS at $1,020.94 (-0.45%), and MS at $203.80 (-2.02%). JPM market cap in the morning snapshot was $806.7B, with the rest of the peer set ranging from BAC $366.5B to C $214.4B."
+      }
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00-07:00",
+      "task": "Big Bank noon sweep",
+      "sweep_type": "noon",
+      "run_label": "Big Bank triple-sweep",
+      "entry_type": "universe_snapshot",
+      "universe": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
+      "results": {
+        "identity_resolution": {
+          "mapped_symbol": "JPM",
+          "company_name": "JPMorgan Chase & Co.",
+          "cik": "0000019617",
+          "confidence": "high",
+          "market_cap_cross_check_usd_b": {
+            "JPM": 806.7,
+            "BAC": 366.5,
+            "MS": 328.1,
+            "GS": 302.3,
+            "WFC": 237.3,
+            "C": 214.4
           }
-        ],
-        "fundamentals_snapshot": [
-          {
-            "ticker": "JPM",
-            "market_cap": 806655413039,
-            "valuation": {
-              "pe_ratio": 14.58,
-              "pb_ratio": 2.23
-            },
-            "profitability": {
-              "roe": 0.1574,
-              "roa": 0.0129,
-              "net_margin": 0.3127
-            },
-            "growth": {
-              "revenue_growth": 0.0175,
-              "earnings_growth": 0.0022,
-              "eps_growth": -0.0028
-            },
-            "latest_quarter": {
-              "period": "2026-Q1",
-              "filing_date": "2026-05-01",
-              "revenue": 49836000000,
-              "revenue_yoy_pct": 9.99,
-              "eps": 5.94,
-              "eps_yoy_pct": 17.16,
-              "net_income": 16494000000,
-              "net_income_yoy_pct": 12.64,
-              "highlights": [
-                "Revenue up 10.0% YoY to $49.8B",
-                "EPS up 17.2% YoY to $5.94",
-                "Net income up 12.6% YoY to $16.5B",
-                "Operating margin expanded 521 bps YoY"
-              ]
-            }
+        },
+        "market_snapshot": {
+          "source_timestamp": "2026-05-30T14:54:21Z",
+          "last_price": 296.74,
+          "day_change_abs": 0.01,
+          "day_change_pct": 0.00,
+          "latest_market_cap_reference_usd_b": 793.36
+        },
+        "fundamentals": {
+          "ttm": {
+            "report_period": "2026-03-31",
+            "accession": "0001628280-26-029344",
+            "filing_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026029344/jpm-20260331.htm",
+            "pe_ratio": 13.795,
+            "pb_ratio": 2.179,
+            "ps_ratio": 4.243,
+            "ev_ebitda": 16.891,
+            "ev_revenue": 9.171,
+            "roe_pct": 15.9,
+            "roa_pct": 1.2,
+            "net_margin_pct": 30.8,
+            "revenue_growth_pct": 2.48,
+            "earnings_growth_pct": 3.29,
+            "debt_to_equity": 12.461,
+            "debt_to_assets_pct": 25.17,
+            "eps": 21.324,
+            "book_value_per_share": 134.025,
+            "free_cash_flow_per_share": -39.652,
+            "payout_ratio_pct": 27.7
           },
-          {
-            "ticker": "BAC",
-            "market_cap": 366467941218,
-            "valuation": {
-              "pe_ratio": 12.13,
-              "pb_ratio": 1.22
-            },
-            "profitability": {
-              "roe": 0.105,
-              "roa": 0.009,
-              "net_margin": 0.2814
-            },
-            "growth": {
-              "revenue_growth": -0.008,
-              "earnings_growth": 0.0346,
-              "eps_growth": 0.0714
-            },
-            "latest_quarter": {
-              "period": "2026-Q1",
-              "filing_date": "2026-05-01",
-              "revenue": 30272000000,
-              "revenue_yoy_pct": 10.62,
-              "eps": 1.11,
-              "eps_yoy_pct": 23.33,
-              "net_income": 8584000000,
-              "net_income_yoy_pct": 16.06,
-              "highlights": [
-                "EPS beat estimate by 11.0%",
-                "Revenue beat estimate by 1.29%",
-                "Revenue up 10.6% YoY to $30.3B",
-                "EPS up 23.3% YoY to $1.11",
-                "Net income up 16.1% YoY to $8.6B"
-              ]
-            }
-          },
-          {
-            "ticker": "C",
-            "market_cap": 214391023244,
-            "valuation": {
-              "pe_ratio": 12.67,
-              "pb_ratio": 1.02
-            },
-            "profitability": {
-              "roe": 0.0835,
-              "roa": 0.0063,
-              "net_margin": 0.1958
-            },
-            "growth": {
-              "revenue_growth": 0.0559,
-              "earnings_growth": 0.2317,
-              "eps_growth": 0.299
-            },
-            "latest_quarter": {
-              "period": "2026-Q1",
-              "filing_date": "2026-05-07",
-              "revenue": 24633000000,
-              "revenue_yoy_pct": 14.06,
-              "eps": 3.06,
-              "eps_yoy_pct": 56.12,
-              "net_income": 5785000000,
-              "net_income_yoy_pct": 42.35,
-              "highlights": [
-                "EPS beat estimate by 15.9%",
-                "Revenue beat estimate by 4.04%",
-                "Revenue up 14.1% YoY to $24.6B",
-                "EPS up 56.1% YoY to $3.06",
-                "Net income up 42.4% YoY to $5.8B",
-                "FY2026 return on tangible common equity guidance reaffirmed at 10%–11%"
-              ]
-            }
-          },
-          {
-            "ticker": "WFC",
-            "market_cap": 237256491470,
-            "valuation": {
-              "pe_ratio": 11.39,
-              "pb_ratio": 1.33
-            },
-            "profitability": {
-              "roe": 0.119,
-              "roa": 0.0096,
-              "net_margin": 0.2532
-            },
-            "growth": {
-              "revenue_growth": 0.0018,
-              "earnings_growth": -0.0051,
-              "eps_growth": 0.0347
-            },
-            "latest_quarter": {
-              "period": "2026-Q1",
-              "filing_date": "2026-04-29",
-              "revenue": 21446000000,
-              "revenue_yoy_pct": 6.44,
-              "eps": 1.6,
-              "eps_yoy_pct": 15.11,
-              "net_income": 5253000000,
-              "net_income_yoy_pct": 7.34,
-              "highlights": [
-                "EPS beat estimate by 1.27%",
-                "Revenue missed estimate by 1.11%",
-                "Revenue up 6.4% YoY to $21.4B",
-                "EPS up 15.1% YoY to $1.60",
-                "Net income up 7.3% YoY to $5.3B",
-                "Operating margin contracted 364 bps YoY"
-              ]
-            }
-          },
-          {
-            "ticker": "GS",
-            "market_cap": 302329505189,
-            "valuation": {
-              "pe_ratio": 17.35,
-              "pb_ratio": 2.46
-            },
-            "profitability": {
-              "roe": 0.1481,
-              "roa": 0.0088,
-              "net_margin": 0.2931
-            },
-            "growth": {
-              "revenue_growth": 0.0647,
-              "earnings_growth": 0.059,
-              "eps_growth": 0.092
-            },
-            "latest_quarter": {
-              "period": "2026-Q1",
-              "filing_date": "2026-05-01",
-              "revenue": 17227000000,
-              "revenue_yoy_pct": 14.37,
-              "eps": 17.55,
-              "eps_yoy_pct": 24.29,
-              "net_income": 5630000000,
-              "net_income_yoy_pct": 18.83,
-              "highlights": [
-                "EPS beat estimate by 7.6%",
-                "Revenue beat estimate by 1.68%",
-                "Revenue up 14.4% YoY to $17.2B",
-                "EPS up 24.3% YoY to $17.55",
-                "Net income up 18.8% YoY to $5.6B",
-                "Dividend guidance initiated for Q2 2026 at $4.50/share"
-              ]
-            }
-          },
-          {
-            "ticker": "MS",
-            "market_cap": 328059469088,
-            "valuation": {
-              "pe_ratio": 18.18,
-              "pb_ratio": 2.87
-            },
-            "profitability": {
-              "roe": 0.1578,
-              "roa": 0.0114,
-              "net_margin": 0.2459
-            },
-            "growth": {
-              "revenue_growth": 0.0381,
-              "earnings_growth": 0.0694,
-              "eps_growth": 0.0802
-            },
-            "latest_quarter": {
-              "period": "2026-Q1",
-              "filing_date": "2026-05-05",
-              "revenue": 20580000000,
-              "revenue_yoy_pct": 16.02,
-              "eps": 3.43,
-              "eps_yoy_pct": 31.92,
-              "net_income": 5638000000,
-              "net_income_yoy_pct": 30.66,
-              "highlights": [
-                "EPS beat estimate by 12.5%",
-                "Revenue beat estimate by 3.91%",
-                "Revenue up 16.0% YoY to $20.6B",
-                "EPS up 31.9% YoY to $3.43",
-                "Net income up 30.7% YoY to $5.6B",
-                "Operating margin expanded 1,943 bps YoY"
-              ]
-            }
+          "annual_2025": {
+            "report_period": "2025-12-31",
+            "accession": "0001628280-26-008131",
+            "filing_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm",
+            "market_cap_usd_b": 877.17,
+            "pe_ratio": 15.753,
+            "pb_ratio": 2.42,
+            "roe_pct": 15.6,
+            "net_margin_pct": 30.5,
+            "revenue_growth_pct": 2.75,
+            "eps": 20.454,
+            "book_value_per_share": 130.538
           }
-        ],
-        "news_highlights": [
-          {
-            "ticker": "JPM",
-            "sentiment": "positive",
-            "items": [
-              {
-                "type": "news",
-                "title": "JPMorgan (JPM): The Best Undervalued Financial Stock to Buy Now",
-                "source": "Yahoo Finance",
-                "date": "2026-05-31T09:44:54+00:00",
-                "sentiment": "positive",
-                "reliability": "medium",
-                "relevance": "medium"
-              },
-              {
-                "type": "news",
-                "title": "JPMorgan Chase & Co. stock holdings increased by Global Retirement Partners LLC",
-                "source": "MarketBeat",
-                "date": "2026-05-31T07:34:54+00:00",
-                "sentiment": "slightly positive",
-                "reliability": "low",
-                "relevance": "low"
-              }
-            ]
+        },
+        "earnings_snapshot": {
+          "filing_type": "10-Q",
+          "report_period": "2026-03-31",
+          "filed_at": "2026-05-01T16:18:43-04:00",
+          "accession": "0001628280-26-029344",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026029344/jpm-20260331.htm",
+          "highlights": {
+            "revenue_usd_b": 49.836,
+            "revenue_yoy_pct": 9.99,
+            "eps": 5.94,
+            "eps_yoy_pct": 17.16,
+            "gross_profit_usd_b": 47.329,
+            "operating_income_usd_b": 14.172,
+            "net_income_usd_b": 16.494,
+            "gross_margin_pct": 94.97,
+            "operating_margin_pct": 28.44,
+            "net_margin_pct": 33.10,
+            "cash_and_equivalents_usd_b": 312.142,
+            "total_assets_usd_t": 4.900,
+            "total_liabilities_usd_t": 4.536,
+            "shareholders_equity_usd_b": 364.038,
+            "total_debt_usd_b": 68.048
           },
-          {
-            "ticker": "BAC",
-            "sentiment": "positive",
-            "items": [
-              {
-                "type": "news",
-                "title": "Is Bank of America (BAC) the Best Undervalued Financial Stock to Buy Now?",
-                "source": "Yahoo Finance",
-                "date": "2026-05-31T09:43:48+00:00",
-                "sentiment": "positive",
-                "reliability": "medium",
-                "relevance": "medium"
-              },
-              {
-                "type": "news",
-                "title": "Bank of America Corporation stock holdings increased by Crake Asset Management LLP",
-                "source": "MarketBeat",
-                "date": "2026-05-31T08:53:26+00:00",
-                "sentiment": "slightly positive",
-                "reliability": "low",
-                "relevance": "low"
-              }
-            ]
-          },
-          {
-            "ticker": "C",
-            "sentiment": "positive",
-            "items": [
-              {
-                "type": "earnings",
-                "title": "Citi Q1 2026 earnings release",
-                "source": "SEC 10-Q / 8-K",
-                "date": "2026-05-07T16:50:22-04:00",
-                "sentiment": "positive",
-                "reliability": "high",
-                "relevance": "high",
-                "summary": "EPS beat by 15.9%, revenue beat by 4.0%, net income up 42.4% YoY, and FY2026 ROTCE guidance reaffirmed at 10%–11%."
-              }
-            ],
-            "note": "No company-specific news articles were returned by the news feed."
-          },
-          {
-            "ticker": "WFC",
-            "sentiment": "mixed",
-            "items": [
-              {
-                "type": "earnings",
-                "title": "Wells Fargo Q1 2026 earnings release",
-                "source": "SEC 10-Q / 8-K",
-                "date": "2026-04-29T17:05:34-04:00",
-                "sentiment": "mixed",
-                "reliability": "high",
-                "relevance": "high",
-                "summary": "EPS beat by 1.3%, but revenue missed by 1.1%; revenue up 6.4% YoY while operating margin contracted."
-              }
-            ],
-            "note": "No company-specific news articles were returned by the news feed."
-          },
-          {
-            "ticker": "GS",
-            "sentiment": "neutral_to_positive",
-            "items": [
-              {
-                "type": "news",
-                "title": "Norges Bank Invests $2.52 Billion in The Goldman Sachs Group, Inc.",
-                "source": "MarketBeat",
-                "date": "2026-05-30T10:53:16+00:00",
-                "sentiment": "slightly positive",
-                "reliability": "low",
-                "relevance": "low"
-              },
-              {
-                "type": "news",
-                "title": "Nomura Asset Management Co. Ltd. boosts stock position in Goldman Sachs",
-                "source": "MarketBeat",
-                "date": "2026-05-31T10:50:29+00:00",
-                "sentiment": "slightly positive",
-                "reliability": "low",
-                "relevance": "low"
-              }
-            ]
-          },
-          {
-            "ticker": "MS",
-            "sentiment": "positive",
-            "items": [
-              {
-                "type": "earnings",
-                "title": "Morgan Stanley Q1 2026 earnings release",
-                "source": "SEC 10-Q / 8-K",
-                "date": "2026-05-05T16:15:42-04:00",
-                "sentiment": "positive",
-                "reliability": "high",
-                "relevance": "high",
-                "summary": "EPS beat by 12.5%, revenue beat by 3.9%, revenue up 16.0% YoY, and EPS up 31.9% YoY."
-              }
-            ],
-            "note": "No company-specific news articles were returned by the news feed."
-          }
-        ],
+          "signals": [
+            "margin expansion +521 bps YoY",
+            "EPS increase +17.2% YoY"
+          ]
+        },
+        "news": {
+          "overall_sentiment": "positive",
+          "items": [
+            {
+              "title": "Vestmark Advisory Solutions Inc. Acquires 56,454 Shares of JPMorgan Chase & Co.",
+              "source": "MarketBeat",
+              "date": "2026-05-31T10:56:26Z",
+              "url": "https://www.marketbeat.com/instant-alerts/filing-vestmark-advisory-solutions-inc-acquires-56454-shares-of-jpmorgan-chase-co-jpm-2026-05-31/",
+              "sentiment": "positive"
+            },
+            {
+              "title": "JPMorgan (JPM): The Best Undervalued Financial Stock to Buy Now",
+              "source": "Yahoo Finance",
+              "date": "2026-05-31T09:44:54Z",
+              "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-jpm-best-undervalued-financial-094454022.html",
+              "sentiment": "positive"
+            },
+            {
+              "title": "JPMorgan Chase & Co. $JPM Stock Holdings Increased by Global Retirement Partners LLC",
+              "source": "MarketBeat",
+              "date": "2026-05-31T07:34:54Z",
+              "url": "https://www.marketbeat.com/instant-alerts/filing-jpmorgan-chase-co-jpm-stock-holdings-increased-by-global-retirement-partners-llc-2026-05-31/",
+              "sentiment": "positive"
+            },
+            {
+              "title": "Trajan Wealth LLC Boosts Holdings in JPMorgan Chase & Co.",
+              "source": "MarketBeat",
+              "date": "2026-05-30T11:07:19Z",
+              "url": "https://www.marketbeat.com/instant-alerts/filing-trajan-wealth-llc-boosts-holdings-in-jpmorgan-chase-co-jpm-2026-05-30/",
+              "sentiment": "positive"
+            },
+            {
+              "title": "Rathbones Group PLC Cuts Holdings in JPMorgan Chase & Co.",
+              "source": "MarketBeat",
+              "date": "2026-05-30T09:08:42Z",
+              "url": "https://www.marketbeat.com/instant-alerts/filing-rathbones-group-plc-cuts-holdings-in-jpmorgan-chase-co-jpm-2026-05-30/",
+              "sentiment": "negative_cautious"
+            }
+          ]
+        },
+        "insider_trading": {
+          "recent_trade_count_returned": 10,
+          "pattern": "net_selling_heavy",
+          "notable_transactions": [
+            {
+              "name": "Stacey Friedman",
+              "title": "General Counsel",
+              "transaction_type": "Open market sale",
+              "date": "2026-05-20",
+              "shares": 5468,
+              "price": 300.2662,
+              "value_usd": 1640000
+            },
+            {
+              "name": "Marianne Lake",
+              "title": "CEO CCB",
+              "transaction_type": "Open market sale",
+              "date": "2026-05-15",
+              "shares": 6427,
+              "price": 298.3555,
+              "value_usd": 1920000
+            },
+            {
+              "name": "Mary E. Erdoes",
+              "title": "Executive",
+              "transaction_type": "Open market sale",
+              "date": "2026-05-15",
+              "shares": 6648,
+              "price": 298.3644,
+              "value_usd": 1980000
+            },
+            {
+              "name": "Lori A. Beer",
+              "title": "Executive",
+              "transaction_type": "Open market sale",
+              "date": "2026-05-15",
+              "shares": 3165,
+              "price": 300.05,
+              "value_usd": 949700
+            },
+            {
+              "name": "Douglas B. Petno",
+              "title": "CEO of Commercial Banking",
+              "transaction_type": "Gift",
+              "date": "2026-05-14",
+              "shares": 135027,
+              "price": 0,
+              "value_usd": 0
+            },
+            {
+              "name": "Douglas B. Petno",
+              "title": "CEO of Commercial Banking",
+              "transaction_type": "Open market sale",
+              "date": "2026-05-15",
+              "shares": 5659,
+              "price": 300.05,
+              "value_usd": 1700000
+            },
+            {
+              "name": "Jennifer Piepszak",
+              "title": "Executive",
+              "transaction_type": "Open market sale",
+              "date": "2026-05-05",
+              "shares": 4919,
+              "price": 309.4201,
+              "value_usd": 1520000
+            },
+            {
+              "name": "Ashley Bacon",
+              "title": "Executive",
+              "transaction_type": "Open market sale",
+              "date": "2026-05-05",
+              "shares": 4070,
+              "price": 309.4242,
+              "value_usd": 1260000
+            },
+            {
+              "name": "Jeremy Barnum",
+              "title": "Executive",
+              "transaction_type": "Open market sale",
+              "date": "2026-05-05",
+              "shares": 3022,
+              "price": 309.4082,
+              "value_usd": 935000
+            }
+          ]
+        },
+        "institutional_ownership": {
+          "status": "unavailable",
+          "note": "Institutional ownership endpoint was unavailable or not verified for this run."
+        },
+        "sec_filings": {
+          "recent_filings": [
+            {
+              "filing_type": "10-Q",
+              "report_period": "2026-03-31",
+              "filed_date": "2026-05-01",
+              "accession": "0001628280-26-029344",
+              "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026029344/jpm-20260331.htm"
+            },
+            {
+              "filing_type": "10-K",
+              "report_period": "2025-12-31",
+              "filed_date": "2026-02-13",
+              "accession": "0001628280-26-008131",
+              "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm"
+            },
+            {
+              "filing_type": "8-K",
+              "report_period": "2026-05-27",
+              "filed_date": "2026-05-27",
+              "accession": "0001193125-26-242018",
+              "url": "https://www.sec.gov/Archives/edgar/data/19617/000119312526242018/d242018d8k.htm"
+            },
+            {
+              "filing_type": "8-K",
+              "report_period": "2026-05-19",
+              "filed_date": "2026-05-21",
+              "accession": "0000019617-26-000228",
+              "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961726000228/jpm-20260519.htm"
+            }
+          ],
+          "related_form_4_dates": ["2026-05-20", "2026-05-15", "2026-05-14", "2026-05-05"]
+        },
         "cross_universe_takeaways": [
-          "Q1 results were broadly constructive across the group: JPM, BAC, C, GS, and MS beat EPS expectations; WFC beat EPS but missed revenue.",
-          "Valuation dispersion is meaningful: C, BAC, and WFC trade near ~1.0x to 1.3x P/B, while JPM, GS, and MS command premium multiples around ~2.2x to 2.9x P/B.",
-          "C looks the cleanest value-plus-momentum setup: lowest P/B in the group, strong EPS growth, and reaffirmed 10%–11% ROTCE guidance.",
-          "JPM remains the quality anchor with strong profitability and premium franchise economics, though near-term price action has been softer.",
-          "GS and MS are the most capital-markets-sensitive names and delivered strong beats, but they also trade at richer valuations and show more volatility.",
-          "BAC and WFC screen as lower-multiple large-bank exposure to net interest income and credit trends, with BAC showing the cleaner recent earnings beat profile."
+          "JPM remains the scale-and-profitability anchor in the Big Bank group.",
+          "The market-cap cross-check still places JPM above BAC, MS, GS, WFC, and C on a raw size basis.",
+          "News tone is positive overall, but the insider tape remains selling-heavy and looks like normal executive disposal rather than a thesis break."
         ],
         "assessment": {
-          "overall": "constructive",
-          "summary": "The large-bank group remains fundamentally healthy. Earnings momentum is positive across the universe, but the best risk-adjusted value appears to be Citi, while JPM remains the highest-quality franchise. BAC and WFC offer cheaper P/B exposure, and GS/MS provide stronger market-linked upside at premium valuations.",
-          "risk_factors": [
-            "Fed rate-cut timing and pace could pressure net interest income and bank margins",
-            "Credit normalization and commercial real estate exposures remain a watchpoint",
-            "Capital markets volatility affects GS and MS more than the retail/commercial banks",
-            "Regulatory capital and liquidity requirements can cap capital return flexibility"
+          "overall": "mildly_positive",
+          "summary": "Bottom line: mildly positive news tone, strong margin snapshot, insider selling-heavy but likely normal executive disposal.",
+          "bull_points": [
+            "Q1 2026 revenue and EPS both grew at a healthy double-digit pace year over year.",
+            "ROE remains strong for a money-center bank and valuation is still reasonable versus franchise quality.",
+            "News flow is constructive with mostly positive ownership / undervaluation headlines."
           ],
-          "sector_view": "Large US banks are benefiting from a still-restrictive policy rate backdrop, but the path of future cuts is the key macro swing factor. Q1 results suggest earnings power is intact, with the main divergence now driven by valuation and business mix."
+          "bear_points": [
+            "Insider transactions are net selling-heavy and remain a short-term sentiment headwind.",
+            "Institutional ownership data was not verified from the endpoint.",
+            "Some news items are aggregation-style headlines and should be treated as lower signal."
+          ],
+          "confidence": 0.86
         },
-        "data_quality_notes": [
-          "Several current quote snapshots had null or inconsistent day_change fields; 1D moves were computed from the latest available historical close to the latest current price snapshot.",
-          "Historical price data available here ran through 2026-05-29 while current quote snapshots were from 2026-05-30 intraday; 5D changes were calculated using the 2026-05-22 close as the reference.",
-          "Company-news coverage was sparse for C, WFC, and MS; no news articles were returned for those tickers, so recent earnings were used as the primary fresh event.",
-          "BAC, JPM, and GS news results were dominated by ownership/holding-change headlines from aggregators, which are lower-signal than SEC filings and earnings releases.",
-          "Bank-specific ratios such as gross margin and operating margin from the metrics snapshot are model-generated and are less economically meaningful for depository institutions than P/E and P/B."
-        ],
         "sources": [
           {
-            "type": "current_stock_price",
-            "tickers": ["JPM", "BAC", "C", "WFC", "GS", "MS"]
+            "type": "provided_research_brief",
+            "note": "User-supplied noon sweep research findings for JPM / JPMorgan Chase & Co."
           },
           {
-            "type": "historical_stock_prices",
-            "tickers": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
-            "range": "2026-05-18 to 2026-05-31",
-            "used_for": ["1D change calculation", "5D change calculation"]
-          },
-          {
-            "type": "financial_metrics_snapshot",
-            "tickers": ["JPM", "BAC", "C", "WFC", "GS", "MS"]
-          },
-          {
-            "type": "earnings",
-            "tickers": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
-            "latest_filing_dates": {
-              "JPM": "2026-05-01",
-              "BAC": "2026-05-01",
-              "C": "2026-05-07",
-              "WFC": "2026-04-29",
-              "GS": "2026-05-01",
-              "MS": "2026-05-05"
-            }
-          },
-          {
-            "type": "company_news",
-            "ticker": "JPM",
-            "articles": [
-              "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-jpm-best-undervalued-financial-094454022.html",
-              "https://www.marketbeat.com/instant-alerts/filing-jpmorgan-chase-co-jpm-stock-holdings-increased-by-global-retirement-partners-llc-2026-05-31/",
-              "https://www.marketbeat.com/instant-alerts/filing-trajan-wealth-llc-boosts-holdings-in-jpmorgan-chase-co-jpm-2026-05-30/",
-              "https://www.marketbeat.com/instant-alerts/filing-rathbones-group-plc-cuts-holdings-in-jpmorgan-chase-co-jpm-2026-05-30/",
-              "https://www.gurufocus.com/news/8892292/jpmorgan-chase-co-jpm-shares-surge-09-what-gf-score-of-81-tells-investors"
-            ]
-          },
-          {
-            "type": "company_news",
-            "ticker": "BAC",
-            "articles": [
-              "https://www.marketbeat.com/instant-alerts/filing-hillsdale-investment-management-inc-grows-stake-in-bank-of-america-corporation-bac-2026-05-31/",
-              "https://finance.yahoo.com/markets/stocks/articles/bank-america-bac-best-undervalued-094348613.html",
-              "https://www.marketbeat.com/instant-alerts/filing-bank-of-america-corporation-bac-stock-holdings-increased-by-crake-asset-management-llp-2026-05-31/",
-              "https://seekingalpha.com/article/4910405-bank-of-america-stock-preferred-shares-high-quality-income-at-a-significant-discount-to-par",
-              "https://www.marketbeat.com/instant-alerts/filing-washington-trust-co-increases-stake-in-bank-of-america-corporation-bac-2026-05-30/"
-            ]
-          },
-          {
-            "type": "company_news",
-            "ticker": "GS",
-            "articles": [
-              "https://www.marketbeat.com/instant-alerts/filing-nomura-asset-management-co-ltd-boosts-stock-position-in-the-goldman-sachs-group-inc-gs-2026-05-31/",
-              "https://www.marketbeat.com/instant-alerts/filing-the-goldman-sachs-group-inc-gs-stake-cut-by-hillsdale-investment-management-inc-2026-05-31/",
-              "https://www.marketbeat.com/instant-alerts/filing-the-goldman-sachs-group-inc-gs-is-triglav-investments-doos-10th-largest-position-2026-05-30/",
-              "https://www.marketbeat.com/instant-alerts/filing-norges-bank-invests-252-billion-in-the-goldman-sachs-group-inc-gs-2026-05-30/",
-              "https://www.marketbeat.com/instant-alerts/filing-forsta-ap-fonden-increases-stock-holdings-in-the-goldman-sachs-group-inc-gs-2026-05-30/"
-            ]
-          },
-          {
-            "type": "company_news",
-            "tickers": ["C", "WFC", "MS"],
-            "result": "No news found in the company-news feed"
-          },
-          {
-            "type": "macro",
-            "source": "interest_rates_snapshot",
-            "as_of": "2026-04-01",
-            "fed_rate": 3.625,
-            "other_reference_rates": {
-              "ECB": 2,
-              "BOJ": 0.75,
-              "BOE": 3.75,
-              "BOC": 2.25
+            "type": "company_facts",
+            "cik": "0000019617",
+            "market_cap_cross_check": {
+              "JPM": 806.7,
+              "BAC": 366.5,
+              "MS": 328.1,
+              "GS": 302.3,
+              "WFC": 237.3,
+              "C": 214.4
             }
           }
-        ]
-      },
-      "summary": "JPM, BAC, C, GS, and MS all delivered positive Q1 earnings momentum, while WFC beat EPS but missed revenue. Citi stands out as the clearest value-plus-momentum setup, while JPM remains the quality anchor and GS/MS offer richer, more market-sensitive upside.",
-      "assessment": {
-        "overall": "constructive",
-        "summary": "The large-bank group remains fundamentally healthy. Earnings momentum is positive across the universe, but the best risk-adjusted value appears to be Citi, while JPM remains the highest-quality franchise. BAC and WFC offer cheaper P/B exposure, and GS/MS provide stronger market-linked upside at premium valuations.",
-        "risk_factors": [
-          "Fed rate-cut timing and pace could pressure net interest income and bank margins",
-          "Credit normalization and commercial real estate exposures remain a watchpoint",
-          "Capital markets volatility affects GS and MS more than the retail/commercial banks",
-          "Regulatory capital and liquidity requirements can cap capital return flexibility"
         ],
-        "sector_view": "Large US banks are benefiting from a still-restrictive policy rate backdrop, but the path of future cuts is the key macro swing factor. Q1 results suggest earnings power is intact, with the main divergence now driven by valuation and business mix."
-      },
-      "sources": [
-        {
-          "type": "current_stock_price",
-          "tickers": ["JPM", "BAC", "C", "WFC", "GS", "MS"]
-        },
-        {
-          "type": "historical_stock_prices",
-          "tickers": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
-          "range": "2026-05-18 to 2026-05-31",
-          "used_for": ["1D change calculation", "5D change calculation"]
-        },
-        {
-          "type": "financial_metrics_snapshot",
-          "tickers": ["JPM", "BAC", "C", "WFC", "GS", "MS"]
-        },
-        {
-          "type": "earnings",
-          "tickers": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
-          "latest_filing_dates": {
-            "JPM": "2026-05-01",
-            "BAC": "2026-05-01",
-            "C": "2026-05-07",
-            "WFC": "2026-04-29",
-            "GS": "2026-05-01",
-            "MS": "2026-05-05"
-          }
-        },
-        {
-          "type": "company_news",
-          "ticker": "JPM",
-          "articles": [
-            "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-jpm-best-undervalued-financial-094454022.html",
-            "https://www.marketbeat.com/instant-alerts/filing-jpmorgan-chase-co-jpm-stock-holdings-increased-by-global-retirement-partners-llc-2026-05-31/",
-            "https://www.marketbeat.com/instant-alerts/filing-trajan-wealth-llc-boosts-holdings-in-jpmorgan-chase-co-jpm-2026-05-30/",
-            "https://www.marketbeat.com/instant-alerts/filing-rathbones-group-plc-cuts-holdings-in-jpmorgan-chase-co-jpm-2026-05-30/",
-            "https://www.gurufocus.com/news/8892292/jpmorgan-chase-co-jpm-shares-surge-09-what-gf-score-of-81-tells-investors"
-          ]
-        },
-        {
-          "type": "company_news",
-          "ticker": "BAC",
-          "articles": [
-            "https://www.marketbeat.com/instant-alerts/filing-hillsdale-investment-management-inc-grows-stake-in-bank-of-america-corporation-bac-2026-05-31/",
-            "https://finance.yahoo.com/markets/stocks/articles/bank-america-bac-best-undervalued-094348613.html",
-            "https://www.marketbeat.com/instant-alerts/filing-bank-of-america-corporation-bac-stock-holdings-increased-by-crake-asset-management-llp-2026-05-31/",
-            "https://seekingalpha.com/article/4910405-bank-of-america-stock-preferred-shares-high-quality-income-at-a-significant-discount-to-par",
-            "https://www.marketbeat.com/instant-alerts/filing-washington-trust-co-increases-stake-in-bank-of-america-corporation-bac-2026-05-30/"
-          ]
-        },
-        {
-          "type": "company_news",
-          "ticker": "GS",
-          "articles": [
-            "https://www.marketbeat.com/instant-alerts/filing-nomura-asset-management-co-ltd-boosts-stock-position-in-the-goldman-sachs-group-inc-gs-2026-05-31/",
-            "https://www.marketbeat.com/instant-alerts/filing-the-goldman-sachs-group-inc-gs-stake-cut-by-hillsdale-investment-management-inc-2026-05-31/",
-            "https://www.marketbeat.com/instant-alerts/filing-the-goldman-sachs-group-inc-gs-is-triglav-investments-doos-10th-largest-position-2026-05-30/",
-            "https://www.marketbeat.com/instant-alerts/filing-norges-bank-invests-252-billion-in-the-goldman-sachs-group-inc-gs-2026-05-30/",
-            "https://www.marketbeat.com/instant-alerts/filing-forsta-ap-fonden-increases-stock-holdings-in-the-goldman-sachs-group-inc-gs-2026-05-30/"
-          ]
-        },
-        {
-          "type": "company_news",
-          "tickers": ["C", "WFC", "MS"],
-          "result": "No news found in the company-news feed"
-        },
-        {
-          "type": "macro",
-          "source": "interest_rates_snapshot",
-          "as_of": "2026-04-01",
-          "fed_rate": 3.625,
-          "other_reference_rates": {
-            "ECB": 2,
-            "BOJ": 0.75,
-            "BOE": 3.75,
-            "BOC": 2.25
-          }
-        }
-      ],
-      "data_quality_notes": [
-        "Several current quote snapshots had null or inconsistent day_change fields; 1D moves were computed from the latest available historical close to the latest current price snapshot.",
-        "Historical price data available here ran through 2026-05-29 while current quote snapshots were from 2026-05-30 intraday; 5D changes were calculated using the 2026-05-22 close as the reference.",
-        "Company-news coverage was sparse for C, WFC, and MS; no news articles were returned for those tickers, so recent earnings were used as the primary fresh event.",
-        "BAC, JPM, and GS news results were dominated by ownership/holding-change headlines from aggregators, which are lower-signal than SEC filings and earnings releases.",
-        "Bank-specific ratios such as gross margin and operating margin from the metrics snapshot are model-generated and are less economically meaningful for depository institutions than P/E and P/B."
-      ]
+        "data_quality_notes": [
+          "Institutional ownership was unavailable / not verified from the endpoint.",
+          "Several news items are aggregator or holdings headlines rather than primary corporate disclosures.",
+          "Debt/equity and debt/assets are reported exactly as provided in the research brief to preserve the source snapshot."
+        ]
+      }
     }
   ]
 }
