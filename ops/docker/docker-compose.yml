@@ -13,6 +13,7 @@ x-agent-base: &agent-base
     ANTHROPIC_API_KEY: "${ANTHROPIC_API_KEY}"
     CHECKPOINT_BACKEND: "${CHECKPOINT_BACKEND:-sqlite}"
     CHECKPOINT_TABLE: "${CHECKPOINT_TABLE:-lovelogic-checkpoints}"
+    COMPACTION_MODEL: "${COMPACTION_MODEL:-claude-haiku-4-5-20251001}"
     AWS_REGION: "${AWS_REGION:-us-east-1}"
     AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
     AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
@@ -37,16 +38,7 @@ services:
     <<: *agent-base
     container_name: lovelogic-trend-arbitrage
     environment:
-      ANTHROPIC_API_KEY: "${ANTHROPIC_API_KEY}"
-      CHECKPOINT_BACKEND: "${CHECKPOINT_BACKEND:-sqlite}"
-      CHECKPOINT_TABLE: "${CHECKPOINT_TABLE:-lovelogic-checkpoints}"
-      AWS_REGION: "${AWS_REGION:-us-east-1}"
-      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
-      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
-      DATABASE_URL: "${DATABASE_URL}"
-      MEMORY_ROOT: "/app/memory/workspace"
-      RUNTIME_DB: "/app/state/runtime.db"
-      RUNTIME_TTL_DAYS: "7"
+      <<: *agent-base
       MUSASHI_API_URL: "${MUSASHI_API_URL}"
       MUSASHI_API_KEY: "${MUSASHI_API_KEY}"
       AGENT: "trend-arbitrage"
@@ -64,16 +56,7 @@ services:
     <<: *agent-base
     container_name: lovelogic-social-content
     environment:
-      ANTHROPIC_API_KEY: "${ANTHROPIC_API_KEY}"
-      CHECKPOINT_BACKEND: "${CHECKPOINT_BACKEND:-sqlite}"
-      CHECKPOINT_TABLE: "${CHECKPOINT_TABLE:-lovelogic-checkpoints}"
-      AWS_REGION: "${AWS_REGION:-us-east-1}"
-      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
-      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
-      DATABASE_URL: "${DATABASE_URL}"
-      MEMORY_ROOT: "/app/memory/workspace"
-      RUNTIME_DB: "/app/state/runtime.db"
-      RUNTIME_TTL_DAYS: "7"
+      <<: *agent-base
       CLIENT_ID: "${CLIENT_ID:-lovelogicai}"
       CONTENT_BRIEF: "${CONTENT_BRIEF:-Focus on AI agent infrastructure and the agentic-os launch.}"
       AGENT: "social-content-engine"
@@ -91,16 +74,7 @@ services:
     <<: *agent-base
     container_name: lovelogic-micro-saas-factory
     environment:
-      ANTHROPIC_API_KEY: "${ANTHROPIC_API_KEY}"
-      CHECKPOINT_BACKEND: "${CHECKPOINT_BACKEND:-sqlite}"
-      CHECKPOINT_TABLE: "${CHECKPOINT_TABLE:-lovelogic-checkpoints}"
-      AWS_REGION: "${AWS_REGION:-us-east-1}"
-      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
-      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
-      DATABASE_URL: "${DATABASE_URL}"
-      MEMORY_ROOT: "/app/memory/workspace"
-      RUNTIME_DB: "/app/state/runtime.db"
-      RUNTIME_TTL_DAYS: "7"
+      <<: *agent-base
       CLOUDFLARE_ACCOUNT_ID: "${CLOUDFLARE_ACCOUNT_ID}"
       CLOUDFLARE_API_TOKEN: "${CLOUDFLARE_API_TOKEN}"
       PRODUCT_IDEA: "${PRODUCT_IDEA:-}"

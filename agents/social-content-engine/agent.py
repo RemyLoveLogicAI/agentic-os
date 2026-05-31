@@ -1,7 +1,7 @@
 """
 Social Content Engine — Skill Build #2
 Produces a full week of multi-platform content from a single brief.
-Persistent via LangGraph + DynamoDB checkpointer.
+Checkpoint backend is selected via CHECKPOINT_BACKEND env var (sqlite/dynamodb/postgres).
 """
 
 import asyncio
@@ -13,10 +13,10 @@ from typing import Annotated, Literal, TypedDict
 from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
 from langchain_core.tools import tool
-from langgraph.checkpoint.dynamodb import DynamoDBSaver
 from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
 
+from packages.memory.checkpoint import get_checkpointer
 from packages.memory.compaction import compact_session
 from packages.memory.state import load_knowledge, save_artifact
 
@@ -100,7 +100,7 @@ async def schedule_posts(content_plan: list[dict], client_id: str) -> dict:
     scheduled = [p for p in content_plan if p.get("status") == "approved"]
     return {
         "scheduled_count": len(scheduled),
-        "platforms": list({p["platform"] for p in scheduled}),
+        "platforms": list({p.get("platform") for p in scheduled if p.get("platform")}),
         "client_id": client_id,
         "scheduled_at": datetime.now(timezone.utc).isoformat(),
         "status": "mcp_call_required",
@@ -191,7 +191,7 @@ def build_graph(checkpointer):
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 async def run_weekly(client_id: str, brief: str):
-    checkpointer = DynamoDBSaver(table_name=os.environ.get("CHECKPOINT_TABLE", "lovelogic-checkpoints"))
+    checkpointer = get_checkpointer()
     graph = build_graph(checkpointer)
 
     run_id = f"content-{client_id}-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S')}"

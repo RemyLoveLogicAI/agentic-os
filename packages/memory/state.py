@@ -56,26 +56,34 @@ def _db() -> sqlite3.Connection:
 def save_signal(payload: dict, agent: str = "unknown") -> int:
     """Persist a transient signal record to SQLite."""
     conn = _db()
-    ts = datetime.now(timezone.utc).isoformat()
-    cur = conn.execute(
-        "INSERT INTO signals (agent, run_id, payload, ts) VALUES (?, ?, ?, ?)",
-        (agent, payload.get("run_id", ""), json.dumps(payload), ts),
-    )
-    conn.commit()
-    return cur.lastrowid
+    try:
+        ts = datetime.now(timezone.utc).isoformat()
+        cur = conn.execute(
+            "INSERT INTO signals (agent, run_id, payload, ts) VALUES (?, ?, ?, ?)",
+            (agent, payload.get("run_id", ""), json.dumps(payload), ts),
+        )
+        conn.commit()
+        return cur.lastrowid
+    finally:
+        conn.close()
 
 
 def save_artifact(agent: str, payload: dict) -> int:
     """Persist a durable artifact to SQLite and a Markdown file in knowledge/."""
     conn = _db()
-    ts = datetime.now(timezone.utc).isoformat()
-    cur = conn.execute(
-        "INSERT INTO artifacts (agent, run_id, payload, ts) VALUES (?, ?, ?, ?)",
-        (agent, payload.get("run_id", ""), json.dumps(payload), ts),
-    )
-    conn.commit()
+    try:
+        ts = datetime.now(timezone.utc).isoformat()
+        cur = conn.execute(
+            "INSERT INTO artifacts (agent, run_id, payload, ts) VALUES (?, ?, ?, ?)",
+            (agent, payload.get("run_id", ""), json.dumps(payload), ts),
+        )
+        conn.commit()
+        lastrowid = cur.lastrowid
+    finally:
+        conn.close()
 
     # Write Markdown snapshot to knowledge base
+    ts = datetime.now(timezone.utc).isoformat()
     fname = f"{payload.get('run_id', 'artifact')}.md"
     kb_path = _knowledge_dir(agent) / fname
     lines = [f"# Artifact: {payload.get('run_id', '')}", f"**Recorded:** {ts}", "", "```json"]
@@ -83,7 +91,7 @@ def save_artifact(agent: str, payload: dict) -> int:
     lines.append("```")
     kb_path.write_text("\n".join(lines))
 
-    return cur.lastrowid
+    return lastrowid
 
 
 def load_knowledge(agent: str, key: str | None = None) -> str:
@@ -109,8 +117,11 @@ def load_knowledge(agent: str, key: str | None = None) -> str:
 def list_recent_signals(agent: str, limit: int = 20) -> list[dict]:
     """Return the most recent signal records for an agent."""
     conn = _db()
-    rows = conn.execute(
-        "SELECT payload, ts FROM signals WHERE agent = ? ORDER BY id DESC LIMIT ?",
-        (agent, limit),
-    ).fetchall()
-    return [{"payload": json.loads(r[0]), "ts": r[1]} for r in rows]
+    try:
+        rows = conn.execute(
+            "SELECT payload, ts FROM signals WHERE agent = ? ORDER BY id DESC LIMIT ?",
+            (agent, limit),
+        ).fetchall()
+        return [{"payload": json.loads(r[0]), "ts": r[1]} for r in rows]
+    finally:
+        conn.close()

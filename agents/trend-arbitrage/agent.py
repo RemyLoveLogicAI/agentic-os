@@ -1,7 +1,7 @@
 """
 Trend Arbitrage Agent — Skill Build #1
 Monitors Musashi API every 2 min, surfaces prediction market spreads > 5%.
-Persistent via LangGraph + DynamoDB checkpointer.
+Checkpoint backend is selected via CHECKPOINT_BACKEND env var (sqlite/dynamodb/postgres).
 """
 
 import asyncio
@@ -14,10 +14,10 @@ import httpx
 from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
 from langchain_core.tools import tool
-from langgraph.checkpoint.dynamodb import DynamoDBSaver
 from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
 
+from packages.memory.checkpoint import get_checkpointer
 from packages.memory.compaction import compact_session
 from packages.memory.state import load_knowledge, save_signal
 
@@ -57,10 +57,15 @@ async def detect_arbitrage_spreads(signals: list[dict], min_spread_pct: float = 
     for sig in signals:
         spread = sig.get("spread_pct", 0)
         if spread >= min_spread_pct:
+            market = sig.get("market")
+            platform_a = sig.get("platform_a")
+            platform_b = sig.get("platform_b")
+            if not (market and platform_a and platform_b):
+                continue
             opportunities.append({
-                "market": sig["market"],
-                "platform_a": sig["platform_a"],
-                "platform_b": sig["platform_b"],
+                "market": market,
+                "platform_a": platform_a,
+                "platform_b": platform_b,
                 "spread_pct": spread,
                 "urgency": sig.get("urgency_score", 0),
                 "detected_at": datetime.now(timezone.utc).isoformat(),
@@ -96,7 +101,7 @@ async def log_evidence(signal: dict, run_id: str) -> str:
         "ts": datetime.now(timezone.utc).isoformat(),
         "signal": signal,
     }
-    save_signal(artifact)
+    save_signal(artifact, agent="trend-arbitrage")
     ledger_path = "ops/ledgers/trend-arbitrage-audit.jsonl"
     os.makedirs(os.path.dirname(ledger_path), exist_ok=True)
     with open(ledger_path, "a") as f:
@@ -160,7 +165,7 @@ def build_graph(checkpointer):
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 async def run_once(thread_id: str = "trend-arbitrage-main"):
-    checkpointer = DynamoDBSaver(table_name=os.environ.get("CHECKPOINT_TABLE", "lovelogic-checkpoints"))
+    checkpointer = get_checkpointer()
     graph = build_graph(checkpointer)
 
     run_id = f"run-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S')}"

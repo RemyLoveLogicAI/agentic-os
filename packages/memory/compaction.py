@@ -51,7 +51,8 @@ def compact_session(agent: str, run_id: str) -> str | None:
 
     raw_notes = "\n\n---\n\n".join(f.read_text() for f in runtime_files)
 
-    llm = ChatAnthropic(model="claude-haiku-4-5-20251001", temperature=0, max_tokens=600)
+    model_name = os.environ.get("COMPACTION_MODEL", "claude-haiku-4-5-20251001")
+    llm = ChatAnthropic(model=model_name, temperature=0, max_tokens=600)
     response = llm.invoke([HumanMessage(content=COMPACTION_PROMPT.format(run_id=run_id, raw_notes=raw_notes[:8000]))])
     summary = response.content
 

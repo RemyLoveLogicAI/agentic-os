@@ -1,7 +1,7 @@
 """
 Micro-SaaS Factory — Skill Build #3
 Builds, deploys, and monetizes web utilities as USDC-gated tools on Cloudflare Workers.
-Persistent via LangGraph + DynamoDB checkpointer.
+Checkpoint backend is selected via CHECKPOINT_BACKEND env var (sqlite/dynamodb/postgres).
 """
 
 import asyncio
@@ -14,10 +14,10 @@ from typing import Annotated, Literal, TypedDict
 from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
 from langchain_core.tools import tool
-from langgraph.checkpoint.dynamodb import DynamoDBSaver
 from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
 
+from packages.memory.checkpoint import get_checkpointer
 from packages.memory.compaction import compact_session
 from packages.memory.state import load_knowledge, save_artifact
 
@@ -109,11 +109,15 @@ async def deploy_to_cloudflare(scaffold: dict, test_results: dict) -> dict:
     """Deploy the scaffolded worker to Cloudflare Workers via cloudflare/agents-sdk MCP."""
     if not test_results.get("passed"):
         return {"deployed": False, "reason": "tests_failed"}
+    product_name = scaffold.get("product_name")
+    if not product_name:
+        return {"deployed": False, "reason": "missing_product_name"}
     # Cloudflare MCP tool call goes here via the MCP tool bus
-    product_slug = scaffold["product_name"].lower().replace(" ", "-")
+    product_slug = product_name.lower().replace(" ", "-")
+    endpoint_path = scaffold.get("endpoint_path", "")
     return {
         "deployed": True,
-        "url": f"https://{product_slug}.lovelogic.workers.dev{scaffold['endpoint_path']}",
+        "url": f"https://{product_slug}.lovelogic.workers.dev{endpoint_path}",
         "worker_name": product_slug,
         "deployed_at": datetime.now(timezone.utc).isoformat(),
         "status": "mcp_call_required",
@@ -165,11 +169,14 @@ async def register_build(
     run_id: str,
 ) -> str:
     """Register the completed build in the knowledge base and audit ledger."""
+    product_name = scaffold.get("product_name")
+    if not product_name:
+        return "Error: product_name is missing from scaffold."
     entry = {
         "run_id": run_id,
-        "product_name": scaffold["product_name"],
+        "product_name": product_name,
         "url": deployment.get("url"),
-        "price_usdc": scaffold["price_usdc"],
+        "price_usdc": scaffold.get("price_usdc", 0.01),
         "deployed": deployment.get("deployed", False),
         "registered_at": datetime.now(timezone.utc).isoformat(),
     }
@@ -178,7 +185,7 @@ async def register_build(
     os.makedirs(os.path.dirname(ledger_path), exist_ok=True)
     with open(ledger_path, "a") as f:
         f.write(json.dumps(entry) + "\n")
-    return f"Build registered: {scaffold['product_name']} — {deployment.get('url', 'no url')}"
+    return f"Build registered: {product_name} — {deployment.get('url', 'no url')}"
 
 
 TOOLS = [scaffold_worker, run_playwright_tests, deploy_to_cloudflare, wire_sentry_monitoring, publish_launch, register_build]
@@ -244,7 +251,7 @@ def build_graph(checkpointer):
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 async def build_tool(product_idea: str):
-    checkpointer = DynamoDBSaver(table_name=os.environ.get("CHECKPOINT_TABLE", "lovelogic-checkpoints"))
+    checkpointer = get_checkpointer()
     graph = build_graph(checkpointer)
 
     run_id = f"factory-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S')}"
