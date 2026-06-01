@@ -316,6 +316,107 @@
           "Debt/equity and debt/assets are reported exactly as provided in the research brief to preserve the source snapshot."
         ]
       }
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00-07:00",
+      "task": "Big Bank night sweep",
+      "sweep_label": "night sweep",
+      "sweep_type": "night sweep",
+      "run_label": "night_sweep",
+      "entry_type": "big_bank_night_sweep",
+      "entry_id": "big_bank_2026-05-31T20:00:00-07:00_night_sweep",
+      "assumption": "Big Bank ambiguous; assumed JPM.",
+      "universe": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
+      "results": {
+        "identity_resolution": {
+          "mapped_symbol": "JPM",
+          "company_name": "JPMorgan Chase & Co.",
+          "exchange": "NYSE",
+          "confidence": "high"
+        },
+        "market_snapshot": {
+          "source_timestamp": "2026-05-31T20:00:00-07:00",
+          "last_price": 296.74,
+          "day_change_pct": 0.01,
+          "market_cap_usd_b": 806.7,
+          "pe_snapshot": 14.6,
+          "pe_ttm": 13.8,
+          "pb_snapshot": 2.23,
+          "pb_ttm": 2.18,
+          "ev_ebitda_snapshot": 6.4,
+          "ttm_eps": 21.324,
+          "book_value_per_share": 134.025
+        },
+        "financials": {
+          "latest_quarter": {
+            "report_period": "2026-03-31",
+            "revenue_usd_b": 49.84,
+            "revenue_yoy_pct": 10.0,
+            "eps": 5.94,
+            "eps_yoy_pct": 17.2,
+            "net_income_usd_b": 16.49,
+            "operating_income_usd_b": 14.17,
+            "operating_margin_pct": 28.4,
+            "operating_margin_yoy_bps": 521,
+            "net_margin_pct": 33.1,
+            "balance_sheet": {
+              "total_assets_usd_t": 4.9,
+              "total_liabilities_usd_t": 4.54,
+              "shareholders_equity_usd_b": 364.0,
+              "cash_and_equivalents_usd_b": 312.1,
+              "total_debt_usd_b": 68.0
+            }
+          },
+          "ttm_fy2025": {
+            "revenue_usd_b": 182.45,
+            "net_income_usd_b": 57.05,
+            "eps": 20.05,
+            "dividends_per_share": 5.8,
+            "revenue_growth_pct": 2.48,
+            "earnings_growth_pct": 3.29,
+            "roe_pct": 15.9,
+            "roa_pct": 1.2,
+            "payout_ratio_pct": 27.7
+          }
+        },
+        "quality_valuation": {
+          "read": "Quality compounder",
+          "notes": [
+            "ROE ~16% is strong",
+            "P/B ~2.2x implies a premium to book",
+            "P/E ~14x is reasonable but not cheap",
+            "Bank cash flow statements are less informative"
+          ]
+        },
+        "analyst_estimates": {
+          "next_quarters": [
+            { "fiscal_period": "2026-06-30", "eps": 5.38 },
+            { "fiscal_period": "2026-09-30", "eps": 5.48 },
+            { "fiscal_period": "2026-12-31", "eps": 5.52 },
+            { "fiscal_period": "2027-03-31", "eps": 5.73 }
+          ]
+        },
+        "news": {
+          "overall_sentiment": "mildly_positive",
+          "items": [
+            { "source": "MarketBeat", "title": "Vestmark Advisory Solutions increased JPM holdings", "sentiment": "positive" },
+            { "source": "MarketBeat", "title": "Global Retirement Partners increased JPM holdings", "sentiment": "positive" },
+            { "source": "MarketBeat", "title": "Trajan Wealth increased JPM holdings", "sentiment": "positive" },
+            { "source": "MarketBeat", "title": "Rathbones Group cut holdings", "sentiment": "negative_cautious" },
+            { "source": "Yahoo Finance", "title": "JPMorgan (JPM): The Best Undervalued Financial Stock to Buy Now", "sentiment": "positive" }
+          ]
+        },
+        "sec_filings": {
+          "latest_earnings_filing_date": "2026-05-01",
+          "recent_8k_dates": ["2026-04-21", "2026-04-23", "2026-05-06", "2026-05-19", "2026-05-27"]
+        },
+        "assessment": {
+          "stance": "constructive_positive",
+          "summary": "If Big Bank = JPM, the sweep is constructive: strong Q1 growth, solid ROE, premium but not excessive valuation, and no major negative news signal in the latest feed. Main caveat: news is mostly ownership chatter.",
+          "confidence": 0.89
+        },
+        "bottom_line": "If Big Bank = JPM, sweep is constructive: strong Q1 growth, solid ROE, premium but not excessive valuation, no major negative news signal in latest feed. Main caveat: news mostly ownership chatter."
+      }
     }
   ]
 }
