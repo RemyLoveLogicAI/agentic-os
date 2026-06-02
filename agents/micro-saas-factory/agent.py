@@ -238,6 +238,7 @@ Build registry (past tools):
 
 
 async def factory_node(state: FactoryState) -> FactoryState:
+    """Load the build registry and invoke the factory LLM to drive the build pipeline."""
     registry = load_knowledge("micro-saas-factory", key="build-registry")
     messages = [
         SystemMessage(content=SYSTEM_PROMPT.format(
@@ -249,12 +250,14 @@ async def factory_node(state: FactoryState) -> FactoryState:
 
 
 async def tool_node(state: FactoryState) -> FactoryState:
+    """Execute tool calls requested by the factory LLM."""
     from langgraph.prebuilt import ToolNode
     tool_executor = ToolNode(TOOLS)
     return await tool_executor.ainvoke(state)
 
 
 def should_continue(state: FactoryState) -> Literal["tools", "end"]:
+    """Route to tools if the LLM made tool calls, otherwise end the turn."""
     last = state["messages"][-1]
     if hasattr(last, "tool_calls") and last.tool_calls:
         return "tools"
@@ -264,6 +267,7 @@ def should_continue(state: FactoryState) -> Literal["tools", "end"]:
 # ── Graph ─────────────────────────────────────────────────────────────────────
 
 def build_graph(checkpointer):
+    """Compile the LangGraph state machine for the micro-SaaS factory workflow."""
     g = StateGraph(FactoryState)
     g.add_node("factory", factory_node)
     g.add_node("tools", tool_node)
@@ -276,6 +280,7 @@ def build_graph(checkpointer):
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 async def build_tool(product_idea: str):
+    """Run one factory cycle: scaffold, test, deploy, monitor, register, and launch a product."""
     checkpointer = get_checkpointer()
     graph = build_graph(checkpointer)
 

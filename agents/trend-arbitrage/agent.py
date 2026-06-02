@@ -137,6 +137,7 @@ Current knowledge base:
 
 
 async def analyst_node(state: ArbitrageState) -> ArbitrageState:
+    """Load knowledge, build system prompt, and invoke the analyst LLM."""
     knowledge = load_knowledge("trend-arbitrage")
     messages = [SystemMessage(content=SYSTEM_PROMPT.format(knowledge=knowledge))] + state["messages"]
     response = await llm.ainvoke(messages)
@@ -144,12 +145,14 @@ async def analyst_node(state: ArbitrageState) -> ArbitrageState:
 
 
 async def tool_node(state: ArbitrageState) -> ArbitrageState:
+    """Execute tool calls requested by the analyst LLM."""
     from langgraph.prebuilt import ToolNode
     tool_executor = ToolNode(TOOLS)
     return await tool_executor.ainvoke(state)
 
 
 def should_continue(state: ArbitrageState) -> Literal["tools", "end"]:
+    """Route to tools if the LLM made tool calls, otherwise end the turn."""
     last = state["messages"][-1]
     if hasattr(last, "tool_calls") and last.tool_calls:
         return "tools"
@@ -159,6 +162,7 @@ def should_continue(state: ArbitrageState) -> Literal["tools", "end"]:
 # ── Graph ─────────────────────────────────────────────────────────────────────
 
 def build_graph(checkpointer):
+    """Compile the LangGraph state machine for the trend arbitrage workflow."""
     g = StateGraph(ArbitrageState)
     g.add_node("analyst", analyst_node)
     g.add_node("tools", tool_node)
@@ -171,6 +175,7 @@ def build_graph(checkpointer):
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 async def run_once(thread_id: str = "trend-arbitrage-main"):
+    """Run one scan cycle: fetch signals, detect spreads, publish, compact memory."""
     checkpointer = get_checkpointer()
     graph = build_graph(checkpointer)
 

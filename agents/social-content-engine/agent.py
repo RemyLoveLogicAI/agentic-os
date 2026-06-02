@@ -161,6 +161,7 @@ Past performance:
 
 
 async def content_director_node(state: ContentEngineState) -> ContentEngineState:
+    """Load brand voice and past performance, then invoke the content director LLM."""
     brand_voice = load_knowledge("social-content-engine", key="brand-voice")
     knowledge = load_knowledge("social-content-engine", key="audience-feedback")
     messages = [
@@ -175,12 +176,14 @@ async def content_director_node(state: ContentEngineState) -> ContentEngineState
 
 
 async def tool_node(state: ContentEngineState) -> ContentEngineState:
+    """Execute tool calls requested by the content director LLM."""
     from langgraph.prebuilt import ToolNode
     tool_executor = ToolNode(TOOLS)
     return await tool_executor.ainvoke(state)
 
 
 def should_continue(state: ContentEngineState) -> Literal["tools", "end"]:
+    """Route to tools if the LLM made tool calls, otherwise end the turn."""
     last = state["messages"][-1]
     if hasattr(last, "tool_calls") and last.tool_calls:
         return "tools"
@@ -190,6 +193,7 @@ def should_continue(state: ContentEngineState) -> Literal["tools", "end"]:
 # ── Graph ─────────────────────────────────────────────────────────────────────
 
 def build_graph(checkpointer):
+    """Compile the LangGraph state machine for the content engine workflow."""
     g = StateGraph(ContentEngineState)
     g.add_node("director", content_director_node)
     g.add_node("tools", tool_node)
@@ -202,6 +206,7 @@ def build_graph(checkpointer):
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 async def run_weekly(client_id: str, brief: str):
+    """Run one weekly cycle: research trends, plan content, produce assets, schedule posts."""
     checkpointer = get_checkpointer()
     graph = build_graph(checkpointer)
 

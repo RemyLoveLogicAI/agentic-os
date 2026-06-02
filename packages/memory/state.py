@@ -18,18 +18,21 @@ RUNTIME_DB = Path(os.environ.get("RUNTIME_DB", "state/runtime.db"))
 
 
 def _runtime_dir(agent: str) -> Path:
+    """Return the runtime directory for agent, creating it if absent."""
     d = MEMORY_ROOT / agent / "runtime"
     d.mkdir(parents=True, exist_ok=True)
     return d
 
 
 def _knowledge_dir(agent: str) -> Path:
+    """Return the knowledge directory for agent, creating it if absent."""
     d = MEMORY_ROOT / agent / "knowledge"
     d.mkdir(parents=True, exist_ok=True)
     return d
 
 
 def _db() -> sqlite3.Connection:
+    """Open the SQLite runtime database, creating tables on first use."""
     RUNTIME_DB.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(str(RUNTIME_DB))
     conn.execute("""
