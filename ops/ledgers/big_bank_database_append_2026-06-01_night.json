@@ -1,0 +1,71 @@
+{
+  "timestamp": "2026-06-01T20:00:00-07:00",
+  "task": "Big Bank triple-sweep research task",
+  "sweep_type": "night sweep",
+  "entries": [
+    {
+      "timestamp": "2026-06-01T20:00:00-07:00",
+      "task": "Big Bank triple-sweep research task",
+      "sweep_type": "night sweep",
+      "run_label": "night_sweep",
+      "entry_type": "universe_snapshot",
+      "universe": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
+      "results": {
+        "report_text": "Big Bank night-sweep report\nTimestamp basis: latest available market/filing data through 2026-06-01.\n\nScope assumption\n- Interpreted “Big Bank” as the major U.S. money-center / large-bank group:\n  JPM, BAC, WFC, C, GS, MS.\n\nExecutive summary\n- Broad read is constructive: 5 of 6 names have recent EPS beats; 4 of 6 also beat revenue estimates.\n- Best fundamental momentum in the latest quarter: MS, C, and GS.\n- Best scale/quality balance: JPM remains the strongest all-around franchise.\n- Cheapest on a bank-style valuation basis: C and BAC; WFC also screens inexpensive.\n- Most expensive: MS and GS, justified by stronger capital-markets / wealth franchises and recent execution.\n- Tape was mixed-to-positive: C, GS, and MS were up on the day; JPM, BAC, and WFC were slightly lower.\n- News flow was mostly neutral and heavily dominated by filings/aggregation rather than high-conviction editorial headlines.\n\nMarket snapshot\nTicker | Price | Day chg | Mkt cap | P/E | P/B | ROE | Latest read\n---|---:|---|---|---|---|---|---\nJPM | 296.74 | -0.86% | $800.3B | 14.47x | 2.21x | 15.7% | Still the cleanest all-around large bank\nBAC | 51.50 | -0.19% | $365.5B | 12.10x | 1.22x | 10.5% | Cheap-ish, decent beat, improving momentum\nWFC | 77.36 | -0.23% | $236.7B | 11.36x | 1.33x | 11.9% | Inexpensive, but Q1 revenue miss/margin pressure\nC | 128.97 | +2.44% | $220.1B | 13.01x | 1.04x | 8.35% | Lowest P/B; strong Q1 beat and guidance\nGS | 1048.23 | +2.21% | $309.2B | 17.75x | 2.52x | 14.8% | Strong quarter, premium valuation\nMS | 210.98 | +1.43% | $332.8B | 18.44x | 2.91x | 15.8% | Best recent growth profile, richest valuation\n\nLatest quarter highlights\n- JPM\n  - Q1 2026 revenue: $49.8B, +10.0% YoY\n  - Q1 2026 EPS: $5.94, +17.2% YoY\n  - Operating margin expanded 521 bps YoY\n  - TTM revenue: $182.4B; TTM net income: $57.0B\n  - Latest 10-Q accession: `0001628280-26-029344`\n  - Read: very solid, broad-based franchise strength; not the cheapest, but still the benchmark name in the group.\n\n- BAC\n  - Q1 2026 revenue: $30.27B, +10.6% YoY, beat estimate by 1.3%\n  - Q1 2026 EPS: $1.11, beat estimate by 11.0%\n  - Net income: $8.58B, +16.1% YoY\n  - TTM revenue: $112.2B; TTM net income: $31.6B\n  - Latest 10-Q accession: `0000070858-26-000249`\n  - Read: better-than-expected quarter; valuation remains reasonable, but it still trades like a second-tier large bank versus JPM.\n\n- WFC\n  - Q1 2026 revenue: $21.45B, missed estimate by 1.1%\n  - Q1 2026 EPS: $1.60, beat estimate by 1.3%\n  - Revenue +6.4% YoY; EPS +15.1% YoY\n  - Operating margin contracted 364 bps YoY\n  - TTM revenue: $83.9B; TTM net income: $21.2B\n  - Latest 10-Q accession: `0000072971-26-000217`\n  - Read: still inexpensive, but the quarter was mixed and the operating-momentum signal is less clean than peers.\n\n- C\n  - Q1 2026 revenue: $24.63B, beat estimate by 4.0%\n  - Q1 2026 EPS: $3.06, beat estimate by 15.9%\n  - Net income +42.4% YoY; revenue +14.1% YoY\n  - Management reiterated FY2026 ROTCE guidance of 10%–11%\n  - TTM revenue: $90.0B; TTM net income: $17.6B\n  - Latest 10-Q accession: `0000831001-26-000019`\n  - Read: strongest “catch-up” story in the pack if execution holds; very low P/B supports the thesis.\n\n- GS\n  - Q1 2026 revenue: $17.23B, beat estimate by 1.7%\n  - Q1 2026 EPS: $17.55, beat estimate by 7.6%\n  - Net income +18.8% YoY; revenue +14.4% YoY\n  - Q2 2026 dividend guidance initiated at $4.50/share\n  - TTM revenue: $62.1B; TTM net income: $18.2B\n  - Latest 10-Q accession: `0000886982-26-000118`\n  - Read: premium franchise, strong quarter, but valuation already reflects quality.\n\n- MS\n  - Q1 2026 revenue: $20.58B, beat estimate by 3.9%\n  - Q1 2026 EPS: $3.43, beat estimate by 12.5%\n  - Net income +30.7% YoY; revenue +16.0% YoY\n  - TTM revenue: $73.3B; TTM net income: $18.0B\n  - Latest 10-Q accession: `0000895421-26-000121`\n  - Read: best near-term growth among the group; valuation is the richest, but momentum is real.\n\nNews and filing read-through\n- JPM\n  - Recent headlines were mostly financing-related:\n    - callable notes due 2046\n    - $500M 2030 notes issuance\n  - Interpretation: neutral-to-positive; signals active capital-markets funding access, but not a fundamental surprise.\n  - Recent 8-K activity exists, but nothing screamed distress.\n\n- BAC\n  - Recent headlines were dominated by:\n    - personnel / Merrill-related story\n    - institutional ownership updates\n  - Interpretation: mostly noisy/automated; little fundamental signal from the headlines.\n  - Earnings/filing data is the more useful input here.\n\n- GS\n  - Recent headlines mostly concern institutional ownership changes.\n  - Interpretation: low editorial quality, but no obvious negative flag.\n  - The dividend guidance in the 8-K/earnings release is the meaningful positive signal.\n\n- WFC / C / MS\n  - No useful company-news items were returned in the latest fetch.\n  - Interpretation: absence of indexed news is not itself meaningful; rely more on the earnings/SEC read.\n\nReliability note\n- The news feed is heavily skewed toward aggregation, holdings, and other automated posts.\n- I weighted SEC filings and earnings releases more heavily than headline tone.\n- For banks, valuation ratios like gross margin, current ratio, and debt ratios can be misleading; P/B, ROE, EPS trend, revenue trend, and capital-return signals are more useful.\n\nOverall assessment\n- Best quality: JPM.\n- Best current momentum: MS and C.\n- Best value: C and BAC, with WFC also cheap but less clean on the latest quarter.\n- Best risk/reward if execution continues: C.\n- Highest-quality premium names: JPM, GS, MS.\n- Weakest tape / mixedest quarter: WFC.\n\nLogging-ready conclusion\n- Big Bank complex remains fundamentally constructive.\n- Q1 2026 results were broadly strong, with beats concentrated in BAC, C, GS, and MS.\n- JPM continues to anchor the group on scale and stability.\n- C looks most interesting on valuation vs. improving fundamentals.\n- WFC is the main “watch for proof” name due to revenue miss and margin contraction.\n- News flow does not currently show a broad negative catalyst across the group.\n\nIf you want, I can also convert this into a stricter log format with fields like:\n`timestamp | universe | catalyst | bullish / neutral / bearish | evidence | action`.\n",
+        "target": {
+          "ticker": "JPM",
+          "company_name": "Jpmorgan Chase & Co",
+          "cik": "0000019617"
+        },
+        "as_of_utc": "2026-06-02T03:00:00Z",
+        "stock_price_snapshot": {
+          "price": 296.74,
+          "day_change": -2.57,
+          "day_change_percent": -0.86,
+          "market_cap": 800317386958,
+          "currency": "USD"
+        },
+        "valuation_multiples_current": {
+          "price_to_earnings": 14.4682076496985,
+          "price_to_book": 2.208149771707161,
+          "price_to_sales": 4.386574659808054
+        },
+        "profitability_current": {
+          "roe": 0.1574007140531622,
+          "roa": 0.01289249474564397
+        },
+        "latest_quarter": {
+          "fiscal_period": "2026-Q1",
+          "report_period": "2026-03-31",
+          "revenue_usd": 49836000000,
+          "eps_usd": 5.94,
+          "net_income_usd": 16494000000
+        },
+        "news_summary": {
+          "coverage_window": "2026-06-01",
+          "overall_sentiment": "mixed_to_slightly_positive",
+          "items": []
+        },
+        "peers": [
+          {"ticker": "BAC", "price": 51.50, "day_change_percent": -0.19, "pe_ratio": 12.10, "pb_ratio": 1.22, "roe": 0.105},
+          {"ticker": "C", "price": 128.97, "day_change_percent": 2.44, "pe_ratio": 13.01, "pb_ratio": 1.04, "roe": 0.0835},
+          {"ticker": "WFC", "price": 77.36, "day_change_percent": -0.23, "pe_ratio": 11.36, "pb_ratio": 1.33, "roe": 0.119},
+          {"ticker": "GS", "price": 1048.23, "day_change_percent": 2.21, "pe_ratio": 17.75, "pb_ratio": 2.52, "roe": 0.148},
+          {"ticker": "MS", "price": 210.98, "day_change_percent": 1.43, "pe_ratio": 18.44, "pb_ratio": 2.91, "roe": 0.158}
+        ],
+        "universe_summary": {
+          "best_daily_performer": {"ticker": "C", "day_change_percent": 2.44},
+          "highest_roe_estimate": {"ticker": "MS", "roe": 0.158},
+          "main_watch_items": [
+            "Interest-rate path / net interest income sensitivity",
+            "Credit quality / reserve build risk",
+            "Capital markets rebound (M&A, trading)",
+            "Regulatory / legislative risk",
+            "Capital return pace"
+          ],
+          "universe_takeaway": "Big Bank complex remains fundamentally constructive; Q1 2026 results were broadly strong, with beats concentrated in BAC, C, GS, and MS. JPM anchors on scale/stability; C looks most interesting on valuation vs. improving fundamentals; WFC is the main watch-for-proof name due to revenue miss and margin contraction."
+        }
+      }
+    }
+  ]
+}
