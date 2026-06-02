@@ -5,6 +5,7 @@ Mirrors holaOS's memory architecture:
   memory/workspace/<agent>/knowledge/ — long-term retained facts
 """
 
+import glob as _glob
 import json
 import os
 import sqlite3
@@ -102,7 +103,7 @@ def load_knowledge(agent: str, key: str | None = None) -> str:
     """Load durable knowledge for an agent. key selects a specific .md file."""
     kd = _knowledge_dir(agent)
     if key:
-        safe_key = key.replace("/", "_").replace("\\", "_")
+        safe_key = _glob.escape(key.replace("/", "_").replace("\\", "_"))
         candidates = sorted(kd.glob(f"{safe_key}*.md"), key=lambda p: p.stat().st_mtime)
         if candidates:
             return candidates[-1].read_text()

@@ -41,16 +41,9 @@ docker compose logs -f micro-saas-factory
 
 ---
 
-## Option B — LangGraph Cloud (Managed)
+### DynamoDB Checkpoint Backend (for AWS Lambda / serverless)
 
-LangGraph Cloud saves state at every execution step with built-in persistence. Fastest path to production.
-
-```bash
-pip install langgraph-cli
-langgraph deploy --config langgraph.json
-```
-
-Install the DynamoDB backend and configure it:
+When `CHECKPOINT_BACKEND=dynamodb`, install and configure:
 
 ```bash
 pip install langgraph-checkpoint-aws
@@ -62,7 +55,19 @@ from langgraph_checkpoint_aws import DynamoDBSaver
 checkpointer = DynamoDBSaver(
     table_name="lovelogic-checkpoints",
     region_name="us-east-1",
+    ttl_seconds=7 * 24 * 60 * 60,  # 7-day TTL controls storage costs
 )
+```
+
+---
+
+## Option B — LangGraph Cloud (Managed)
+
+LangGraph Cloud saves state at every execution step with built-in persistence — no checkpoint backend configuration required. Fastest path to production.
+
+```bash
+pip install langgraph-cli
+langgraph deploy --config langgraph.json
 ```
 
 ---
@@ -114,4 +119,4 @@ result = await graph.ainvoke(new_message, config=config)
 | Social Content Engine | `ops/ledgers/social-content-audit.jsonl` |
 | Micro-SaaS Factory | `ops/ledgers/micro-saas-factory-audit.jsonl` |
 
-Each line is a newline-delimited JSON artifact written before any publish action. For the Micro-SaaS Factory, the ledger entry is written after the Cloudflare deploy but before the Product Hunt launch post.
+Each line is a newline-delimited JSON artifact written before any publish or deploy action.

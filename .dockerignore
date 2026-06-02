@@ -13,7 +13,9 @@ memory/workspace/
 
 # Secrets
 .env
+.env.*
 **/.env
+**/.env.*
 
 # Dev artifacts
 *.tmp

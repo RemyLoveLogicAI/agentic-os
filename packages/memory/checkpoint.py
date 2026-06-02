@@ -32,8 +32,14 @@ def get_checkpointer():
             raise ImportError(
                 "Postgres backend requires: pip install langgraph-checkpoint-postgres 'psycopg[binary]'"
             )
-        conn = psycopg.connect(os.environ["DATABASE_URL"], autocommit=True)
-        return PostgresSaver(conn)
+        conn = psycopg.connect(
+            os.environ["DATABASE_URL"],
+            autocommit=True,
+            row_factory=psycopg.rows.dict_row,
+        )
+        checkpointer = PostgresSaver(conn)
+        checkpointer.setup()
+        return checkpointer
 
     if backend != "sqlite":
         raise ValueError(
