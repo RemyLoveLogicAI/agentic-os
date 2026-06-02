@@ -10,6 +10,6 @@ setup(
         "langchain-anthropic>=0.3.0,<2.0.0",
         "langchain-core>=1.3.3,<2.0.0",
         "langgraph>=1.0.10,<2.0.0",
-        "langgraph-checkpoint-sqlite>=3.0.0,<4.0.0",
+        "langgraph-checkpoint-sqlite>=3.1.0,<4.0.0",
     ],
 )
