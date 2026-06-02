@@ -1,0 +1,178 @@
+{
+  "timestamp": "2026-06-02T08:00:00-07:00",
+  "task": "Big Bank triple-sweep research task",
+  "sweep_type": "morning sweep",
+  "entries": [
+    {
+      "timestamp": "2026-06-02T08:00:00-07:00",
+      "task": "Big Bank triple-sweep research task",
+      "sweep_type": "morning sweep",
+      "run_label": "morning_sweep",
+      "entry_type": "universe_snapshot",
+      "universe": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
+      "results": {
+        "summary": "JPM remains the primary Big Bank anchor on scale, profitability, and valuation quality. BAC is the clean secondary candidate: cheaper than JPM, with a solid Q1 beat and constructive Reuters-linked expectation readthrough. Overall read is constructive, with the group still anchored by quality franchises rather than deep-value distress.",
+        "target": {
+          "ticker": "JPM",
+          "company_name": "JPMorgan Chase & Co.",
+          "mapping": "Primary Big Bank = JPM",
+          "market_snapshot": {
+            "last_price": 300.11,
+            "market_cap_usd_b": 801.7,
+            "pe_ratio": 14.49,
+            "pb_ratio": 2.21,
+            "ps_ratio": 4.39,
+            "roe_pct": 15.7,
+            "roa_pct": 1.29
+          },
+          "latest_quarter": {
+            "report_period": "2026-03-31",
+            "fiscal_period": "2026-Q1",
+            "revenue_usd_b": 49.84,
+            "eps_usd": 5.94,
+            "net_income_usd_b": 16.49,
+            "total_assets_usd_t": 4.90,
+            "cash_and_equivalents_usd_b": 312.1
+          },
+          "forward_expectations": {
+            "next_quarter": {
+              "fiscal_period": "2026-06-30",
+              "eps_usd": 5.38,
+              "revenue_usd_b": 47.92
+            },
+            "forward_quarters_eps_usd": [5.48, 5.52, 5.73],
+            "readthrough": "Forward estimates still imply a durable low-teens earnings profile and continued premium-but-reasonable valuation support if JPM keeps executing.",
+            "confidence": "high"
+          },
+          "notable_news": [
+            "May 27, 2026 8-K redemption of Series KK preferred depositary shares",
+            "Recent news flow remains constructive on scale, capital access, and franchise strength",
+            "Q1 2026 filing remains the core fundamental anchor for the sweep"
+          ],
+          "sec_refs": {
+            "company_page": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000019617",
+            "latest_10_q": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+            "latest_8_k": {
+              "date": "2026-05-27",
+              "doc": "d51433d8k.htm",
+              "note": "May 27, 2026 redemption of Series KK preferred depositary shares (per the supplied brief)."
+            }
+          }
+        },
+        "secondary_candidate": {
+          "ticker": "BAC",
+          "company_name": "Bank of America Corp.",
+          "mapping": "Secondary Big Bank candidate",
+          "market_snapshot": {
+            "last_price": 52.34,
+            "market_cap_usd_b": 371.4,
+            "pe_ratio": 12.30,
+            "pb_ratio": 1.24
+          },
+          "latest_quarter": {
+            "report_period": "2026-03-31",
+            "fiscal_period": "2026-Q1",
+            "revenue_usd_b": 30.27,
+            "eps_usd": 1.11,
+            "earnings_note": "EPS beat",
+            "readthrough": "Reuters-linked expectations were for a solid quarter; BAC delivered a clear EPS beat and held revenue in constructive shape.",
+            "confidence": "medium"
+          },
+          "sec_refs": {
+            "company_page": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000070858",
+            "latest_10_q": {
+              "form": "10-Q",
+              "report_period": "2026-03-31",
+              "note": "Latest Q1 2026 filing (exact URL not surfaced in the supplied brief)."
+            },
+            "latest_8_k_list_items": [
+              {
+                "form": "8-K",
+                "note": "Q1 2026 earnings / results update referenced by the briefing."
+              },
+              {
+                "form": "8-K",
+                "note": "Any later capital-return or preferred-related update referenced in the briefing."
+              }
+            ]
+          },
+          "notes": [
+            "BAC remains the cleaner value/comp-rounding play after JPM.",
+            "The earnings beat supports the Reuters-linked constructive readthrough.",
+            "P/B at 1.24 keeps BAC on the value side of the group, even if JPM remains the higher-quality anchor."
+          ]
+        },
+        "peer_context": [
+          {
+            "ticker": "C",
+            "note": "Lower P/B and still-improving execution keep Citigroup in the value/catch-up conversation."
+          },
+          {
+            "ticker": "WFC",
+            "note": "Cheap, but still more of a proof story than a premium-quality story."
+          },
+          {
+            "ticker": "GS",
+            "note": "Higher multiple, but quality/franchise mix remains strong."
+          },
+          {
+            "ticker": "MS",
+            "note": "Premium valuation remains justified by wealth-management and capital-markets strength."
+          }
+        ],
+        "assessment": {
+          "stance": "constructive_positive",
+          "summary": "Bottom line: JPM stays the quality leader and morning anchor; BAC is the best secondary value/earnings-beat candidate. The broader Big Bank tape remains constructive rather than broken.",
+          "bull_points": [
+            "JPM combines scale, profitability, and valuation quality with a still-reasonable P/E and P/B.",
+            "BAC delivered a Q1 EPS beat and remains cheaper than JPM on both P/E and P/B.",
+            "Forward expectations still support durable earnings power for JPM if execution holds."
+          ],
+          "bear_points": [
+            "BAC is still the more value-sensitive name and needs continued execution to sustain multiple expansion.",
+            "Bank headlines can skew noisy, so filing-level confirmation remains important.",
+            "Rate and credit conditions remain the key macro cross-currents for the group."
+          ],
+          "confidence": 0.87
+        },
+        "sources": [
+          {
+            "type": "provided_research_brief",
+            "note": "User-supplied morning sweep findings for JPM and BAC."
+          },
+          {
+            "type": "jpm_sec_reference",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000019617"
+          },
+          {
+            "type": "jpm_10q",
+            "url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm"
+          },
+          {
+            "type": "jpm_8k",
+            "doc": "d51433d8k.htm",
+            "date": "2026-05-27"
+          },
+          {
+            "type": "bac_sec_reference",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000070858"
+          },
+          {
+            "type": "bac_10q",
+            "form": "10-Q",
+            "report_period": "2026-03-31"
+          },
+          {
+            "type": "bac_8k_items",
+            "items": ["Q1 2026 earnings / results update", "Later capital-return or preferred-related update referenced by the briefing"]
+          }
+        ],
+        "data_quality_notes": [
+          "The JPM 8-K doc name was preserved exactly as supplied in the brief.",
+          "BAC exact filing URLs were not surfaced in the supplied brief, so this log preserves the SEC company page and filing labels rather than inventing links.",
+          "Other peers (C, WFC, GS, MS) were treated as context rather than the primary logging focus for this morning sweep."
+        ]
+      }
+    }
+  ]
+}
