@@ -1,0 +1,1032 @@
+[
+  {
+    "entries": [
+      {
+        "timestamp": "2026-06-03T08:00:00-07:00",
+        "task": "Big Bank triple-sweep research task",
+        "sweep_type": "morning sweep",
+        "results": {
+          "ledger": "orion_big_bank_ledger",
+          "as_of_date": "2026-06-03",
+          "anchor": {
+            "ticker": "JPM",
+            "name": "Jpmorgan Chase & Co",
+            "market_snapshot": {
+              "current_price": 297.57,
+              "day_change": 0.99,
+              "day_change_percent": 0.33,
+              "snapshot_time_utc": "2026-06-03T15:14:04Z",
+              "range_1m": {
+                "low": 293.67,
+                "high": 316.3
+              },
+              "latest_volume": 7929978,
+              "latest_volume_date": "2026-06-01",
+              "prior_close": 296.58,
+              "prior_close_date": "2026-06-01"
+            },
+            "market_valuation": {
+              "market_cap": 793359043430,
+              "enterprise_value": 523589368972,
+              "pe_ratio": 13.795,
+              "pb_ratio": 2.179,
+              "ev_ebitda": {
+                "financial_metrics_snapshot": 6.3516961528999305,
+                "ttm_metrics": 16.891,
+                "note": "Cross-feed discrepancy; the EV/EBITDA value differs materially between feeds."
+              },
+              "ev_revenue": {
+                "financial_metrics_snapshot": 2.8698162697769765,
+                "ttm_metrics": 9.170586359688297,
+                "note": "Cross-feed discrepancy; use with caution."
+              },
+              "ps_ratio": 4.243
+            },
+            "latest_quarter": {
+              "report_period": "2026-03-31",
+              "filing_date": "2026-05-01",
+              "filing_type": "10-Q",
+              "source_type": "10-Q",
+              "filing_window": "AFTER_HOURS",
+              "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+              "revenue": 49836000000,
+              "revenue_yoy_change": 0.0999,
+              "eps": 5.94,
+              "eps_yoy_change": 0.1716,
+              "net_income": 16494000000,
+              "operating_income": 14172000000,
+              "operating_margin": 0.28437274259571393,
+              "net_margin": 0.33096556705995667,
+              "estimated_revenue": null,
+              "estimated_eps": null,
+              "guidance": null,
+              "signals": [
+                {
+                  "type": "MARGIN_EXPANSION",
+                  "headline": "Operating margin expanded 521bps year-over-year to 28.4%"
+                },
+                {
+                  "type": "EPS_INCREASE",
+                  "headline": "EPS grew 17.2% year-over-year to $5.94"
+                }
+              ]
+            },
+            "financial_health": {
+              "roe": 0.159,
+              "roa": 0.0129,
+              "gross_margin": 0.9221034053725191,
+              "operating_margin": 0.9344796022954611,
+              "net_margin": 0.31268258727192005,
+              "debt_to_equity": 0.17872298158581607,
+              "debt_to_assets": 0.014638974892087956,
+              "interest_coverage": 1.7415371100533208,
+              "current_ratio": 4.268514949959595,
+              "cash_ratio": 4.268514949959595,
+              "total_assets": 4900475000000,
+              "total_liabilities": 4536437000000,
+              "shareholders_equity": 364038000000,
+              "total_debt": 68048000000,
+              "revenue_growth": 0.024807204283983843,
+              "earnings_growth": 0.032865789048328875,
+              "eps_growth": 0.04252793529098429,
+              "margin_and_leverage_note": "Bank-sector ratios are not perfectly comparable across feeds; absolute balance sheet scale is the more reliable signal."
+            },
+            "news_highlights": [
+              {
+                "date_utc": "2026-06-03T10:10:19+00:00",
+                "title": "JPMorgan Chase (JPM) prices 5.225% callable notes maturing 2036",
+                "source": "Stock Titan",
+                "url": "https://www.stocktitan.net/sec-filings/JPM/424b2-jpmorgan-chase-co-prospectus-supplement-b5aaa46a2afc.html",
+                "sentiment": "neutral",
+                "sentiment_basis": "Capital-markets issuance event; operationally normal, mildly supportive of funding access."
+              },
+              {
+                "date_utc": "2026-06-02T21:45:02+00:00",
+                "title": "JPMorgan Chase & Co. (JPM) Exceeds Market Returns: Some Facts to Consider",
+                "source": "Yahoo Finance",
+                "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-chase-co-jpm-exceeds-214502921.html",
+                "sentiment": "positive",
+                "sentiment_basis": "Editorial item framing the stock as outperforming."
+              },
+              {
+                "date_utc": "2026-06-02T20:15:25+00:00",
+                "title": "JPMorgan Chase closes $500M fixed-to-floating 2030 notes",
+                "source": "Stock Titan",
+                "url": "https://www.stocktitan.net/sec-filings/JPM/8-k-jpmorgan-chase-co-reports-material-event-84b1a25f4b49.html",
+                "sentiment": "neutral",
+                "sentiment_basis": "Funding transaction; not inherently negative."
+              },
+              {
+                "date_utc": "2026-06-02T10:21:57+00:00",
+                "title": "JPMorgan prices callable 5.35% notes due 2038",
+                "source": "Stock Titan",
+                "url": "https://www.stocktitan.net/sec-filings/JPM/424b2-jpmorgan-chase-co-prospectus-supplement-e42f8270d51c.html",
+                "sentiment": "neutral"
+              },
+              {
+                "date_utc": "2026-06-01T23:26:17+00:00",
+                "title": "Auto-Callable Notes Linked to MerQube Index — JPM",
+                "source": "Stock Titan",
+                "url": "https://www.stocktitan.net/sec-filings/JPM/424b3-jpmorgan-chase-co-prospectus-filed-pursuant-to-rule-424-b-3-b265c0c98064.html",
+                "sentiment": "neutral"
+              }
+            ],
+            "insider_trades": {
+              "available": true,
+              "recent_trades": [
+                {
+                  "name": "Stacey Friedman",
+                  "title": "General Counsel",
+                  "transaction_date": "2026-05-20",
+                  "transaction_type": "Open market sale",
+                  "shares": 5468,
+                  "price_per_share": 300.2662,
+                  "value": 1641855.58,
+                  "filing_date": "2026-05-20"
+                },
+                {
+                  "name": "Marianne Lake",
+                  "title": "CEO CCB",
+                  "transaction_date": "2026-05-15",
+                  "transaction_type": "Open market sale",
+                  "shares": 6427,
+                  "price_per_share": 298.3555,
+                  "value": 1917530.8,
+                  "filing_date": "2026-05-15"
+                },
+                {
+                  "name": "Mary E. Erdoes",
+                  "title": "CEO Asset & Wealth Management",
+                  "transaction_date": "2026-05-15",
+                  "transaction_type": "Open market sale",
+                  "shares": 6648,
+                  "price_per_share": 298.3644,
+                  "value": 1983526.53,
+                  "filing_date": "2026-05-15"
+                },
+                {
+                  "name": "Lori A Beer",
+                  "title": "Chief Information Officer",
+                  "transaction_date": "2026-05-15",
+                  "transaction_type": "Open market sale",
+                  "shares": 3165,
+                  "price_per_share": 300.05,
+                  "value": 949658.25,
+                  "filing_date": "2026-05-15"
+                },
+                {
+                  "name": "Douglas B Petno",
+                  "title": "Co-CEO CIB",
+                  "transaction_date": "2026-05-14",
+                  "transaction_type": "Gift",
+                  "shares": 135027,
+                  "price_per_share": 0,
+                  "value": 0,
+                  "filing_date": "2026-05-14"
+                }
+              ],
+              "summary": "Recent insider activity is predominantly executive selling, with one large gift transaction."
+            },
+            "institutional_ownership": {
+              "available": false,
+              "summary": null,
+              "note": "Ticker-level ownership query was not available in this API session because the endpoint required an investor parameter."
+            },
+            "assessment": {
+              "key_takeaways": [
+                "JPM remains the benchmark U.S. bank franchise on scale, profitability, and balance-sheet strength.",
+                "Q1 2026 showed strong revenue and EPS growth, with margin expansion and a healthy ROE.",
+                "Valuation is moderate for a high-quality bank, but not distressed or especially cheap versus peers.",
+                "Recent capital-markets issuance suggests active funding and strong market access."
+              ],
+              "risks": [
+                "Executive insider selling is a mild caution flag.",
+                "Bank valuation/EV metrics vary materially across feeds; use the balance sheet and earnings trend more than derived EV ratios.",
+                "Macro risks include slower loan growth, credit deterioration, and rate-driven NII pressure.",
+                "Regulatory capital requirements could constrain capital return or increase funding costs."
+              ]
+            }
+          },
+          "peer_universe": [
+            {
+              "ticker": "BAC",
+              "name": "Bank of America Corporation",
+              "market_snapshot": {
+                "current_price": 51.27,
+                "day_change": -0.24,
+                "day_change_percent": -0.47,
+                "snapshot_time_utc": "2026-06-03T15:13:53Z",
+                "range_1m": {
+                  "low": 49.3,
+                  "high": 54.2
+                },
+                "latest_volume": 34303714,
+                "latest_volume_date": "2026-06-01",
+                "prior_close": 51.51,
+                "prior_close_date": "2026-06-01"
+              },
+              "market_valuation": {
+                "market_cap": 363700270864,
+                "enterprise_value": 504815270864,
+                "pe_ratio": 12.043303500712815,
+                "pb_ratio": 1.209640769433395,
+                "ev_ebitda": 11.923737413231924,
+                "ev_revenue": 4.499685984044781,
+                "ps_ratio": 3.24185321969177
+              },
+              "latest_quarter": {
+                "report_period": "2026-03-31",
+                "filing_date": "2026-05-01",
+                "filing_type": "10-Q",
+                "source_type": "10-Q",
+                "filing_window": "AFTER_HOURS",
+                "filing_url": "https://www.sec.gov/Archives/edgar/data/0000070858/000007085826000249/bac-20260331.htm",
+                "revenue": 30272000000,
+                "revenue_yoy_change": 0.1062,
+                "eps": 1.11,
+                "eps_yoy_change": 0.2333,
+                "net_income": 8584000000,
+                "operating_income": 7104000000,
+                "operating_margin": 0.2346723044397463,
+                "net_margin": 0.28356236786469347,
+                "estimated_revenue": 29885005210,
+                "estimated_eps": 1.0,
+                "guidance": null,
+                "signals": [
+                  {
+                    "type": "EPS_BEAT",
+                    "headline": "EPS of $1.11 beat estimate of $1.00 by 11.0%"
+                  },
+                  {
+                    "type": "REVENUE_INCREASE",
+                    "headline": "Revenue grew 10.6% year-over-year to $30.3B"
+                  }
+                ]
+              },
+              "financial_health": {
+                "roe": 0.10498290473212979,
+                "roa": 0.009028409815724907,
+                "gross_margin": 1,
+                "operating_margin": 1.0093413792796084,
+                "net_margin": 0.2813555696191249,
+                "debt_to_equity": 1.2758058722577728,
+                "debt_to_assets": 0.10971784681936259,
+                "interest_coverage": 1.4597475925902053,
+                "current_ratio": 4.211851466250217,
+                "cash_ratio": 4.207513447857019,
+                "total_assets": 3496186000000,
+                "shareholders_equity": 300668000000,
+                "total_debt": 383594000000,
+                "earnings_growth": 0.034612737225081125,
+                "eps_growth": 0.07135247365717902
+              },
+              "news_highlights": [
+                {
+                  "date_utc": "2026-06-03T13:28:55+00:00",
+                  "title": "BofA to Welcome Nearly 4,000 Summer Interns and Campus Recruits",
+                  "source": "Finviz",
+                  "url": "https://finviz.com/news/359329/bofa-to-welcome-nearly-4000-summer-interns-and-campus-recruits",
+                  "sentiment": "positive",
+                  "sentiment_basis": "Hiring/expansion signal."
+                },
+                {
+                  "date_utc": "2026-06-02T09:40:25+00:00",
+                  "title": "Bank of America: Let The Capital Flow To Your Portfolio With This Banking Powerhouse (BAC)",
+                  "source": "Seeking Alpha",
+                  "url": "https://seekingalpha.com/article/4910861-bank-of-america-let-capital-flow-to-your-portfolio-with-this-banking-powerhouse",
+                  "sentiment": "positive"
+                },
+                {
+                  "date_utc": "2026-06-01T18:49:15+00:00",
+                  "title": "Former Epstein banker Paul Morris leaves Bank of America's Merrill unit - report",
+                  "source": "Seeking Alpha",
+                  "url": "https://seekingalpha.com/news/4599372-former-epstein-banker-paul-morris-leaves-bank-of-americas-merrill-unit-report",
+                  "sentiment": "mixed"
+                },
+                {
+                  "date_utc": "2026-06-01T10:42:36+00:00",
+                  "title": "New Mexico Educational Retirement Board Buys 17,200 Shares of Bank of America Corporation $BAC",
+                  "source": "MarketBeat",
+                  "url": "https://www.marketbeat.com/instant-alerts/filing-new-mexico-educational-retirement-board-buys-17200-shares-of-bank-of-america-corporation-bac-2026-06-01/",
+                  "sentiment": "positive"
+                },
+                {
+                  "date_utc": "2026-06-01T08:34:16+00:00",
+                  "title": "Bank of America Corporation $BAC Stock Holdings Increased by Easterly Investment Partners LLC",
+                  "source": "MarketBeat",
+                  "url": "https://www.marketbeat.com/instant-alerts/filing-bank-of-america-corporation-bac-stock-holdings-increased-by-easterly-investment-partners-llc-2026-06-01/",
+                  "sentiment": "positive"
+                }
+              ],
+              "insider_trades": {
+                "available": true,
+                "recent_trades": [
+                  {
+                    "name": "Brian T Moynihan",
+                    "title": "Chair and CEO",
+                    "transaction_date": "2026-05-15",
+                    "transaction_type": "Option exercise or derivative conversion",
+                    "shares": 18083,
+                    "price_per_share": null,
+                    "value": null,
+                    "filing_date": "2026-05-15"
+                  },
+                  {
+                    "name": "Brian T Moynihan",
+                    "title": "Chair and CEO",
+                    "transaction_date": "2026-05-15",
+                    "transaction_type": "Disposition back to the company",
+                    "shares": 18083,
+                    "price_per_share": 49.77,
+                    "value": 899990.91,
+                    "filing_date": "2026-05-15"
+                  },
+                  {
+                    "name": "Geoffrey S Greener",
+                    "title": "Chief Risk Officer",
+                    "transaction_date": "2026-05-05",
+                    "transaction_type": "Open market sale",
+                    "shares": 126756,
+                    "price_per_share": 53.005,
+                    "value": 6718701.78,
+                    "filing_date": "2026-05-05"
+                  }
+                ],
+                "summary": "Mostly routine CEO derivative activity and one large CRO sale."
+              },
+              "institutional_ownership": {
+                "available": false,
+                "summary": null,
+                "note": "Ticker-level ownership query was not available in this API session."
+              },
+              "assessment": {
+                "key_takeaways": [
+                  "BAC is cheaper than JPM on P/B and P/E, with solid Q1 growth and earnings beat.",
+                  "Revenue growth is healthy, but profitability and valuation quality trail JPM/MS.",
+                  "A broad ownership base likely supports stability, but the ownership endpoint was unavailable."
+                ],
+                "risks": [
+                  "Higher leverage than JPM and earnings sensitivity to rate and credit conditions.",
+                  "Insider trading mix is somewhat noisy due to derivative/compensation-related transactions."
+                ]
+              }
+            },
+            {
+              "ticker": "C",
+              "name": "Citigroup Inc",
+              "market_snapshot": {
+                "current_price": 128.96,
+                "day_change": -0.13,
+                "day_change_percent": -0.1,
+                "snapshot_time_utc": "2026-06-03T15:13:55Z",
+                "range_1m": {
+                  "low": 119.76,
+                  "high": 131.95
+                },
+                "latest_volume": 12543714,
+                "latest_volume_date": "2026-06-01",
+                "prior_close": 129.09,
+                "prior_close_date": "2026-06-01"
+              },
+              "market_valuation": {
+                "market_cap": 219865925269,
+                "enterprise_value": 213765925269,
+                "pe_ratio": 12.993425652667424,
+                "pb_ratio": 1.0422211200707245,
+                "ev_ebitda": 8.887656962788958,
+                "ev_revenue": 2.3755200781112826,
+                "ps_ratio": 2.4433076474268507
+              },
+              "latest_quarter": {
+                "report_period": "2026-03-31",
+                "filing_date": "2026-05-07",
+                "filing_type": "10-Q",
+                "source_type": "10-Q",
+                "filing_window": "AFTER_HOURS",
+                "filing_url": "https://www.sec.gov/Archives/edgar/data/0000831001/000083100126000019/c-20260331.htm",
+                "revenue": 24633000000,
+                "revenue_yoy_change": 0.1406,
+                "eps": 3.06,
+                "eps_yoy_change": 0.5612,
+                "net_income": 5785000000,
+                "operating_income": 1253000000,
+                "operating_margin": 0.0508667235009946,
+                "net_margin": 0.23484756221329112,
+                "estimated_revenue": 23676884334,
+                "estimated_eps": 2.64,
+                "guidance": {
+                  "metric": "return_on_tangible_common_equity",
+                  "fiscal_year": 2026,
+                  "range_low": 10,
+                  "range_high": 11,
+                  "unit": "%"
+                },
+                "signals": [
+                  {
+                    "type": "EPS_BEAT",
+                    "headline": "EPS of $3.06 beat estimate of $2.64 by 15.9%"
+                  },
+                  {
+                    "type": "REVENUE_BEAT",
+                    "headline": "Revenue of $24.6B beat estimate of $23.7B by 4.04%"
+                  },
+                  {
+                    "type": "GUIDANCE_REAFFIRMED",
+                    "headline": "Reaffirmed FY 2026 ROTCE guidance of 10%–11%"
+                  }
+                ]
+              },
+              "financial_health": {
+                "roe": 0.08352333865822269,
+                "roa": 0.006343407302550647,
+                "gross_margin": 0.9991554335626257,
+                "operating_margin": 1.168424327958483,
+                "net_margin": 0.1958060608754598,
+                "debt_to_equity": 1.7995060651595807,
+                "debt_to_assets": 0.13666838632286504,
+                "interest_coverage": 1.2844246274126558,
+                "current_ratio": 5.363619962251582,
+                "cash_ratio": 5.353086488286888,
+                "total_assets": 2778000000000,
+                "shareholders_equity": 210959000000,
+                "total_debt": 379622000000,
+                "earnings_growth": 0.2316510555011883,
+                "eps_growth": 0.29898963516851107
+              },
+              "news_highlights": [],
+              "insider_trades": {
+                "available": true,
+                "recent_trades": [
+                  {
+                    "name": "John Cunningham Dugan",
+                    "title": "Board Director",
+                    "transaction_date": "2026-05-08",
+                    "transaction_type": "Open market sale",
+                    "shares": 2117,
+                    "price_per_share": 125.3,
+                    "value": 265260.1,
+                    "filing_date": "2026-05-08"
+                  },
+                  {
+                    "name": "David Livingstone",
+                    "title": "Chief Client Officer",
+                    "transaction_date": "2026-04-20",
+                    "transaction_type": "Tax or exercise-price share withholding",
+                    "shares": 85180.13,
+                    "price_per_share": 132.18,
+                    "value": 11259109.58,
+                    "filing_date": "2026-04-20"
+                  },
+                  {
+                    "name": "Nicole Giles",
+                    "title": "Chief Accounting Officer",
+                    "transaction_date": "2026-04-15",
+                    "transaction_type": "Open market sale",
+                    "shares": 12732,
+                    "price_per_share": 131.8,
+                    "value": 1678077.6,
+                    "filing_date": "2026-04-15"
+                  }
+                ],
+                "summary": "Insider activity skews toward selling/withholding rather than purchases."
+              },
+              "institutional_ownership": {
+                "available": false,
+                "summary": null,
+                "note": "Ticker-level ownership query was not available in this API session."
+              },
+              "assessment": {
+                "key_takeaways": [
+                  "C screens as the deepest value name in the peer set on P/B and a modest P/E.",
+                  "Q1 beat and FY2026 ROTCE guidance support the turnaround narrative.",
+                  "The stock has recovered, but profitability still trails JPM/MS."
+                ],
+                "risks": [
+                  "Lower ROE/ROA versus JPM/MS and a less proven earnings mix.",
+                  "Turnaround execution risk remains central."
+                ]
+              }
+            },
+            {
+              "ticker": "WFC",
+              "name": "Wells Fargo & Company",
+              "market_snapshot": {
+                "current_price": 77.52,
+                "day_change": 0.35,
+                "day_change_percent": 0.45,
+                "snapshot_time_utc": "2026-06-03T15:13:54Z",
+                "range_1m": {
+                  "low": 72.78,
+                  "high": 81.47
+                },
+                "latest_volume": 15558441,
+                "latest_volume_date": "2026-06-01",
+                "prior_close": 77.17,
+                "prior_close_date": "2026-06-01"
+              },
+              "market_valuation": {
+                "market_cap": 237287093365,
+                "enterprise_value": 278726093365,
+                "pe_ratio": 11.387021102213849,
+                "pb_ratio": 1.3301144272573375,
+                "ev_ebitda": 8.345592351787532,
+                "ev_revenue": 3.323984751469834,
+                "ps_ratio": 2.8297984969530012
+              },
+              "latest_quarter": {
+                "report_period": "2026-03-31",
+                "filing_date": "2026-04-29",
+                "filing_type": "10-Q",
+                "source_type": "10-Q",
+                "filing_window": "AFTER_HOURS",
+                "filing_url": "https://www.sec.gov/Archives/edgar/data/0000072971/000007297126000217/wfc-20260331.htm",
+                "revenue": 21446000000,
+                "revenue_yoy_change": 0.0644,
+                "eps": 1.6,
+                "eps_yoy_change": 0.1511,
+                "net_income": 5253000000,
+                "operating_income": 8176000000,
+                "operating_margin": 0.3812365942366875,
+                "net_margin": 0.2449407814977152,
+                "estimated_revenue": 21685791500,
+                "estimated_eps": 1.58,
+                "guidance": null,
+                "signals": [
+                  {
+                    "type": "EPS_INCREASE",
+                    "headline": "EPS grew 15.1% year-over-year to $1.60"
+                  },
+                  {
+                    "type": "REVENUE_MISS",
+                    "headline": "Revenue missed estimate by 1.1%"
+                  }
+                ]
+              },
+              "financial_health": {
+                "roe": 0.11900491042400053,
+                "roa": 0.009624835430275026,
+                "gross_margin": 0.9490775523833375,
+                "operating_margin": 0.7700022658700345,
+                "net_margin": 0.2531811622720714,
+                "debt_to_equity": 1.2120395076122783,
+                "debt_to_assets": 0.09802688606878743,
+                "interest_coverage": 1.6178961611706926,
+                "current_ratio": 5.414286599343288,
+                "cash_ratio": 5.414286599343288,
+                "total_assets": 2205752000000,
+                "shareholders_equity": 178396000000,
+                "total_debt": 216223000000,
+                "earnings_growth": -0.005061392820320555,
+                "eps_growth": 0.034701685876984474
+              },
+              "news_highlights": [],
+              "insider_trades": {
+                "available": true,
+                "recent_trades": [
+                  {
+                    "name": "Theodore F Jr Craver",
+                    "title": "Board Director",
+                    "transaction_date": "2026-05-14",
+                    "transaction_type": "Gift",
+                    "shares": 89,
+                    "price_per_share": 0,
+                    "value": 0,
+                    "filing_date": "2026-05-14"
+                  },
+                  {
+                    "name": "Theodore F Jr Craver",
+                    "title": "Board Director",
+                    "transaction_date": "2026-05-14",
+                    "transaction_type": "Gift",
+                    "shares": 89,
+                    "price_per_share": 0,
+                    "value": 0,
+                    "filing_date": "2026-05-14"
+                  },
+                  {
+                    "name": "Steven D Black",
+                    "title": "Board Director",
+                    "transaction_date": "2026-04-01",
+                    "transaction_type": "Company grant or award",
+                    "shares": 1117.0411,
+                    "price_per_share": 80.57,
+                    "value": 90000,
+                    "filing_date": "2026-04-01"
+                  }
+                ],
+                "summary": "Recent insider activity is mostly director grants/gifts rather than directional open-market trading."
+              },
+              "institutional_ownership": {
+                "available": false,
+                "summary": null,
+                "note": "Ticker-level ownership query was not available in this API session."
+              },
+              "assessment": {
+                "key_takeaways": [
+                  "WFC remains the cheapest earnings multiple in the group after JPM, with solid but less exciting growth.",
+                  "Q1 beat EPS but missed revenue, suggesting some top-line pressure.",
+                  "A cleaner balance sheet than in prior cycles, but still not as compelling as JPM on quality."
+                ],
+                "risks": [
+                  "Growth is modest and revenue execution is uneven.",
+                  "No obvious near-term catalyst from the available news feed."
+                ]
+              }
+            },
+            {
+              "ticker": "GS",
+              "name": "The Goldman Sachs Group, Inc.",
+              "market_snapshot": {
+                "current_price": 1038.15,
+                "day_change": -10.43,
+                "day_change_percent": -0.99,
+                "snapshot_time_utc": "2026-06-03T15:13:47Z",
+                "range_1m": {
+                  "low": 899.0,
+                  "high": 1051.2
+                },
+                "latest_volume": 2666658,
+                "latest_volume_date": "2026-06-01",
+                "prior_close": 1048.58,
+                "prior_close_date": "2026-06-01"
+              },
+              "market_valuation": {
+                "market_cap": 306014147878,
+                "enterprise_value": 745532147878,
+                "pe_ratio": 17.565093188190666,
+                "pb_ratio": 2.492337214559137,
+                "ev_ebitda": 29.98681312356206,
+                "ev_revenue": 12.013860833408534,
+                "ps_ratio": 4.931258023043703
+              },
+              "latest_quarter": {
+                "report_period": "2026-03-31",
+                "filing_date": "2026-05-01",
+                "filing_type": "10-Q",
+                "source_type": "10-Q",
+                "filing_window": "AFTER_HOURS",
+                "filing_url": "https://www.sec.gov/Archives/edgar/data/0000886982/000088698226000118/gs-20260331.htm",
+                "revenue": 17227000000,
+                "revenue_yoy_change": 0.1437,
+                "eps": 17.55,
+                "eps_yoy_change": 0.2429,
+                "net_income": 5630000000,
+                "operating_income": -2067000000,
+                "operating_margin": -0.11998606838102978,
+                "net_margin": 0.32681256167643813,
+                "estimated_revenue": 16942067960,
+                "estimated_eps": 16.31,
+                "guidance": {
+                  "metric": "dividends_per_common_share",
+                  "period": "Q2 2026",
+                  "point_estimate": 4.5,
+                  "unit": "USD per share"
+                },
+                "signals": [
+                  {
+                    "type": "EPS_BEAT",
+                    "headline": "EPS of $17.55 beat estimate of $16.31 by 7.60%"
+                  },
+                  {
+                    "type": "REVENUE_BEAT",
+                    "headline": "Revenue of $17.2B beat estimate of $16.9B by 1.68%"
+                  },
+                  {
+                    "type": "GUIDANCE_INITIATED",
+                    "headline": "Initiated Q2 2026 dividend guidance of $4.50 per share"
+                  }
+                ]
+              },
+              "financial_health": {
+                "roe": 0.14814060692935446,
+                "roa": 0.008828840198429264,
+                "gross_margin": 0.9786483176485755,
+                "operating_margin": 1.4455975248162949,
+                "net_margin": 0.293106226634008,
+                "debt_to_equity": 5.041846524734896,
+                "debt_to_assets": 0.30048248211321343,
+                "interest_coverage": 1.3344440312383785,
+                "current_ratio": 0.5575748864485712,
+                "cash_ratio": 0.5160984304030357,
+                "total_assets": 2062000000000,
+                "shareholders_equity": 123000000000,
+                "total_debt": 396000000000,
+                "earnings_growth": 0.058977643223102005,
+                "eps_growth": 0.09198473859628949
+              },
+              "news_highlights": [
+                {
+                  "date_utc": "2026-06-03T10:39:13+00:00",
+                  "title": "Marble Wealth LLC Purchases Shares of 3,595 The Goldman Sachs Group, Inc. $GS",
+                  "source": "MarketBeat",
+                  "url": "https://www.marketbeat.com/instant-alerts/filing-marble-wealth-llc-purchases-shares-of-3595-the-goldman-sachs-group-inc-gs-2026-06-03/",
+                  "sentiment": "positive"
+                },
+                {
+                  "date_utc": "2026-06-03T10:06:21+00:00",
+                  "title": "GS Finance Corp. 125% Buffered Notes Linked to 9 Stocks",
+                  "source": "Stock Titan",
+                  "url": "https://www.stocktitan.net/sec-filings/GS/424b2-goldman-sachs-group-inc-prospectus-supplement-7ca0eb04998c.html",
+                  "sentiment": "neutral"
+                },
+                {
+                  "date_utc": "2026-06-03T10:02:12+00:00",
+                  "title": "The Zacks Analyst Blog Highlights Chevron, The Goldman Sachs and Philip Morris",
+                  "source": "The Globe and Mail",
+                  "url": "https://www.theglobeandmail.com/investing/markets/stocks/GS/pressreleases/2276001/the-zacks-analyst-blog-highlights-chevron-the-goldman-sachs-and-philip-morris/",
+                  "sentiment": "positive"
+                },
+                {
+                  "date_utc": "2026-06-03T08:40:05+00:00",
+                  "title": "The Goldman Sachs Group, Inc. $GS Shares Acquired by CIBC Asset Management Inc",
+                  "source": "MarketBeat",
+                  "url": "https://www.marketbeat.com/instant-alerts/filing-the-goldman-sachs-group-inc-gs-shares-acquired-by-cibc-asset-management-inc-2026-06-03/",
+                  "sentiment": "positive"
+                },
+                {
+                  "date_utc": "2026-06-03T07:08:28+00:00",
+                  "title": "Bank of New York Mellon Corp Lowers Stake in The Goldman Sachs Group, Inc. $GS",
+                  "source": "MarketBeat",
+                  "url": "https://www.marketbeat.com/instant-alerts/filing-bank-of-new-york-mellon-corp-lowers-stake-in-the-goldman-sachs-group-inc-gs-2026-06-03/",
+                  "sentiment": "mixed"
+                }
+              ],
+              "insider_trades": {
+                "available": true,
+                "recent_trades": [
+                  {
+                    "name": "Denis P. Coleman",
+                    "title": "Chief Financial Officer",
+                    "transaction_date": "2026-05-14",
+                    "transaction_type": "Open market sale",
+                    "shares": 2509,
+                    "price_per_share": 972.29,
+                    "value": 2439475.61,
+                    "filing_date": "2026-05-14"
+                  },
+                  {
+                    "name": "Denis P. Coleman",
+                    "title": "Chief Financial Officer",
+                    "transaction_date": "2026-05-14",
+                    "transaction_type": "Open market sale",
+                    "shares": 1560,
+                    "price_per_share": 973.19,
+                    "value": 1518176.4,
+                    "filing_date": "2026-05-14"
+                  },
+                  {
+                    "name": "Denis P. Coleman",
+                    "title": "Chief Financial Officer",
+                    "transaction_date": "2026-05-14",
+                    "transaction_type": "Open market sale",
+                    "shares": 1360,
+                    "price_per_share": 974.53,
+                    "value": 1325360.8,
+                    "filing_date": "2026-05-14"
+                  }
+                ],
+                "summary": "Insider activity is dominated by CFO selling."
+              },
+              "institutional_ownership": {
+                "available": false,
+                "summary": null,
+                "note": "Ticker-level ownership query was not available in this API session."
+              },
+              "assessment": {
+                "key_takeaways": [
+                  "Goldman is delivering strong earnings momentum, but the stock already discounts a lot of strength.",
+                  "Valuation is significantly richer than BAC/WFC/C and well above JPM.",
+                  "Dividend guidance and Q1 beat support the bull case."
+                ],
+                "risks": [
+                  "Cyclical exposure and trading/investment-banking sensitivity.",
+                  "Recent insider selling and balance-sheet leverage are caution points."
+                ]
+              }
+            },
+            {
+              "ticker": "MS",
+              "name": "Morgan Stanley",
+              "market_snapshot": {
+                "current_price": 209.64,
+                "day_change": -1.37,
+                "day_change_percent": -0.65,
+                "snapshot_time_utc": "2026-06-03T15:13:54Z",
+                "range_1m": {
+                  "low": 187.12,
+                  "high": 217.03
+                },
+                "latest_volume": 7664436,
+                "latest_volume_date": "2026-06-02",
+                "prior_close": 214.98,
+                "prior_close_date": "2026-06-02"
+              },
+              "market_valuation": {
+                "market_cap": 330299213528,
+                "enterprise_value": 679611213528,
+                "pe_ratio": 18.303486218179803,
+                "pb_ratio": 2.8901108930927673,
+                "ev_ebitda": 25.696128763157894,
+                "ev_revenue": 9.267215020494989,
+                "ps_ratio": 4.503977821340424
+              },
+              "latest_quarter": {
+                "report_period": "2026-03-31",
+                "filing_date": "2026-05-05",
+                "filing_type": "10-Q",
+                "source_type": "10-Q",
+                "filing_window": "AFTER_HOURS",
+                "filing_url": "https://www.sec.gov/Archives/edgar/data/0000895421/000089542126000121/ms-20260331.htm",
+                "revenue": 20580000000,
+                "revenue_yoy_change": 0.1602,
+                "eps": 3.43,
+                "eps_yoy_change": 0.3192,
+                "net_income": 5567000000,
+                "operating_income": 3789000000,
+                "operating_margin": 0.18411078717201165,
+                "net_margin": 0.2705053449951409,
+                "estimated_revenue": 19806382850,
+                "estimated_eps": 3.05,
+                "guidance": null,
+                "signals": [
+                  {
+                    "type": "EPS_BEAT",
+                    "headline": "EPS of $3.43 beat estimate of $3.05 by 12.5%"
+                  },
+                  {
+                    "type": "REVENUE_BEAT",
+                    "headline": "Revenue of $20.6B beat estimate of $19.8B by 3.91%"
+                  }
+                ]
+              },
+              "financial_health": {
+                "roe": 0.15777085557286108,
+                "roa": 0.01140179256844174,
+                "gross_margin": 1,
+                "operating_margin": 0.988409354332856,
+                "net_margin": 0.24587168473443785,
+                "debt_to_equity": 4.22484818787953,
+                "debt_to_assets": 0.3053215531883411,
+                "interest_coverage": 1.4646985127707728,
+                "current_ratio": 0.9577463778510974,
+                "cash_ratio": 0.9577463778510974,
+                "total_assets": 1581418000000,
+                "shareholders_equity": 114286000000,
+                "total_debt": 482841000000,
+                "earnings_growth": 0.06939090208172706,
+                "eps_growth": 0.08024766250895274
+              },
+              "news_highlights": [],
+              "insider_trades": {
+                "available": true,
+                "recent_trades": [
+                  {
+                    "name": "Shelley B Leibowitz",
+                    "title": "Board Director",
+                    "transaction_date": "2026-06-01",
+                    "transaction_type": "Company grant or award",
+                    "shares": 1309.777,
+                    "price_per_share": 0,
+                    "value": 0,
+                    "filing_date": "2026-06-01"
+                  },
+                  {
+                    "name": "Perry M Traquina",
+                    "title": "Board Director",
+                    "transaction_date": "2026-06-01",
+                    "transaction_type": "Company grant or award",
+                    "shares": 1309.777,
+                    "price_per_share": 0,
+                    "value": 0,
+                    "filing_date": "2026-06-01"
+                  },
+                  {
+                    "name": "Perry M Traquina",
+                    "title": "Board Director",
+                    "transaction_date": "2026-06-01",
+                    "transaction_type": "Company grant or award",
+                    "shares": 369.119,
+                    "price_per_share": 209.9594,
+                    "value": 77500,
+                    "filing_date": "2026-06-01"
+                  }
+                ],
+                "summary": "Recent insider activity is grant-heavy and not obviously bearish."
+              },
+              "institutional_ownership": {
+                "available": false,
+                "summary": null,
+                "note": "Ticker-level ownership query was not available in this API session."
+              },
+              "assessment": {
+                "key_takeaways": [
+                  "MS showed strong Q1 beats and the best near-term momentum among the wealth/capital-markets names.",
+                  "ROE is strong, but valuation is rich versus JPM/BAC/WFC/C.",
+                  "No company news was returned from the news endpoint."
+                ],
+                "risks": [
+                  "High multiple and market-sensitive mix.",
+                  "Balance-sheet leverage remains elevated versus JPM/BAC/WFC."
+                ]
+              }
+            }
+          ],
+          "assessment_summary": {
+            "ranking_notes": [
+              "Best overall quality/scale: JPM.",
+              "Best value screen: C and WFC on P/B and P/E; C offers more turnaround optionality, WFC offers cleaner earnings quality.",
+              "Highest earnings momentum: MS and GS.",
+              "Highest valuation and most leverage-sensitive: GS and MS."
+            ],
+            "key_takeaways": [
+              "The peer set is broadly constructive: all six names have recent quarter EPS strength, with only WFC missing revenue estimates.",
+              "JPM remains the anchor franchise with the strongest blend of scale, profitability, and moderate valuation.",
+              "C is the most obvious turnaround/value name, while MS and GS have the strongest earnings momentum but richer valuations.",
+              "BAC and WFC sit in the middle: cheaper than JPM/MS/GS, but with less excitement on growth."
+            ],
+            "risks": [
+              "Rates, credit, and capital-markets cyclicality remain the main sector risks.",
+              "Several names show insider selling or no news coverage, which limits conviction on near-term catalysts.",
+              "Derived EV and leverage metrics can be inconsistent across data feeds for banks; absolute balance-sheet and earnings trends are more reliable."
+            ]
+          },
+          "data_quality_notes": [
+            "JPM financial metrics feeds conflict materially on EV/EBITDA and EV/revenue; the snapshot and TTM metrics report different values.",
+            "Institutional ownership ticker-level lookups were not available because the API required an investor parameter.",
+            "Company news endpoints returned no data for C, WFC, and MS in this session.",
+            "Banking ratios such as margins, current ratios, and debt-to-equity are not always comparable across feeds because bank balance sheets are structurally different from non-financial companies.",
+            "Insider trade data is a recent sample, not a complete universe of all transactions."
+          ],
+          "source_timestamps": {
+            "current_price_snapshots_utc": {
+              "JPM": "2026-06-03T15:14:04Z",
+              "BAC": "2026-06-03T15:13:53Z",
+              "C": "2026-06-03T15:13:55Z",
+              "WFC": "2026-06-03T15:13:54Z",
+              "GS": "2026-06-03T15:13:47Z",
+              "MS": "2026-06-03T15:13:54Z"
+            },
+            "historical_price_windows": {
+              "JPM": {
+                "start_date": "2026-05-03",
+                "end_date": "2026-06-03"
+              },
+              "BAC": {
+                "start_date": "2026-05-03",
+                "end_date": "2026-06-03"
+              },
+              "C": {
+                "start_date": "2026-05-03",
+                "end_date": "2026-06-03"
+              },
+              "WFC": {
+                "start_date": "2026-05-03",
+                "end_date": "2026-06-03"
+              },
+              "GS": {
+                "start_date": "2026-05-03",
+                "end_date": "2026-06-03"
+              },
+              "MS": {
+                "start_date": "2026-05-03",
+                "end_date": "2026-06-03"
+              }
+            },
+            "latest_quarter_filing_dates": {
+              "JPM": "2026-05-01",
+              "BAC": "2026-05-01",
+              "C": "2026-05-07",
+              "WFC": "2026-04-29",
+              "GS": "2026-05-01",
+              "MS": "2026-05-05"
+            },
+            "news_latest_dates_utc": {
+              "JPM": "2026-06-03T10:10:19+00:00",
+              "BAC": "2026-06-03T13:28:55+00:00",
+              "C": null,
+              "WFC": null,
+              "GS": "2026-06-03T10:39:13+00:00",
+              "MS": null
+            },
+            "insider_latest_filing_dates": {
+              "JPM": "2026-05-20",
+              "BAC": "2026-05-15",
+              "C": "2026-05-08",
+              "WFC": "2026-05-14",
+              "GS": "2026-05-14",
+              "MS": "2026-06-01"
+            },
+            "financial_metrics_report_period": {
+              "JPM": "2026-03-31",
+              "BAC": "2026-03-31",
+              "C": "2026-03-31",
+              "WFC": "2026-03-31",
+              "GS": "2026-03-31",
+              "MS": "2026-03-31"
+            }
+          }
+        }
+      }
+    ]
+  }
+]
