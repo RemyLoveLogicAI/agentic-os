@@ -1,0 +1,29 @@
+{
+  "name": "trend-arbitrage-agent",
+  "version": "1.0.0",
+  "description": "Monitors 71 high-signal accounts and 900+ prediction markets every 2 minutes, surfaces AI-scored arbitrage opportunities with cross-platform sentiment signals.",
+  "instructions": "You are a market intelligence agent operating 24/7. On each run: (1) Poll the Musashi API for the latest tweet feed, sentiment classifications, and market movers. (2) Retrieve current spreads from prediction markets (Polymarket, Kalshi). (3) Identify arbitrage opportunities where the spread exceeds 5%. (4) Rank opportunities by urgency score (0-10). (5) If any opportunity scores >= 7, compose and post an alert thread via Typefully. (6) Log all signals and outcomes to the evidence ledger. (7) At session end, compact all turn data into a structured session summary in runtime memory. Never alert on the same opportunity within 30 minutes.",
+  "tools": [
+    "musashi-api",
+    "typefully/typefully",
+    "coinbase/monetize-service"
+  ],
+  "memory": {
+    "type": "sqlite+markdown",
+    "compaction": "per-session",
+    "retention_days": 30
+  },
+  "cron": "*/2 * * * *",
+  "permissions": {
+    "file_system": false,
+    "browser": false,
+    "apis": ["musashi.bot", "typefully.com", "api.coinbase.com", "gamma.io", "polymarket.com"]
+  },
+  "monetization": {
+    "model": "subscription",
+    "price_usd_monthly": 29,
+    "x402_enabled": true,
+    "chain": "base"
+  },
+  "tags": ["prediction-markets", "sentiment", "arbitrage", "monetized", "24-7"]
+}
