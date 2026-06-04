@@ -1,0 +1,229 @@
+{
+  "timestamp": "2026-06-03T20:00:00-07:00",
+  "task": "Big Bank night sweep",
+  "sweep_type": "night sweep",
+  "entries": [
+    {
+      "timestamp": "2026-06-03T20:00:00-07:00",
+      "task": "Big Bank triple-sweep research task",
+      "sweep_type": "night sweep",
+      "run_label": "night_sweep",
+      "entry_type": "big_bank_night_sweep",
+      "entry_id": "big_bank_2026-06-03T20:00:00-07:00_night_sweep",
+      "assumption": "Big Bank interpreted as JPMorgan Chase & Co. (JPM).",
+      "universe": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
+      "results": {
+        "report_text": "Big Bank Night Sweep Report — JPM. JPMorgan Chase & Co. (JPM) is the Big Bank target. The latest available snapshot shows JPM at $297.57 (+0.33% / +$0.99), market cap about $793.4B, P/E 13.8x, P/B 2.18x, and TTM ROE near 15.9%. Q1 2026 revenue was $49.84B (+10.0% YoY) and EPS was $5.94 (+17.2% YoY). Macro rates remain moderately supportive for net interest income, but any easing path could compress spreads. News flow is mostly financing/capital-markets and editorial items, leaving the tone constructive but not euphoric. Bottom line: JPM remains the quality leader in the Big Bank group; near-term bias is neutral to slightly positive.",
+        "identity_resolution": {
+          "mapped_symbol": "JPM",
+          "company_name": "JPMorgan Chase & Co.",
+          "cik": "0000019617",
+          "sector": "Financials",
+          "industry": "Banks",
+          "exchange": "NYSE",
+          "country": "United States",
+          "confidence": "high"
+        },
+        "stock_movement": {
+          "current_price": 297.57,
+          "day_change": 0.99,
+          "day_change_percent": 0.33,
+          "snapshot_time_utc": "2026-06-03T15:14:04Z",
+          "range_1m": {
+            "low": 293.67,
+            "high": 316.3
+          },
+          "latest_volume": 7929978,
+          "latest_volume_date": "2026-06-01",
+          "prior_close": 296.58,
+          "prior_close_date": "2026-06-01"
+        },
+        "latest_financial_snapshot": {
+          "market_valuation": {
+            "market_cap": 793359043430,
+            "enterprise_value": 523589368972,
+            "pe_ratio": 13.795,
+            "pb_ratio": 2.179,
+            "ps_ratio": 4.243,
+            "ev_ebitda_snapshot": 6.3516961528999305,
+            "ev_ebitda_ttm": 16.891,
+            "ev_revenue_snapshot": 2.8698162697769765,
+            "ev_revenue_ttm": 9.170586359688297,
+            "valuation_note": "Cross-feed discrepancy; EV-based ratios differ materially between feeds, so treat them as approximate."
+          },
+          "q1_2026": {
+            "report_period": "2026-03-31",
+            "filing_date": "2026-05-01",
+            "filing_type": "10-Q",
+            "filing_window": "AFTER_HOURS",
+            "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+            "revenue": 49836000000,
+            "revenue_yoy_change": 0.0999,
+            "eps": 5.94,
+            "eps_yoy_change": 0.1716,
+            "net_income": 16494000000,
+            "operating_income": 14172000000,
+            "operating_margin": 0.28437274259571393,
+            "net_margin": 0.33096556705995667,
+            "shareholders_equity": 364038000000,
+            "total_assets": 4900475000000,
+            "total_liabilities": 4536437000000,
+            "total_debt": 68048000000,
+            "signals": [
+              "Operating margin expanded 521 bps year over year",
+              "EPS increased 17.2% year over year",
+              "Revenue grew 10.0% year over year"
+            ]
+          },
+          "profitability": {
+            "roe": 0.159,
+            "roa": 0.0129,
+            "gross_margin": 0.9221034053725191,
+            "operating_margin": 0.9344796022954611,
+            "net_margin": 0.31268258727192005,
+            "debt_to_equity": 0.17872298158581607,
+            "debt_to_assets": 0.014638974892087956,
+            "interest_coverage": 1.7415371100533208,
+            "current_ratio": 4.268514949959595,
+            "cash_ratio": 4.268514949959595,
+            "revenue_growth": 0.024807204283983843,
+            "earnings_growth": 0.032865789048328875,
+            "eps_growth": 0.04252793529098429,
+            "profitability_note": "Bank-sector ratios like gross margin and current ratio are less comparable than ROE, ROA, P/E, and P/B."
+          }
+        },
+        "macro_context": {
+          "interest_rates_snapshot_date": "2026-04-01",
+          "rates": {
+            "FED": 3.625,
+            "ECB": 2.0,
+            "BOE": 3.75,
+            "BOC": 2.25
+          },
+          "assessment": "Policy rates remain moderately elevated versus pre-tightening norms, which is broadly supportive for bank net interest income, though further easing could gradually normalize spreads and pressure margin expansion.",
+          "sector_watch_items": [
+            "Credit quality and provisioning",
+            "Net interest income sensitivity to rates and deposit costs",
+            "Capital and liquidity discipline",
+            "Cybersecurity and AI investment"
+          ]
+        },
+        "news_digest": {
+          "overall_sentiment": "mixed_to_positive",
+          "items": [
+            {
+              "date_utc": "2026-06-03T10:10:19+00:00",
+              "title": "JPMorgan Chase (JPM) prices 5.225% callable notes maturing 2036",
+              "source": "Stock Titan",
+              "url": "https://www.stocktitan.net/sec-filings/JPM/424b2-jpmorgan-chase-co-prospectus-supplement-b5aaa46a2afc.html",
+              "sentiment": "neutral",
+              "sentiment_basis": "Capital-markets issuance event; operationally normal and mildly supportive of funding access."
+            },
+            {
+              "date_utc": "2026-06-02T21:45:02+00:00",
+              "title": "JPMorgan Chase & Co. (JPM) Exceeds Market Returns: Some Facts to Consider",
+              "source": "Yahoo Finance",
+              "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-chase-co-jpm-exceeds-214502921.html",
+              "sentiment": "positive",
+              "sentiment_basis": "Editorial item framing the stock as outperforming."
+            },
+            {
+              "date_utc": "2026-06-02T20:15:25+00:00",
+              "title": "JPMorgan Chase closes $500M fixed-to-floating 2030 notes",
+              "source": "Stock Titan",
+              "url": "https://www.stocktitan.net/sec-filings/JPM/8-k-jpmorgan-chase-co-reports-material-event-84b1a25f4b49.html",
+              "sentiment": "neutral",
+              "sentiment_basis": "Funding transaction; not inherently negative."
+            },
+            {
+              "date_utc": "2026-06-02T10:21:57+00:00",
+              "title": "JPMorgan prices callable 5.35% notes due 2038",
+              "source": "Stock Titan",
+              "url": "https://www.stocktitan.net/sec-filings/JPM/424b2-jpmorgan-chase-co-prospectus-supplement-e42f8270d51c.html",
+              "sentiment": "neutral",
+              "sentiment_basis": "Routine funding activity."
+            },
+            {
+              "date_utc": "2026-06-01T23:26:17+00:00",
+              "title": "Auto-Callable Notes Linked to MerQube Index — JPM",
+              "source": "Stock Titan",
+              "url": "https://www.stocktitan.net/sec-filings/JPM/424b3-jpmorgan-chase-co-prospectus-filed-pursuant-to-rule-424-b-3-b265c0c98064.html",
+              "sentiment": "neutral",
+              "sentiment_basis": "Structured-product issuance with limited fundamental signal."
+            }
+          ]
+        },
+        "bottom_line": {
+          "stance": "neutral_to_slightly_positive",
+          "summary": "JPM remains the quality leader in the Big Bank group. The franchise still screens well on profitability and valuation, and the latest news mix is constructive without being transformative.",
+          "bull_points": [
+            "Strong Q1 2026 revenue and EPS growth remain the core fundamental story.",
+            "ROE around 15.9% is strong for a money-center bank.",
+            "Valuation is reasonable relative to franchise quality and scale.",
+            "Funding access and capital-markets activity remain active."
+          ],
+          "bear_points": [
+            "EV-based ratios vary materially across feeds and should be treated cautiously.",
+            "Macro and credit conditions remain the key swing factors for banks.",
+            "The news flow is mostly financing/aggregation-driven rather than a fresh operating catalyst."
+          ]
+        },
+        "sources": [
+          {
+            "type": "company_facts",
+            "tool": "provided_research_brief",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000019617",
+            "note": "Company identity and SEC reference."
+          },
+          {
+            "type": "current_price_snapshot",
+            "tool": "provided_research_brief",
+            "as_of": "2026-06-03T15:14:04Z",
+            "note": "Latest available price snapshot used for this night record."
+          },
+          {
+            "type": "financial_metrics_snapshot",
+            "tool": "provided_research_brief",
+            "report_period": "2026-03-31",
+            "note": "Latest valuation and TTM ratio snapshot."
+          },
+          {
+            "type": "quarterly_financials",
+            "tool": "provided_research_brief",
+            "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+            "report_period": "2026-03-31"
+          },
+          {
+            "type": "earnings_snapshot",
+            "tool": "provided_research_brief",
+            "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm",
+            "report_period": "2026-03-31"
+          },
+          {
+            "type": "historical_prices",
+            "tool": "provided_research_brief",
+            "range": "2026-05-03 to 2026-06-03",
+            "note": "Used to infer volatility and liquidity context."
+          },
+          {
+            "type": "news",
+            "tool": "provided_research_brief",
+            "articles": [
+              "https://www.stocktitan.net/sec-filings/JPM/424b2-jpmorgan-chase-co-prospectus-supplement-b5aaa46a2afc.html",
+              "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-chase-co-jpm-exceeds-214502921.html",
+              "https://www.stocktitan.net/sec-filings/JPM/8-k-jpmorgan-chase-co-reports-material-event-84b1a25f4b49.html",
+              "https://www.stocktitan.net/sec-filings/JPM/424b2-jpmorgan-chase-co-prospectus-supplement-e42f8270d51c.html",
+              "https://www.stocktitan.net/sec-filings/JPM/424b3-jpmorgan-chase-co-prospectus-filed-pursuant-to-rule-424-b-3-b265c0c98064.html"
+            ]
+          }
+        ],
+        "notes": [
+          "The night sweep uses the latest available morning price snapshot because no later intraday quote was surfaced in the repo.",
+          "EV and TTM ratio fields are point-in-time estimates from the supplied sweep inputs and should be treated as approximate.",
+          "News coverage is a mix of strategic, financing, and editorial/aggregation items, so sentiment should be treated as moderate-confidence rather than high-confidence."
+        ],
+        "uncertainty_note": "No post-close quote or fresh market tape was available in the repo at write time, so this night sweep uses the latest published 2026-06-03 morning snapshot and the newest indexed news items available in the repository."
+      }
+    }
+  ]
+}
