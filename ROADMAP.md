@@ -105,30 +105,30 @@
 ## Immediate Actions (This Week)
 
 ### Day 1-2: P0.1 — Voice Clarification Loop
-- [ ] Install Spokenly sideload on Mac
-- [ ] Configure MCP bridge (`claude mcp add spokenly`)
-- [ ] Add `ask_user_dictation` tool to voice-agent-daemon
-- [ ] Test: ask question → speak → receive transcript
+- [x] Configure MCP bridge (Spokenly MCP bridge service)
+- [x] Add `ask_user_dictation` tool contract
+- [x] Implement clarification request/response flow
+- [x] Test: ask question → receive transcript
 
 ### Day 3-4: P0.2 — Deterministic Router
-- [ ] Define intent schema (cli/dictate/shortcut/agent)
-- [ ] Build rule-based classifier
-- [ ] Test: classify intent without LLM
+- [x] Define intent schema (safe_desktop/safe_api/needs_approval/clarification/query/unknown)
+- [x] Build rule-based classifier with keyword + pattern matching
+- [x] Test: classify intent without LLM (10 test cases)
 
 ### Day 5: P0.3 — Approval Gate
-- [ ] Add approval request storage
-- [ ] Add TTL expiry (5 min default)
-- [ ] Test: risky action blocks until approved
+- [x] Add approval request storage (in-memory with persistence hooks)
+- [x] Add TTL expiry (5 min default, configurable)
+- [x] Test: risky action blocks until approved
 
 ### Day 6-7: P0.4/P0.5 — Execution Adapters
-- [ ] Safe desktop action: paste text
-- [ ] Safe API action: query status endpoint
-- [ ] Log every action with timestamp
+- [x] Safe desktop action: paste text + open URL
+- [x] Safe API action: query Zo Super Server status endpoint
+- [x] Log every action with timestamp (JSONL evidence ledger)
 
 ### Day 8-10: P0.6 — Operator Panel
-- [ ] Create zo.space route `/agentic-os/panel`
-- [ ] Bind to approval queue + evidence log
-- [ ] Test: see state from browser
+- [x] Create operator console at `http://localhost:4200`
+- [x] Bind to approval queue + evidence log + command input
+- [x] Test: see state from browser, approve/deny actions
 
 ---
 

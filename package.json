@@ -1,0 +1,20 @@
+{
+  "name": "agentic-os",
+  "version": "0.1.0",
+  "description": "A voice-native operating system for the Agentic Web",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run apps/operator-console/index.ts",
+    "orchestrator": "bun run agents/orchestrator/index.ts",
+    "test": "bun test",
+    "lint": "bunx biome check .",
+    "typecheck": "bunx tsc --noEmit",
+    "format": "bunx biome format --write ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.0",
+    "@types/bun": "latest",
+    "typescript": "^5.5.0"
+  }
+}
