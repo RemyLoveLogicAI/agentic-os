@@ -1,0 +1,5 @@
+# Default code owners
+* @RemyLoveLogicAI
+
+# Specs and research docs
+/research/docs/* @RemyLoveLogicAI
