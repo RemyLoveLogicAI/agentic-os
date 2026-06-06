@@ -23,3 +23,9 @@ Thumbs.db
 # Temp files
 *.tmp
 *.temp
+
+# Secrets — never commit API keys or environment files
+.env
+**/.env
+.env.*
+!.env.example

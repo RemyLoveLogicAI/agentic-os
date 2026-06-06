@@ -1,0 +1,98 @@
+version: "3.9"
+
+# LoveLogicAI Agentic OS — 24/7 Persistent Agent Stack
+# Runs all three skill-build agents as always-on services.
+# restart: always ensures Docker restarts within ~500ms of any crash, reboot, or OOM.
+
+x-agent-base: &agent-base
+  build:
+    context: ../..
+    dockerfile: ops/docker/Dockerfile.agent
+  restart: always
+  environment: &env-base
+    ANTHROPIC_API_KEY: "${ANTHROPIC_API_KEY}"
+    CHECKPOINT_BACKEND: "${CHECKPOINT_BACKEND:-sqlite}"
+    CHECKPOINT_TABLE: "${CHECKPOINT_TABLE:-lovelogic-checkpoints}"
+    COMPACTION_MODEL: "${COMPACTION_MODEL:-claude-haiku-4-5-20251001}"
+    AWS_REGION: "${AWS_REGION:-us-east-1}"
+    AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+    AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+    DATABASE_URL: "${DATABASE_URL}"
+    MEMORY_ROOT: "/app/memory/workspace"
+    RUNTIME_DB: "/app/state/runtime.db"
+    RUNTIME_TTL_DAYS: "7"
+  volumes:
+    - agent_memory:/app/memory
+    - agent_state:/app/state
+    - agent_logs:/app/ops/ledgers
+  healthcheck:
+    test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+    interval: 30s
+    timeout: 10s
+    retries: 3
+    start_period: 15s
+
+services:
+  # ── Skill Build #1: Trend Arbitrage Agent (runs every 2 min via cron) ────────
+  trend-arbitrage:
+    <<: *agent-base
+    container_name: lovelogic-trend-arbitrage
+    environment:
+      <<: *env-base
+      MUSASHI_API_URL: "${MUSASHI_API_URL}"
+      MUSASHI_API_KEY: "${MUSASHI_API_KEY}"
+      AGENT: "trend-arbitrage"
+    command: >
+      sh -c "
+        echo '*/2 * * * * cd /app && /usr/local/bin/python -m agents.trend-arbitrage.agent >> /app/ops/ledgers/trend-arbitrage.log 2>&1' | crontab - &&
+        cron -f
+      "
+    labels:
+      lovelogic.agent: "trend-arbitrage"
+      lovelogic.schedule: "*/2 * * * *"
+
+  # ── Skill Build #2: Social Content Engine (runs Mondays at 08:00 UTC) ────────
+  social-content-engine:
+    <<: *agent-base
+    container_name: lovelogic-social-content
+    environment:
+      <<: *env-base
+      CLIENT_ID: "${CLIENT_ID:-lovelogicai}"
+      CONTENT_BRIEF: "${CONTENT_BRIEF:-Focus on AI agent infrastructure and the agentic-os launch.}"
+      AGENT: "social-content-engine"
+    command: >
+      sh -c "
+        echo '0 8 * * 1 cd /app && /usr/local/bin/python -m agents.social-content-engine.agent >> /app/ops/ledgers/social-content.log 2>&1' | crontab - &&
+        cron -f
+      "
+    labels:
+      lovelogic.agent: "social-content-engine"
+      lovelogic.schedule: "0 8 * * 1"
+
+  # ── Skill Build #3: Micro-SaaS Factory (runs on-demand via env trigger) ──────
+  micro-saas-factory:
+    <<: *agent-base
+    container_name: lovelogic-micro-saas-factory
+    environment:
+      <<: *env-base
+      CLOUDFLARE_ACCOUNT_ID: "${CLOUDFLARE_ACCOUNT_ID}"
+      CLOUDFLARE_API_TOKEN: "${CLOUDFLARE_API_TOKEN}"
+      PRODUCT_IDEA: "${PRODUCT_IDEA:-}"
+      AGENT: "micro-saas-factory"
+    command: >
+      sh -c "if [ -n \"$$PRODUCT_IDEA\" ]; then
+        cd /app && /usr/local/bin/python -m agents.micro-saas-factory.agent;
+      else
+        echo 'No PRODUCT_IDEA set — factory is idle. Set PRODUCT_IDEA and restart.' && sleep infinity;
+      fi"
+    labels:
+      lovelogic.agent: "micro-saas-factory"
+      lovelogic.trigger: "manual"
+
+volumes:
+  agent_memory:
+    driver: local
+  agent_state:
+    driver: local
+  agent_logs:
+    driver: local
