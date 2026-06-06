@@ -119,4 +119,4 @@ result = await graph.ainvoke(new_message, config=config)
 | Social Content Engine | `ops/ledgers/social-content-audit.jsonl` |
 | Micro-SaaS Factory | `ops/ledgers/micro-saas-factory-audit.jsonl` |
 
-Each line is a newline-delimited JSON artifact written before any publish or deploy action.
+Each line is a newline-delimited JSON artifact written before any publish action; for the Micro-SaaS Factory, the ledger entry is written after deploy and before launch publishing.

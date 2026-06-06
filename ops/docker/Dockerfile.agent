@@ -2,10 +2,16 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# System deps for cron + healthcheck
+# System deps for healthcheck; supercronic provides non-root cron scheduling
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    cron curl \
+    curl \
     && rm -rf /var/lib/apt/lists/*
+
+ARG SUPERCRONIC_VERSION=0.2.33
+RUN curl -fsSL \
+    "https://github.com/aptible/supercronic/releases/download/v${SUPERCRONIC_VERSION}/supercronic-linux-amd64" \
+    -o /usr/local/bin/supercronic \
+    && chmod +x /usr/local/bin/supercronic
 
 # Install shared requirements
 COPY agents/trend-arbitrage/requirements.txt /tmp/req-trend.txt
@@ -31,6 +37,6 @@ RUN groupadd --gid 1001 agentuser && \
 USER agentuser
 
 HEALTHCHECK --interval=30s --timeout=10s --retries=3 \
-    CMD pgrep cron > /dev/null || exit 1
+    CMD pgrep supercronic > /dev/null || exit 1
 
 CMD ["sh", "-c", "echo 'No command override — start via docker-compose.' && exit 1"]

@@ -16,6 +16,7 @@ from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
 from langchain_core.tools import tool
 from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
+from langgraph.prebuilt import ToolNode
 
 from packages.memory.checkpoint import get_checkpointer
 from packages.memory.compaction import compact_session
@@ -107,6 +108,7 @@ async def log_evidence(signal: dict, run_id: str) -> str:
     ledger_path = "ops/ledgers/trend-arbitrage-audit.jsonl"
 
     def _write() -> None:
+        """Append evidence artifact to the audit ledger file."""
         os.makedirs(os.path.dirname(ledger_path), exist_ok=True)
         with open(ledger_path, "a", encoding="utf-8") as f:
             f.write(json.dumps(artifact) + "\n")
@@ -116,6 +118,7 @@ async def log_evidence(signal: dict, run_id: str) -> str:
 
 
 TOOLS = [fetch_musashi_feed, detect_arbitrage_spreads, publish_signal_thread, log_evidence]
+_TOOL_EXECUTOR = ToolNode(TOOLS)
 
 
 # ── Nodes ─────────────────────────────────────────────────────────────────────
@@ -146,9 +149,7 @@ async def analyst_node(state: ArbitrageState) -> ArbitrageState:
 
 async def tool_node(state: ArbitrageState) -> ArbitrageState:
     """Execute tool calls requested by the analyst LLM."""
-    from langgraph.prebuilt import ToolNode
-    tool_executor = ToolNode(TOOLS)
-    return await tool_executor.ainvoke(state)
+    return await _TOOL_EXECUTOR.ainvoke(state)
 
 
 def should_continue(state: ArbitrageState) -> Literal["tools", "end"]:

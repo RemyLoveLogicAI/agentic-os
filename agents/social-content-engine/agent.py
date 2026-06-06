@@ -15,6 +15,7 @@ from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
 from langchain_core.tools import tool
 from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
+from langgraph.prebuilt import ToolNode
 
 from packages.memory.checkpoint import get_checkpointer
 from packages.memory.compaction import compact_session
@@ -127,6 +128,7 @@ async def save_content_artifact(plan: list[dict], run_id: str, client_id: str) -
     ledger_path = "ops/ledgers/social-content-audit.jsonl"
 
     def _write() -> None:
+        """Append content artifact to the audit ledger file."""
         os.makedirs(os.path.dirname(ledger_path), exist_ok=True)
         with open(ledger_path, "a", encoding="utf-8") as f:
             f.write(json.dumps(artifact) + "\n")
@@ -136,6 +138,7 @@ async def save_content_artifact(plan: list[dict], run_id: str, client_id: str) -
 
 
 TOOLS = [research_trends, generate_content_plan, produce_media_asset, schedule_posts, save_content_artifact]
+_TOOL_EXECUTOR = ToolNode(TOOLS)
 
 
 # ── Nodes ─────────────────────────────────────────────────────────────────────
@@ -177,9 +180,7 @@ async def content_director_node(state: ContentEngineState) -> ContentEngineState
 
 async def tool_node(state: ContentEngineState) -> ContentEngineState:
     """Execute tool calls requested by the content director LLM."""
-    from langgraph.prebuilt import ToolNode
-    tool_executor = ToolNode(TOOLS)
-    return await tool_executor.ainvoke(state)
+    return await _TOOL_EXECUTOR.ainvoke(state)
 
 
 def should_continue(state: ContentEngineState) -> Literal["tools", "end"]:

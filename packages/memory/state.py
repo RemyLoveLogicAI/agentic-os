@@ -88,7 +88,7 @@ def save_artifact(agent: str, payload: dict) -> int:
     lines = [f"# Artifact: {run_id}", f"**Recorded:** {ts}", "", "```json"]
     lines.append(json.dumps(payload, indent=2))
     lines.append("```")
-    kb_path.write_text("\n".join(lines))
+    kb_path.write_text("\n".join(lines), encoding="utf-8")
 
     conn = _db()
     try:
@@ -109,7 +109,7 @@ def load_knowledge(agent: str, key: str | None = None) -> str:
         safe_key = _glob.escape(key.replace("/", "_").replace("\\", "_"))
         candidates = sorted(kd.glob(f"{safe_key}*.md"), key=lambda p: p.stat().st_mtime)
         if candidates:
-            return candidates[-1].read_text()
+            return candidates[-1].read_text(encoding="utf-8")
         return ""
     # Return catalog of all knowledge files (for context bootstrapping)
     files = sorted(kd.glob("*.md"))
@@ -118,7 +118,7 @@ def load_knowledge(agent: str, key: str | None = None) -> str:
     catalog = [f"## Knowledge: {agent}", ""]
     for f in files[-10:]:  # last 10 artifacts max to avoid context bloat
         catalog.append(f"### {f.stem}")
-        catalog.append(f.read_text()[:500])  # truncate per artifact
+        catalog.append(f.read_text(encoding="utf-8")[:500])  # truncate per artifact
         catalog.append("")
     return "\n".join(catalog)
 

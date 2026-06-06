@@ -9,6 +9,7 @@ At end of session:
   4. Prune runtime files older than RUNTIME_TTL_DAYS.
 """
 
+import asyncio
 import os
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -45,11 +46,11 @@ async def compact_session(agent: str, run_id: str) -> str | None:
     runtime_files = sorted(runtime_dir.glob(f"{run_id}*.md"))
     if not runtime_files:
         marker = knowledge_dir / f"{run_id}-compact.md"
-        marker.write_text(f"## Session {run_id} Compact\n\n- No runtime notes recorded.\n")
-        _prune_runtime(runtime_dir)
+        await asyncio.to_thread(marker.write_text, f"## Session {run_id} Compact\n\n- No runtime notes recorded.\n", encoding="utf-8")
+        await asyncio.to_thread(_prune_runtime, runtime_dir)
         return str(marker)
 
-    raw_notes = "\n\n---\n\n".join(f.read_text() for f in runtime_files)
+    raw_notes = "\n\n---\n\n".join([await asyncio.to_thread(f.read_text, encoding="utf-8") for f in runtime_files])
 
     model_name = os.environ.get("COMPACTION_MODEL", "claude-haiku-4-5-20251001")
     llm = ChatAnthropic(model=model_name, temperature=0, max_tokens=600)
@@ -60,9 +61,9 @@ async def compact_session(agent: str, run_id: str) -> str | None:
         summary = f"## Session {run_id} Compact\n\n- Compaction failed: {type(exc).__name__}"
 
     compact_path = knowledge_dir / f"{run_id}-compact.md"
-    compact_path.write_text(summary)
+    await asyncio.to_thread(compact_path.write_text, summary, encoding="utf-8")
 
-    _prune_runtime(runtime_dir)
+    await asyncio.to_thread(_prune_runtime, runtime_dir)
     return str(compact_path)
 
 
@@ -72,7 +73,7 @@ def write_runtime_note(agent: str, run_id: str, content: str):
     runtime_dir.mkdir(parents=True, exist_ok=True)
     note_path = runtime_dir / f"{run_id}.md"
     ts = datetime.now(timezone.utc).isoformat()
-    with note_path.open("a") as f:
+    with note_path.open("a", encoding="utf-8") as f:
         f.write(f"\n\n<!-- {ts} -->\n{content}")
 
 
