@@ -63,8 +63,15 @@ export type KanbanBoard = Record<KanbanColumn, Task[]>;
 
 // ── Evidence ────────────────────────────────────────────────────────
 
+/** Typed event names — prevents typos like "task_creatd" from compiling. */
+export type TaskEventType =
+  | "task_created"
+  | "task_updated"
+  | "task_moved"
+  | "task_deleted";
+
 export interface TaskEvent {
-  event: string;
+  event: TaskEventType;
   taskId: string;
   from?: KanbanColumn;
   to?: KanbanColumn;
@@ -80,4 +87,6 @@ export type PersistMode = "rip" | "local";
 export interface TaskStoreOptions {
   persist?: PersistMode;
   ledgerPath?: string;
+  /** Actor identifier for evidence events. Defaults to "agent:task-manager". */
+  actor?: string;
 }

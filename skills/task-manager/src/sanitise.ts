@@ -13,16 +13,23 @@
  * Coerce an unknown value to a trimmed string.
  *
  * - `undefined` / `null` → `fallback` (default `""`)
- * - non-string primitives → `String(value).trim()`
- * - string → `value.trim()`
+ * - `number` / `boolean` → `String(value).trim()`
+ * - `string` → `value.trim()`
+ * - objects / arrays / symbols → `fallback` (rejects silently to avoid
+ *   `"[object Object]"` data corruption)
  */
 export function sanitiseString(
   value: unknown,
   fallback: string = "",
 ): string {
   if (value === undefined || value === null) return fallback;
-  if (typeof value !== "string") return String(value).trim();
-  return value.trim();
+  if (typeof value === "string") return value.trim();
+  if (typeof value === "number" || typeof value === "boolean") {
+    return String(value).trim();
+  }
+  // Objects, arrays, symbols, functions — reject rather than silently
+  // coercing to "[object Object]" or similar nonsense.
+  return fallback;
 }
 
 /**

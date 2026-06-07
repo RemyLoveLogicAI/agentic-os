@@ -3,14 +3,23 @@
  *
  * Each mutation emits a {@link TaskEvent} that can be appended to the
  * Agentic OS Evidence Ledger for auditability.
+ *
+ * NOTE: The listener pool is module-level (singleton).  All TaskStore
+ * instances in the same process share the same event bus.  This is
+ * intentional for the single-board hermes GUI use-case.  For multi-board
+ * or test scenarios, use {@link removeAllListeners} between instances.
  */
 
-import type { TaskEvent, KanbanColumn } from "./types.js";
+import type { TaskEvent, TaskEventType, KanbanColumn } from "./types.js";
 
 export type EvidenceListener = (event: TaskEvent) => void;
 
 const listeners: EvidenceListener[] = [];
 
+/**
+ * Subscribe to all task evidence events.
+ * Returns an unsubscribe function.
+ */
 export function onTaskEvent(fn: EvidenceListener): () => void {
   listeners.push(fn);
   return () => {
@@ -19,8 +28,19 @@ export function onTaskEvent(fn: EvidenceListener): () => void {
   };
 }
 
+/**
+ * Remove all registered evidence listeners.
+ * Useful for test teardown or multi-board scenarios.
+ */
+export function removeAllListeners(): void {
+  listeners.length = 0;
+}
+
+/**
+ * Emit a task evidence event to all registered listeners.
+ */
 export function emitTaskEvent(
-  event: string,
+  event: TaskEventType,
   taskId: string,
   actor: string,
   opts?: { from?: KanbanColumn; to?: KanbanColumn; detail?: Record<string, unknown> },

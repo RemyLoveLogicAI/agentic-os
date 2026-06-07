@@ -31,12 +31,19 @@ function now(): string {
 export class TaskStore {
   private tasks: Map<string, Task> = new Map();
   private actor: string;
+  private opts: TaskStoreOptions;
 
   constructor(opts?: TaskStoreOptions) {
-    this.actor = "agent:task-manager";
-    // Persistence mode is recorded but storage adapters are plugged in
-    // at a higher layer (R.I.P. sync or local JSON ledger).
-    void opts;
+    this.actor = opts?.actor ?? "agent:task-manager";
+    // Persist options for the higher-layer adapter (R.I.P. sync or local
+    // JSON ledger) to inspect.  The store itself is always in-memory;
+    // persistence is an orthogonal concern owned by the integrator.
+    this.opts = opts ?? {};
+  }
+
+  /** The configured persistence mode (informational — store is in-memory). */
+  get persistMode(): string | undefined {
+    return this.opts.persist;
   }
 
   // ── Create ──────────────────────────────────────────────────────
@@ -52,7 +59,17 @@ export class TaskStore {
       throw new Error(`task_create: invalid column "${column}"`);
     }
 
-    const id = generateTaskId();
+    // Guard against ID collision (rare but would silently overwrite).
+    let id = generateTaskId();
+    let attempts = 0;
+    while (this.tasks.has(id) && attempts < 10) {
+      id = generateTaskId();
+      attempts++;
+    }
+    if (this.tasks.has(id)) {
+      throw new Error("task_create: ID generation exhausted after 10 attempts");
+    }
+
     const ts = now();
 
     const task: Task = {
@@ -154,6 +171,16 @@ export class TaskStore {
       to: updated.column,
     });
 
+    // If the column changed via update(), also emit task_moved so the
+    // evidence ledger stays consistent regardless of which API path
+    // was used to move the task.
+    if (updatedColumn !== undefined && updatedColumn !== existing.column) {
+      emitTaskEvent("task_moved", taskId, this.actor, {
+        from: existing.column,
+        to: updatedColumn,
+      });
+    }
+
     return { ...updated };
   }
 
@@ -201,7 +228,14 @@ export class TaskStore {
     return this.tasks.size;
   }
 
+  /**
+   * Remove all tasks.  Emits a `task_deleted` event for each removed
+   * task so the evidence ledger remains complete.
+   */
   clear(): void {
+    for (const task of this.tasks.values()) {
+      emitTaskEvent("task_deleted", task.id, this.actor, { from: task.column });
+    }
     this.tasks.clear();
   }
 }
