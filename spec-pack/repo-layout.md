@@ -37,6 +37,7 @@ agentic-os/
 │   ├── routing/
 │   └── telemetry/
 ├── skills/
+│   ├── task-manager/        ← Kanban desk for claw3d hermes GUI
 │   ├── voice-agent-daemon/
 │   ├── zopenclaw/
 │   ├── zopack/
