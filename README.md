@@ -1,248 +1,27 @@
-# Agentic OS
+# Agentic OS: The Voice-Native Control System for the Agentic Web
 
-> A voice-native operating system for the Agentic Web.
+Agentic OS is a high-fidelity control system designed to turn human intent into verified, autonomous action through a sophisticated, layered architecture.
 
-**One loop**: speak → route → approve → act → verify → remember.
+### Business Value
+Agentic OS provides a standardized, reliable framework for deploying AI agents into production environments. By solving the core challenges of communication, safety, and memory, it allows businesses to deploy agentic solutions that are both powerful and predictable.
 
----
+### What it Solves
+- The Communication Gap: Uses voice-native clarification (Spokenly) to ensure agents fully understand human intent before acting.
+- The Execution Gap: Bridges the divide between desktop control and API surfaces through a safe, deterministic routing and approval plane.
+- The Memory Gap: Solves agent 'amnesia' by maintaining a canonical, auditable history of every action and decision (R.I.P. + Knowledge Graph).
 
-## Table of Contents
+### Operational Utility
+- Voice-First Orchestration: A "speak-to-act" loop that handles clarification, approval, and verification.
+- Deterministic Guardrails: Voice Orion and Aegis provide hard boundaries and approval gates for every agent action.
+- Unified Evidence Capture: Every action generates a verifiable receipt, ensuring transparency and accountability for the autonomous fleet.
 
-- [What It Is](#what-it-is)
-- [Why It Exists](#why-it-exists)
-- [Quickstart](#quickstart)
-- [Core Loop](#core-loop)
-- [System Layers](#system-layers)
-- [Architecture](#architecture)
-- [Status](#status)
-- [Deliverables](#deliverables)
-- [Philosophy](#philosophy)
-- [Token-Based Roadmap](#token-based-roadmap)
-- [Publish Checklist](#publish-checklist)
+### The Core Loop
+Speak -> Route -> Approve -> Act -> Verify -> Remember.
 
----
+### System Layers
+- Interaction Edge: Spokenly MCP for high-fidelity intent capture.
+- Control Edge: Voice Orion and Command Palette for routing and governance.
+- Execution Plane: DLAM / R1 for desktop and API-level action.
+- Truth Plane: R.I.P. and Knowledge Graph for persistent identity and context.
 
-## What It Is
-
-Agentic OS is a layered control system that turns spoken intent into verified action.
-
-It combines:
-- **Spokenly** — voice clarification and MCP-driven question capture
-- **Voice Orion** — deterministic command parsing and approval gates
-- **Command Palette** — fast command discovery and selection
-- **DLAM / R1** — desktop and machine control
-- **OpenClaw** — orchestration and multi-agent coordination
-- **R.I.P.** — canonical memory and identity
-- **Knowledge Graph** — operational context
-- **Aegis / Violet Covenant** — governance and trust policy
-- **zopack** — portable bundles
-- **glyphy pets / CYOA** — ambient state and narrative UX
-
----
-
-## Why It Exists
-
-Most agent stacks fail in three places:
-
-1. They cannot ask clarifying questions reliably.
-2. They cannot execute safely across desktop and API surfaces.
-3. They cannot remember what happened in a canonical, auditable way.
-
-Agentic OS closes all three gaps.
-
----
-
-## Quickstart
-
-### Read the Spec
-
-```bash
-# Clone or download
-open spec-pack/README.md
-```
-
-### Understand the Loop
-
-1. Human speaks or types a request.
-2. Command edge classifies intent.
-3. Governance decides if the action is safe.
-4. Execution plane performs the action.
-5. Evidence is captured.
-6. Memory is updated.
-7. System learns for the next round.
-
-### Build Phase-0
-
-See `spec-pack/phase-0-build-plan.md` for the first shippable slice.
-
----
-
-## Core Loop
-
-```
-┌─────────────┐
-│   Human     │
-│  speaks or  │
-│   types     │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│ Voice Edge  │  ← Spokenly MCP
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│ Command     │  ← Voice Orion + Command Palette
-│ Router      │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│ Policy /    │  ← Aegis + Violet Covenant
-│ Approval    │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│ Execution   │  ← DLAM / R1 + API adapters
-│ Plane       │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│ Evidence    │  ← Logs, artifacts, receipts
-│ Capture     │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│ Memory /    │  ← R.I.P. + Knowledge Graph
-│ Identity    │
-└──────┬──────┘
-       │
-       └──────────────────────┐
-                              │
-                              ▼
-                    ┌─────────────┐
-                    │ Orchestration│  ← OpenClaw + peers
-                    │ Mesh         │
-                    └─────────────┘
-```
-
----
-
-## System Layers
-
-| Layer | Purpose | Key Artifacts |
-|---|---|---|
-| Voice edge | Human input, dictation, clarification | Spokenly MCP |
-| Desktop edge | Physical machine control | tmux, VS Code browser, SSH |
-| Command edge | Discovery, classification, routing | Voice Orion, Command Palette |
-| Execution edge | CLI, API, browser, shortcut actions | DLAM / R1, Zo API |
-| Orchestration mesh | Multi-agent coordination | OpenClaw, peer coordination |
-| Memory and identity | Canonical truth, history, claims | R.I.P., Knowledge Graph |
-| Governance and verification | Approval gates, evidence checks | Aegis, Violet Covenant |
-| Productization and packaging | Reusable, portable bundles | zopack |
-| Ambient state and storytelling | Visible, memorable UX | glyphy pets, CYOA |
-
----
-
-## Architecture
-
-See `spec-pack/assets/` for diagrams:
-
-- `agentic-os-architecture.png` — layer overview
-- `agentic-os-phase0-flow.png` — phase-0 execution flow
-- `agentic-os-repo-layout.png` — folder topology
-- `agentic-os-docs-pack.png` — doc structure
-
----
-
-## Status
-
-This repo is the **spec and operating narrative**.
-
-Implementation follows a phase-0 slice:
-
-- [ ] Voice clarification loop
-- [ ] Deterministic router
-- [ ] Approval gate
-- [ ] One safe desktop action
-- [ ] One safe API action
-- [ ] Evidence logging
-
----
-
-## Deliverables
-
-| File | Purpose |
-|---|---|
-| `README.md` | This document |
-| `spec-pack/README.md` | Pack overview |
-| `spec-pack/master-spec.md` | Canonical system contract |
-| `spec-pack/deployment-blueprint.md` | Deployment stages |
-| `spec-pack/phase-0-build-plan.md` | First slice |
-| `spec-pack/repo-layout.md` | Folder structure |
-| `spec-pack/assets/*.png` | Architecture diagrams |
-
----
-
-## Philosophy
-
-- **No proof, no claim.** Evidence required.
-- **Prefer reversible decisions.** Keep options open.
-- **Keep the first slice thin and real.** Ship, then iterate.
-- **Treat memory as a product surface.** It matters.
-- **Treat governance as a feature.** Not an afterthought.
-
----
-
-## Token-Based Roadmap
-
-| Feature | Token Cost | Dependencies | Priority |
-|---|---:|---|---|
-| Voice clarification via Spokenly | Medium | MCP bridge | P0 |
-| Deterministic command routing | Medium | parsing rules | P0 |
-| Approval-gated execution | Medium | storage, TTL, operator panel | P0 |
-| Memory / identity canon | High | R.I.P., Knowledge Graph | P0 |
-| Execution adapters | High | desktop + API integrations | P0 |
-| Orchestration mesh | High | OpenClaw, peer coordination | P1 |
-| Portable packaging | Medium | zopack | P1 |
-| Ambient state layer | Low | glyphy pets, CYOA | P2 |
-
----
-
-## Publish Checklist
-
-Before publishing:
-
-- [ ] All markdown files render correctly on GitHub
-- [ ] Diagrams are visible in `spec-pack/assets/`
-- [ ] `README.md` has a clear one-line tagline
-- [ ] Quickstart section is actionable
-- [ ] Table of contents links work
-- [ ] All cross-references resolve
-- [ ] Token roadmap is up to date
-- [ ] License is included (MIT recommended)
-- [ ] `.gitignore` is set for any generated artifacts
-- [ ] Repo description matches README intro
-
-After publishing:
-
-- [ ] Add GitHub Topics: `agents`, `voice`, `mcp`, `operating-system`, `agentic-web`
-- [ ] Enable Discussions if community input is welcome
-- [ ] Add a `CONTRIBUTING.md` if accepting external contributions
-- [ ] Add a `CODE_OF_CONDUCT.md` for community projects
-- [ ] Pin the repo if it's a flagship project
-- [ ] Add release tags for stable milestones
-
----
-
-## License
-
-MIT — use freely, attribute kindly.
-
----
-
-*Built with intent for the Agentic Web.*
+Built with intent for the Agentic Web. Licensed under MIT.
