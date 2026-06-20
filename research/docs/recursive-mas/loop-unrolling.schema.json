@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/RemyLoveLogicAI/agentic-os/research/docs/recursive-mas/loop-unrolling.schema.json",
+  "title": "RecursiveMAS Unrolled DAG (recursive-mas-unrolled/v0.1)",
+  "description": "Output schema for unroll(). See research/docs/recursive-mas-spec.md §6.",
+  "type": "object",
+  "required": ["schema_version", "source_digest", "limits", "frames", "links", "evidence"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "recursive-mas-unrolled/v0.1" },
+    "source_digest":  {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$",
+      "description": "sha256(canonicalJSON(source_mas_spec)) per canonical-json-spec.md."
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_depth", "fuel"],
+      "properties": {
+        "max_depth": { "type": "integer", "minimum": 0 },
+        "fuel":      { "type": "integer", "minimum": 0 }
+      }
+    },
+    "frames":   { "type": "array", "items": { "$ref": "#/$defs/Frame" } },
+    "links":    { "type": "array", "items": { "$ref": "#/$defs/UnrolledLink" } },
+    "evidence": { "type": "array", "items": { "$ref": "#/$defs/EvidenceEntry" } }
+  },
+  "$defs": {
+    "FrameId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+)*#[0-9]+(::[a-z][a-z0-9_]*::[a-z][a-z0-9_]*(\\.[a-z0-9_]+)*#[0-9]+)*$",
+      "description": "Frame identifier. Root frame: '<mas_id>#<depth>'. Nested frame entered via sub-MAS node N: '<parent_frame_id>::<N>::<mas_id>#<depth>'. Self-recursion preserves the parent path."
+    },
+    "QualifiedNodeId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+)*#[0-9]+(::[a-z][a-z0-9_]*::[a-z][a-z0-9_]*(\\.[a-z0-9_]+)*#[0-9]+)*::([a-z][a-z0-9_]*|__outer_in__|__outer_out__|__cap__)$",
+      "description": "'<frame_id>::<node_id>' for real nodes, or '<frame_id>::__outer_in__' / '__outer_out__' / '__cap__' for virtual boundary/sink nodes."
+    },
+    "PortName": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "Frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["frame_id", "mas_id", "depth", "nodes", "termination"],
+      "properties": {
+        "frame_id": { "$ref": "#/$defs/FrameId" },
+        "mas_id":   { "type": "string", "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+)*$" },
+        "depth":    { "type": "integer", "minimum": 0 },
+        "nodes":    { "type": "array", "items": { "$ref": "#/$defs/UnrolledNode" } },
+        "termination": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["reason", "node_id"],
+              "properties": {
+                "reason": {
+                  "enum": [
+                    "loop.depth_cap_reached",
+                    "loop.fuel_exhausted",
+                    "loop.fixed_point_reached"
+                  ]
+                },
+                "node_id": { "$ref": "#/$defs/QualifiedNodeId" }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "UnrolledNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "ports"],
+      "properties": {
+        "id":   { "$ref": "#/$defs/QualifiedNodeId" },
+        "kind": { "enum": ["agent", "depth_cap", "fuel_exhausted", "fixed_point"] },
+        "ports": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["in", "out"],
+          "properties": {
+            "in":  { "type": "array", "items": { "$ref": "#/$defs/PortName" }, "uniqueItems": true },
+            "out": { "type": "array", "items": { "$ref": "#/$defs/PortName" }, "uniqueItems": true }
+          }
+        },
+        "capabilities": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "annotations":  { "type": "object" }
+      }
+    },
+    "UnrolledEndpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["node", "port"],
+      "properties": {
+        "node": { "$ref": "#/$defs/QualifiedNodeId" },
+        "port": { "$ref": "#/$defs/PortName" }
+      }
+    },
+    "UnrolledLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "to", "kind"],
+      "properties": {
+        "from": { "$ref": "#/$defs/UnrolledEndpoint" },
+        "to":   { "$ref": "#/$defs/UnrolledEndpoint" },
+        "kind": { "enum": ["data", "control", "evidence"] },
+        "guard":        { "type": "string" },
+        "capabilities": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "stitch":       {
+          "enum": [
+            "none",
+            "self_recurse_in",
+            "self_recurse_out",
+            "outer_in",
+            "outer_out"
+          ]
+        }
+      }
+    },
+    "EvidenceEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "frame_id"],
+      "properties": {
+        "kind": {
+          "enum": [
+            "loop.depth_cap_reached",
+            "loop.fuel_exhausted",
+            "loop.fixed_point_reached"
+          ]
+        },
+        "frame_id": { "$ref": "#/$defs/FrameId" }
+      }
+    }
+  }
+}
