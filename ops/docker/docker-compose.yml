@@ -25,12 +25,6 @@ x-agent-base: &agent-base
     - agent_memory:/app/memory
     - agent_state:/app/state
     - agent_logs:/app/ops/ledgers
-  healthcheck:
-    test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
-    interval: 30s
-    timeout: 10s
-    retries: 3
-    start_period: 15s
 
 services:
   # ── Skill Build #1: Trend Arbitrage Agent (runs every 2 min via cron) ────────
@@ -44,8 +38,8 @@ services:
       AGENT: "trend-arbitrage"
     command: >
       sh -c "
-        echo '*/2 * * * * cd /app && /usr/local/bin/python -m agents.trend-arbitrage.agent >> /app/ops/ledgers/trend-arbitrage.log 2>&1' | crontab - &&
-        cron -f
+        echo '*/2 * * * * cd /app && /usr/local/bin/python -m agents.trend-arbitrage.agent >> /app/ops/ledgers/trend-arbitrage.log 2>&1' > /tmp/crontab &&
+        exec supercronic /tmp/crontab
       "
     labels:
       lovelogic.agent: "trend-arbitrage"
@@ -62,8 +56,8 @@ services:
       AGENT: "social-content-engine"
     command: >
       sh -c "
-        echo '0 8 * * 1 cd /app && /usr/local/bin/python -m agents.social-content-engine.agent >> /app/ops/ledgers/social-content.log 2>&1' | crontab - &&
-        cron -f
+        echo '0 8 * * 1 cd /app && /usr/local/bin/python -m agents.social-content-engine.agent >> /app/ops/ledgers/social-content.log 2>&1' > /tmp/crontab &&
+        exec supercronic /tmp/crontab
       "
     labels:
       lovelogic.agent: "social-content-engine"
@@ -85,6 +79,14 @@ services:
       else
         echo 'No PRODUCT_IDEA set — factory is idle. Set PRODUCT_IDEA and restart.' && sleep infinity;
       fi"
+    healthcheck:
+      # Does not run supercronic (one-shot/idle agent); the base image's
+      # pgrep-supercronic check does not apply here.
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
     labels:
       lovelogic.agent: "micro-saas-factory"
       lovelogic.trigger: "manual"

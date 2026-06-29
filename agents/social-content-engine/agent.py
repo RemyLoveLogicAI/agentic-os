@@ -25,6 +25,8 @@ from packages.memory.state import load_knowledge, save_artifact
 # ── State ────────────────────────────────────────────────────────────────────
 
 class ContentEngineState(TypedDict):
+    """Graph state for the social-content-engine workflow."""
+
     messages: Annotated[list[BaseMessage], add_messages]
     client_id: str
     run_id: str

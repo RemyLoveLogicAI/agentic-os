@@ -85,6 +85,7 @@ def save_artifact(agent: str, payload: dict) -> int:
     # Write Markdown file before DB commit so a file-write failure prevents commit
     safe_name = run_id.replace("/", "_").replace("\\", "_")
     kb_path = _knowledge_dir(agent) / f"{safe_name}.md"
+    previous_bytes = kb_path.read_bytes() if kb_path.exists() else None
     lines = [f"# Artifact: {run_id}", f"**Recorded:** {ts}", "", "```json"]
     lines.append(json.dumps(payload, indent=2))
     lines.append("```")
@@ -99,7 +100,10 @@ def save_artifact(agent: str, payload: dict) -> int:
         conn.commit()
         return cur.lastrowid
     except Exception:
-        kb_path.unlink(missing_ok=True)
+        if previous_bytes is None:
+            kb_path.unlink(missing_ok=True)
+        else:
+            kb_path.write_bytes(previous_bytes)
         raise
     finally:
         conn.close()

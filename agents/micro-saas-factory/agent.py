@@ -7,6 +7,7 @@ Checkpoint backend is selected via CHECKPOINT_BACKEND env var (sqlite/dynamodb/p
 import asyncio
 import json
 import os
+import re
 import textwrap
 from datetime import datetime, timezone
 from typing import Annotated, Literal, TypedDict
@@ -26,6 +27,8 @@ from packages.memory.state import load_knowledge, save_artifact
 # ── State ────────────────────────────────────────────────────────────────────
 
 class FactoryState(TypedDict):
+    """Graph state for the micro-saas-factory workflow."""
+
     messages: Annotated[list[BaseMessage], add_messages]
     run_id: str
     product_idea: str
@@ -34,6 +37,13 @@ class FactoryState(TypedDict):
     deployment: dict
     revenue_config: dict
     published: bool
+
+
+def _wrangler_slug(name: str) -> str:
+    """Normalize product_name into a Cloudflare Workers-safe name (lowercase ASCII, digits, dashes, <=63 chars)."""
+    slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+    slug = slug[:63].rstrip("-")
+    return slug or "worker"
 
 
 # ── Tools ─────────────────────────────────────────────────────────────────────
@@ -79,7 +89,7 @@ async def scaffold_worker(
         }};
     """).strip()
 
-    wrangler_name = "".join(c if c.isalnum() or c == "-" else "-" for c in product_name.lower().replace(" ", "-"))
+    wrangler_name = _wrangler_slug(product_name)
     wrangler_toml = textwrap.dedent(f"""
         name = "{wrangler_name}"
         main = "src/index.ts"

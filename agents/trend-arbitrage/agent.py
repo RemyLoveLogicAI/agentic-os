@@ -26,6 +26,8 @@ from packages.memory.state import load_knowledge, save_signal
 # ── State ────────────────────────────────────────────────────────────────────
 
 class ArbitrageState(TypedDict):
+    """Graph state for the trend-arbitrage workflow."""
+
     messages: Annotated[list[BaseMessage], add_messages]
     run_id: str
     signals: list[dict]
