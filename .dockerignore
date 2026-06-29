@@ -1,0 +1,23 @@
+.git
+.gitignore
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+.mypy_cache
+.ruff_cache
+
+# Runtime state — rebuilt at container start
+state/
+memory/workspace/
+
+# Secrets
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Dev artifacts
+*.tmp
+*.temp
+.DS_Store

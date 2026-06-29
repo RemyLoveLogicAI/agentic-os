@@ -1,0 +1,51 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# System deps for healthcheck; supercronic provides non-root cron scheduling
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+ARG TARGETARCH=
+ARG SUPERCRONIC_VERSION=0.2.33
+ARG SUPERCRONIC_SHA1_AMD64=71b0d58cc53f6bd72cf2f293e09e294b79c666d8
+ARG SUPERCRONIC_SHA1_ARM64=e0f0c06ebc5627e43b25475711e694450489ab00
+RUN case "${TARGETARCH:-$(uname -m)}" in \
+        amd64 | x86_64) SUPERCRONIC_SHA1="${SUPERCRONIC_SHA1_AMD64}"; arch=amd64 ;; \
+        arm64 | aarch64) SUPERCRONIC_SHA1="${SUPERCRONIC_SHA1_ARM64}"; arch=arm64 ;; \
+        *) echo "Unsupported architecture: ${TARGETARCH:-$(uname -m)}" >&2; exit 1 ;; \
+    esac \
+    && curl -fsSL \
+        "https://github.com/aptible/supercronic/releases/download/v${SUPERCRONIC_VERSION}/supercronic-linux-${arch}" \
+        -o /usr/local/bin/supercronic \
+    && echo "${SUPERCRONIC_SHA1}  /usr/local/bin/supercronic" | sha1sum -c - \
+    && chmod +x /usr/local/bin/supercronic
+
+# Install shared requirements
+COPY agents/trend-arbitrage/requirements.txt /tmp/req-trend.txt
+COPY agents/social-content-engine/requirements.txt /tmp/req-social.txt
+COPY agents/micro-saas-factory/requirements.txt /tmp/req-factory.txt
+RUN pip install --no-cache-dir \
+    -r /tmp/req-trend.txt \
+    -r /tmp/req-social.txt \
+    -r /tmp/req-factory.txt
+
+# Copy entire project
+COPY . .
+
+# Make packages importable
+RUN pip install --no-cache-dir -e .
+
+# Create non-root user and grant ownership of runtime dirs
+RUN groupadd --gid 1001 agentuser && \
+    useradd --uid 1001 --gid 1001 --no-create-home agentuser && \
+    mkdir -p state memory/workspace ops/ledgers && \
+    chown -R agentuser:agentuser /app
+
+USER agentuser
+
+HEALTHCHECK --interval=30s --timeout=10s --retries=3 \
+    CMD pgrep supercronic > /dev/null || exit 1
+
+CMD ["sh", "-c", "echo 'No command override — start via docker-compose.' && exit 1"]

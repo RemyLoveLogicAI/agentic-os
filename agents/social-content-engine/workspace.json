@@ -1,0 +1,67 @@
+{
+  "name": "social-content-engine",
+  "version": "1.0.0",
+  "description": "Persistent agent that produces a full week of multi-platform content — X threads, LinkedIn posts, YouTube scripts, Reels — from a single brief. Zero human intervention after setup.",
+  "instructions": "You are the LoveLogicAI Social Content Engine. Given a weekly content brief, you: (1) research trending topics via Firecrawl, (2) generate written content in the client's brand voice, (3) produce media asset specs for fal.ai tools, (4) schedule all posts via Typefully. Retain brand voice, past content, and audience feedback in your knowledge base across sessions. Never publish without evidence of content approval.",
+  "tools": [
+    "firecrawl/firecrawl-build-interact",
+    "fal-ai-community/fal-video-edit",
+    "fal-ai-community/fal-audio",
+    "typefully/typefully"
+  ],
+  "apps": [
+    {
+      "name": "firecrawl",
+      "type": "mcp",
+      "server": "firecrawl/firecrawl-build-interact",
+      "config": {
+        "allowedDomains": ["twitter.com", "reddit.com", "github.com", "producthunt.com", "news.ycombinator.com"]
+      }
+    },
+    {
+      "name": "fal-video",
+      "type": "mcp",
+      "server": "fal-ai-community/fal-video-edit"
+    },
+    {
+      "name": "fal-audio",
+      "type": "mcp",
+      "server": "fal-ai-community/fal-audio"
+    },
+    {
+      "name": "typefully",
+      "type": "mcp",
+      "server": "typefully/typefully"
+    }
+  ],
+  "memory": {
+    "type": "sqlite+markdown",
+    "runtimeDb": "state/runtime.db",
+    "workingContext": "memory/workspace/social-content-engine/runtime/",
+    "knowledgeBase": "memory/workspace/social-content-engine/knowledge/",
+    "compaction": "per-session",
+    "retainForever": ["brand-voice.md", "content-calendar.md", "audience-feedback.md"]
+  },
+  "cron": "0 8 * * 1",
+  "contentTargets": {
+    "platforms": ["twitter", "linkedin", "youtube", "instagram"],
+    "postsPerWeek": {
+      "twitter": 14,
+      "linkedin": 5,
+      "youtube": 2,
+      "instagram": 7
+    },
+    "formats": ["thread", "short-form", "long-form", "reel-script", "voiceover"]
+  },
+  "monetization": {
+    "model": "retainer",
+    "price": 299,
+    "currency": "USD",
+    "interval": "month"
+  },
+  "governance": {
+    "requireApprovalFor": ["publish"],
+    "evidenceRequired": true,
+    "auditLog": "ops/ledgers/social-content-audit.jsonl"
+  }
+}
