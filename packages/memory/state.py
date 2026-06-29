@@ -100,10 +100,13 @@ def save_artifact(agent: str, payload: dict) -> int:
         conn.commit()
         return cur.lastrowid
     except Exception:
-        if previous_bytes is None:
-            kb_path.unlink(missing_ok=True)
-        else:
-            kb_path.write_bytes(previous_bytes)
+        try:
+            if previous_bytes is None:
+                kb_path.unlink(missing_ok=True)
+            else:
+                kb_path.write_bytes(previous_bytes)
+        except OSError:
+            pass  # Don't let cleanup failure mask the original exception below
         raise
     finally:
         conn.close()
