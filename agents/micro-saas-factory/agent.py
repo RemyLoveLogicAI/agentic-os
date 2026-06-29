@@ -5,6 +5,7 @@ Checkpoint backend is selected via CHECKPOINT_BACKEND env var (sqlite/dynamodb/p
 """
 
 import asyncio
+import hashlib
 import json
 import os
 import re
@@ -40,10 +41,15 @@ class FactoryState(TypedDict):
 
 
 def _wrangler_slug(name: str) -> str:
-    """Normalize product_name into a Cloudflare Workers-safe name (lowercase ASCII, digits, dashes, <=63 chars)."""
+    """Normalize product_name into a Cloudflare Workers-safe name (lowercase ASCII, digits, dashes, <=63 chars).
+
+    Appends a short content hash so distinct names that normalize to the
+    same slug (e.g. differing only in punctuation) don't collide on deploy.
+    """
+    suffix = hashlib.sha256(name.encode("utf-8")).hexdigest()[:8]
     slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
-    slug = slug[:63].rstrip("-")
-    return slug or "worker"
+    slug = slug[: 63 - len(suffix) - 1].rstrip("-")
+    return f"{slug}-{suffix}" if slug else suffix
 
 
 # ── Tools ─────────────────────────────────────────────────────────────────────
@@ -139,7 +145,7 @@ async def deploy_to_cloudflare(scaffold: dict, test_results: dict) -> dict:
     if not product_name:
         return {"deployed": False, "reason": "missing_product_name"}
     # Cloudflare MCP tool call goes here via the MCP tool bus
-    product_slug = product_name.lower().replace(" ", "-")
+    product_slug = _wrangler_slug(product_name)
     raw_path = scaffold.get("endpoint_path", "")
     endpoint_path = raw_path if raw_path.startswith("/") else f"/{raw_path}"
     return {

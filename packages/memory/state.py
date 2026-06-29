@@ -9,6 +9,7 @@ import glob as _glob
 import json
 import os
 import sqlite3
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -82,14 +83,16 @@ def save_artifact(agent: str, payload: dict) -> int:
         raise ValueError("payload.run_id is required for save_artifact")
 
     ts = datetime.now(timezone.utc).isoformat()
-    # Write Markdown file before DB commit so a file-write failure prevents commit
+    # Write to a private temp file and only publish it (atomic rename) after the
+    # DB commit succeeds, so a failed write never clobbers a concurrently
+    # published artifact for the same run_id and never needs a rollback.
     safe_name = run_id.replace("/", "_").replace("\\", "_")
     kb_path = _knowledge_dir(agent) / f"{safe_name}.md"
-    previous_bytes = kb_path.read_bytes() if kb_path.exists() else None
+    tmp_path = kb_path.with_name(f"{kb_path.name}.{uuid.uuid4().hex}.tmp")
     lines = [f"# Artifact: {run_id}", f"**Recorded:** {ts}", "", "```json"]
     lines.append(json.dumps(payload, indent=2))
     lines.append("```")
-    kb_path.write_text("\n".join(lines), encoding="utf-8")
+    tmp_path.write_text("\n".join(lines), encoding="utf-8")
 
     conn = _db()
     try:
@@ -98,13 +101,11 @@ def save_artifact(agent: str, payload: dict) -> int:
             (agent, run_id, json.dumps(payload), ts),
         )
         conn.commit()
+        os.replace(tmp_path, kb_path)
         return cur.lastrowid
     except Exception:
         try:
-            if previous_bytes is None:
-                kb_path.unlink(missing_ok=True)
-            else:
-                kb_path.write_bytes(previous_bytes)
+            tmp_path.unlink(missing_ok=True)
         except OSError:
             pass  # Don't let cleanup failure mask the original exception below
         raise
