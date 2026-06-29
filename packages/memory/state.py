@@ -98,6 +98,9 @@ def save_artifact(agent: str, payload: dict) -> int:
         )
         conn.commit()
         return cur.lastrowid
+    except Exception:
+        kb_path.unlink(missing_ok=True)
+        raise
     finally:
         conn.close()
 

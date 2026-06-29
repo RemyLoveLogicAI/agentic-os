@@ -79,8 +79,9 @@ async def scaffold_worker(
         }};
     """).strip()
 
+    wrangler_name = "".join(c if c.isalnum() or c == "-" else "-" for c in product_name.lower().replace(" ", "-"))
     wrangler_toml = textwrap.dedent(f"""
-        name = "{product_name.lower().replace(' ', '-')}"
+        name = "{wrangler_name}"
         main = "src/index.ts"
         compatibility_date = "2026-01-01"
 
