@@ -1,0 +1,531 @@
+<details>
+<summary>Documentation Metadata (click to expand)</summary>
+
+```json
+{
+  "doc_type": "file_overview",
+  "file_path": "spec-pack/assets/remixathon/build_jam_assets.py",
+  "source_hash": "69e2df0873a0d4251c9cfbead1085d20230ce46ccc44b913a054a6101337748d",
+  "last_updated": "2026-05-02T17:20:26.012657+00:00",
+  "tokens_used": 26704,
+  "complexity_score": 3,
+  "estimated_review_time_minutes": 10,
+  "external_dependencies": [
+    "cairosvg"
+  ]
+}
+```
+
+</details>
+
+[Documentation Home](../../../README.md) > [spec-pack](../../README.md) > [assets](../README.md) > [remixathon](./README.md) > **build_jam_assets**
+
+---
+
+# build_jam_assets.py
+
+> **File:** `spec-pack/assets/remixathon/build_jam_assets.py`
+
+![Complexity: Low](https://img.shields.io/badge/Complexity-Low-green) ![Review Time: 10min](https://img.shields.io/badge/Review_Time-10min-blue)
+
+## 📑 Table of Contents
+
+
+- [Overview](#overview)
+- [Dependencies](#dependencies)
+- [Architecture Notes](#architecture-notes)
+- [Usage Examples](#usage-examples)
+- [Maintenance Notes](#maintenance-notes)
+- [Functions and Classes](#functions-and-classes)
+
+---
+
+## Overview
+
+This module builds a set of 1920x1080 SVG compositions (title card, end card, chapter dividers, lower-thirds, callout overlays, and a corner watermark) and writes them to spec-pack/assets/remixathon/jam. Each visual is produced by focused functions that return SVG strings or fragments and are wrapped by svg_doc. After writing each .svg, the pipeline rasterizes it to PNG using cairosvg.svg2png.
+
+Visual constants and helpers (colors, gradients, loop_glyph, svg_doc) are imported from an internal build_logos module. A main() function orchestrates file naming, slug normalization for lower-thirds, and output directory creation.
+
+## Dependencies
+
+### External Dependencies
+
+| Module | Usage |
+| --- | --- |
+| `cairosvg` | import cairosvg — used in write_and_render(...) to rasterize the written SVG into PNG via cairosvg.svg2png(url=str(svg_path), write_to=str(png_path), output_width=width). |
+
+### Internal Dependencies
+
+| Module | Usage |
+| --- | --- |
+| `__future__` | from __future__ import annotations — enables postponed evaluation of annotations (used at module top). No runtime objects are referenced from this import. |
+| [pathlib.Path](../pathlib/Path.md) | from pathlib import Path — used to compute ROOT = Path(__file__).resolve().parent, create the JAM output directory (JAM.mkdir(...)), build file paths for writing SVG/PNG (JAM / f"{name}.svg"), and iterate JAM.iterdir() to print generated files. |
+| `build_logos` | from build_logos import (ACCENT_MAGENTA, ACCENT_VIOLET, GREY, INDIGO, INK, PAPER, WHITE, gradient_def, loop_glyph, svg_doc) — imports color constants and helper functions used throughout SVG builders: gradient_def(...) provides gradient defs; loop_glyph(...) draws a loop/play glyph used in multiple cards; svg_doc(W,H,content) wraps raw parts into a full SVG document; color constants are referenced when composing shapes and text. |
+
+## 📁 Directory
+
+This file is part of the **remixathon** directory. View the [directory index](_docs/spec-pack/assets/remixathon/README.md) to see all files in this module.
+
+## Architecture Notes
+
+- Pure-function SVG composition: each card/overlay is produced by a small function that returns a complete SVG string (or fragment wrapped by svg_doc) so visuals are deterministic and easy to test or modify.
+- Two-step output pipeline: write_and_render writes the SVG to disk then calls cairosvg.svg2png to produce a PNG. This separation allows inspecting SVGs before rasterization and reusing the same SVGs in other pipelines.
+- Shared visual primitives are centralized in build_logos: colors, gradient definitions, loop_glyph, and svg_doc are imported rather than duplicated, keeping styling consistent across cards.
+
+## Usage Examples
+
+### Generate the full asset pack
+
+Run the module as a script (python build_jam_assets.py). main() will create spec-pack/assets/remixathon/jam if needed, write .svg files for title/end/chapter/lower-third/callout/corner-bug, convert each SVG to PNG using cairosvg.svg2png, and print a summary of generated files and sizes.
+
+## Maintenance Notes
+
+- Requires cairosvg to be installed in the environment; failures in cairosvg.svg2png will raise exceptions and stop generation — consider wrapping calls for robust batch generation.
+- Font fallback depends on the host rendering stack. The SVGs reference 'DejaVu Sans, Inter, Helvetica, Arial, sans-serif'; missing fonts can change text layout and clipping; check built PNGs for overflow.
+- Slug generation for lower-thirds strips and replaces punctuation and collapses repeated hyphens; changing that logic will alter filenames. Filenames are deterministic and used by external EDL/ffmpeg recipes.
+
+---
+
+## Navigation
+
+**↑ Parent Directory:** [Go up](_docs/spec-pack/assets/remixathon/README.md)
+
+---
+
+*This documentation was automatically generated by AI ([Woden DocBot](https://github.com/marketplace/ai-document-creator)) and may contain errors. It is the responsibility of the user to validate the accuracy and completeness of this documentation.*
+
+
+---
+
+## Functions and Classes
+
+
+#### _bg_dark_gradient
+
+![Type: Sync](https://img.shields.io/badge/Type-Sync-green)
+
+### Signature
+
+```python
+def _bg_dark_gradient() -> str
+```
+
+### Description
+
+Return an SVG <defs> fragment string that defines a dark background linear gradient and appends another gradient definition returned by gradient_def("remix-grad-jam").
+
+
+The function constructs and returns a single string composed of SVG markup. It builds a <defs> element containing a <linearGradient> with id "bg-grad" and two <stop> elements — the first stop uses the global INK value and the second uses the hard-coded color "#1A1F4D" — then concatenates the result of calling the global function gradient_def("remix-grad-jam") and closes the <defs> element.
+
+### Returns
+
+**Type:** `str`
+
+An SVG fragment as a string containing <defs> with a linear gradient (id="bg-grad") and the output of gradient_def("remix-grad-jam").
+
+
+**Possible Values:**
+
+- A non-empty string containing SVG markup, e.g. '<defs><linearGradient id="bg-grad" ...>...</linearGradient>...'</defs>'
+- If globals INK or gradient_def produce unexpected values, the returned string will include those values verbatim (no validation).
+
+### Complexity
+
+O(1)
+
+### Related Functions
+
+- `gradient_def` - Called by this function to append additional gradient definitions; must be defined in the same module or imported globally.
+
+### Notes
+
+- The function references the global name INK for the first stop's color; INK must be defined as a string elsewhere.
+- gradient_def("remix-grad-jam") is invoked and its return value is concatenated; any side effects or exceptions from gradient_def are not handled here.
+- There is no input validation; the function simply concatenates strings and returns the result.
+
+---
+
+
+
+#### _decor_rings
+
+![Type: Sync](https://img.shields.io/badge/Type-Sync-green)
+
+### Signature
+
+```python
+def _decor_rings(cx: float, cy: float, color: str = ACCENT_MAGENTA) -> str
+```
+
+### Description
+
+Returns a single concatenated string of SVG <circle> elements positioned at (cx, cy) with a fixed set of radii and progressively increasing opacity.
+
+
+The function iterates over a hard-coded list of radii [460, 380, 300, 220, 150], enumerates them to compute an opacity for each circle (0.07 + i * 0.04), and builds an SVG <circle> element string for each radius. It uses f-strings to interpolate cx, cy, r, stroke color, stroke-width, and opacity, then joins all generated circle strings into one string which it returns.
+
+### Parameters
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `cx` | `float` | ✅ | The x-coordinate used for each SVG circle's cx attribute.
+<br>**Constraints:** Should be a numeric value representable as a string in the SVG attribute |
+| `cy` | `float` | ✅ | The y-coordinate used for each SVG circle's cy attribute.
+<br>**Constraints:** Should be a numeric value representable as a string in the SVG attribute |
+| `color` = `ACCENT_MAGENTA` | `str` | ❌ | Stroke color used for each circle's stroke attribute; defaults to the module constant ACCENT_MAGENTA.
+<br>**Constraints:** Should be a valid SVG color string (e.g., hex, rgb(), or named color) |
+
+### Returns
+
+**Type:** `str`
+
+A single string containing concatenated SVG <circle> element markup for five rings.
+
+
+**Possible Values:**
+
+- Empty string if radii list is empty (not the case here)
+- A concatenated string like '<circle cx="{cx}" cy="{cy}" r="460" .../><circle .../>' containing five circle elements
+
+### Complexity
+
+O(n) where n is the number of radii (fixed at 5 in this implementation)
+
+### Notes
+
+- Opacity is computed as 0.07 + i * 0.04 and formatted to two decimal places.
+- The radii are hard-coded; changing the radii requires editing the function.
+- Relies on a module-level constant ACCENT_MAGENTA if color is not provided.
+
+---
+
+
+
+#### title_card
+
+![Type: Sync](https://img.shields.io/badge/Type-Sync-green)
+
+### Signature
+
+```python
+def title_card() -> str
+```
+
+### Description
+
+Constructs and returns an SVG document string representing a title card graphic for a 'Remixathon' event.
+
+
+Builds an SVG document for a 1920x1080 title card by assembling SVG fragments and literal elements. It composes background gradients, decorative rings, glyphs, text, and footer elements into a single string using helper functions, then wraps the result with svg_doc. The function relies on module-level helpers and constants for fragment generation.
+
+### Returns
+
+**Type:** `str`
+
+An SVG document as a string containing the composed title card graphic.
+
+
+**Possible Values:**
+
+- A valid SVG document string of width 1920 and height 1080 containing the assembled elements
+- If helper functions produce incorrect fragments, the returned string may still be a concatenation of those fragments (not validated here)
+
+### Complexity
+
+O(1)
+
+### Related Functions
+
+- `_bg_dark_gradient` - Called by title_card to produce background gradient SVG fragment
+- `svg_doc` - Called by title_card to wrap concatenated SVG fragments into a full SVG document string
+
+### Notes
+
+- The function uses fixed canvas dimensions (W=1920, H=1080) and hard-coded coordinates/sizes for elements.
+- The function assumes helper functions (_bg_dark_gradient, _decor_rings, loop_glyph, _t) and constants (WHITE, ACCENT_MAGENTA) are available in the same module or imported; any errors from those will surface when calling title_card.
+- No validation is performed on the generated SVG fragments; svg_doc is responsible for final wrapping.
+
+---
+
+
+
+#### end_card
+
+![Type: Sync](https://img.shields.io/badge/Type-Sync-green)
+
+### Signature
+
+```python
+def end_card() -> str
+```
+
+### Description
+
+Constructs and returns a complete SVG document string representing an end-card graphic composed from several SVG fragment helper functions and inline SVG elements.
+
+
+Builds an SVG for a 1920x1080 end-card by assembling fragments from helper functions and inline SVG elements. It composes a background gradient, decorative rings, a loop glyph, headline and subhead text, two CTA buttons with labels, and a footer, then wraps the combined fragments with svg_doc to produce the final SVG string.
+
+### Returns
+
+**Type:** `str`
+
+An SVG document serialized as a string representing the composed end-card graphic.
+
+
+**Possible Values:**
+
+- A string containing a full SVG document (XML) sized to 1920x1080 with the assembled parts
+- An empty or invalid SVG string only if underlying helpers produce empty/invalid fragments (dependent on helpers)
+
+### Complexity
+
+O(1)
+
+### Related Functions
+
+- `_bg_dark_gradient` - Called by end_card to produce the SVG fragment for the background gradient definition.
+- `svg_doc` - Called by end_card to wrap the concatenated SVG fragments into a complete SVG document string.
+
+### Notes
+
+- Canvas dimensions are fixed at W=1920 and H=1080 inside the function.
+- The function depends on several helpers and constants (e.g., _decor_rings, loop_glyph, _t, WHITE, ACCENT_MAGENTA, INK) to produce fragments; their behavior affects the final SVG.
+- Text and button positions, sizes, and colors are hard-coded in the assembled fragments.
+- No input validation or error handling is present; any exceptions would come from the called helper functions.
+
+---
+
+
+
+#### chapter_card
+
+![Type: Sync](https://img.shields.io/badge/Type-Sync-green)
+
+### Signature
+
+```python
+def chapter_card(num: int, label: str, sub: str) -> str
+```
+
+### Description
+
+Constructs and returns an SVG document string representing a chapter card composed from several SVG fragments and text elements.
+
+
+Builds an SVG of fixed size (1920x1080) by assembling fragments from helper functions (_bg_dark_gradient, _decor_rings, loop_glyph, _t) and formatted text. Fragments are concatenated and wrapped with svg_doc to produce the final SVG string; the chapter number is formatted as two digits.
+
+### Parameters
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `num` | `int` | ✅ | Numeric chapter identifier used in the large chapter number text (formatted as two digits).
+ |
+| `label` | `str` | ✅ | Primary chapter title string rendered as a large label on the card.
+ |
+| `sub` | `str` | ✅ | Secondary subtitle string rendered beneath the main label.
+ |
+
+### Returns
+
+**Type:** `str`
+
+A string containing the complete SVG document markup for the chapter card.
+
+
+**Possible Values:**
+
+- An SVG XML string composed of gradients, shapes, decorative elements, and text
+- An empty or malformed SVG only if helper functions return unexpected values (dependent on helpers)
+
+### Complexity
+
+O(1)
+
+### Related Functions
+
+- `_bg_dark_gradient` - Called by; provides background gradient SVG fragment used in the assembled document
+- `svg_doc` - Called by; wraps the concatenated SVG parts into the final full SVG document string returned
+
+### Notes
+
+- The function depends on several local helper functions: _bg_dark_gradient, _decor_rings, loop_glyph, _t, and svg_doc; their behavior affects the final SVG output.
+- Numeric chapter number is formatted as two digits using f"{num:02d}" in the rendered text.
+- All canvas dimensions (W=1920, H=1080) are fixed within the function.
+
+---
+
+
+
+#### corner_bug
+
+![Type: Sync](https://img.shields.io/badge/Type-Sync-green)
+
+### Signature
+
+```python
+def corner_bug() -> str
+```
+
+### Description
+
+Constructs and returns an SVG document string that composes a small corner badge / cluster graphic positioned for a 1920x1080 canvas.
+
+
+The function defines fixed canvas dimensions (W=1920, H=1080) and builds a list of SVG fragment strings by calling helper functions: loop_glyph, gradient_def, and _t (text placement). It then concatenates those fragments and passes them to svg_doc(W, H, content) to produce the final SVG string which it returns.
+
+### Returns
+
+**Type:** `str`
+
+An SVG document serialized as a string representing the assembled corner graphic.
+
+
+**Possible Values:**
+
+- A valid SVG string containing a loop glyph, gradient definition, and two text elements positioned near the bottom-right (for the provided helper implementations).
+- Any string returned by svg_doc when given the concatenated parts (may vary depending on helper function implementations).
+
+### Complexity
+
+O(1)
+
+### Related Functions
+
+- `loop_glyph` - Called by corner_bug to produce the glyph/shape fragment placed near the bottom-right
+- `svg_doc` - Called by corner_bug to wrap the concatenated SVG fragments into a complete SVG document string
+
+### Notes
+
+- All canvas dimensions and positions are hard-coded: width=1920, height=1080, and element coordinates near (1750,1018)/(1750,1044)/(1810,1010).
+- The function relies on external helper functions (loop_glyph, gradient_def, _t, svg_doc) to return string fragments; behavior depends on their implementations.
+- No I/O or global state modification occurs within this function itself; it merely composes and returns a string.
+
+---
+
+
+
+#### write_and_render
+
+![Type: Sync](https://img.shields.io/badge/Type-Sync-green)
+
+### Signature
+
+```python
+def write_and_render(name: str, content: str, *, width: int = 1920) -> None
+```
+
+### Description
+
+Writes the provided SVG content to a file named '<name>.svg' inside the JAM path and renders that SVG to a PNG file '<name>.png' using cairosvg.svg2png with the specified output width.
+
+
+The function constructs two filesystem paths (svg_path and png_path) by joining a global JAM path with the provided name and appropriate extensions. It writes the SVG content to the .svg file using Path.write_text, then calls cairosvg.svg2png with the svg file path as the URL and writes the rendered PNG to the .png path using the provided width as output_width.
+
+### Parameters
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | `str` | ✅ | Base filename (without extension) used to construct '<name>.svg' and '<name>.png' inside the JAM path.
+<br>**Constraints:** Should be a valid filename for the target filesystem, Should not include the extension (function appends .svg and .png) |
+| `content` | `str` | ✅ | String containing the SVG XML/text to be written into the .svg file.
+<br>**Constraints:** Should be valid SVG content if correct rendering is expected |
+| `width` = `1920` | `int` | ❌ | Output width in pixels to pass to cairosvg.svg2png (controls PNG width).
+<br>**Constraints:** Must be a positive integer, Controls the output_width passed to cairosvg.svg2png |
+
+### Returns
+
+**Type:** `None`
+
+This function does not return a value; it performs file I/O and image rendering as side effects.
+
+
+**Possible Values:**
+
+- None (on successful completion)
+
+### Raises
+
+| Exception | Condition |
+| --- | --- |
+| `OSError / IOError` | If writing the SVG file via svg_path.write_text fails (e.g., permission issues, invalid path, disk full). |
+| `Exception (from cairosvg.svg2png)` | If cairosvg.svg2png encounters an error while reading the SVG or rendering/writing the PNG (errors raised by the cairosvg library). |
+
+### Side Effects
+
+> ❗ **IMPORTANT**
+> This function has side effects that modify state or perform I/O operations.
+
+- Writes a file named '<name>.svg' to the filesystem under the JAM path via svg_path.write_text
+- Creates/writes a file named '<name>.png' to the filesystem under the JAM path via cairosvg.svg2png
+- Calls the external cairosvg library to perform SVG-to-PNG rendering
+
+### Complexity
+
+O(1)
+
+### Notes
+
+- This function depends on a global variable or Path-like object named JAM being defined elsewhere in the module.
+- cairosvg.svg2png is invoked with url=str(svg_path) and write_to=str(png_path); the function relies on cairosvg being installed and importable.
+- No validation of SVG content is performed before writing or rendering; invalid SVG may cause cairosvg to raise an exception.
+
+---
+
+
+
+#### main
+
+![Type: Sync](https://img.shields.io/badge/Type-Sync-green)
+
+### Signature
+
+```python
+def main() -> None
+```
+
+### Description
+
+Generate and write a collection of pre-rendered 'jam' assets to disk and print a summary of the generated files.
+
+
+This function sequentially calls helper rendering functions to assemble a set of title/end cards, chapter cards, lower-third overlays, callout overlays, and a corner bug, writing each rendered asset via write_and_render. After generating assets it lists the contents of the JAM directory (using JAM.iterdir()), computes file sizes (entry.stat().st_size), and prints a sorted summary to stdout.
+
+### Returns
+
+**Type:** `None`
+
+This function returns None; its primary effect is to produce side effects (writing assets and printing).
+
+
+**Possible Values:**
+
+- None
+
+### Side Effects
+
+> ❗ **IMPORTANT**
+> This function has side effects that modify state or perform I/O operations.
+
+- Calls write_and_render repeatedly which is expected to write rendered files to disk or another output
+- Reads the JAM directory via JAM.iterdir() and reads file metadata via entry.stat() (file system access)
+- Writes to standard output using print()
+
+### Complexity
+
+O(n) — work scales linearly with the number of defined assets (chapters, lower_thirds, callouts) and files in the JAM directory.
+
+### Related Functions
+
+- `write_and_render` - Called by main to persist rendered assets (primary output mechanism)
+- `chapter_card` - Called by main to produce chapter-specific rendered content passed to write_and_render
+
+### Notes
+
+- The function assumes the existence and correct behavior of helper functions: title_card, end_card, chapter_card, lower_third, callout_overlay, corner_bug, and write_and_render.
+- Any exceptions raised by the helper functions or by file system operations (e.g., permission errors) will propagate since main does not catch exceptions.
+- Slug generation for lower_thirds performs character replacements and collapses repeated hyphens; the exact filename produced depends on that logic and the headline strings.
+
+---
+
+
