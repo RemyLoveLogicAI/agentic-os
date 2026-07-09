@@ -1,0 +1,20 @@
+[project]
+name = "zo-super-server"
+version = "0.1.0"
+description = "Zo Super Server - MCP and SSE gateway"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.111.0",
+    "uvicorn[standard]>=0.30.0",
+    "python-multipart>=0.0.9",
+]
+
+[project.scripts]
+zo-super-server = "main:main"
+
+[tool.setuptools]
+py-modules = ["main", "zo_super_server"]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
