@@ -1,97 +1,123 @@
-<details><summary>Directory Metadata (for smart change detection)</summary>
+# 📚 agentic-os Documentation
 
-```json
-{
-  "doc_type": "directory_index",
-  "directory_path": "_docs",
-  "directory_hash": "c5ecd5f387d2dbf05b5e52d4a3dc723c0ca485d680d1a71637224879ae989d36",
-  "file_count": 1,
-  "file_hashes": {
-    "DEPENDENCIES": "c33fbeee7427d6b8"
-  }
-}
+Welcome to the complete documentation for this repository. This documentation is automatically generated and maintained by Woden Docbot.
+
+![Health: Healthy](https://img.shields.io/badge/Health-Healthy-green) ![Files Documented: 10](https://img.shields.io/badge/Files_Documented-10-blue) ![Coverage: 100](https://img.shields.io/badge/Coverage-100-green) ![Last Updated: 2026-07-09](https://img.shields.io/badge/Last_Updated-2026--07--09-gray)
+
+## 🔗 Quick Links
+
+[📂 skills](./skills/README.md) | [📂 src](./src/README.md)
+[📋 Dependencies](./DEPENDENCIES.md)
+
+
+---
+
+> A documentation-first repository that indexes skill implementations and exposes TypeScript-based skill source (including a task-manager skill and UI).
+
+
+
+## 📖 Overview
+
+agentic-os organizes and documents skill implementations alongside their TypeScript source. The repository's primary role is to provide a navigable documentation index for skills and to point developers to the corresponding TypeScript modules and UI assets. The current, documented example is a task-manager skill that includes a documentation index and a TypeScript src submodule.
+
+The layout is intentionally hierarchical and scaffolded: a top-level skills container groups per-skill subdirectories (for example task-manager/), each containing documentation indices and a src/ folder that holds TypeScript modules and type definitions plus a UI submodule. Separately, a src/ folder at the repository root provides a namespace for future documentation topics (metropolis/), which is currently empty. Technology explicitly present in the repository is TypeScript.
+
+
+### 🧩 Key Components
+
+| Component | Purpose | Technologies |
+| --- | --- | --- |
+| **skills** | Top-level documentation index that groups per-skill documentation subdirectories and points to each skill's source code and type definitions. | N/A |
+| **task-manager** | A documented skill subdirectory that contains the documentation-level source index and a src/ submodule with TypeScript modules, type definitions, and a UI submodule representing the task-manager implementation. | `TypeScript` |
+| **src** | A top-level container for documentation-related subdirectories (a namespace for additional docs); currently contains the metropolis/ subfolder but no root-level documentation files. | N/A |
+| **metropolis** | A focused documentation topic folder under src/ intended to house documentation resources; currently present as scaffolding with no documented files. | N/A |
+
+
+
+
+**Component Architecture:**
+
+```mermaid
+graph TD
+    C0[skills]
+    C1[task-manager]
+    C2[src]
+    C3[metropolis]
+    C0 --> C1
+    C1 --> C2
+    C2 --> C3
 ```
 
-</details>
+### 🏗️ Architecture
 
-[Documentation Home](README.md)
+A hierarchical documentation scaffold: top-level container directories group per-skill folders and documentation topics. Each skill folder contains a documentation index and a src/ subfolder for TypeScript source and UI, providing a predictable navigable structure.
 
----
+### 💡 Use Cases
 
-# 📁 _docs
-
-> **Purpose:** Top-level documentation container that stores repository-level dependency information and organizes subdirectories for source documentation and skill-specific documentation.
-> 
-
-![Organization: Hierarchical](https://img.shields.io/badge/Organization-Hierarchical-blue)
-
-## 📑 Table of Contents
+- ✦ Provide a discoverable index of skill implementations and their TypeScript source for developers
+- ✦ Host and document a TypeScript-based task-manager skill alongside its UI and type definitions
+- ✦ Serve as scaffolding and a predictable path for adding future topic-specific documentation (e.g., src/metropolis)
 
 
-- [Overview](#overview)
-- [Subdirectories](#subdirectories)
-- [All Files](#all-files)
-- [Dependencies](#dependencies)
-- [Architecture Notes](#architecture-notes)
+
+### 🔧 Technologies
+
+
+**Languages:** ![TypeScript: ](https://img.shields.io/badge/TypeScript--blue)
 
 ---
 
-## Overview
+## 📑 Documentation Sections
 
-The _docs directory contains a single root-level file, DEPENDENCIES, which records dependency information relevant to the project. At the root level there are no other documentation entry points; instead, the directory delegates most documentation organization to two subdirectories. This file serves as the canonical place in this directory to inspect declared dependencies for documentation and related tooling.
+### [skills](./skills/README.md)
+Top-level documentation index for skill implementations and their documentation; organizes and points to subdirectories that document individual skills and their source modules.
 
-Two subdirectories, src/ and skills/, provide the organizational structure for documentation content. The src/ subdirectory is a container for source documentation and documentation-adjacent resources and currently contains no root-level files, acting primarily as a holder for further nested documentation. The skills/ subdirectory is similarly an index-like container that organizes per-skill documentation and points to subdirectories for each skill implementation; it currently contains no files at its root. Together, the root file and the two subdirectories form a hierarchical documentation layout where DEPENDENCIES gives a single-file entry point for dependency-related concerns, while src/ and skills/ group more detailed content and per-skill materials in nested folders.
+This directory serves as the documentation-level index for skill implementations and their associated source documentation.
+
+![Files: 8](https://img.shields.io/badge/Files-8-blue)
+
+### [src](./src/README.md)
+Holds source documentation and documentation-adjacent resources for the project; currently contains a single subdirectory for further documentation organization.
 
 
-### File Organization
-
-The directory uses a hierarchical organization: a single root file (DEPENDENCIES) at the top level for repository-wide dependency information, plus two subdirectories (src/ and skills/) which act as containers for more detailed, nested documentation. Root-level documentation is minimal; most content is intended to live within the subdirectories' nested structure.
-
-## 📂 Subdirectories
-
-This directory contains the following subdirectories:
-
-### [📁 src/](./src//README.md)
-
-**Purpose:** Holds source documentation and documentation-adjacent resources for the project; currently contains a single subdirectory for further documentation organization and has no root-level documentation files.
-
-![Files: 0](https://img.shields.io/badge/Files-0-blue)
+This directory currently contains no documentation files at the root level and serves primarily as a container for documentation-related subdirectories.
 
 ---
 
-### [📁 skills/](./skills//README.md)
+## 📊 Documentation Statistics
 
-**Purpose:** Top-level documentation index for skill implementations and their documentation; organizes and points to subdirectories that document individual skills and their source modules. At the root there are no files.
-
-![Files: 0](https://img.shields.io/badge/Files-0-blue)
-
----
-## 📂 All Files
-
-| File | Type |
-| --- | --- |
-| [DEPENDENCIES](./DEPENDENCIES.md) | 📄 File |
-
-## Dependencies
-
-### Internal Dependencies
-
-| Dependency | Usage |
-| --- | --- |
-| `DEPENDENCIES (file)` | Serves as the repository-level record of dependencies referenced by documentation and tooling that inspects project dependencies. |
-
-## Architecture Notes
-
-- Documentation is organized hierarchically: a single root-level file for global concerns and two container subdirectories (src/ and skills/) for nested, detailed materials.
-- Root is intentionally sparse; the design directs developers to place detailed docs inside dedicated subdirectories to keep the top-level clean.
+- **Files Documented**: 10
+- **Directories**: 8
+- **Coverage**: 100%
+- **Last Updated**: 2026-07-09
 
 ---
 
-## Navigation
+## 🧭 How to Navigate
 
-**↑ Parent Directory:** [Go up](../README.md)
-**🔗 Related:** [src/](./src//README.md) • [skills/](./skills//README.md)
+> ℹ️ **INFO**
+> Each directory has its own README.md with detailed information about that section. Use the breadcrumb navigation at the top of each page to navigate back to parent directories.
+
+### Navigation Features
+
+- **Breadcrumbs** - At the top of each page, showing your current location
+- **Directory READMEs** - Each folder has a comprehensive overview
+- **File Documentation** - Click through to individual file documentation
+- **Search** - Use GitHub's search or your IDE's search functionality
 
 ---
 
-*Generated by Woden Docbot*
+## 🤖 About Woden DocBot
+
+This documentation is automatically generated and kept up-to-date by Woden DocBot, an AI-powered documentation assistant. DocBot analyzes code on every pull request and updates documentation to reflect changes.
+
+### Features
+
+- **Automatic Updates** - Documentation updates on every PR
+- **Comprehensive Coverage** - Files, functions, classes, and directories
+- **Smart Navigation** - Breadcrumbs, related files, and parent links
+- **AI-Powered** - Uses Azure GPT models for intelligent documentation generation
+
+---
+
+*Generated by Woden DocBot for agentic-os*
