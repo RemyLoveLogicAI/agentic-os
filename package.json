@@ -1,0 +1,17 @@
+{
+  "name": "agentic-os",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Voice-native, governed runtime for autonomous agents",
+  "scripts": {
+    "build:task-manager": "cd skills/task-manager && bun run build",
+    "build:car": "npx tsc",
+    "example:car": "npx tsc && node dist/src/metropolis/car-kernel/example.js",
+    "typecheck": "npx tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  }
+}
