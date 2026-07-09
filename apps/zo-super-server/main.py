@@ -13,11 +13,15 @@ AUTH_TOKEN = os.environ.get("ZO_SUPER_SERVER_TOKEN", "changeme")
 app = FastAPI(title="Zo Super Server", version="0.1.0")
 
 
-def _verify_authorization(authorization: str | None) -> None:
-    if not authorization or not authorization.startswith("Bearer "):
-        raise HTTPException(status_code=401, detail="Unauthorized")
-    if authorization.split(" ", 1)[1] != AUTH_TOKEN:
-        raise HTTPException(status_code=401, detail="Unauthorized")
+def _verify_authorization(
+    authorization: str | None, x_api_token: str | None = None
+) -> None:
+    if authorization and authorization.startswith("Bearer "):
+        if authorization.split(" ", 1)[1] == AUTH_TOKEN:
+            return
+    if x_api_token == AUTH_TOKEN:
+        return
+    raise HTTPException(status_code=401, detail="Unauthorized")
 
 
 @app.get("/")
@@ -29,8 +33,9 @@ async def health() -> dict:
 async def mcp_handler(
     request: Request,
     authorization: str | None = Header(None),
+    x_api_token: str | None = Header(None, alias="X-API-Token"),
 ) -> dict:
-    _verify_authorization(authorization)
+    _verify_authorization(authorization, x_api_token)
     try:
         data = await request.json()
     except Exception as exc:
