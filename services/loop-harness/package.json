@@ -1,0 +1,43 @@
+{
+  "name": "@agentic-os/loop-harness",
+  "version": "0.1.0",
+  "description": "Local recursive execution loop daemon — PAI Algorithm phases over Arbol primitives with bounded loop-unrolling and external-volume storage hygiene",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "loop-harness": "dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc --typeRoots \"${LOOP_HARNESS_TYPE_ROOTS:-/Volumes/SAMSUNG SSD/LOCAL_SHARE/npm/loop-harness-toolchain/node_modules/@types}\" --outDir \"${LOOP_HARNESS_BUILD_DIR:-/Volumes/SAMSUNG SSD/LOCAL_SHARE/tmp/loop-harness/package-dist}\"",
+    "lint": "tsc --noEmit --typeRoots \"${LOOP_HARNESS_TYPE_ROOTS:-/Volumes/SAMSUNG SSD/LOCAL_SHARE/npm/loop-harness-toolchain/node_modules/@types}\"",
+    "test": "bun test",
+    "dev": "bun run src/cli.ts",
+    "daemon": "bun run src/cli.ts daemon"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "20.17.30",
+    "typescript": "5.8.3"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "agentic-os",
+    "pai",
+    "arbol",
+    "loop-engineering",
+    "recursive",
+    "daemon",
+    "harness"
+  ],
+  "license": "MIT"
+}
