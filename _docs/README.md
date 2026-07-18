@@ -1,96 +1,123 @@
-<details><summary>Directory Metadata (for smart change detection)</summary>
+# 📚 agentic-os Documentation
 
-```json
-{
-  "doc_type": "directory_index",
-  "directory_path": "_docs",
-  "directory_hash": "c5ecd5f387d2dbf05b5e52d4a3dc723c0ca485d680d1a71637224879ae989d36",
-  "file_count": 1,
-  "file_hashes": {
-    "DEPENDENCIES": "c33fbeee7427d6b8"
-  }
-}
+Welcome to the complete documentation for this repository. This documentation is automatically generated and maintained by Woden Docbot.
+
+![Health: Healthy](https://img.shields.io/badge/Health-Healthy-green) ![Files Documented: 26](https://img.shields.io/badge/Files_Documented-26-blue) ![Coverage: 100](https://img.shields.io/badge/Coverage-100-green) ![Last Updated: 2026-07-18](https://img.shields.io/badge/Last_Updated-2026--07--18-gray)
+
+## 🔗 Quick Links
+
+[📂 services](./services/README.md) | [📂 skills](./skills/README.md)
+[📋 Dependencies](./DEPENDENCIES.md)
+
+
+---
+
+> A modular TypeScript codebase organizing service implementations and skill documentation with colocated tooling, lifecycle helpers, and runtime entry points.
+
+
+
+## 📖 Overview
+
+agentic-os organizes self-contained service modules and skill documentation to make it straightforward to implement, run, and validate service-level behavior. The services directory hosts service implementations and supporting artifacts; the current service, loop-harness, includes a TypeScript implementation, a public API surface, filesystem-backed utilities, lifecycle helpers, and CLI/daemon entry points with colocated tests.
+
+The skills directory is a documentation-level index for skill implementations and their source modules. The current task-manager skill documents its behavior and points to a TypeScript src/ submodule and a UI submodule. Together the services and skills areas let developers find implementation code, runtime entry points, and documentation grouped by service or skill.
+
+
+### 🧩 Key Components
+
+| Component | Purpose | Technologies |
+| --- | --- | --- |
+| **services (directory)** | Top-level container for service implementations and their supporting tooling; organizes services into subdirectories so each service is developed and tested independently. | `TypeScript` |
+| **services/loop-harness** | A TypeScript service implementation with a public API surface, filesystem-backed utilities, lifecycle helpers, CLI and daemon entry points, and colocated tests to validate behavior. | `TypeScript` |
+| **skills (directory)** | Documentation-level index that groups per-skill documentation subdirectories and points to each skill's source and type definitions. | `TypeScript` |
+| **skills/task-manager** | Documentation and source for the task-manager skill; includes a TypeScript src/ submodule (index and type definitions) and a UI submodule to document and expose the skill implementation. | `TypeScript` |
+
+
+
+
+**Component Architecture:**
+
+```mermaid
+graph TD
+    C0[services (directory)]
+    C1[services/loop-harness]
+    C2[skills (directory)]
+    C3[skills/task-manager]
+    C0 --> C1
+    C1 --> C2
+    C2 --> C3
 ```
 
-</details>
+### 🏗️ Architecture
 
-[Documentation Home](README.md)
+A modular, repository-organized layout: per-service subdirectories under services and per-skill subdirectories under skills. Each service is self-contained with implementation, public API, lifecycle helpers, CLI/daemon entry points, filesystem utilities, and colocated tests.
 
----
+### 💡 Use Cases
 
-# 📁 _docs
-
-> **Purpose:** Provide top-level documentation and indexes for service and skill implementations and record repository dependencies.
-> 
-
-![Organization: Hierarchical](https://img.shields.io/badge/Organization-Hierarchical-blue)
-
-## 📑 Table of Contents
+- ✦ Develop and run the loop-harness service implementation (TypeScript) locally via CLI or as a daemon
+- ✦ Author, document, and inspect skill implementations such as the task-manager and its UI/source modules
+- ✦ Validate service behavior through colocated tests and use lifecycle helpers to start/stop services during development
 
 
-- [Overview](#overview)
-- [Subdirectories](#subdirectories)
-- [All Files](#all-files)
-- [Dependencies](#dependencies)
-- [Architecture Notes](#architecture-notes)
+
+### 🔧 Technologies
+
+
+**Languages:** ![TypeScript: ](https://img.shields.io/badge/TypeScript--blue)
 
 ---
 
-## Overview
+## 📑 Documentation Sections
 
-The _docs directory contains repository-level documentation artifacts. At the root it contains a single DEPENDENCIES file intended to capture dependency information for the repository. This file is the primary root-level artifact and serves as the documented list of libraries, packages, or other external requirements that the codebase references.
+### [services](./services/README.md)
+Host service implementations and service-specific tooling; currently contains the loop-harness service implementation and its supporting artifacts.
 
-Two subdirectories organize implementation-level documentation: services/ and skills/. The services/ subdirectory is described as the host for service implementations and service-specific tooling; it currently contains the loop-harness service implementation and its supporting artifacts and is the top-level location for service implementations in the repository. The skills/ subdirectory serves as the documentation index for skill implementations and their documentation, grouping per-skill documentation subdirectories and pointing to individual skill documentation and source modules. Together, the root DEPENDENCIES file and these subdirectories form a documentation surface: DEPENDENCIES records the external requirements used across implementations, services/ groups service implementation artifacts, and skills/ groups skill-specific documentation and source references.
 
+The services directory is the top-level location for service implementations in this repository.
 
-### File Organization
+### [skills](./skills/README.md)
+Top-level documentation index for skill implementations and their documentation; organizes and points to subdirectories that document individual skills and their source modules.
 
-The directory is organized with a small flat set of root artifacts (currently a single DEPENDENCIES file) and two thematic subdirectories (services/ and skills/). Root files hold repository-wide metadata while subdirectories group implementation-specific documentation and tooling to keep service and skill documentation separate and discoverable.
+This directory serves as the documentation-level index for skill implementations and their associated source documentation.
 
-## 📂 Subdirectories
-
-This directory contains the following subdirectories:
-
-### [📁 services](./services/README.md)
-
-**Purpose:** Host service implementations and service-specific tooling; currently contains the loop-harness service implementation and its supporting artifacts.
-
-![Files: 0](https://img.shields.io/badge/Files-0-blue)
+![Files: 8](https://img.shields.io/badge/Files-8-blue)
 
 ---
 
-### [📁 skills](./skills/README.md)
+## 📊 Documentation Statistics
 
-**Purpose:** Top-level documentation index for skill implementations and their documentation; organizes and points to subdirectories that document individual skills and their source modules.
-
-![Files: 0](https://img.shields.io/badge/Files-0-blue)
-
----
-## 📂 All Files
-
-| File | Type |
-| --- | --- |
-| [DEPENDENCIES](./DEPENDENCIES.md) | 📄 File |
-
-## Dependencies
-
-### Internal Dependencies
-
-| Dependency | Usage |
-| --- | --- |
-| `DEPENDENCIES` | Acts as the repository-level listing of dependencies referenced by services and skills. |
-
-## Architecture Notes
-
-- Documentation is separated: repository-wide metadata (DEPENDENCIES) is kept at the root while implementation-level documentation is grouped under services/ and skills/ to keep concerns separated and discoverable.
+- **Files Documented**: 26
+- **Directories**: 9
+- **Coverage**: 100%
+- **Last Updated**: 2026-07-18
 
 ---
 
-## Navigation
+## 🧭 How to Navigate
 
-**↑ Parent Directory:** [Go up](../README.md)
-**🔗 Related:** [services](./services/README.md) • [skills](./skills/README.md)
+> ℹ️ **INFO**
+> Each directory has its own README.md with detailed information about that section. Use the breadcrumb navigation at the top of each page to navigate back to parent directories.
+
+### Navigation Features
+
+- **Breadcrumbs** - At the top of each page, showing your current location
+- **Directory READMEs** - Each folder has a comprehensive overview
+- **File Documentation** - Click through to individual file documentation
+- **Search** - Use GitHub's search or your IDE's search functionality
 
 ---
 
-*Generated by Woden Docbot*
+## 🤖 About Woden DocBot
+
+This documentation is automatically generated and kept up-to-date by Woden DocBot, an AI-powered documentation assistant. DocBot analyzes code on every pull request and updates documentation to reflect changes.
+
+### Features
+
+- **Automatic Updates** - Documentation updates on every PR
+- **Comprehensive Coverage** - Files, functions, classes, and directories
+- **Smart Navigation** - Breadcrumbs, related files, and parent links
+- **AI-Powered** - Uses Azure GPT models for intelligent documentation generation
+
+---
+
+*Generated by Woden DocBot for agentic-os*
