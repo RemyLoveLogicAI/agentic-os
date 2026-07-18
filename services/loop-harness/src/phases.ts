@@ -35,8 +35,15 @@ export async function planPhase(
     plan = await deps.project.planner(state);
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
+    const withError = recordError(state, "plan", `planner threw: ${message}`);
     return {
-      state: recordError(state, "plan", `planner threw: ${message}`),
+      state: recordPhase(withError, {
+        iteration: state.iteration,
+        phase: "plan",
+        ok: false,
+        summary: `planner threw: ${message}`,
+        at: now(),
+      }),
       plan: { steps: [], preBuildCommands: [], exhausted: true },
     };
   }

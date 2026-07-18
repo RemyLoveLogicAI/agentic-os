@@ -92,7 +92,11 @@ export async function processAvailable(paths: StoragePaths): Promise<number> {
       const message = err instanceof Error ? err.stack ?? err.message : String(err);
       writeFileSync(
         join(dirs.failed, name),
-        `${JSON.stringify({ id, status: "failed", termination: "aborted", error: message }, null, 2)}\n`,
+        `${JSON.stringify(
+          { kind: "daemon_error", id, status: "failed", termination: "aborted", error: message },
+          null,
+          2,
+        )}\n`,
         "utf8",
       );
       rmSync(claimed, { force: true });

@@ -7,7 +7,7 @@
  */
 
 import { cpSync, mkdirSync, rmSync, writeFileSync, existsSync } from "node:fs";
-import { isAbsolute, join, normalize } from "node:path";
+import { isAbsolute, join, relative, resolve, sep } from "node:path";
 import type { ExecutionState, Project } from "./types.js";
 import type { StoragePaths } from "./storage.js";
 
@@ -28,17 +28,17 @@ export function publishDistribution(
   if (existsSync(target)) rmSync(target, { recursive: true, force: true });
 
   if (project.distFiles && project.distFiles.length > 0) {
+    const workspaceRoot = resolve(state.currentCode.workspace);
     for (const rel of project.distFiles) {
-      const normalized = normalize(rel);
-      const parentPrefix = `..${process.platform === "win32" ? "\\" : "/"}`;
+      const src = resolve(workspaceRoot, rel);
+      const withinWorkspace = relative(workspaceRoot, src);
       if (
-        isAbsolute(normalized) ||
-        normalized === ".." ||
-        normalized.startsWith(parentPrefix)
+        withinWorkspace === ".." ||
+        withinWorkspace.startsWith(`..${sep}`) ||
+        isAbsolute(withinWorkspace)
       ) {
         throw new Error(`distribution path must stay inside the workspace: ${rel}`);
       }
-      const src = join(state.currentCode.workspace, rel);
       if (!existsSync(src)) throw new Error(`declared distribution file does not exist: ${rel}`);
     }
   }
@@ -48,7 +48,7 @@ export function publishDistribution(
 
   if (project.distFiles && project.distFiles.length > 0) {
     for (const rel of project.distFiles) {
-      const src = join(state.currentCode.workspace, rel);
+      const src = resolve(state.currentCode.workspace, rel);
       cpSync(src, join(target, rel), { recursive: true });
     }
   } else {

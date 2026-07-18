@@ -10,6 +10,7 @@ import { dirname, join } from "node:path";
 import { randomUUID } from "node:crypto";
 import {
   classify,
+  ensureDaemonDirs,
   ensureStorage,
   processAvailable,
   runLoop,
@@ -113,6 +114,29 @@ describe("recursive loop", () => {
     expect(observations[1].errors[0].stderr).toContain("Unexpected token");
   });
 
+  test("records a failed plan phase when the planner throws", async () => {
+    write("build.mjs", "process.exit(0);");
+    write("verify.mjs", "process.exit(0);");
+
+    const state = await runLoop(
+      project({
+        planner: () => {
+          throw new Error("planner unavailable");
+        },
+      }),
+      { workspace: source, paths: paths() },
+    );
+
+    expect(state.status).toBe("failed");
+    expect(state.termination).toBe("no_plan");
+    expect(state.errors.at(-1)?.phase).toBe("plan");
+    expect(state.phases.at(-1)).toMatchObject({
+      phase: "plan",
+      ok: false,
+      summary: "planner threw: planner unavailable",
+    });
+  });
+
   test("captures runtime verification errors and repairs them on the next cycle", async () => {
     write(
       "build.mjs",
@@ -184,6 +208,21 @@ describe("recursive loop", () => {
     expect(existsSync(join(root, "dist", state.id))).toBe(false);
   });
 
+  test("rejects a distribution path that escapes the staged workspace", async () => {
+    write("build.mjs", "process.exit(0);");
+    write("verify.mjs", "process.exit(0);");
+
+    const state = await runLoop(project({ distFiles: ["../escape"] }), {
+      workspace: source,
+      paths: paths(),
+    });
+
+    expect(state.status).toBe("failed");
+    expect(state.termination).toBe("distribution_failed");
+    expect(state.errors.at(-1)?.stderr).toContain("must stay inside the workspace");
+    expect(existsSync(join(root, "dist", state.id))).toBe(false);
+  });
+
   test("pins child cwd, caches, installs, and temp files to the share", async () => {
     write(
       "build.mjs",
@@ -233,7 +272,27 @@ mkdirSync("build",{recursive:true}); writeFileSync("build/env.json",JSON.stringi
     ) as ExecutionState;
     expect(terminal.status).toBe("succeeded");
     expect(terminal.distPath).toBe(join(root, "dist", id));
-    expect(existsSync(join(storage.tmp, "loop-harness", "daemon", "processing", `${id}.json`))).toBe(false);
+    expect(
+      existsSync(join(storage.tmp, "loop-harness", "daemon", "processing", `${id}.json`)),
+    ).toBe(false);
+  });
+
+  test("daemon-level failures carry an explicit discriminant", async () => {
+    const storage = paths();
+    const dirs = ensureDaemonDirs(storage);
+    writeFileSync(join(dirs.inbox, "malformed.json"), "{not json", "utf8");
+
+    expect(await processAvailable(storage)).toBe(1);
+    const failure = JSON.parse(readFileSync(join(dirs.failed, "malformed.json"), "utf8")) as {
+      kind: string;
+      status: string;
+      termination: string;
+    };
+    expect(failure).toMatchObject({
+      kind: "daemon_error",
+      status: "failed",
+      termination: "aborted",
+    });
   });
 });
 
