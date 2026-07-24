@@ -2,35 +2,35 @@
 
 Welcome to the complete documentation for this repository. This documentation is automatically generated and maintained by Woden Docbot.
 
-![Health: Healthy](https://img.shields.io/badge/Health-Healthy-green) ![Files Documented: 7](https://img.shields.io/badge/Files_Documented-7-blue) ![Coverage: 100](https://img.shields.io/badge/Coverage-100-green) ![Last Updated: 2026-05-19](https://img.shields.io/badge/Last_Updated-2026--05--19-gray)
+![Health: Healthy](https://img.shields.io/badge/Health-Healthy-green) ![Files Documented: 10](https://img.shields.io/badge/Files_Documented-10-blue) ![Coverage: 100](https://img.shields.io/badge/Coverage-100-green) ![Last Updated: 2026-07-09](https://img.shields.io/badge/Last_Updated-2026--07--09-gray)
 
 ## 🔗 Quick Links
 
-[📂 skills](./skills/README.md)
+[📂 skills](./skills/README.md) | [📂 src](./src/README.md)
 [📋 Dependencies](./DEPENDENCIES.md)
 
 
 ---
 
-> A documentation-first repository that organizes skill implementations and their TypeScript source, starting with a task-manager skill.
+> A documentation-first repository that indexes skill implementations and exposes TypeScript-based skill source (including a task-manager skill and UI).
 
 
 
 ## 📖 Overview
 
-agentic-os provides a documentation-focused structure for implementing and navigating "skills" — discrete capability modules — and their corresponding source code. At the top level the skills directory acts as a documentation index that groups per-skill subdirectories. Each per-skill subdirectory is intended to contain a documentation index and pointers to the skill's implementation and type definitions so developers can quickly find both high-level docs and the actual source modules.
+agentic-os organizes and documents skill implementations alongside their TypeScript source. The repository's primary role is to provide a navigable documentation index for skills and to point developers to the corresponding TypeScript modules and UI assets. The current, documented example is a task-manager skill that includes a documentation index and a TypeScript src submodule.
 
-The repository currently hosts a task-manager skill subdirectory which contains a documentation-level index and a TypeScript source submodule (src/) that includes an index module and type definitions, plus a UI submodule. The documentation entries point directly at the TypeScript modules and types, enabling a tight link between design docs and implementation. Architecturally this is a modular, per-skill layout: documentation directories map to source submodules, with TypeScript used for implementation and explicit type definitions to support developer understanding and reuse.
+The layout is intentionally hierarchical and scaffolded: a top-level skills container groups per-skill subdirectories (for example task-manager/), each containing documentation indices and a src/ folder that holds TypeScript modules and type definitions plus a UI submodule. Separately, a src/ folder at the repository root provides a namespace for future documentation topics (metropolis/), which is currently empty. Technology explicitly present in the repository is TypeScript.
 
 
 ### 🧩 Key Components
 
 | Component | Purpose | Technologies |
 | --- | --- | --- |
-| **skills (directory)** | Top-level documentation index that groups per-skill documentation subdirectories and provides navigation to each skill's docs and source. | N/A |
-| **task-manager (skill subdirectory)** | Documentation-level source index for the task-manager skill; documents the implementation and points to the skill's TypeScript source and type definitions. | N/A |
-| **task-manager/src (TypeScript source submodule)** | Holds the TypeScript modules for the task-manager skill, including an index module and explicit type definitions for the skill's interfaces and exports. | `TypeScript` |
-| **task-manager/ui (UI submodule)** | Contains the UI components or assets associated with the task-manager skill; linked from the documentation index to show how the skill is presented. | N/A |
+| **skills** | Top-level documentation index that groups per-skill documentation subdirectories and points to each skill's source code and type definitions. | N/A |
+| **task-manager** | A documented skill subdirectory that contains the documentation-level source index and a src/ submodule with TypeScript modules, type definitions, and a UI submodule representing the task-manager implementation. | `TypeScript` |
+| **src** | A top-level container for documentation-related subdirectories (a namespace for additional docs); currently contains the metropolis/ subfolder but no root-level documentation files. | N/A |
+| **metropolis** | A focused documentation topic folder under src/ intended to house documentation resources; currently present as scaffolding with no documented files. | N/A |
 
 
 
@@ -39,10 +39,10 @@ The repository currently hosts a task-manager skill subdirectory which contains 
 
 ```mermaid
 graph TD
-    C0[skills (directory)]
-    C1[task-manager (skill subdirectory)]
-    C2[task-manager/src (TypeScript source submodule)]
-    C3[task-manager/ui (UI submodule)]
+    C0[skills]
+    C1[task-manager]
+    C2[src]
+    C3[metropolis]
     C0 --> C1
     C1 --> C2
     C2 --> C3
@@ -50,13 +50,13 @@ graph TD
 
 ### 🏗️ Architecture
 
-A modular, documentation-first repository structure where each skill lives in its own subdirectory that links documentation to TypeScript source and type definitions, enabling clear navigation between docs and implementation.
+A hierarchical documentation scaffold: top-level container directories group per-skill folders and documentation topics. Each skill folder contains a documentation index and a src/ subfolder for TypeScript source and UI, providing a predictable navigable structure.
 
 ### 💡 Use Cases
 
-- ✦ Discover and read per-skill documentation and design rationale from a single index
-- ✦ Locate and modify TypeScript implementations and type definitions for a specific skill (e.g., task-manager)
-- ✦ Reuse or inspect the task-manager UI and types for integration into other components or extensions
+- ✦ Provide a discoverable index of skill implementations and their TypeScript source for developers
+- ✦ Host and document a TypeScript-based task-manager skill alongside its UI and type definitions
+- ✦ Serve as scaffolding and a predictable path for adding future topic-specific documentation (e.g., src/metropolis)
 
 
 
@@ -72,17 +72,24 @@ A modular, documentation-first repository structure where each skill lives in it
 ### [skills](./skills/README.md)
 Top-level documentation index for skill implementations and their documentation; organizes and points to subdirectories that document individual skills and their source modules.
 
-
 This directory serves as the documentation-level index for skill implementations and their associated source documentation.
+
+![Files: 8](https://img.shields.io/badge/Files-8-blue)
+
+### [src](./src/README.md)
+Holds source documentation and documentation-adjacent resources for the project; currently contains a single subdirectory for further documentation organization.
+
+
+This directory currently contains no documentation files at the root level and serves primarily as a container for documentation-related subdirectories.
 
 ---
 
 ## 📊 Documentation Statistics
 
-- **Files Documented**: 7
-- **Directories**: 5
+- **Files Documented**: 10
+- **Directories**: 8
 - **Coverage**: 100%
-- **Last Updated**: 2026-05-19
+- **Last Updated**: 2026-07-09
 
 ---
 
