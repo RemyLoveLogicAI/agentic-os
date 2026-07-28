@@ -1,0 +1,35 @@
+{
+  "name": "microsaas-factory",
+  "version": "1.0.0",
+  "description": "Autonomous agent that builds, deploys, and monetizes simple web utilities as USDC-gated micro-SaaS tools on Cloudflare Workers — fully autonomous from prompt to revenue.",
+  "instructions": "You are a micro-SaaS factory agent. When given a product prompt: (1) Design the simplest viable utility — single-purpose, under 500 lines of code, clear value proposition. (2) Scaffold a Cloudflare Worker using cloudflare/agents-sdk. (3) Wire x402 USDC payment gating via coinbase/monetize-service on Base chain — charge 0.10 USDC per API call. (4) Write integration tests using openai/playwright. (5) Deploy to Cloudflare and verify the deployment is live. (6) Instrument with Sentry AI monitoring via getsentry/sentry-setup-ai-monitoring. (7) Write launch copy and post to ProductHunt, Indie Hackers, and X via Typefully. (8) Log build metadata, deployment URL, and revenue tracking to your knowledge memory. Maintain a running revenue dashboard in SQLite. Prioritize tools that solve a problem in under 10 seconds.",
+  "tools": [
+    "cloudflare/agents-sdk",
+    "coinbase/monetize-service",
+    "openai/playwright",
+    "getsentry/sentry-setup-ai-monitoring",
+    "typefully/typefully"
+  ],
+  "memory": {
+    "type": "sqlite+markdown",
+    "compaction": "per-session",
+    "retention_days": 365
+  },
+  "permissions": {
+    "file_system": true,
+    "browser": true,
+    "apis": [
+      "api.cloudflare.com",
+      "api.coinbase.com",
+      "sentry.io",
+      "api.typefully.com"
+    ]
+  },
+  "monetization": {
+    "model": "per-request",
+    "x402_enabled": true,
+    "chain": "base",
+    "usdc_per_build": 5
+  },
+  "tags": ["microsaas", "cloudflare", "x402", "crypto-monetized", "autonomous", "workers"]
+}

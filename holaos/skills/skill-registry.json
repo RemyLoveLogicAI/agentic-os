@@ -1,0 +1,116 @@
+{
+  "version": "1.0.0",
+  "source": "VoltAgent/awesome-agent-skills",
+  "license": "MIT",
+  "last_updated": "2026-05-12",
+  "skills": [
+    {
+      "id": "coinbase/monetize-service",
+      "publisher": "Coinbase",
+      "category": "monetization",
+      "description": "Scaffold an Express server that charges USDC per agent request via x402 protocol — zero Stripe, instant crypto billing on Base chain.",
+      "viral_potential": 3,
+      "lovelogic_use": "Per-request USDC billing for all three viral skill builds",
+      "tags": ["x402", "usdc", "base", "crypto", "monetization"]
+    },
+    {
+      "id": "firecrawl/firecrawl-build-interact",
+      "publisher": "Firecrawl",
+      "category": "browser",
+      "description": "Multi-step browser flows: login, form fill, pagination, and real-time scraping — deployed inside holaOS workspace for 24/7 data collection.",
+      "viral_potential": 3,
+      "lovelogic_use": "Real-time trend research for social content engine",
+      "tags": ["browser", "scraping", "automation", "multi-step"]
+    },
+    {
+      "id": "browserbase/browser",
+      "publisher": "Browserbase",
+      "category": "browser",
+      "description": "Remote isolated cloud browser sessions — no local Chromium required, perfect for headless holaOS deployments.",
+      "viral_potential": 2,
+      "lovelogic_use": "Headless browser operations in cloud-deployed workspaces",
+      "tags": ["browser", "cloud", "headless", "isolated"]
+    },
+    {
+      "id": "openai/playwright",
+      "publisher": "OpenAI",
+      "category": "browser",
+      "description": "Playwright-based browser automation for navigation, forms, testing, and data extraction.",
+      "viral_potential": 2,
+      "lovelogic_use": "Testing deployed micro-SaaS tools in the factory agent",
+      "tags": ["playwright", "testing", "browser", "automation"]
+    },
+    {
+      "id": "typefully/typefully",
+      "publisher": "Typefully",
+      "category": "distribution",
+      "description": "Create, schedule, and publish content across X, LinkedIn, Threads, Bluesky, Mastodon — the distribution layer for autonomous content pipelines.",
+      "viral_potential": 3,
+      "lovelogic_use": "Content scheduling in social-content-engine; launch announcements in microsaas-factory",
+      "tags": ["social-media", "scheduling", "x", "linkedin", "distribution"]
+    },
+    {
+      "id": "replicate/replicate",
+      "publisher": "Replicate",
+      "category": "ai-generation",
+      "description": "Discover and run 1000s of AI models for image, video, and audio generation inside autonomous content workspaces.",
+      "viral_potential": 2,
+      "lovelogic_use": "Media generation for social content engine",
+      "tags": ["image", "video", "audio", "generative-ai"]
+    },
+    {
+      "id": "fal-ai-community/fal-audio",
+      "publisher": "fal.ai",
+      "category": "audio",
+      "description": "Text-to-speech and speech-to-text for voice content agents and audio content generation.",
+      "viral_potential": 3,
+      "lovelogic_use": "Voice-over generation for Reels and YouTube Shorts in content engine",
+      "tags": ["tts", "stt", "audio", "voice"]
+    },
+    {
+      "id": "fal-ai-community/fal-video-edit",
+      "publisher": "fal.ai",
+      "category": "video",
+      "description": "Edit existing videos using AI — restyle, upscale, remove background, add audio tracks.",
+      "viral_potential": 3,
+      "lovelogic_use": "Autonomous video production in social content engine",
+      "tags": ["video", "editing", "ai", "restyle"]
+    },
+    {
+      "id": "remotion-dev/remotion",
+      "publisher": "Remotion",
+      "category": "video",
+      "description": "Programmatic video creation with React — automate YouTube shorts, reels, and clips from reusable templates.",
+      "viral_potential": 2,
+      "lovelogic_use": "Template-based video automation for repeatable content formats",
+      "tags": ["video", "react", "programmatic", "youtube"]
+    },
+    {
+      "id": "veniceai/venice-audio-music",
+      "publisher": "Venice.ai",
+      "category": "music",
+      "description": "Music generation queueing, retrieval, and completion — fully autonomous music creation pipeline.",
+      "viral_potential": 3,
+      "lovelogic_use": "Background music generation for video content",
+      "tags": ["music", "generation", "autonomous", "audio"]
+    },
+    {
+      "id": "cloudflare/agents-sdk",
+      "publisher": "Cloudflare",
+      "category": "infrastructure",
+      "description": "Build stateful agents with scheduling, RPC, and MCP servers on Cloudflare Workers — serverless persistent compute.",
+      "viral_potential": 2,
+      "lovelogic_use": "Serverless deployment target for micro-SaaS factory builds",
+      "tags": ["cloudflare", "workers", "stateful", "serverless"]
+    },
+    {
+      "id": "getsentry/sentry-setup-ai-monitoring",
+      "publisher": "Sentry",
+      "category": "observability",
+      "description": "Automatically instruments OpenAI, Anthropic, and LangChain agent calls for production monitoring and alerting.",
+      "viral_potential": 1,
+      "lovelogic_use": "Production monitoring for all deployed agents and micro-SaaS tools",
+      "tags": ["monitoring", "observability", "langchain", "anthropic"]
+    }
+  ]
+}

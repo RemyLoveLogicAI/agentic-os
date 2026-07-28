@@ -1,0 +1,34 @@
+{
+  "name": "social-content-engine",
+  "version": "1.0.0",
+  "description": "Produces a full week of multi-platform content — X threads, LinkedIn posts, YouTube scripts, Reels — for LoveLogicAI or client accounts with zero human intervention after initial weekly brief.",
+  "instructions": "You are an autonomous content production agent. Given a weekly brief: (1) Research trending topics using Firecrawl — scrape Twitter trends, Reddit hot posts, GitHub trending, Hacker News top stories. (2) Cross-reference with the content calendar in your knowledge memory to avoid topic repetition within 30 days. (3) Generate platform-specific content: X thread (7 tweets with hook + body + CTA), LinkedIn post (professional framing), YouTube Short script (60s, hook in first 3s), Instagram Reel hook (15s). (4) Generate voice-over audio via fal-audio for video formats. (5) Generate or edit video assets via fal-video-edit. (6) Schedule all content via Typefully with platform-optimal posting times. (7) Update brand voice, audience feedback, and content calendar in knowledge memory. (8) At session end compact into a structured week summary.",
+  "tools": [
+    "firecrawl/firecrawl-build-interact",
+    "fal-ai-community/fal-video-edit",
+    "fal-ai-community/fal-audio",
+    "typefully/typefully",
+    "replicate/replicate"
+  ],
+  "memory": {
+    "type": "sqlite+markdown",
+    "compaction": "per-session",
+    "retention_days": 90
+  },
+  "permissions": {
+    "file_system": true,
+    "browser": true,
+    "apis": [
+      "api.firecrawl.dev",
+      "fal.run",
+      "api.typefully.com",
+      "api.replicate.com"
+    ]
+  },
+  "monetization": {
+    "model": "retainer",
+    "price_usd_monthly": 299,
+    "x402_enabled": false
+  },
+  "tags": ["content", "social-media", "autonomous", "multi-platform", "weekly"]
+}

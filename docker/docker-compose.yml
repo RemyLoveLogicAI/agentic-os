@@ -1,0 +1,93 @@
+version: "3.9"
+
+services:
+  trend-arbitrage-agent:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.agent
+    restart: always
+    command: python -m agents.trend_arbitrage.agent
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - MUSASHI_API_KEY=${MUSASHI_API_KEY}
+      - MUSASHI_API_BASE=${MUSASHI_API_BASE:-https://musashi.bot/api}
+      - CHECKPOINT_BACKEND=${CHECKPOINT_BACKEND:-memory}
+      - LANGGRAPH_CHECKPOINT_TABLE=${LANGGRAPH_CHECKPOINT_TABLE:-lovelogic-checkpoints}
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION:-us-east-1}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - MEMORY_ROOT=/app/memory
+      - WORKSPACE_ID=trend-arbitrage-agent
+      - ARBITRAGE_THRESHOLD=0.05
+      - ALERT_URGENCY_THRESHOLD=7.0
+    volumes:
+      - trend_arbitrage_memory:/app/memory
+      - trend_arbitrage_evidence:/app/evidence
+      - trend_arbitrage_logs:/app/logs
+    healthcheck:
+      test: ["CMD", "python", "-c", "from agents.trend_arbitrage import agent; print('ok')"]
+      interval: 30s
+      retries: 3
+      start_period: 15s
+
+  social-content-engine:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.agent
+    restart: always
+    command: python -m agents.social_content.agent
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - FIRECRAWL_API_KEY=${FIRECRAWL_API_KEY}
+      - FAL_KEY=${FAL_KEY}
+      - TYPEFULLY_API_KEY=${TYPEFULLY_API_KEY}
+      - REPLICATE_API_TOKEN=${REPLICATE_API_TOKEN}
+      - CHECKPOINT_BACKEND=${CHECKPOINT_BACKEND:-memory}
+      - MEMORY_ROOT=/app/memory
+      - WORKSPACE_ID=social-content-engine
+    volumes:
+      - social_content_memory:/app/memory
+      - social_content_evidence:/app/evidence
+      - social_content_logs:/app/logs
+    healthcheck:
+      test: ["CMD", "python", "-c", "from agents.social_content import agent; print('ok')"]
+      interval: 30s
+      retries: 3
+      start_period: 15s
+
+  microsaas-factory:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.agent
+    restart: always
+    command: python -m agents.microsaas_factory.agent
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}
+      - CLOUDFLARE_ACCOUNT_ID=${CLOUDFLARE_ACCOUNT_ID}
+      - COINBASE_API_KEY=${COINBASE_API_KEY}
+      - SENTRY_DSN=${SENTRY_DSN}
+      - TYPEFULLY_API_KEY=${TYPEFULLY_API_KEY}
+      - CHECKPOINT_BACKEND=${CHECKPOINT_BACKEND:-memory}
+      - MEMORY_ROOT=/app/memory
+      - WORKSPACE_ID=microsaas-factory
+    volumes:
+      - microsaas_memory:/app/memory
+      - microsaas_evidence:/app/evidence
+      - microsaas_logs:/app/logs
+    healthcheck:
+      test: ["CMD", "python", "-c", "from agents.microsaas_factory import agent; print('ok')"]
+      interval: 30s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  trend_arbitrage_memory:
+  trend_arbitrage_evidence:
+  trend_arbitrage_logs:
+  social_content_memory:
+  social_content_evidence:
+  social_content_logs:
+  microsaas_memory:
+  microsaas_evidence:
+  microsaas_logs:

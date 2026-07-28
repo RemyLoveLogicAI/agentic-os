@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "holaOS Workspace Template",
+  "description": "Schema for LoveLogicAI holaOS-compatible agent workspace configurations",
+  "type": "object",
+  "required": ["name", "version", "instructions", "tools", "memory"],
+  "properties": {
+    "name": { "type": "string", "description": "Unique workspace identifier" },
+    "version": { "type": "string" },
+    "description": { "type": "string" },
+    "instructions": { "type": "string", "description": "Agent system prompt / behavioral specification" },
+    "tools": {
+      "type": "array",
+      "description": "MCP skill IDs the agent can access",
+      "items": { "type": "string" }
+    },
+    "memory": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": { "enum": ["sqlite+markdown", "sqlite", "markdown"] },
+        "compaction": { "enum": ["per-session", "hourly", "daily"], "default": "per-session" },
+        "retention_days": { "type": "integer", "minimum": 1, "default": 30 }
+      }
+    },
+    "cron": {
+      "type": "string",
+      "description": "Cron expression for automated runs (e.g. '*/2 * * * *')"
+    },
+    "permissions": {
+      "type": "object",
+      "properties": {
+        "file_system": { "type": "boolean", "default": false },
+        "browser": { "type": "boolean", "default": false },
+        "apis": { "type": "array", "items": { "type": "string" }, "description": "Allowlisted API hostnames" }
+      }
+    },
+    "monetization": {
+      "type": "object",
+      "properties": {
+        "model": { "enum": ["subscription", "retainer", "per-request"] },
+        "price_usd_monthly": { "type": "number" },
+        "x402_enabled": { "type": "boolean", "default": false },
+        "chain": { "type": "string", "description": "Blockchain for x402 payments (e.g. 'base')" },
+        "usdc_per_build": { "type": "number" }
+      }
+    },
+    "tags": { "type": "array", "items": { "type": "string" } }
+  }
+}
