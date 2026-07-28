@@ -1,0 +1,125 @@
+[
+  {
+    "entries": [
+      {
+        "timestamp": "2026-05-25T20:00:00-07:00",
+        "task": "Big Bank triple-sweep research task",
+        "sweep_type": "night sweep",
+        "results": {
+          "report_meta": {
+            "as_of": "2026-05-25T20:00:00-07:00",
+            "report_date": "2026-05-25",
+            "sweep_type": "night sweep",
+            "task": "Big Bank triple-sweep research task",
+            "target_ticker": "JPM",
+            "universe": ["JPM", "BAC", "C", "WFC", "GS", "MS"],
+            "source_database": "ops/ledgers/big_bank_database.json",
+            "generated_by": "financial research agent"
+          },
+          "entity_resolution": {
+            "interpreted_entity": "JPMorgan Chase & Co. (NYSE: JPM, CIK 0000019617)",
+            "assumption": "Big Bank was interpreted as JPMorgan Chase & Co. because no alternate bank/ticker was provided.",
+            "source": "get_company_facts"
+          },
+          "market_snapshot": {
+            "target": {
+              "ticker": "JPM",
+              "last_price": 306.34,
+              "day_change": 4.36,
+              "day_change_percent": 1.44,
+              "snapshot_time_utc": "2026-05-23T15:00:00Z",
+              "source": "get_current_stock_price"
+            },
+            "sector_proxies": [
+              {"ticker": "XLF", "last_price": 51.93, "day_change_percent": 0.52, "snapshot_time_utc": "2026-05-22T19:59:59Z", "source": "get_current_stock_price"},
+              {"ticker": "KBE", "last_price": 63.52, "day_change_percent": 0.25, "snapshot_time_utc": "2026-05-22T19:59:52Z", "source": "get_current_stock_price"}
+            ],
+            "readthrough": "Financials were mildly positive on the latest available price snapshot."
+          },
+          "latest_financial_metrics": {
+            "market_cap": "~$826.2B",
+            "pe_ratio": "14.94x",
+            "pb_ratio": "2.28x",
+            "ev_ebitda": "6.64x",
+            "roe": "15.7%",
+            "debt_to_equity": "0.18x",
+            "source": "get_financial_metrics_snapshot"
+          },
+          "key_financial_and_earnings_items": {
+            "latest_reported_quarter": {
+              "quarter": "1Q26",
+              "filing_date": "2026-05-01",
+              "report_period": "2026-03-31",
+              "accession": "0001628280-26-029344",
+              "source": "10-Q"
+            },
+            "results": {
+              "revenue_B": 49.836,
+              "revenue_yoy_pct": 10,
+              "net_income_B": 16.494,
+              "net_income_yoy_pct": 13,
+              "diluted_eps": 5.94,
+              "diluted_eps_yoy_pct": 17,
+              "provision_for_credit_losses_B": 2.507,
+              "total_noninterest_expense_B": 26.85
+            },
+            "balance_sheet_and_capital": {
+              "total_assets_T": 4.9,
+              "deposits_T": 2.676,
+              "loans_T": 1.504,
+              "stockholders_equity_B": 364.0,
+              "CET1_ratio_standardized_pct": 14.3,
+              "SLR_pct": 5.6,
+              "LCR_pct": 112
+            },
+            "capital_return": {
+              "common_dividend_declared_per_share": 1.5,
+              "shares_redeemed_millions": 27.5,
+              "buybacks_B": 8.328,
+              "board_authorization_B": 50
+            },
+            "forward_guidance": {
+              "FY26_NII_B": 103,
+              "FY26_adjusted_expense_B": 105,
+              "Card_Services_net_charge_off_rate_pct": 3.4
+            }
+          },
+          "macro_context": {
+            "policy_rates_as_of_2026_04_01": {"Fed": 3.625, "ECB": 2.0, "BOE": 3.75, "BOC": 2.25},
+            "interpretation": "Policy rates remain elevated enough to support bank NII, though further easing could compress spreads over time.",
+            "financials_etf_tape": {"XLF": {"last_price": 51.93, "day_change_percent": 0.52}, "KBE": {"last_price": 63.52, "day_change_percent": 0.25}},
+            "readthrough": "JPM continues to benefit from diversified fee income, strong markets activity, and deposit growth."
+          },
+          "news_highlights": [
+            {"title": "JPMorgan Chase & Co. (JPM) Declares Quarterly Dividend of $1.50 per Share", "source": "Yahoo Finance", "published": "2026-05-24T17:21:40Z", "relevance": "Confirms ongoing capital return and aligns with the bank's dividend posture."},
+            {"title": "JPMorgan Chase Links Wealth Products Leadership Shift And Chicago Redevelopment", "source": "Yahoo Finance", "published": "2026-05-22T18:14:10Z", "relevance": "Strategic/operational story with lower immediate financial impact."},
+            {"title": "JPMorgan Chase (JPM) launches $25M 5.00% callable notes maturing May 2031", "source": "Stock Titan", "published": "2026-05-22T13:45:40Z", "relevance": "Routine funding headline; low signal for fundamentals."}
+          ],
+          "risks": [
+            {"type": "regulatory_capital", "detail": "The March 2026 U.S. Basel III re-proposal could raise JPM's required CET1 capital; capital rules remain a watch item.", "source": "10-Q accession 0001628280-26-029344"},
+            {"type": "credit_risk", "detail": "Card delinquencies and charge-offs remain the clearest near-term consumer watch item.", "source": "10-Q accession 0001628280-26-029344"},
+            {"type": "rates_and_valuation", "detail": "NII sensitivity to lower rates and valuation compression are the main macro/market risks.", "source": "provided_research_brief"}
+          ],
+          "assessment": {
+            "stance": "constructive_slightly_positive",
+            "thesis": "JPM remains a high-quality mega-bank with strong earnings power, diversified revenue, fortress liquidity, and capital return support."
+          },
+          "sources": [
+            {"type": "company_facts", "tool": "get_company_facts", "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000019617"},
+            {"type": "current_price_snapshot", "tool": "get_current_stock_price", "as_of": "2026-05-23T15:00:00Z"},
+            {"type": "financial_metrics_snapshot", "tool": "get_financial_metrics_snapshot"},
+            {"type": "earnings_snapshot", "tool": "get_earnings", "filing_url": "https://www.sec.gov/Archives/edgar/data/0000019617/000162828026029344/jpm-20260331.htm", "report_period": "2026-03-31"},
+            {"type": "sec_filings", "tool": "get_sec_filings", "filings": [{"filing_type": "10-Q", "filing_date": "2026-05-01", "report_period": "2026-03-31", "accession": "0001628280-26-029344"}]},
+            {"type": "interest_rates_snapshot", "tool": "get_interest_rates_snapshot", "date": "2026-04-01"},
+            {"type": "company_news", "tool": "company_news_feed", "articles": ["2026-05-24T17:21:40Z - JPMorgan Chase & Co. (JPM) Declares Quarterly Dividend of $1.50 per Share", "2026-05-22T18:14:10Z - JPMorgan Chase Links Wealth Products Leadership Shift And Chicago Redevelopment", "2026-05-22T13:45:40Z - JPMorgan Chase (JPM) launches $25M 5.00% callable notes maturing May 2031"]}
+          ],
+          "data_quality_notes": [
+            "No intraday quote after 2026-05-23 was surfaced in the repository, so the latest market snapshot was carried forward.",
+            "News coverage is a mix of company releases and syndicated headlines, so sentiment should be treated as moderate-confidence.",
+            "The night sweep is based on the latest available research artifacts in the repo rather than a fresh live market pull."
+          ]
+        }
+      }
+    ]
+  }
+]
