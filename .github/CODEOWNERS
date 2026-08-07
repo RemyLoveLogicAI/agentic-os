@@ -1,0 +1,13 @@
+# Default owner for everything
+* @RemyLoveLogicAI
+
+# Agent implementations — require review before merge
+/agents/ @RemyLoveLogicAI
+/packages/ @RemyLoveLogicAI
+
+# Deployment and ops — extra caution
+/ops/ @RemyLoveLogicAI
+/ops/docker/ @RemyLoveLogicAI
+
+# Governance docs
+SECURITY.md @RemyLoveLogicAI

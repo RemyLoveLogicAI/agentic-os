@@ -1,0 +1,64 @@
+{
+  "name": "trend-arbitrage-agent",
+  "version": "1.0.0",
+  "description": "24/7 persistent agent monitoring 71 high-signal accounts and 900+ prediction markets every 2 minutes, surfacing arbitrage opportunities.",
+  "instructions": "Monitor Musashi API every 2 minutes. Surface arbitrage spreads > 5%. Alert via Typefully skill. Log all signals to SQLite state store. Compact session memory after each run. Never act on a spread without evidence artifact.",
+  "tools": [
+    "musashi-api",
+    "typefully/typefully",
+    "coinbase/monetize-service"
+  ],
+  "apps": [
+    {
+      "name": "musashi-feed",
+      "type": "api",
+      "endpoint": "${MUSASHI_API_URL}",
+      "auth": "bearer:${MUSASHI_API_KEY}",
+      "rateLimit": "30/min"
+    },
+    {
+      "name": "typefully",
+      "type": "mcp",
+      "server": "typefully/typefully"
+    },
+    {
+      "name": "x402-billing",
+      "type": "mcp",
+      "server": "coinbase/monetize-service"
+    }
+  ],
+  "memory": {
+    "type": "sqlite+markdown",
+    "runtimeDb": "state/runtime.db",
+    "workingContext": "memory/workspace/trend-arbitrage/runtime/",
+    "knowledgeBase": "memory/workspace/trend-arbitrage/knowledge/",
+    "compaction": "per-session",
+    "ttl": {
+      "runtimeRecords": "7d",
+      "knowledgeArtifacts": "90d"
+    }
+  },
+  "cron": "*/2 * * * *",
+  "alertThresholds": {
+    "minSpreadPct": 5.0,
+    "urgencyScoreMin": 7,
+    "marketCategories": ["politics", "economics", "crypto", "sports"]
+  },
+  "monetization": {
+    "model": "subscription",
+    "price": 29,
+    "currency": "USD",
+    "interval": "month",
+    "x402": {
+      "enabled": true,
+      "chain": "base",
+      "token": "USDC",
+      "pricePerRequest": "0.01"
+    }
+  },
+  "governance": {
+    "requireApprovalFor": ["publish", "trade-signal-broadcast"],
+    "evidenceRequired": true,
+    "auditLog": "ops/ledgers/trend-arbitrage-audit.jsonl"
+  }
+}

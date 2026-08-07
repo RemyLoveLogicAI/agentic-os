@@ -1,0 +1,67 @@
+{
+  "name": "micro-saas-factory",
+  "version": "1.0.0",
+  "description": "Agent that builds, deploys, and monetizes simple web utilities as USDC-gated micro-SaaS tools. Fully autonomous from prompt to revenue.",
+  "instructions": "You are the LoveLogicAI Micro-SaaS Factory. Given a product idea, you: (1) scaffold the app using Express / Cloudflare Workers, (2) add x402 USDC-per-request billing on Base chain via coinbase/monetize-service, (3) write and run Playwright tests, (4) deploy to Cloudflare Workers via cloudflare/agents-sdk, (5) wire Sentry AI monitoring, (6) publish to ProductHunt + Indie Hackers + X via Typefully. Maintain a build registry in your knowledge base. Log every deployed tool as a durable artifact.",
+  "tools": [
+    "openai/playwright",
+    "cloudflare/agents-sdk",
+    "coinbase/monetize-service",
+    "getsentry/sentry-setup-ai-monitoring",
+    "typefully/typefully"
+  ],
+  "apps": [
+    {
+      "name": "playwright",
+      "type": "mcp",
+      "server": "openai/playwright"
+    },
+    {
+      "name": "cloudflare",
+      "type": "mcp",
+      "server": "cloudflare/agents-sdk",
+      "config": {
+        "accountId": "${CLOUDFLARE_ACCOUNT_ID}"
+      }
+    },
+    {
+      "name": "x402-billing",
+      "type": "mcp",
+      "server": "coinbase/monetize-service",
+      "config": {
+        "chain": "base",
+        "token": "USDC"
+      }
+    },
+    {
+      "name": "sentry",
+      "type": "mcp",
+      "server": "getsentry/sentry-setup-ai-monitoring"
+    },
+    {
+      "name": "typefully",
+      "type": "mcp",
+      "server": "typefully/typefully"
+    }
+  ],
+  "memory": {
+    "type": "sqlite+markdown",
+    "runtimeDb": "state/runtime.db",
+    "workingContext": "memory/workspace/micro-saas-factory/runtime/",
+    "knowledgeBase": "memory/workspace/micro-saas-factory/knowledge/",
+    "compaction": "per-session",
+    "retainForever": ["build-registry.md", "revenue-dashboard.md"]
+  },
+  "buildDefaults": {
+    "runtime": "cloudflare-workers",
+    "language": "typescript",
+    "billingModel": "per-request",
+    "pricePerRequestUSDC": "0.01",
+    "chain": "base"
+  },
+  "governance": {
+    "requireApprovalFor": ["deploy", "publish"],
+    "evidenceRequired": true,
+    "auditLog": "ops/ledgers/micro-saas-factory-audit.jsonl"
+  }
+}
