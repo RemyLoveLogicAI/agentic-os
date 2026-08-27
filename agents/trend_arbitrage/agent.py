@@ -1,8 +1,4 @@
-"""Trend Arbitrage Agent — Skill Build #1.
-
-Polls Musashi API every 2 minutes, identifies prediction market spreads > 5%,
-alerts via Typefully, and logs every signal to the evidence ledger.
-"""
+"""Trend Arbitrage Agent — Skill Build #1."""
 import json
 import os
 import uuid
@@ -18,13 +14,29 @@ from agents.shared.state import AgentState
 
 MUSASHI_API_BASE = os.getenv("MUSASHI_API_BASE", "https://musashi.bot/api")
 MUSASHI_API_KEY = os.getenv("MUSASHI_API_KEY", "")
-ARBITRAGE_THRESHOLD = float(os.getenv("ARBITRAGE_THRESHOLD", "0.05"))
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
-ALERT_URGENCY_THRESHOLD = float(os.getenv("ALERT_URGENCY_THRESHOLD", "7.0"))
 
 
-def poll_musashi(state: AgentState) -> AgentState:
-    """Fetch latest signals from Musashi API."""
+def _safe_float(var: str, default: float) -> float:
+    try:
+        return float(os.getenv(var, str(default)))
+    except (TypeError, ValueError):
+        return default
+
+
+ARBITRAGE_THRESHOLD = _safe_float("ARBITRAGE_THRESHOLD", 0.05)
+ALERT_URGENCY_THRESHOLD = _safe_float("ALERT_URGENCY_THRESHOLD", 7.0)
+
+
+def _strip_json_fences(text: str) -> str:
+    text = text.strip()
+    if text.startswith("```"):
+        lines = text.splitlines()
+        text = "\n".join(lines[1:-1])
+    return text
+
+
+def poll_musashi(state: AgentState) -> dict:
     try:
         resp = httpx.get(
             f"{MUSASHI_API_BASE}/signals",
@@ -33,9 +45,7 @@ def poll_musashi(state: AgentState) -> AgentState:
         )
         resp.raise_for_status()
         return {
-            **state,
-            "messages": state["messages"]
-            + [
+            "messages": [
                 {
                     "role": "tool",
                     "content": json.dumps(
@@ -45,35 +55,40 @@ def poll_musashi(state: AgentState) -> AgentState:
             ],
         }
     except Exception as exc:
-        return {**state, "error": str(exc)}
+        return {"error": str(exc)}
 
 
-def analyze_arbitrage(state: AgentState) -> AgentState:
-    """Use Claude to identify spreads above threshold and rank by urgency."""
+def analyze_arbitrage(state: AgentState) -> dict:
     if state.get("error"):
-        return state
+        return {}
 
-    last_tool = next((m for m in reversed(state["messages"]) if m.get("role") == "tool"), None)
+    last_tool = next(
+        (m for m in reversed(state["messages"]) if getattr(m, "type", None) == "tool"),
+        None,
+    )
     if not last_tool:
-        return state
+        return {}
 
     client = Anthropic(api_key=ANTHROPIC_API_KEY)
-    response = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=1024,
-        system=(
-            "You are a prediction market arbitrage analyst. Given market signals, "
-            f"identify opportunities where the spread exceeds {ARBITRAGE_THRESHOLD * 100:.0f}%. "
-            "Return JSON with keys: opportunities (array of objects with market, spread, urgency_score 0-10, summary), "
-            "highest_urgency_score (float), alert_summary (string for Twitter). "
-            "Return only valid JSON."
-        ),
-        messages=[{"role": "user", "content": f"Analyze: {last_tool['content']}"}],
-    )
+    try:
+        response = client.messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=1024,
+            system=(
+                "You are a prediction market arbitrage analyst. Given market signals, "
+                f"identify opportunities where the spread exceeds {ARBITRAGE_THRESHOLD * 100:.0f}%. "
+                "Return JSON with keys: opportunities (array of objects with market, spread, urgency_score 0-10, summary), "
+                "highest_urgency_score (float), alert_summary (string for Twitter). "
+                "Return only valid JSON."
+            ),
+            messages=[{"role": "user", "content": f"Analyze: {last_tool.content}"}],
+        )
+    except Exception as exc:
+        return {"error": str(exc)}
+
     tokens_used = response.usage.input_tokens + response.usage.output_tokens
     return {
-        **state,
-        "messages": state["messages"] + [{"role": "assistant", "content": response.content[0].text}],
+        "messages": [{"role": "assistant", "content": response.content[0].text}],
         "cost_usd": state["cost_usd"] + tokens_used * 0.000003,
         "turn_count": state["turn_count"] + 1,
     }
@@ -82,32 +97,36 @@ def analyze_arbitrage(state: AgentState) -> AgentState:
 def should_alert(state: AgentState) -> str:
     if state.get("error"):
         return "log_and_end"
-    last = next((m for m in reversed(state["messages"]) if m.get("role") == "assistant"), None)
+    last = next(
+        (m for m in reversed(state["messages"]) if getattr(m, "type", None) == "ai"),
+        None,
+    )
     if not last:
         return "log_and_end"
     try:
-        data = json.loads(last["content"])
+        data = json.loads(_strip_json_fences(last.content))
         if data.get("highest_urgency_score", 0) >= ALERT_URGENCY_THRESHOLD:
             return "send_alert"
-    except (json.JSONDecodeError, TypeError):
+    except (json.JSONDecodeError, TypeError, AttributeError):
         pass
     return "log_and_end"
 
 
-def send_alert(state: AgentState) -> AgentState:
-    """Post alert thread via Typefully skill (MCP call in production)."""
-    last = next((m for m in reversed(state["messages"]) if m.get("role") == "assistant"), None)
+def send_alert(state: AgentState) -> dict:
+    last = next(
+        (m for m in reversed(state["messages"]) if getattr(m, "type", None) == "ai"),
+        None,
+    )
     if last:
         try:
-            data = json.loads(last["content"])
+            data = json.loads(_strip_json_fences(last.content))
             print(f"[TYPEFULLY] Posting alert: {data.get('alert_summary', '')[:200]}")
-        except (json.JSONDecodeError, TypeError):
+        except (json.JSONDecodeError, TypeError, AttributeError):
             pass
-    return state
+    return {}
 
 
-def log_and_end(state: AgentState) -> AgentState:
-    """Log outcome to evidence ledger and compact session memory."""
+def log_and_end(state: AgentState) -> dict:
     entry = {
         "workspace": state["workspace_id"],
         "session": state["session_id"],
@@ -118,7 +137,7 @@ def log_and_end(state: AgentState) -> AgentState:
     }
     print(f"[EVIDENCE] {json.dumps(entry)}")
     compact_session(state["workspace_id"], state["session_id"], state["messages"])
-    return state
+    return {}
 
 
 def build_graph():
@@ -143,8 +162,10 @@ def build_graph():
 
 async def run(
     workspace_id: str = "trend-arbitrage-agent",
-    thread_id: str = "default",
+    thread_id: str | None = None,
 ) -> AgentState:
+    if not thread_id:
+        thread_id = str(uuid.uuid4())
     graph = build_graph()
     initial: AgentState = {
         "messages": [],

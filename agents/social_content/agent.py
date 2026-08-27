@@ -1,8 +1,4 @@
-"""Social Content Engine — Skill Build #2.
-
-Researches trends via Firecrawl, generates a week of multi-platform content,
-produces media assets via fal.ai, and schedules via Typefully.
-"""
+"""Social Content Engine — Skill Build #2."""
 import json
 import os
 import uuid
@@ -21,8 +17,15 @@ ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 TYPEFULLY_API_KEY = os.getenv("TYPEFULLY_API_KEY", "")
 
 
-def research_trends(state: AgentState) -> AgentState:
-    """Scrape Twitter, Reddit, and GitHub for trending topics via Firecrawl."""
+def _strip_json_fences(text: str) -> str:
+    text = text.strip()
+    if text.startswith("```"):
+        lines = text.splitlines()
+        text = "\n".join(lines[1:-1])
+    return text
+
+
+def research_trends(state: AgentState) -> dict:
     try:
         resp = httpx.post(
             "https://api.firecrawl.dev/v1/scrape",
@@ -32,9 +35,7 @@ def research_trends(state: AgentState) -> AgentState:
         )
         resp.raise_for_status()
         return {
-            **state,
-            "messages": state["messages"]
-            + [
+            "messages": [
                 {
                     "role": "tool",
                     "content": json.dumps(
@@ -44,61 +45,69 @@ def research_trends(state: AgentState) -> AgentState:
             ],
         }
     except Exception as exc:
-        return {**state, "error": str(exc)}
+        return {"error": str(exc)}
 
 
-def generate_content(state: AgentState) -> AgentState:
-    """Use Claude to produce a full week of platform-specific content."""
+def generate_content(state: AgentState) -> dict:
     if state.get("error"):
-        return state
+        return {}
 
-    last_tool = next((m for m in reversed(state["messages"]) if m.get("role") == "tool"), None)
-    client = Anthropic(api_key=ANTHROPIC_API_KEY)
-
-    response = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=4096,
-        system=(
-            "You are a professional content strategist for LoveLogicAI. "
-            "Given trending topics, produce a full week of content. "
-            "Return JSON with: x_threads (array of 7-tweet threads), linkedin_posts (array), "
-            "youtube_scripts (array of 60s scripts), reel_hooks (array of 15s hooks). "
-            "Each piece should have: platform, content, hashtags, posting_time, media_prompt. "
-            "Optimize for virality and brand authenticity."
-        ),
-        messages=[
-            {
-                "role": "user",
-                "content": f"Create this week's content from trends: {last_tool['content'] if last_tool else 'AI and agents'}",
-            }
-        ],
+    last_tool = next(
+        (m for m in reversed(state["messages"]) if getattr(m, "type", None) == "tool"),
+        None,
     )
+    trend_data = last_tool.content if last_tool else "AI and agents"
+
+    client = Anthropic(api_key=ANTHROPIC_API_KEY)
+    try:
+        response = client.messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=4096,
+            system=(
+                "You are a professional content strategist for LoveLogicAI. "
+                "Given trending topics, produce a full week of content. "
+                "Return JSON with: x_threads (array of 7-tweet threads), linkedin_posts (array), "
+                "youtube_scripts (array of 60s scripts), reel_hooks (array of 15s hooks). "
+                "Each piece should have: platform, content, hashtags, posting_time, media_prompt. "
+                "Optimize for virality and brand authenticity."
+            ),
+            messages=[
+                {
+                    "role": "user",
+                    "content": f"Create this week's content from trends: {trend_data}",
+                }
+            ],
+        )
+    except Exception as exc:
+        return {"error": str(exc)}
+
     tokens_used = response.usage.input_tokens + response.usage.output_tokens
     return {
-        **state,
-        "messages": state["messages"] + [{"role": "assistant", "content": response.content[0].text}],
+        "messages": [{"role": "assistant", "content": response.content[0].text}],
         "cost_usd": state["cost_usd"] + tokens_used * 0.000003,
         "turn_count": state["turn_count"] + 1,
     }
 
 
-def schedule_content(state: AgentState) -> AgentState:
-    """Schedule generated content via Typefully skill (MCP call in production)."""
+def schedule_content(state: AgentState) -> dict:
     if state.get("error"):
-        return state
-    last = next((m for m in reversed(state["messages"]) if m.get("role") == "assistant"), None)
+        return {}
+    last = next(
+        (m for m in reversed(state["messages"]) if getattr(m, "type", None) == "ai"),
+        None,
+    )
     if last:
         try:
-            data = json.loads(last["content"])
+            data = json.loads(_strip_json_fences(last.content))
             thread_count = len(data.get("x_threads", []))
             linkedin_count = len(data.get("linkedin_posts", []))
             print(f"[TYPEFULLY] Scheduling {thread_count} X threads, {linkedin_count} LinkedIn posts")
-        except (json.JSONDecodeError, TypeError):
+        except (json.JSONDecodeError, TypeError, AttributeError):
             print("[TYPEFULLY] Scheduling content batch")
-    return state
+    return {}
 
 
-def log_and_end(state: AgentState) -> AgentState:
+def log_and_end(state: AgentState) -> dict:
     entry = {
         "workspace": state["workspace_id"],
         "session": state["session_id"],
@@ -108,7 +117,7 @@ def log_and_end(state: AgentState) -> AgentState:
     }
     print(f"[EVIDENCE] {json.dumps(entry)}")
     compact_session(state["workspace_id"], state["session_id"], state["messages"])
-    return state
+    return {}
 
 
 def build_graph():
@@ -129,9 +138,11 @@ def build_graph():
 
 async def run(
     workspace_id: str = "social-content-engine",
-    thread_id: str = "default",
+    thread_id: str | None = None,
     weekly_brief: str = "",
 ) -> AgentState:
+    if not thread_id:
+        thread_id = str(uuid.uuid4())
     graph = build_graph()
     initial: AgentState = {
         "messages": [{"role": "user", "content": weekly_brief or "Produce this week's content"}],

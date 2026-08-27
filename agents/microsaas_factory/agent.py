@@ -1,8 +1,4 @@
-"""Micro-SaaS Factory Agent — Skill Build #3.
-
-Builds, deploys, and monetizes a Cloudflare Worker with x402 USDC billing,
-Playwright testing, Sentry monitoring, and Typefully launch announcements.
-"""
+"""Micro-SaaS Factory Agent — Skill Build #3."""
 import json
 import os
 import uuid
@@ -20,49 +16,62 @@ CLOUDFLARE_API_TOKEN = os.getenv("CLOUDFLARE_API_TOKEN", "")
 CLOUDFLARE_ACCOUNT_ID = os.getenv("CLOUDFLARE_ACCOUNT_ID", "")
 
 
-def design_product(state: AgentState) -> AgentState:
-    """Design the minimal viable utility architecture."""
-    client = Anthropic(api_key=ANTHROPIC_API_KEY)
+def _strip_json_fences(text: str) -> str:
+    text = text.strip()
+    if text.startswith("```"):
+        lines = text.splitlines()
+        text = "\n".join(lines[1:-1])
+    return text
+
+
+def design_product(state: AgentState) -> dict:
     prompt = next(
-        (m["content"] for m in state["messages"] if m.get("role") == "user"),
+        (getattr(m, "content", "") for m in state["messages"] if getattr(m, "type", "") == "human"),
         "Build a useful web utility",
     )
-    response = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=2048,
-        system=(
-            "You are a micro-SaaS architect. Given a product prompt, design the simplest viable "
-            "Cloudflare Worker utility under 500 lines. Return JSON with: "
-            "worker_name, description, endpoint_spec (array of routes), "
-            "value_proposition, target_user, x402_price_usdc (float), "
-            "worker_code (full TypeScript Cloudflare Worker implementation)."
-        ),
-        messages=[{"role": "user", "content": prompt}],
-    )
+    client = Anthropic(api_key=ANTHROPIC_API_KEY)
+    try:
+        response = client.messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=2048,
+            system=(
+                "You are a micro-SaaS architect. Given a product prompt, design the simplest viable "
+                "Cloudflare Worker utility under 500 lines. Return JSON with: "
+                "worker_name, description, endpoint_spec (array of routes), "
+                "value_proposition, target_user, x402_price_usdc (float), "
+                "worker_code (full TypeScript Cloudflare Worker implementation)."
+            ),
+            messages=[{"role": "user", "content": prompt}],
+        )
+    except Exception as exc:
+        return {"error": str(exc)}
+
     tokens_used = response.usage.input_tokens + response.usage.output_tokens
     return {
-        **state,
-        "messages": state["messages"] + [{"role": "assistant", "content": response.content[0].text}],
+        "messages": [{"role": "assistant", "content": response.content[0].text}],
         "cost_usd": state["cost_usd"] + tokens_used * 0.000003,
         "turn_count": state["turn_count"] + 1,
     }
 
 
-def deploy_worker(state: AgentState) -> AgentState:
-    """Deploy generated Cloudflare Worker via API (MCP cloudflare/agents-sdk in production)."""
-    last = next((m for m in reversed(state["messages"]) if m.get("role") == "assistant"), None)
+def deploy_worker(state: AgentState) -> dict:
+    if state.get("error"):
+        return {}
+    last = next(
+        (m for m in reversed(state["messages"]) if getattr(m, "type", None) == "ai"),
+        None,
+    )
     if not last:
-        return {**state, "error": "No worker design found"}
+        return {"error": "No worker design found"}
     try:
-        design = json.loads(last["content"])
+        design = json.loads(_strip_json_fences(last.content))
+        if not isinstance(design, dict):
+            return {"error": "Worker design response was not a JSON object"}
         worker_name = design.get("worker_name", "lovelogic-tool")
         print(f"[CLOUDFLARE] Deploying worker: {worker_name}")
         print(f"[CLOUDFLARE] x402 price: {design.get('x402_price_usdc', 0.10)} USDC")
-        # Production: call cloudflare/agents-sdk MCP tool
         return {
-            **state,
-            "messages": state["messages"]
-            + [
+            "messages": [
                 {
                     "role": "tool",
                     "content": json.dumps(
@@ -77,25 +86,27 @@ def deploy_worker(state: AgentState) -> AgentState:
             ],
         }
     except (json.JSONDecodeError, TypeError) as exc:
-        return {**state, "error": str(exc)}
+        return {"error": str(exc)}
 
 
-def announce_launch(state: AgentState) -> AgentState:
-    """Post launch announcement via Typefully (MCP call in production)."""
-    last_tool = next((m for m in reversed(state["messages"]) if m.get("role") == "tool"), None)
+def announce_launch(state: AgentState) -> dict:
+    last_tool = next(
+        (m for m in reversed(state["messages"]) if getattr(m, "type", None) == "tool"),
+        None,
+    )
     if last_tool:
         try:
-            deployment = json.loads(last_tool["content"])
+            deployment = json.loads(last_tool.content)
             if deployment.get("deployed"):
                 url = deployment.get("url", "")
                 name = deployment.get("worker_name", "")
                 print(f"[TYPEFULLY] Announcing launch of {name}: {url}")
-        except (json.JSONDecodeError, TypeError):
+        except (json.JSONDecodeError, TypeError, AttributeError):
             pass
-    return state
+    return {}
 
 
-def log_and_end(state: AgentState) -> AgentState:
+def log_and_end(state: AgentState) -> dict:
     entry = {
         "workspace": state["workspace_id"],
         "session": state["session_id"],
@@ -106,7 +117,7 @@ def log_and_end(state: AgentState) -> AgentState:
     }
     print(f"[EVIDENCE] {json.dumps(entry)}")
     compact_session(state["workspace_id"], state["session_id"], state["messages"])
-    return state
+    return {}
 
 
 def build_graph():
@@ -127,9 +138,11 @@ def build_graph():
 
 async def run(
     workspace_id: str = "microsaas-factory",
-    thread_id: str = "default",
+    thread_id: str | None = None,
     product_prompt: str = "",
 ) -> AgentState:
+    if not thread_id:
+        thread_id = str(uuid.uuid4())
     graph = build_graph()
     initial: AgentState = {
         "messages": [{"role": "user", "content": product_prompt or "Build a useful web utility"}],

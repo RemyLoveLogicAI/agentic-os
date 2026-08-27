@@ -7,12 +7,38 @@ MEMORY_ROOT = Path(os.getenv("MEMORY_ROOT", "./memory/workspace"))
 DECAY_LAMBDA = 0.05
 
 
+def _msg_type(m) -> str:
+    """Normalize message type from a dict or a LangChain BaseMessage."""
+    if hasattr(m, "type"):
+        return m.type  # BaseMessage: "ai", "human", "tool"
+    if hasattr(m, "get"):
+        role = m.get("role", "")
+        return "ai" if role == "assistant" else role
+    return ""
+
+
+def _msg_content(m) -> str:
+    """Return string content from a dict or a LangChain BaseMessage."""
+    if hasattr(m, "content"):
+        content = m.content
+    elif hasattr(m, "get"):
+        content = m.get("content", "")
+    else:
+        content = ""
+    return content if isinstance(content, str) else str(content) if content is not None else ""
+
+
 def workspace_path(workspace_id: str) -> Path:
-    return MEMORY_ROOT / workspace_id
+    safe_id = Path(workspace_id).name
+    if not safe_id or safe_id != workspace_id:
+        raise ValueError(f"Invalid workspace_id: {workspace_id!r}")
+    return MEMORY_ROOT / safe_id
 
 
 def freshness_score(last_accessed: str, base_weight: float = 1.0) -> float:
     dt = datetime.fromisoformat(last_accessed)
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
     days = max(0, (datetime.now(timezone.utc) - dt).total_seconds() / 86400)
     return base_weight * math.exp(-DECAY_LAMBDA * days)
 
@@ -23,35 +49,35 @@ def compact_session(workspace_id: str, session_id: str, messages: list) -> str:
     base.mkdir(parents=True, exist_ok=True)
 
     now = datetime.now(timezone.utc).isoformat()
-    assistant_msgs = [m for m in messages if m.get("role") == "assistant"]
-    tool_msgs = [m for m in messages if m.get("role") == "tool"]
+    assistant_msgs = [m for m in messages if _msg_type(m) in ("ai", "assistant")]
+    tool_msgs = [m for m in messages if _msg_type(m) == "tool"]
 
     lines = [
-        f"---",
+        "---",
         f'id: "session-{session_id}"',
         f'workspace: "{workspace_id}"',
-        f"type: runtime",
+        "type: runtime",
         f'created: "{now}"',
         f'last_accessed: "{now}"',
-        f"freshness_score: 1.0",
-        f"---",
-        f"",
-        f"# Session {session_id[:8]} — Compact Summary",
-        f"",
+        "freshness_score: 1.0",
+        "---",
+        "",
+        f"# Session {session_id} — Compact Summary",
+        "",
         f"**Workspace:** {workspace_id}",
         f"**Completed:** {now}",
         f"**Turns:** {len(messages)}",
         f"**Tool calls:** {len(tool_msgs)}",
-        f"",
-        f"## Key Assistant Actions",
-        f"",
+        "",
+        "## Key Assistant Actions",
+        "",
     ]
     for i, msg in enumerate(assistant_msgs[:8], 1):
-        content = msg.get("content", "")
-        if isinstance(content, str) and content.strip():
+        content = _msg_content(msg)
+        if content.strip():
             lines.append(f"{i}. {content[:300]}")
 
-    path = base / f"session-{session_id[:8]}.md"
+    path = base / f"session-{session_id}.md"
     path.write_text("\n".join(lines))
     return str(path)
 

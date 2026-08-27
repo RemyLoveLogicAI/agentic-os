@@ -130,10 +130,10 @@ wrangler secret put CLOUDFLARE_API_TOKEN
 
 **Cloudflare Durable Objects for state:**
 ```typescript
-import { AgentState } from 'cloudflare:workers'
+import { DurableObject } from 'cloudflare:workers'
 
-export class WorkspaceAgent extends AgentState {
-  async onRequest(request: Request): Promise<Response> {
+export class WorkspaceAgent extends DurableObject {
+  async fetch(request: Request): Promise<Response> {
     // Durable Object — state persists automatically across requests
     return new Response('ok')
   }

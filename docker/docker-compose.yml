@@ -5,7 +5,9 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile.agent
-    restart: always
+    # restart: on-failure prevents infinite loop; these agents run once and exit.
+    # Schedule cron externally (host cron, systemd, or LangGraph Cloud).
+    restart: on-failure
     command: python -m agents.trend_arbitrage.agent
     environment:
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
@@ -34,7 +36,9 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile.agent
-    restart: always
+    # restart: on-failure prevents infinite loop; these agents run once and exit.
+    # Schedule cron externally (host cron, systemd, or LangGraph Cloud).
+    restart: on-failure
     command: python -m agents.social_content.agent
     environment:
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
@@ -59,7 +63,9 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile.agent
-    restart: always
+    # restart: on-failure prevents infinite loop; these agents run once and exit.
+    # Schedule cron externally (host cron, systemd, or LangGraph Cloud).
+    restart: on-failure
     command: python -m agents.microsaas_factory.agent
     environment:
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
