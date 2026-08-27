@@ -5,6 +5,15 @@
   "last_updated": "2026-05-12",
   "skills": [
     {
+      "id": "musashi/musashi-api",
+      "publisher": "Musashi",
+      "category": "prediction-markets",
+      "description": "Prediction market signal API — real-time market data and arbitrage opportunity feeds across Kalshi, Polymarket, and partner exchanges.",
+      "viral_potential": 3,
+      "lovelogic_use": "Real-time signal polling for trend arbitrage agent",
+      "tags": ["prediction-markets", "arbitrage", "signals", "kalshi", "polymarket"]
+    },
+    {
       "id": "coinbase/monetize-service",
       "publisher": "Coinbase",
       "category": "monetization",

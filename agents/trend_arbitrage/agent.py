@@ -47,7 +47,7 @@ def poll_musashi(state: AgentState) -> dict:
         return {
             "messages": [
                 {
-                    "role": "tool",
+                    "role": "user",
                     "content": json.dumps(
                         {"signals": resp.json(), "polled_at": datetime.now(timezone.utc).isoformat()}
                     ),
@@ -63,7 +63,7 @@ def analyze_arbitrage(state: AgentState) -> dict:
         return {}
 
     last_tool = next(
-        (m for m in reversed(state["messages"]) if getattr(m, "type", None) == "tool"),
+        (m for m in reversed(state["messages"]) if getattr(m, "type", None) == "human"),
         None,
     )
     if not last_tool:

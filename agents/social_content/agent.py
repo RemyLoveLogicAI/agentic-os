@@ -37,7 +37,7 @@ def research_trends(state: AgentState) -> dict:
         return {
             "messages": [
                 {
-                    "role": "tool",
+                    "role": "user",
                     "content": json.dumps(
                         {"trends": resp.json(), "researched_at": datetime.now(timezone.utc).isoformat()}
                     ),
@@ -53,7 +53,7 @@ def generate_content(state: AgentState) -> dict:
         return {}
 
     last_tool = next(
-        (m for m in reversed(state["messages"]) if getattr(m, "type", None) == "tool"),
+        (m for m in reversed(state["messages"]) if getattr(m, "type", None) == "human"),
         None,
     )
     trend_data = last_tool.content if last_tool else "AI and agents"

@@ -24,7 +24,7 @@ def get_checkpointer():
         region = os.getenv("AWS_DEFAULT_REGION", "us-east-1")
         return DynamoDBSaver(
             table_name=table,
-            boto3_client=boto3.client("dynamodb", region_name=region),
+            client=boto3.client("dynamodb", region_name=region),
         )
 
     return MemorySaver()

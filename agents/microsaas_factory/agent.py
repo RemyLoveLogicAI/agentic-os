@@ -73,7 +73,7 @@ def deploy_worker(state: AgentState) -> dict:
         return {
             "messages": [
                 {
-                    "role": "tool",
+                    "role": "user",
                     "content": json.dumps(
                         {
                             "deployed": True,
@@ -91,7 +91,7 @@ def deploy_worker(state: AgentState) -> dict:
 
 def announce_launch(state: AgentState) -> dict:
     last_tool = next(
-        (m for m in reversed(state["messages"]) if getattr(m, "type", None) == "tool"),
+        (m for m in reversed(state["messages"]) if getattr(m, "type", None) == "human"),
         None,
     )
     if last_tool:
