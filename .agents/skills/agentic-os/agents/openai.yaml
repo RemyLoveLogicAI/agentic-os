@@ -1,0 +1,6 @@
+interface:
+  display_name: "Agentic Os"
+  short_description: "Repo-specific patterns and workflows for agentic-os"
+  default_prompt: "Use the agentic-os repo skill to follow existing architecture, testing, and workflow conventions."
+policy:
+  allow_implicit_invocation: true
