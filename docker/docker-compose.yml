@@ -47,6 +47,10 @@ services:
       - TYPEFULLY_API_KEY=${TYPEFULLY_API_KEY}
       - REPLICATE_API_TOKEN=${REPLICATE_API_TOKEN}
       - CHECKPOINT_BACKEND=${CHECKPOINT_BACKEND:-memory}
+      - LANGGRAPH_CHECKPOINT_TABLE=${LANGGRAPH_CHECKPOINT_TABLE:-lovelogic-checkpoints}
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION:-us-east-1}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - MEMORY_ROOT=/app/memory/workspace
       - WORKSPACE_ID=social-content-engine
     volumes:
@@ -75,6 +79,10 @@ services:
       - SENTRY_DSN=${SENTRY_DSN}
       - TYPEFULLY_API_KEY=${TYPEFULLY_API_KEY}
       - CHECKPOINT_BACKEND=${CHECKPOINT_BACKEND:-memory}
+      - LANGGRAPH_CHECKPOINT_TABLE=${LANGGRAPH_CHECKPOINT_TABLE:-lovelogic-checkpoints}
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION:-us-east-1}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - MEMORY_ROOT=/app/memory/workspace
       - WORKSPACE_ID=microsaas-factory
     volumes:
