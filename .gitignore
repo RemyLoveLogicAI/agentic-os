@@ -23,3 +23,8 @@ Thumbs.db
 # Temp files
 *.tmp
 *.temp
+
+# Secrets — never commit
+.env
+*.pem
+*.key
