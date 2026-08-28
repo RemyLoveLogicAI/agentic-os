@@ -149,7 +149,9 @@ For agents with `cron` fields in their workspace config:
 **Docker (cron via host systemd):**
 ```bash
 # /etc/cron.d/lovelogic-agents
-*/2 * * * * docker exec trend-arbitrage-agent python -m agents.trend_arbitrage.agent
+# Use `docker compose run --rm` — the container exits after each run (restart: on-failure)
+# so `docker exec` against a stopped container will fail.
+*/2 * * * * cd /path/to/agentic-os && docker compose run --rm trend-arbitrage-agent
 ```
 
 **Cloudflare Workers (built-in cron triggers):**

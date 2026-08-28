@@ -86,9 +86,14 @@ def analyze_arbitrage(state: AgentState) -> dict:
     except Exception as exc:
         return {"error": str(exc)}
 
+    raw_text = response.content[0].text
+    try:
+        json.loads(_strip_json_fences(raw_text))
+    except (json.JSONDecodeError, ValueError):
+        return {"error": f"analyze_arbitrage: LLM response is not valid JSON: {raw_text[:200]}"}
     tokens_used = response.usage.input_tokens + response.usage.output_tokens
     return {
-        "messages": [{"role": "assistant", "content": response.content[0].text}],
+        "messages": [{"role": "assistant", "content": raw_text}],
         "cost_usd": state["cost_usd"] + tokens_used * 0.000003,
         "turn_count": state["turn_count"] + 1,
     }

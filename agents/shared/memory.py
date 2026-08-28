@@ -30,9 +30,13 @@ def _msg_content(m) -> str:
 
 def workspace_path(workspace_id: str) -> Path:
     safe_id = Path(workspace_id).name
-    if not safe_id or safe_id != workspace_id:
+    if not safe_id or safe_id in (".", "..") or safe_id != workspace_id:
         raise ValueError(f"Invalid workspace_id: {workspace_id!r}")
-    return MEMORY_ROOT / safe_id
+    root = MEMORY_ROOT.resolve()
+    resolved = (root / safe_id).resolve()
+    if root not in resolved.parents:
+        raise ValueError(f"Invalid workspace_id: {workspace_id!r}")
+    return resolved
 
 
 def freshness_score(last_accessed: str, base_weight: float = 1.0) -> float:
