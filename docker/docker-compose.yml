@@ -18,7 +18,7 @@ services:
       - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION:-us-east-1}
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-      - MEMORY_ROOT=/app/memory
+      - MEMORY_ROOT=/app/memory/workspace
       - WORKSPACE_ID=trend-arbitrage-agent
       - ARBITRAGE_THRESHOLD=0.05
       - ALERT_URGENCY_THRESHOLD=7.0
@@ -47,7 +47,7 @@ services:
       - TYPEFULLY_API_KEY=${TYPEFULLY_API_KEY}
       - REPLICATE_API_TOKEN=${REPLICATE_API_TOKEN}
       - CHECKPOINT_BACKEND=${CHECKPOINT_BACKEND:-memory}
-      - MEMORY_ROOT=/app/memory
+      - MEMORY_ROOT=/app/memory/workspace
       - WORKSPACE_ID=social-content-engine
     volumes:
       - social_content_memory:/app/memory
@@ -75,7 +75,7 @@ services:
       - SENTRY_DSN=${SENTRY_DSN}
       - TYPEFULLY_API_KEY=${TYPEFULLY_API_KEY}
       - CHECKPOINT_BACKEND=${CHECKPOINT_BACKEND:-memory}
-      - MEMORY_ROOT=/app/memory
+      - MEMORY_ROOT=/app/memory/workspace
       - WORKSPACE_ID=microsaas-factory
     volumes:
       - microsaas_memory:/app/memory

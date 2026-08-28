@@ -52,11 +52,9 @@ def generate_content(state: AgentState) -> dict:
     if state.get("error"):
         return {}
 
-    last_tool = next(
-        (m for m in reversed(state["messages"]) if getattr(m, "type", None) == "human"),
-        None,
-    )
-    trend_data = last_tool.content if last_tool else "AI and agents"
+    human_msgs = [m for m in state["messages"] if getattr(m, "type", None) == "human"]
+    weekly_brief = human_msgs[0].content if human_msgs else "Produce this week's content"
+    trend_data = human_msgs[-1].content if len(human_msgs) > 1 else weekly_brief
 
     client = Anthropic(api_key=ANTHROPIC_API_KEY)
     try:
@@ -74,7 +72,7 @@ def generate_content(state: AgentState) -> dict:
             messages=[
                 {
                     "role": "user",
-                    "content": f"Create this week's content from trends: {trend_data}",
+                    "content": f"Campaign brief: {weekly_brief}\n\nTrend data: {trend_data}",
                 }
             ],
         )
@@ -119,6 +117,7 @@ def log_and_end(state: AgentState) -> dict:
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "turns": state["turn_count"],
         "cost_usd": state["cost_usd"],
+        "error": state.get("error"),
     }
     print(f"[EVIDENCE] {json.dumps(entry)}")
     compact_session(state["workspace_id"], state["session_id"], state["messages"])

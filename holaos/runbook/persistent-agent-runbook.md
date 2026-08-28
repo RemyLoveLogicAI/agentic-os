@@ -90,7 +90,7 @@ docker compose -f docker/docker-compose.yml logs -f trend-arbitrage-agent
 
 **The critical directive:**
 ```yaml
-restart: always  # Docker restarts within ~500ms of any crash, reboot, or OOM kill
+restart: on-failure  # Restarts on crash but exits cleanly after a successful run (avoids infinite loop for one-shot agents)
 ```
 
 **Required .env file:**

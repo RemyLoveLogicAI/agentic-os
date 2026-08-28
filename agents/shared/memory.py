@@ -40,7 +40,7 @@ def workspace_path(workspace_id: str) -> Path:
 
 
 def freshness_score(last_accessed: str, base_weight: float = 1.0) -> float:
-    dt = datetime.fromisoformat(last_accessed)
+    dt = datetime.fromisoformat(last_accessed.replace("Z", "+00:00"))
     if dt.tzinfo is None:
         dt = dt.replace(tzinfo=timezone.utc)
     days = max(0, (datetime.now(timezone.utc) - dt).total_seconds() / 86400)

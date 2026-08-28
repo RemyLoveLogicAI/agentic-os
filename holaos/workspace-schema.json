@@ -42,7 +42,8 @@
         "price_usd_monthly": { "type": "number" },
         "x402_enabled": { "type": "boolean", "default": false },
         "chain": { "type": "string", "description": "Blockchain for x402 payments (e.g. 'base')" },
-        "usdc_per_build": { "type": "number" }
+        "usdc_per_build": { "type": "number" },
+        "usdc_per_api_call": { "type": "number" }
       }
     },
     "tags": { "type": "array", "items": { "type": "string" } }
