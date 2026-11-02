@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Repo Is
 
-Agentic OS is a **spec-first** repository whose implementation has started. Alongside architecture specifications, research data, and operational ledgers, the repo now contains runnable code: a root `package.json` + `tsconfig.json` (TypeScript), `apps/zo-super-server/` (Python MCP server), `services/loop-harness/`, `agents/` (durable LangGraph agents under `agents/{trend_arbitrage,social_content,microsaas_factory}` + `agents/shared/`), `skills/task-manager/`, `src/metropolis/` (car-kernel, TypeScript), `docker/`, and `holaos/`. Phase 0 (the first shippable slice) is the active build focus.
+Agentic OS is a **spec-first** repository whose implementation has started. Alongside architecture specifications, research data, and operational ledgers, the repo now contains runnable code: a root `package.json` + `tsconfig.json` (TypeScript), `apps/zo-super-server/` (Python MCP server), `services/loop-harness/`, `agents/` (durable LangGraph agents under `agents/{trend_arbitrage,social_content,microsaas_factory}` + `agents/shared/`), `skills/task-manager/`, `src/metropolis/` (car-kernel, TypeScript), `docker/`, and `holaos/`.
+
+The **current proof slice** is the CAR Kernel (`src/metropolis/car-kernel/`) plus the TASK-MANAGER skill (`skills/task-manager/`) — these are implemented and runnable. **Phase 0** (the voice-to-action pipeline described in `spec-pack/phase-0-build-plan.md`) is the next build target; its voice bridge, command router, and approval-gate directories (`services/spokenly-mcp-bridge/`, `apps/voice-orion/`, `services/approval-gate/`) do not yet exist.
 
 **Available commands** (see `package.json`):
 - `npm run typecheck` — TypeScript type check (no emit)
