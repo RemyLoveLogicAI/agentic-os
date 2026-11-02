@@ -79,6 +79,8 @@ These principles govern all design and implementation decisions:
 
 ```
 agentic-os/
+├── package.json       # npm scripts: typecheck, build:car, example:car
+├── tsconfig.json      # TypeScript compiler config
 ├── _docs/             # Dependency notes and scratch docs
 ├── agents/            # Durable LangGraph agents (Python)
 │   ├── shared/        # Shared utilities (delta-dict returns, BaseMessage helpers)
@@ -112,7 +114,7 @@ agentic-os/
     └── metropolis/    # car-kernel (TypeScript)
 ```
 
-Always append sweep data to `ops/ledgers/big_bank_database.json` — that is the canonical ledger. `research/big_bank_database.json` is an optional manual copy that may lag behind and should not be used as an append target.
+Always append sweep data to `ops/ledgers/big_bank_database.json` — that is the canonical ledger. **Note:** as of this writing the file has a JSON parse error around line 827; repair the malformed JSON before appending. `research/big_bank_database.json` is an optional manual copy that may lag behind and should not be used as an append target.
 
 ## Research Sweep Convention
 
@@ -129,9 +131,10 @@ Use `YYYY-MM-DD-{sweep-type}-sweep.md` for new sweeps. Subdirectory outputs go t
 
 **Reading the full sweep history** requires consulting both `ops/ledgers/big_bank_database.json` AND the dated `ops/ledgers/big_bank_database_append_*.json` files — the canonical file may not contain the most recent entries, which live only in dated append files until they are merged.
 
-**JSON ledger schema** — two record variants coexist:
+**JSON ledger schema** — three record variants coexist:
 - Current format: `{ "timestamp", "sweep_type", "results": { "target": {...}, "peers": [...] } }`
 - Older format: `{ "timestamp", "sweep_type", "entries": [...] }` or top-level `"target"` / `"peers"` keys
+- Report format (some dated append files): top-level `"report_meta"`, `"report_text"`, `"identity"`, and `"stock_movement"` fields
 
 New entries should use the current format. The "Big Bank" alias maps to JPM (JPMorgan Chase & Co., ticker `JPM`, CIK `0000019617`).
 
