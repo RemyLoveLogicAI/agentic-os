@@ -125,7 +125,13 @@ The repo runs recurring **Big Bank triple-sweep** research tasks on JPMorgan Cha
 
 Use `YYYY-MM-DD-{sweep-type}-sweep.md` for new sweeps. Subdirectory outputs go to `research/night-sweeps/`, `research/big_bank_night_sweeps/`, or `research/big_bank_morning_sweeps/` depending on sweep type.
 
-The JSON ledger is an append-only array. Each entry includes `timestamp`, `sweep_type`, and a `results` block with `target` (JPM) and `peers`. The "Big Bank" alias maps to JPM (JPMorgan Chase & Co., ticker `JPM`, CIK `0000019617`).
+**Reading the full sweep history** requires consulting both `ops/ledgers/big_bank_database.json` AND the dated `ops/ledgers/big_bank_database_append_*.json` files — the canonical file may not contain the most recent entries, which live only in dated append files until they are merged.
+
+**JSON ledger schema** — two record variants coexist:
+- Current format: `{ "timestamp", "sweep_type", "results": { "target": {...}, "peers": [...] } }`
+- Older format: `{ "timestamp", "sweep_type", "entries": [...] }` or top-level `"target"` / `"peers"` keys
+
+New entries should use the current format. The "Big Bank" alias maps to JPM (JPMorgan Chase & Co., ticker `JPM`, CIK `0000019617`).
 
 ## Planned Implementation Structure
 
@@ -140,4 +146,4 @@ skills/        voice-agent-daemon, zopenclaw, zopack, glyphy-pets
 routes/        api, pages
 ```
 
-Phase 0 minimum viable remaining targets: `services/spokenly-mcp-bridge/`, `apps/voice-orion/`, and `packages/{core,policy,memory,routing}`.
+Phase 0 minimum viable remaining targets (per `spec-pack/phase-0-build-plan.md` deliverables): `services/spokenly-mcp-bridge/`, `apps/voice-orion/`, `apps/operator-console/`, and `packages/{core,policy,memory,routing}`.
